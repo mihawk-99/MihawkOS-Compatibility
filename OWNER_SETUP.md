@@ -121,6 +121,33 @@ After that it runs every 15 minutes (GitHub may start a scheduled run a few minu
 - Before ticking, check that the report is about one game, and that the console, firmware and version look real.
   Reject requests for games, keys or firmware, and anything else MihawkOS's README turns away.
 
+## The Steam lookup (game suggestions on the report page)
+
+The report page suggests games with their Steam pictures as a player types, for any Steam game. Steam does not
+answer other websites' pages, so a small Google Apps Script in your account asks Steam for the page
+(`tools/steam-lookup.gs`; it passes on only the typed name or AppID). Until it is set up, the page suggests only the
+games already on the list. Setting it up takes about five minutes:
+
+1. Open [script.google.com](https://script.google.com) and click **New project**.
+2. Click **Untitled project** at the top and name it `MihawkOS Steam lookup`.
+3. In the editor, select everything in `Code.gs` (Ctrl+A) and delete it. Open
+   [tools/steam-lookup.gs on GitHub](https://github.com/mihawk-99/MihawkOS-Compatibility/blob/main/tools/steam-lookup.gs),
+   click **Copy raw file** (the copy icon above the code), and paste it into `Code.gs`. Press **Ctrl+S** to save.
+4. Click **Deploy** (top right) > **New deployment**.
+5. Next to **Select type**, click the gear icon and choose **Web app**.
+6. Description: `Steam lookup`. **Execute as: Me**. **Who has access: Anyone**. Click **Deploy**.
+7. Click **Authorize access** and choose your Google account. Google shows **Google hasn't verified this app**,
+   because it is your own script: click **Advanced**, then **Go to MihawkOS Steam lookup (unsafe)**, then **Allow**.
+   The only permission it asks for is to connect to an external service (Steam).
+8. Copy the **Web app URL**. It starts with `https://script.google.com/macros/s/` and ends with `/exec`.
+9. Check it: open that URL with `?q=stardew` added at the end. The page should show a short list with
+   "Stardew Valley" and the number 413150.
+10. On GitHub, open the repository's **Settings > Secrets and variables > Actions > Variables > New repository
+    variable**. Name `STEAM_LOOKUP_URL`, value the Web app URL. Then **Actions > Publish > Run workflow**.
+
+To change the script later, paste the new code, save, then **Deploy > Manage deployments**, click the pencil, set
+**Version** to **New version** and click **Deploy**. The URL stays the same.
+
 ## When MihawkOS has a new release
 
 Add the version at the top of the form's **MihawkOS version** dropdown, and to `VERSIONS` in `src/fields.js` (the

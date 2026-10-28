@@ -44,3 +44,23 @@ test('a link fills the page in; unknown choices are ignored', () => {
   assert.deepEqual(p.row, { game: 'Hades', appid: '1145360', launcher: 'Steam', rating: 'Perfect', fps: '', settings: '' });
   assert.equal(appidFrom(' 620 '), '620');
 });
+
+test('the Steam lookup: only its own address, and only clean answers', async () => {
+  const { lookupUrl, cleanGames, cleanGame } = await import('../src/submit.js');
+  assert.equal(lookupUrl('https://script.google.com/macros/s/AKfy-cb_1/exec'), 'https://script.google.com/macros/s/AKfy-cb_1/exec');
+  assert.equal(lookupUrl('https://evil.example/macros/s/x/exec'), null);
+  const hash = '9d1e5917fb47c7af55a5134a6f7eb302fea2fb16';
+  const games = cleanGames({ games: [
+    { id: '2499860', name: 'DRAGON QUEST VII Reimagined', capsule: hash },
+    { id: '413150', name: 'Stardew <b>Valley</b>', capsule: '' },
+    { id: '12ab', name: 'bad id' }, { id: '1', name: '' }, { id: '2', name: 42 },
+    { id: '3', name: 'bad hash', capsule: 'https://evil.example/x' },
+  ] });
+  assert.deepEqual(games.map((g) => g.id), ['2499860', '413150', '3']);
+  assert.equal(games[0].img, `https://shared.steamstatic.com/store_item_assets/steam/apps/2499860/${hash}/capsule_231x87.jpg`);
+  assert.equal(games[1].name, 'Stardew bValley/b');
+  assert.equal(games[2].img, 'https://shared.steamstatic.com/store_item_assets/steam/apps/3/capsule_231x87.jpg');
+  assert.deepEqual(cleanGames({ error: 'x' }), []);
+  assert.equal(cleanGame({ game: { id: '9', name: 'Other' } }, '8'), null); // an answer for another AppID is ignored
+  assert.equal(cleanGame({ game: { id: '8', name: 'Eight', header: hash } }, '8').img, `https://shared.steamstatic.com/store_item_assets/steam/apps/8/${hash}/header.jpg`);
+});

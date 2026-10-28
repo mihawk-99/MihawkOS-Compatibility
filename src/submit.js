@@ -71,3 +71,29 @@ export function prefill(search) {
     },
   };
 }
+
+// The Steam lookup (tools/steam-lookup.gs) is a Google Apps Script web app; only its own address is used.
+export function lookupUrl(url) {
+  return /^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(url ?? '') ? url : null;
+}
+
+const STEAM_IMG = 'https://shared.steamstatic.com/store_item_assets/steam/apps';
+const hex40 = (h) => (/^[0-9a-f]{40}$/.test(h ?? '') ? h : '');
+
+// Its answers are untrusted input too: only digits, plain names and 40-hex picture hashes are kept.
+export function cleanGames(body) {
+  const games = Array.isArray(body?.games) ? body.games : [];
+  return games.filter((g) => /^\d{1,10}$/.test(String(g?.id)) && typeof g?.name === 'string' && g.name.trim()).slice(0, 8)
+    .map((g) => {
+      const id = String(g.id);
+      const hash = hex40(g.capsule);
+      return { id, name: g.name.replace(/[<>]/g, '').trim().slice(0, 100), img: `${STEAM_IMG}/${id}${hash ? `/${hash}` : ''}/capsule_231x87.jpg` };
+    });
+}
+
+export function cleanGame(body, id) {
+  const g = body?.game;
+  if (!g || String(g.id) !== id || typeof g.name !== 'string' || !g.name.trim()) return null;
+  const hash = hex40(g.header);
+  return { id, name: g.name.replace(/[<>]/g, '').trim().slice(0, 100), img: `${STEAM_IMG}/${id}${hash ? `/${hash}` : ''}/header.jpg` };
+}

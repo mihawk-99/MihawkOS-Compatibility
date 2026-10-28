@@ -1,24 +1,27 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // The report page: the console's details once, then one card per game. Each game is posted to the Google Form as its
 // own response (src/submit.js), so the sheet, its Approved box and the list's build stay as they are.
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import data from '../data/reports.json';
 import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, FIRMWARES } from './fields.js';
-import { appidFrom, formBody, prefill, problems, responseUrl } from './submit.js';
+import { appidFrom, cleanGame, cleanGames, formBody, lookupUrl, prefill, problems, responseUrl } from './submit.js';
 import { Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
 import documentDay from './assets/orbs/document-day.svg';
 import documentNight from './assets/orbs/document-night.svg';
-import consoleDay from './assets/orbs/this-pc-day.svg';
-import consoleNight from './assets/orbs/this-pc-night.svg';
-import gamesDay from './assets/orbs/games-day.svg';
-import gamesNight from './assets/orbs/games-night.svg';
+import consoleDay from './assets/orbs/ps5-day.svg';
+import consoleNight from './assets/orbs/ps5-night.svg';
+import gamesDay from './assets/orbs/dualsense-day.svg';
+import gamesNight from './assets/orbs/dualsense-night.svg';
 
 const POST_URL = responseUrl(FORM_URL);
+const LOOKUP = lookupUrl(import.meta.env.VITE_STEAM_LOOKUP); // tools/steam-lookup.gs, if deployed
 const SAVED = 'report-console'; // this device's console, firmware, version and nickname
 const key = (name) => String(name ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 let nextId = 1;
-const emptyRow = (fill = {}) => ({ id: nextId++, game: '', appid: '', launcher: '', rating: '', fps: '', settings: '', notes: '', ...fill });
+// steam: the Steam game the AppID stands for ({ id, name, img }), from the list or the Steam lookup; auto: the AppID came
+// from choosing a suggestion, so editing the name takes it away again.
+const emptyRow = (fill = {}) => ({ id: nextId++, game: '', appid: '', launcher: '', rating: '', fps: '', settings: '', notes: '', steam: null, auto: false, ...fill });
 
 // Small line icons for the buttons, drawn here (GPL-3.0-or-later like the page).
 const ICONS = {
@@ -78,22 +81,99 @@ function Chips({ legend, name, value, onChange, options, error, hint, render, wi
   );
 }
 
+async function ask(query) {
+  const res = await fetch(`${LOOKUP}?${query}`);
+  return res.json();
+}
+
+// Suggestions for a name: the games the list knows first, then Steam's store search through the lookup.
+function useSuggestions(text, known) {
+  const [remote, setRemote] = useState({ q: '', games: [] });
+  const q = text.trim();
+  useEffect(() => {
+    if (!LOOKUP || q.length < 2) return undefined;
+    const timer = setTimeout(() => {
+      ask(`q=${encodeURIComponent(q)}`).then((body) => setRemote({ q, games: cleanGames(body) })).catch(() => {});
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [q]);
+  return useMemo(() => {
+    if (q.length < 2) return [];
+    const local = [...known.byId].filter(([, name]) => key(name).includes(key(q))).slice(0, 4)
+      .map(([id, name]) => ({ id, name, img: steamHeader(id, data.steam) }));
+    const fromSteam = remote.q === q ? remote.games.filter((g) => !local.some((l) => l.id === g.id)) : [];
+    return [...local, ...fromSteam].slice(0, 8);
+  }, [q, remote, known]);
+}
+
+// The game's name, with suggestions as you type (a combobox: arrow keys, Enter, Escape).
+function GameName({ row, error, known, onChange }) {
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(-1);
+  const list = useSuggestions(row.game, known);
+  const listId = `games-${row.id}`;
+  const showing = open && list.length > 0;
+  const choose = (g) => {
+    onChange({ ...row, game: g.name, appid: g.id, steam: g, auto: true });
+    setOpen(false);
+  };
+  const type = (e) => {
+    const game = e.target.value;
+    const id = known.byName.get(key(game));
+    // A name typed in full that the list knows still fills its AppID; any other edit drops a chosen one.
+    if (id) onChange({ ...row, game, appid: id, steam: { id, name: known.byId.get(id), img: steamHeader(id, data.steam) }, auto: true });
+    else onChange({ ...row, game, ...(row.auto ? { appid: '', steam: null, auto: false } : {}) });
+    setOpen(true);
+    setActive(-1);
+  };
+  const keys = (e) => {
+    if (!showing) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActive((active + 1) % list.length); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setActive((active - 1 + list.length) % list.length); }
+    else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); choose(list[active]); }
+    else if (e.key === 'Escape') setOpen(false);
+  };
+  return (
+    <Field label="Game *" error={error} hint={LOOKUP ? 'Start typing, then choose it from the list.' : undefined}>
+      <div className="combo">
+        <input value={row.game} onChange={type} onKeyDown={keys} onFocus={() => setOpen(true)} onBlur={() => setTimeout(() => setOpen(false), 120)}
+          role="combobox" aria-expanded={showing} aria-controls={listId} aria-autocomplete="list"
+          aria-activedescendant={showing && active >= 0 ? `${listId}-${active}` : undefined}
+          maxLength={100} autoComplete="off" placeholder="Start typing its name" />
+        {showing && (
+          <ul className="suggestions glass" id={listId} role="listbox">
+            {list.map((g, i) => (
+              <li key={g.id} id={`${listId}-${i}`} role="option" aria-selected={i === active} className={i === active ? 'on' : ''}
+                onMouseDown={(e) => { e.preventDefault(); choose(g); }} onMouseEnter={() => setActive(i)}>
+                <img src={g.img} alt="" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }} />
+                <span>{g.name}</span>
+                <small>{g.id}</small>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </Field>
+  );
+}
+
 // "Is it the right game?": the AppID's Steam picture and name, and a link to check on Steam.
-function SteamCheck({ appid, game, known }) {
-  const [state, setState] = useState({ id: null, ok: true });
+function SteamCheck({ row, known }) {
+  const [failed, setFailed] = useState(null);
+  const { appid, game } = row;
   if (!/^\d{1,10}$/.test(appid)) return null;
-  const failed = state.id === appid && !state.ok;
-  const name = known.byId.get(appid);
+  const steam = row.steam?.id === appid ? row.steam : null;
+  const name = steam?.name ?? known.byId.get(appid);
+  const img = steam?.img ?? steamHeader(appid, data.steam);
   const matches = name && key(name) === key(game);
   return (
     <div className={`steam-check${matches ? ' matches' : ''}`} aria-live="polite">
-      {!failed && <img src={steamHeader(appid, data.steam)} alt="" referrerPolicy="no-referrer"
-        onLoad={() => setState({ id: appid, ok: true })} onError={() => setState({ id: appid, ok: false })} />}
+      {failed !== img && <img src={img} alt="" referrerPolicy="no-referrer" onError={() => setFailed(img)} />}
       <p>
         {name
           ? (matches ? <strong className="good"><Icon name="check" /> This is {name} on Steam.</strong>
             : <><strong>Steam AppID {appid} is {name}.</strong> Is that your game?</>)
-          : failed ? <>No picture for {appid}. Check that it is your game:</> : <>Is this your game?</>}
+          : failed === img ? <>No picture for {appid}. Check that it is your game:</> : <>Is this your game?</>}
         {' '}<a href={`https://store.steampowered.com/app/${appid}/`} target="_blank" rel="noopener noreferrer">Open its Steam page</a>
       </p>
     </div>
@@ -102,11 +182,21 @@ function SteamCheck({ appid, game, known }) {
 
 function GameCard({ row, index, count, errors, known, onChange, onRemove }) {
   const set = (field) => (e) => onChange({ ...row, [field]: e.target.value });
-  const setGame = (e) => {
-    const game = e.target.value;
-    const id = known.byName.get(key(game)); // a game the list knows fills its AppID in, unless one was typed
-    onChange({ ...row, game, appid: row.appid || id || '' });
-  };
+  const latest = useRef(row);
+  latest.current = row;
+  // An AppID typed or pasted by hand: ask the lookup which game it is, unless the list already knows.
+  useEffect(() => {
+    const id = row.appid;
+    if (!LOOKUP || !/^\d{1,10}$/.test(id) || known.byId.has(id) || row.steam?.id === id) return undefined;
+    const timer = setTimeout(() => {
+      ask(`id=${id}`).then((body) => {
+        const game = cleanGame(body, id);
+        // An empty name takes Steam's; a typed one stays, and the check asks whether it is the same game.
+        if (game && latest.current.appid === id) onChange({ ...latest.current, steam: game, game: latest.current.game.trim() ? latest.current.game : game.name });
+      }).catch(() => {});
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [row.appid]);
   return (
     <li className="game-row glass">
       <div className="row-head">
@@ -114,14 +204,12 @@ function GameCard({ row, index, count, errors, known, onChange, onRemove }) {
         {count > 1 && <button type="button" className="button small quiet" onClick={onRemove} aria-label={`Remove game ${index + 1}`}><Icon name="trash" /> Remove</button>}
       </div>
       <div className="row-fields">
-        <Field label="Game *" error={errors.game}>
-          <input value={row.game} onChange={setGame} list="known-games" maxLength={100} autoComplete="off" placeholder="Start typing its name" />
-        </Field>
-        <Field label="Steam AppID" error={errors.appid} hint="Optional. Its number, or paste its Steam link.">
-          <input value={row.appid} onChange={(e) => onChange({ ...row, appid: appidFrom(e.target.value) })} inputMode="numeric" autoComplete="off" placeholder="e.g. 620" />
+        <GameName row={row} error={errors.game} known={known} onChange={onChange} />
+        <Field label="Steam AppID" error={errors.appid} hint="Filled in when you choose the game. Or type its number, or paste its Steam link.">
+          <input value={row.appid} onChange={(e) => onChange({ ...row, appid: appidFrom(e.target.value), auto: false })} inputMode="numeric" autoComplete="off" placeholder="e.g. 620" />
         </Field>
       </div>
-      <SteamCheck appid={row.appid} game={row.game} known={known} />
+      <SteamCheck row={row} known={known} />
       <Chips legend="How did it run? *" name={`rating-${row.id}`} value={row.rating} onChange={(rating) => onChange({ ...row, rating })}
         error={errors.rating} wide hint={RATINGS.find((r) => r.name === row.rating)?.means ?? 'Choose the one that fits best.'}
         options={RATINGS.map((r) => ({ value: r.name }))}
@@ -162,7 +250,8 @@ export default function ReportPage() {
   const [ownFirmware, setOwnFirmware] = useState(() => Boolean(shared.firmware) && !FIRMWARES.includes(shared.firmware));
   const [rows, setRows] = useState(() => {
     const row = Object.fromEntries(Object.entries(start.row).filter(([, v]) => v));
-    if (row.game && !row.appid && known.byName.has(key(row.game))) row.appid = known.byName.get(key(row.game));
+    const id = !row.appid && known.byName.get(key(row.game ?? ''));
+    if (id) Object.assign(row, { appid: id, steam: { id, name: known.byId.get(id), img: steamHeader(id, data.steam) }, auto: true });
     return [emptyRow(row)];
   });
   const [showErrors, setShowErrors] = useState(false);
@@ -237,7 +326,6 @@ export default function ReportPage() {
         </section>
 
         <form id="report-form" onSubmit={send} noValidate>
-          <datalist id="known-games">{known.names.map((n) => <option key={n} value={n} />)}</datalist>
           <section className="glass card console" aria-labelledby="console-title">
             <div className="titled">
               <Orb night={night} day={consoleDay} dark={consoleNight} />
@@ -281,7 +369,7 @@ export default function ReportPage() {
           <ul className="game-rows">
             {rows.map((row, i) => (
               <GameCard key={row.id} row={row} index={i} count={rows.length} errors={errorsOf(row)} known={known}
-                onChange={(next) => setRows(rows.map((r) => (r.id === row.id ? next : r)))}
+                onChange={(next) => setRows((all) => all.map((r) => (r.id === next.id ? next : r)))}
                 onRemove={() => setRows(rows.filter((r) => r.id !== row.id))} />
             ))}
           </ul>

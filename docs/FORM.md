@@ -121,14 +121,20 @@ checks every field the way the form does (`problems()`, tested in `scripts/repor
 - **Remembered:** console, firmware, version and nickname, in the visitor's browser (`localStorage`), after a send.
 - **Pre-filled by a link:** `…/report/?game=&appid=&launcher=&rating=&fps=&settings=&model=&fw=&version=` (also
   `console=`, `firmware=`). Unknown choices are ignored. A game the list knows gets its AppID filled in.
-- **"Is it the right game?":** an AppID shows its Steam picture, the name Steam gives it when the list knows it
-  (`data/steam.json`, from the build), and a link to its Steam page. Steam's store API does not answer other sites'
-  pages, so a new AppID shows its picture and the link only.
+- **Suggestions as you type:** the games the list knows (`data/steam.json`, from the build), then Steam's store
+  search through the Steam lookup, a Google Apps Script web app (`tools/steam-lookup.gs`, address in the repository
+  variable `STEAM_LOOKUP_URL`, set up in OWNER_SETUP.md), because Steam does not answer other websites' pages.
+  Choosing one fills the name and AppID; editing the name afterwards drops that AppID again.
+- **"Is it the right game?":** an AppID shows its Steam picture, its Steam name (from the list or the lookup's
+  `?id=`), and a link to its Steam page. A hand-typed AppID with an empty name takes Steam's name. Without the
+  lookup, an AppID the list does not know shows its picture (when it has an unhashed one) and the link only.
 - **When the form changes:** a new MihawkOS release goes into `VERSIONS` in `src/fields.js` as well as the form's
   dropdown. A question deleted and made again gets a new `entry.` id, to copy into `FORM_ENTRIES`. A new question
   needs the page, the script and `src/fields.js`.
-- The page's Content-Security-Policy allows `connect-src https://docs.google.com` for the sends; the list page does
-  not.
+- The page's Content-Security-Policy allows `connect-src https://docs.google.com` for the sends and
+  `https://script.google.com https://script.googleusercontent.com` for the lookup; the list page allows neither.
+  The lookup's answers are cleaned (`cleanGames`, `cleanGame` in `src/submit.js`): digits, plain names, 40-hex
+  picture hashes only.
 
 ## A future hook: "Report this game" from the WebUI
 

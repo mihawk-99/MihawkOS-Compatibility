@@ -48,8 +48,9 @@ The screenshots show made-up examples.
 2. Open [the report page](https://mihawk-99.github.io/MihawkOS-Compatibility/report/) (**Report games** on the list). Fill in your console, firmware and
    MihawkOS version once, then one row per game; **+ Add another game** adds a row. It needs no account and no
    e-mail, and your console details are remembered on your device for next time.
-3. Type a Steam AppID (or paste the game's Steam link) and the page shows the game's Steam picture and name, so you
-   can see it is the right one.
+3. Start typing a game's name and choose it from the suggestions, with their Steam pictures: its AppID is filled
+   in, and the page shows the game's Steam picture and name, so you can see it is the right one. Typing an AppID or
+   pasting a Steam link works too.
 4. Your reports are read, then they appear on the list, usually within a day.
 
 The page sends each game to the project's [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform), which still works on its own, one game at a
