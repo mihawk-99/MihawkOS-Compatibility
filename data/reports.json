@@ -1,4 +1,19 @@
 {
  "examples": false,
- "reports": []
+ "reports": [
+  {
+   "date": "2026-10-28",
+   "game": "Hollow Knight: Silksong",
+   "appid": "1030300",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "120Hz",
+   "notes": null,
+   "nickname": null
+  }
+ ]
 }
