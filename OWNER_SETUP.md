@@ -47,7 +47,8 @@ You need a Google account (a personal one is fine) and the `mihawk-99` GitHub ac
    choose **Apply**.
 5. Add the published tab: click **+** (bottom left) and rename the new tab (double-click its name) to `Published`.
    - In **A1** paste `={'Form Responses 1'!A1:M1}`
-   - In **A2** paste `=FILTER('Form Responses 1'!A2:M, 'Form Responses 1'!M2:M=TRUE)`
+   - In **A2** paste `=FILTER('Form Responses 1'!A:M, 'Form Responses 1'!M:M=TRUE)`. Keep the whole columns
+     (`A:M`): a range starting at row 2 shifts down each time Google adds a response, and misses it.
    - If you formatted dates in step 4, format this tab's column **A** the same way.
    - A2 shows `#N/A` until a box is ticked. That is expected.
 6. Tick your test report's box in `Form Responses 1` and check that it appears in `Published`. Then untick it, or
@@ -93,7 +94,7 @@ few minutes to apply a change.
 4. **Settings > Pages > Build and deployment > Source: GitHub Actions.**
 5. **Settings > Actions > General**: keep **Allow all actions** (or allow `actions/*`), and keep the default
    workflow permissions. The workflow asks for what each job needs.
-6. If you protect `main` later, let `github-actions[bot]` push to it, or the daily data commit will fail.
+6. If you protect `main` later, let `github-actions[bot]` push to it, or the data commits will fail.
 
 ## 5. First run
 
@@ -105,7 +106,8 @@ few minutes to apply a change.
 4. Without any ticked rows, the list says **No reports yet**. The made-up examples are gone as soon as the sheet is
    read once.
 
-After that it runs every day at 04:23 UTC, after every push to `main`, and whenever you press **Run workflow**.
+After that it runs every 15 minutes (GitHub may start a scheduled run a few minutes late), after every push to
+`main`, and whenever you press **Run workflow**. A scheduled run that finds no change stops after reading the sheet.
 
 ## Moderating
 

@@ -55,9 +55,12 @@ Google names the responses tab `Form Responses 1`, with the columns `Timestamp`,
 2. **A tab named `Published`**, which holds only the ticked rows. Only this tab is published to the web, so a row
    nobody has approved never leaves Google.
    - A1: `={'Form Responses 1'!A1:M1}`
-   - A2: `=FILTER('Form Responses 1'!A2:M, 'Form Responses 1'!M2:M=TRUE)`
+   - A2: `=FILTER('Form Responses 1'!A:M, 'Form Responses 1'!M:M=TRUE)`
 
-   While nothing is ticked, A2 shows `#N/A`. The script reads that row as not approved and leaves it out.
+   Whole columns, not `A2:M`: Google inserts a new response as a row, which shifts a range that starts at row 2
+   past the row just added (the first approved report, 2026-10-28, stayed hidden that way). The header row is left
+   out anyway, as its Approved cell holds text. While nothing is ticked, A2 shows `#N/A`; the script reads that row
+   as not approved and leaves it out.
 
 **Dates.** The script reads `yyyy-mm-dd` or the US `m/d/yyyy`. A sheet whose locale is United States (File >
 Settings > Locale) writes the US form, and needs nothing more; the sheet made on 2026-10-27 is one. In any other
@@ -89,7 +92,7 @@ data.
 ## Game pictures
 
 The page shows a game's Steam header picture (`shared.steamstatic.com/store_item_assets/steam/apps/<AppID>/header.jpg`)
-and a coloured letter when there is none. A report's own Steam AppID comes first. Without one, the daily run asks
+and a coloured letter when there is none. A report's own Steam AppID comes first. Without one, the run asks
 Steam's public store search (`store.steampowered.com/api/storesearch`) for the game's name and takes the AppID only
 when a result has exactly that name (case, accents, ™ and punctuation aside), so a near match never shows another
 game's art. Found AppIDs are kept in `data/appids.json`, so a day Steam does not answer changes nothing, and each name

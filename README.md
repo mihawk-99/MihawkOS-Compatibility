@@ -89,7 +89,7 @@ Nothing anyone writes goes straight to the page.
 1. The form writes each report into a private Google Sheet.
 2. The maintainer reads it and ticks **Approved**, or leaves it out.
 3. Only ticked rows are published, from a separate tab, as a CSV file.
-4. Once a day, a GitHub Action reads that file. It keeps the approved rows, checks every field against the known
+4. Every 15 minutes, a GitHub Action reads that file. It keeps the approved rows, checks every field against the known
    values, removes HTML, links and e-mail addresses, cuts long text, and writes `data/reports.json`. Then it rebuilds
    the page.
 
@@ -106,7 +106,7 @@ game pictures from Steam's public image server (`shared.steamstatic.com`), witho
 | The form's exact fields, the sheet, the checks and the WebUI's future "Report this game" link | [`docs/FORM.md`](docs/FORM.md) |
 | The maintainer's setup, click by click | [`OWNER_SETUP.md`](OWNER_SETUP.md) |
 | Fetch, validate and write the reports | [`scripts/build-reports.mjs`](scripts/build-reports.mjs), tested by [`scripts/build-reports.test.mjs`](scripts/build-reports.test.mjs) against [sample](scripts/fixtures/sample.csv) and [hostile](scripts/fixtures/hostile.csv) sheets |
-| The daily run | [`.github/workflows/publish.yml`](.github/workflows/publish.yml): actions pinned to commits, least privilege, no installed code in the job that can push |
+| The run, every 15 minutes | [`.github/workflows/publish.yml`](.github/workflows/publish.yml): actions pinned to commits, least privilege, no installed code in the job that can push |
 | The page | [`src/App.jsx`](src/App.jsx), [`src/app.css`](src/app.css), [`src/fields.js`](src/fields.js) (the ratings and consoles, shared with the script) |
 | The data | [`data/reports.json`](data/reports.json): the made-up examples until the first real run; [`data/appids.json`](data/appids.json): AppIDs found by name |
 | Launcher logos | [`src/launchers.js`](src/launchers.js), from Simple Icons |
