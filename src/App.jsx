@@ -4,6 +4,7 @@
 import { useMemo, useState } from 'react';
 import data from '../data/reports.json';
 import { RATINGS, CONSOLES } from './fields.js';
+import { LAUNCHER_ICONS } from './launchers.js';
 import bannerDay from './assets/banner-day.svg';
 import bannerNight from './assets/banner-night.svg';
 
@@ -45,6 +46,16 @@ function Badge({ rating }) {
   return <span className={`badge rating-${slug(rating)}`}>{rating}</span>;
 }
 
+function Launcher({ name }) {
+  const path = LAUNCHER_ICONS[name];
+  return (
+    <span className="launcher">
+      {path && <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={path} /></svg>}
+      {name === 'None' ? 'No launcher' : name}
+    </span>
+  );
+}
+
 function Cover({ game }) {
   const [failed, setFailed] = useState(false);
   if (game.appid && /^\d+$/.test(game.appid) && !failed) {
@@ -61,6 +72,7 @@ function Report({ r }) {
     <li className="report">
       <div className="report-head">
         <Badge rating={r.rating} />
+        {r.launcher && <Launcher name={r.launcher} />}
         <span>{r.console} · firmware {r.firmware} · MihawkOS {r.version}{r.fps ? ` · ${r.fps} fps` : ''}</span>
         <time dateTime={r.date}>{day(r.date)}</time>
       </div>
@@ -75,6 +87,7 @@ function Game({ game }) {
   const [open, setOpen] = useState(false);
   const id = `reports-${game.key.replace(/[^\w-]/g, '_')}`;
   const count = game.reports.length;
+  const launchers = [...new Set(game.reports.map((r) => r.launcher).filter(Boolean))];
   return (
     <li className="game glass">
       <div className="art"><Cover game={game} /></div>
@@ -83,6 +96,7 @@ function Game({ game }) {
         <dl className="verdicts">
           <div><dt>Best</dt><dd><Badge rating={game.best.rating} /></dd></div>
           <div><dt>Latest</dt><dd><Badge rating={game.latest.rating} /> <span className="muted">{game.latest.console}, {game.latest.version}, {day(game.latest.date)}</span></dd></div>
+          {launchers.length > 0 && <div><dt>Started</dt><dd>{launchers.map((l) => <Launcher key={l} name={l} />)}</dd></div>}
         </dl>
         <button type="button" className="button small" aria-expanded={open} aria-controls={id} onClick={() => setOpen(!open)}>
           {open ? 'Hide' : 'Show'} {count} {count === 1 ? 'report' : 'reports'}

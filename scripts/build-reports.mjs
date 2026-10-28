@@ -2,7 +2,7 @@
 // Turn the moderated sheet's published CSV into data/reports.json, the only data the page reads.
 //
 //   SHEET_CSV_URL=https://docs.google.com/... node scripts/build-reports.mjs
-//   node scripts/build-reports.mjs --csv scripts/fixtures/sample.csv [--out file]
+//   node scripts/build-reports.mjs --csv scripts/fixtures/sample.csv [--out file] [--appids file] [--offline]
 //
 // Submissions are untrusted text from anyone. Nothing here evaluates them: each cell is parsed as text, cleaned
 // (HTML, links, e-mail addresses and invisible characters removed, lengths capped), checked against the known
@@ -10,10 +10,11 @@
 // The log prints counts only, never a submission's words, since a public repository's Action logs are public.
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { RATINGS, CONSOLES, COLUMNS, LIMITS } from '../src/fields.js';
+import { RATINGS, CONSOLES, LAUNCHERS, COLUMNS, LIMITS } from '../src/fields.js';
 
 const MAX_BYTES = 5 * 1024 * 1024;
 const MAX_ROWS = 20000;
+const MAX_LOOKUPS = 50; // Steam store searches per run; names not found are tried again on later runs
 
 // RFC 4180: quoted cells, doubled quotes, commas and newlines inside quotes, CRLF or LF, a leading BOM.
 export function parseCsv(text) {
@@ -58,7 +59,9 @@ export function cleanText(value, limit, { multiline = false } = {}) {
   return chars.length > limit ? chars.slice(0, limit - 1).join('').trimEnd() + '…' : s;
 }
 
-const pick = (value, allowed) => allowed.find((a) => a.toLowerCase() === cleanText(value, 40).toLowerCase()) ?? null;
+// A choice is matched as written (spaces collapsed, any case), not cleaned: cleaning would strip "Battle.net" as a link.
+const answer = (value) => String(value ?? '').slice(0, 100).replace(/\s+/g, ' ').trim().toLowerCase();
+const pick = (value, allowed) => allowed.find((a) => a.toLowerCase() === answer(value)) ?? null;
 
 // A store link works as well as the number: https://store.steampowered.com/app/620/... gives 620.
 export function cleanAppId(value) {
@@ -76,6 +79,11 @@ export function cleanFirmware(value) {
 export function cleanVersion(value) {
   const m = /^v?(\d{1,3}\.\d{1,3}\.\d{1,3}(?:-[a-z]{1,12}(?:[-.]\d{1,3})?)?)$/i.exec(String(value ?? '').trim());
   return m ? `v${m[1].toLowerCase()}` : null;
+}
+
+export function cleanLauncher(value) {
+  if (!answer(value)) return null;
+  return pick(value, LAUNCHERS) ?? 'Other';
 }
 
 export function cleanFps(value) {
@@ -109,6 +117,7 @@ export function normalizeRow(raw) {
     date: cleanDate(raw.timestamp),
     game: cleanText(raw.game, LIMITS.game),
     appid: cleanAppId(raw.appid),
+    launcher: cleanLauncher(raw.launcher),
     version: cleanVersion(raw.version),
     console: pick(raw.console, CONSOLES),
     firmware: cleanFirmware(raw.firmware),
@@ -146,6 +155,33 @@ export function buildReports(csvText) {
   return { reports, dropped, rows: rows.length };
 }
 
+// A game's picture needs its Steam AppID. A report without one gets it from Steam's store search, but only when a
+// result has exactly the game's name (case, accents, ™ and punctuation aside), so a near match never shows the wrong art.
+export const gameKey = (name) => name.replace(/[™®©℠]/g, '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+  .replace(/[^a-z0-9]+/g, ' ').trim();
+
+export async function findAppIds(reports, cache, search) {
+  const names = new Map();
+  for (const r of reports) if (!r.appid && !(gameKey(r.game) in cache) && gameKey(r.game)) names.set(gameKey(r.game), r.game);
+  let found = 0;
+  for (const [key, name] of [...names].slice(0, MAX_LOOKUPS)) {
+    const items = await search(name).catch(() => []);
+    const match = items.find((i) => /^\d{1,10}$/.test(String(i.id)) && gameKey(String(i.name ?? '')) === key);
+    if (match) { cache[key] = String(match.id); found++; }
+  }
+  for (const r of reports) if (!r.appid && cache[gameKey(r.game)]) r.appid = cache[gameKey(r.game)];
+  return { searched: Math.min(names.size, MAX_LOOKUPS), found };
+}
+
+async function steamSearch(term) {
+  const url = new URL('https://store.steampowered.com/api/storesearch/');
+  url.search = new URLSearchParams({ term, l: 'english', cc: 'US' });
+  const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const body = await res.json();
+  return Array.isArray(body?.items) ? body.items : [];
+}
+
 async function fetchCsv(url) {
   const u = new URL(url);
   if (u.protocol !== 'https:' || u.hostname !== 'docs.google.com') throw new Error('SHEET_CSV_URL must be a https://docs.google.com/ published CSV link');
@@ -170,8 +206,17 @@ async function main(argv) {
   const csv = file ? await readFile(file, 'utf8') : await fetchCsv(url);
   if (Buffer.byteLength(csv) > MAX_BYTES) throw new Error('the CSV is larger than 5 MiB');
   const { reports, dropped, rows } = buildReports(csv);
+  // data/appids.json remembers the AppIDs found by name, so a day Steam does not answer changes nothing.
+  const cacheFile = arg('--appids') ?? fileURLToPath(new URL('../data/appids.json', import.meta.url));
+  const cache = JSON.parse(await readFile(cacheFile, 'utf8').catch(() => '{}'));
+  const offline = argv.includes('--offline');
+  const lookups = await findAppIds(reports, cache, offline ? async () => [] : steamSearch);
+  if (!offline) {
+    const sorted = Object.fromEntries(Object.entries(cache).sort(([a], [b]) => a.localeCompare(b)));
+    await writeFile(cacheFile, JSON.stringify(sorted, null, 1) + '\n');
+  }
   await writeFile(out, JSON.stringify({ examples: false, reports }, null, 1) + '\n');
-  console.log(`rows ${rows}, published ${reports.length}, left out ${JSON.stringify(dropped)}`);
+  console.log(`rows ${rows}, published ${reports.length}, left out ${JSON.stringify(dropped)}, Steam searches ${lookups.searched}, AppIDs found ${lookups.found}`);
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

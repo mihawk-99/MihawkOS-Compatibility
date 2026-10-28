@@ -3,10 +3,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildReports, parseCsv, cleanText, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
+import { buildReports, findAppIds, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
 
 const fixture = (name) => readFileSync(new URL(`fixtures/${name}`, import.meta.url), 'utf8');
-const HEADER = 'Timestamp,Game,Steam AppID,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
+const HEADER = 'Timestamp,Game,Steam AppID,Launcher,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
 const csvCell = (s) => `"${String(s).replace(/"/g, '""')}"`;
 
 test('the sample sheet keeps only approved, valid rows, newest first', () => {
@@ -22,6 +22,8 @@ test('the sample sheet keeps only approved, valid rows, newest first', () => {
   assert.equal(multi.notes, 'Example row.\nThe first load takes a minute.');
   assert.equal(multi.nickname, null);
   assert.equal(multi.fps, 60);
+  assert.equal(multi.launcher, 'None');
+  assert.deepEqual(reports.map((r) => r.launcher), ['Epic Games Store', 'Steam', null, 'None', 'Steam']);
 });
 
 test('hostile rows: no markup, links, e-mail or invisible characters survive; fields are capped', () => {
@@ -40,19 +42,22 @@ test('hostile rows: no markup, links, e-mail or invisible characters survive; fi
   assert.equal(evil.appid, '620');
   assert.equal(evil.settings, 'high');
   assert.equal(evil.nickname, 'nick');
+  assert.equal(evil.launcher, 'Other'); // "<b>Steam</b>" is not an option as written
+  assert.equal(reports.find((r) => r.game.startsWith('AAA')).launcher, 'Other'); // free text never published
   const odd = reports.find((r) => r.rating === 'Broken');
   assert.equal(odd.console, 'PS5 Pro');
   assert.equal(odd.version, 'v4.0.0-alpha-4');
   assert.equal(odd.firmware, '9.60');
   assert.equal(odd.appid, '440');
   assert.equal(odd.fps, 60);
+  assert.equal(odd.launcher, 'Battle.net');
   assert.equal(odd.notes, 'line1\n\nline2');
   assert.equal(odd.game, '=HYPERLINK("'); // plain text: React shows it as written, nothing runs it
 });
 
 test('huge cells are cut to their limits', () => {
   const huge = 'A'.repeat(200000);
-  const row = ['2026-10-26 10:01:00', huge, '123abc', 'v4.0.0-alpha-4', 'PS5', '13.40', 'Playable', '999999', huge, huge, huge, 'TRUE'];
+  const row = ['2026-10-26 10:01:00', huge, '123abc', huge, 'v4.0.0-alpha-4', 'PS5', '13.40', 'Playable', '999999', huge, huge, huge, 'TRUE'];
   const { reports } = buildReports(`${HEADER}\n${row.map(csvCell).join(',')}\n`);
   const [r] = reports;
   assert.equal([...r.game].length, 100);
@@ -62,6 +67,7 @@ test('huge cells are cut to their limits', () => {
   assert.equal([...r.nickname].length, 32);
   assert.equal(r.appid, null);
   assert.equal(r.fps, null);
+  assert.equal(r.launcher, 'Other');
 });
 
 test('a sheet without the expected columns is refused, not guessed', () => {
@@ -79,10 +85,33 @@ test('field cleaners', () => {
   assert.equal(cleanAppId('12345678901'), null);
   assert.equal(cleanFirmware('13.4'), '13.40');
   assert.equal(cleanFirmware('13.400'), null);
+  assert.equal(cleanLauncher(' itch.IO '), 'itch.io');
+  assert.equal(cleanLauncher('<b>Steam</b>'), 'Other');
   assert.equal(cleanFps('0'), null);
   assert.equal(cleanFps('29,97'), 30);
   assert.equal(cleanVersion('4.0.0-alpha-4'), 'v4.0.0-alpha-4');
   assert.equal(cleanVersion('latest'), null);
   assert.equal(cleanDate('2/30/2026 10:00:00'), null);
   assert.equal(cleanDate('2026-10-27T10:00:00Z'), '2026-10-27');
+});
+
+test('a report without an AppID takes one from Steam only for the exact name', async () => {
+  const reports = [{ game: 'Hollow Knight™' }, { game: 'Celest' }, { game: 'Portal 2', appid: '620' }, { game: 'Known' }];
+  const asked = [];
+  const search = async (term) => {
+    asked.push(term);
+    if (term === 'Celest') return [{ id: 504230, name: 'Celeste' }]; // a near match is not taken
+    return [{ id: 'x1', name: 'Hollow Knight' }, { id: 367520, name: 'Hollow Knight' }];
+  };
+  const cache = { known: '1234' };
+  const result = await findAppIds(reports, cache, search);
+  assert.deepEqual(asked, ['Hollow Knight™', 'Celest']); // never for a report with an AppID or a cached name
+  assert.deepEqual(result, { searched: 2, found: 1 });
+  assert.deepEqual(reports.map((r) => r.appid ?? null), ['367520', null, '620', '1234']);
+  assert.deepEqual(cache, { known: '1234', 'hollow knight': '367520' });
+  assert.equal(gameKey('Pokémon: Édition'), 'pokemon edition');
+  // Steam not answering changes nothing.
+  const quiet = [{ game: 'Other' }];
+  await findAppIds(quiet, {}, async () => { throw new Error('down'); });
+  assert.equal(quiet[0].appid, undefined);
 });

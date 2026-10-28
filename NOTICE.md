@@ -30,6 +30,18 @@ from the MihawkOS v4.0.0-alpha-4 title (`assets/hui/fonts/`):
 SIL Open Font License 1.1: [`public/licenses/OFL-1.1-Inter.txt`](public/licenses/OFL-1.1-Inter.txt), the copy shipped
 with that title. The licence is published with the site.
 
+## Launcher logos
+
+`src/launchers.js` holds the logos of Steam, Epic Games, GOG.com, EA, Ubisoft, Battle.net, Rockstar Games and itch.io:
+the 24x24 SVG paths of [Simple Icons](https://simpleicons.org) 16.35.0 (npm `simple-icons`, tarball SHA-256
+`20ebead4f6bc93464812a5e260d19fc4d84772e5eeff69a6fbea263ca2441c5f`), copied unchanged from its `icons/*.svg`. Simple Icons
+is CC0-1.0, and none of these eight icons names another licence in its data. The marks remain the trademarks of their
+owners. The page draws them small and in one colour beside the launcher's name, only to say which launcher a report
+used, as Simple Icons' disclaimer asks; it does not suggest that any of them endorses this project. Brand guidelines
+named in Simple Icons' data: [Steam](https://partner.steamgames.com/doc/marketing/branding),
+[Epic Games](https://dev.epicgames.com/docs/services/en-US/EpicAccountServices/DesignGuidelines/index.html#epicgamesbrandguidelines),
+[itch.io](https://itch.io/press-kit).
+
 ## npm packages
 
 | Package | Version | Licence | Where |
@@ -50,7 +62,9 @@ The workflow uses `actions/checkout`, `actions/setup-node`, `actions/upload-page
   the form states (CC0 1.0 is recommended in `docs/FORM.md`; the maintainer decides). The rows in the repository
   today are made-up examples, flagged `"examples": true`.
 - **Game pictures** are not in this repository. Each visitor's browser loads a game's Steam header image from
-  `shared.steamstatic.com`, by the AppID a report gives. The artwork belongs to the game's publisher.
+  `shared.steamstatic.com`, by the AppID a report gives or the one Steam's store search returns for the game's exact
+  name (`data/appids.json`). The artwork belongs to the game's publisher.
 - **Names.** PlayStation and PS5 are trademarks of Sony Interactive Entertainment; Steam is a trademark of Valve
-  Corporation. This project is not affiliated with either. Names are used only to say which console or store a
+  Corporation; the launchers' names and logos are their owners' trademarks. This project is not affiliated with any
+  of them. Names are used only to say which console or store a
   report means.

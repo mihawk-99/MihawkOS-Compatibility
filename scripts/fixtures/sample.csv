@@ -1,9 +1,9 @@
-Timestamp,Game,Steam AppID,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved
-2026-10-21 18:04:11,Meadow Racer (example),,v4.0.0-alpha-4,PS5 Pro,10.01,Perfect,120,"120 Hz, Game Mode on","Example row. Menus, races and saves all work.",example-tester,TRUE
-10/22/2026 09:15:02,Meadow Racer (example),,v4.0.0-alpha-4,PS5,13.40,Playable,60,,"Example row.
+Timestamp,Game,Steam AppID,Launcher,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved
+2026-10-21 18:04:11,Meadow Racer (example),,Steam,v4.0.0-alpha-4,PS5 Pro,10.01,Perfect,120,"120 Hz, Game Mode on","Example row. Menus, races and saves all work.",example-tester,TRUE
+10/22/2026 09:15:02,Meadow Racer (example),,None,v4.0.0-alpha-4,PS5,13.40,Playable,60,,"Example row.
 The first load takes a minute.",,TRUE
-2026-10-23 21:40:55,Bubble Puzzle (example),,v4.0.0-alpha-4,PS5 Slim,12.40,Runs with issues,45,,Example row. Sound crackles in the second world.,,TRUE
-2026-10-24 12:00:00,Sky Fortress (example),,v3.0.0-alpha-3,PS5 Digital Edition,10.1,Boots only,,,Example row. Reaches the title screen; the controller does nothing.,anon,TRUE
-2026-10-24 13:00:00,Sky Fortress (example),,v4.0.0-alpha-4,PS5 Pro,10.01,Broken,,,Example row. Closes before its first window.,,yes
-2026-10-25 08:30:00,Not yet looked at,,v4.0.0-alpha-4,PS5,13.40,Perfect,,,,,
-2026-10-25 08:31:00,Turned down,,v4.0.0-alpha-4,PS5,13.40,Perfect,,,,,FALSE
+2026-10-23 21:40:55,Bubble Puzzle (example),,,v4.0.0-alpha-4,PS5 Slim,12.40,Runs with issues,45,,Example row. Sound crackles in the second world.,,TRUE
+2026-10-24 12:00:00,Sky Fortress (example),,Epic Games Store,v3.0.0-alpha-3,PS5 Digital Edition,10.1,Boots only,,,Example row. Reaches the title screen; the controller does nothing.,anon,TRUE
+2026-10-24 13:00:00,Sky Fortress (example),,steam,v4.0.0-alpha-4,PS5 Pro,10.01,Broken,,,Example row. Closes before its first window.,,yes
+2026-10-25 08:30:00,Not yet looked at,,,v4.0.0-alpha-4,PS5,13.40,Perfect,,,,,
+2026-10-25 08:31:00,Turned down,,,v4.0.0-alpha-4,PS5,13.40,Perfect,,,,,FALSE

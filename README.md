@@ -30,7 +30,8 @@ it ran.
 
 Each game has one row, with its **best** rating, its **latest** rating and how many reports it has. Open a row to read
 every report. You can search by name, filter by rating, console, firmware and MihawkOS version, and sort the list.
-Pictures are the games' Steam headers, when the report gives a Steam AppID.
+Pictures are the games' Steam headers, by the report's Steam AppID or else by the game's exact name on Steam. A report
+also shows the launcher the game was started from, with its logo.
 
 It is a plain web page on GitHub Pages: no account, no cookies, no trackers, no analytics.
 
@@ -52,7 +53,8 @@ The form asks for:
 | Field | |
 | --- | --- |
 | Game | its name, as on its store page |
-| Steam AppID | optional: the number in its Steam store link, for its picture |
+| Steam AppID | optional: the number in its Steam store link; without it, the picture is found by the game's name |
+| Launcher | optional: Steam, Epic Games Store, GOG Galaxy, EA app, Ubisoft Connect, Battle.net, Rockstar Games Launcher, itch.io, other, or none |
 | MihawkOS version | from a list |
 | Console | PS5, PS5 Slim, PS5 Digital Edition or PS5 Pro |
 | Firmware | like 10.01 or 13.40 |
@@ -105,13 +107,14 @@ game pictures from Steam's public image server (`shared.steamstatic.com`), witho
 | Fetch, validate and write the reports | [`scripts/build-reports.mjs`](scripts/build-reports.mjs), tested by [`scripts/build-reports.test.mjs`](scripts/build-reports.test.mjs) against [sample](scripts/fixtures/sample.csv) and [hostile](scripts/fixtures/hostile.csv) sheets |
 | The daily run | [`.github/workflows/publish.yml`](.github/workflows/publish.yml): actions pinned to commits, least privilege, no installed code in the job that can push |
 | The page | [`src/App.jsx`](src/App.jsx), [`src/app.css`](src/app.css), [`src/fields.js`](src/fields.js) (the ratings and consoles, shared with the script) |
-| The data | [`data/reports.json`](data/reports.json): the made-up examples until the first real run |
+| The data | [`data/reports.json`](data/reports.json): the made-up examples until the first real run; [`data/appids.json`](data/appids.json): AppIDs found by name |
+| Launcher logos | [`src/launchers.js`](src/launchers.js), from Simple Icons |
 
 ```bash
 npm ci
 npm test                                                   # the validator, with hostile input
 npm run dev                                                # the page at http://localhost:5173
-npm run reports -- --csv scripts/fixtures/sample.csv       # rebuild data/reports.json from a CSV file
+npm run reports -- --csv scripts/fixtures/sample.csv       # rebuild data/reports.json from a CSV file (--offline: no Steam lookups)
 npm run build                                              # the static site in dist/
 ```
 
@@ -121,5 +124,5 @@ Node 22.12 or later.
 
 The page's code is **GPL-3.0-or-later** ([LICENSE](LICENSE)). Its look comes from MihawkOS's WebUI, by the same
 author. The banner, divider and Mihawk mark are MihawkOS's own art, **LGPL-2.1-or-later**. Inter is **OFL-1.1**. React
-is **MIT**. [NOTICE.md](NOTICE.md) lists every file's origin and revision. Game pictures are not part of this
+is **MIT**. The launcher logos come from Simple Icons (**CC0-1.0**) and remain their owners' trademarks. [NOTICE.md](NOTICE.md) lists every file's origin and revision. Game pictures are not part of this
 repository: they belong to the games' publishers, and your browser loads them from Steam.

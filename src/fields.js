@@ -13,11 +13,16 @@ export const RATINGS = [
 
 export const CONSOLES = ['PS5', 'PS5 Slim', 'PS5 Digital Edition', 'PS5 Pro'];
 
+// Optional. "None": the game's own program was started directly. A form's free "Other" answer is published as "Other".
+export const LAUNCHERS = ['None', 'Steam', 'Epic Games Store', 'GOG Galaxy', 'EA app', 'Ubisoft Connect', 'Battle.net',
+  'Rockstar Games Launcher', 'itch.io', 'Other'];
+
 // The form's own question titles, which Google uses as the sheet's column headers.
 export const COLUMNS = {
   timestamp: 'Timestamp',
   game: 'Game',
   appid: 'Steam AppID',
+  launcher: 'Launcher',
   version: 'MihawkOS version',
   console: 'Console',
   firmware: 'Firmware',

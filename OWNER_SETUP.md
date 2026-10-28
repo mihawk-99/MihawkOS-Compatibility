@@ -10,7 +10,7 @@ You need a Google account (a personal one is fine) and the `mihawk-99` GitHub ac
 1. Open [forms.google.com](https://forms.google.com) and choose **Blank form**.
 2. Click **Untitled form** and type `MihawkOS game report`. Click under it and paste the description from
    [docs/FORM.md](docs/FORM.md#the-form). Keep or drop the CC0 line: it is your decision.
-3. Add the ten questions from the table in [docs/FORM.md](docs/FORM.md#the-form), in order:
+3. Add the eleven questions from the table in [docs/FORM.md](docs/FORM.md#the-form), in order:
    - Click **⊕ Add question**, type the title **exactly** as in the table, and choose the type in the menu on the
      right (Short answer, Paragraph, Multiple choice, Dropdown).
    - For a choice question, type each option on its own line.
@@ -30,14 +30,14 @@ You need a Google account (a personal one is fine) and the `mihawk-99` GitHub ac
 1. In the form, open the **Responses** tab > **Link to Sheets** > **Create a new spreadsheet** > **Create**.
    Google opens a sheet with a tab named `Form Responses 1`.
 2. Send one test report through the form link, so the header row appears (Timestamp, then Game through Nickname, A
-   to K).
-3. Click **L1** and type `Approved`. Select **L2** down to the last row (click L2, then Ctrl+Shift+↓) and choose
+   to L).
+3. Click **M1** and type `Approved`. Select **M2** down to the last row (click M2, then Ctrl+Shift+↓) and choose
    **Insert > Checkbox**.
 4. Select column **A**, choose **Format > Number > Custom date and time**, delete what is in the box, type
    `yyyy-mm-dd hh:mm:ss` and choose **Apply**.
 5. Add the published tab: click **+** (bottom left) and rename the new tab (double-click its name) to `Published`.
-   - In **A1** paste `={'Form Responses 1'!A1:L1}`
-   - In **A2** paste `=FILTER('Form Responses 1'!A2:L, 'Form Responses 1'!L2:L=TRUE)`
+   - In **A1** paste `={'Form Responses 1'!A1:M1}`
+   - In **A2** paste `=FILTER('Form Responses 1'!A2:M, 'Form Responses 1'!M2:M=TRUE)`
    - Format its column **A** with `yyyy-mm-dd hh:mm:ss`, as in step 4.
    - A2 shows `#N/A` until a box is ticked. That is expected.
 6. Tick your test report's box in `Form Responses 1` and check that it appears in `Published`. Then untick it, or
