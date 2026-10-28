@@ -33,7 +33,8 @@ every report. You can search by name, filter by rating, console, firmware and Mi
 Pictures are the games' Steam headers, by the report's Steam AppID or else by the game's exact name on Steam. A report
 also shows the launcher the game was started from, with its logo.
 
-It is a plain web page on GitHub Pages: no account, no cookies, no trackers, no analytics.
+It opens at night; the Day/Night slider in the header switches, and your browser remembers the choice on your
+device. It is a plain web page on GitHub Pages: no account, no cookies, no trackers, no analytics.
 
 | Day | Night |
 | --- | --- |

@@ -56,6 +56,20 @@ function Launcher({ name }) {
   );
 }
 
+function ThemeToggle({ night, onChange }) {
+  return (
+    <button type="button" role="switch" aria-checked={night} aria-label="Night mode" className={`theme-toggle${night ? ' night' : ''}`}
+      onClick={() => onChange(!night)}>
+      <span className="label" aria-hidden="true">{night ? 'Night Mode' : 'Day Mode'}</span>
+      <span className="knob" aria-hidden="true">
+        {night
+          ? <svg viewBox="0 0 24 24"><path d="M15.5 3.2a8.5 8.5 0 1 0 5.3 13.3A7 7 0 0 1 15.5 3.2Z" fill="#2c3e5c" /><path d="m17.5 6 .6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z" fill="#2c3e5c" /></svg>
+          : <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.6" fill="#ffb020" /><g stroke="#ffb020" strokeWidth="2" strokeLinecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" /></g></svg>}
+      </span>
+    </button>
+  );
+}
+
 function Cover({ game }) {
   const [failed, setFailed] = useState(false);
   if (game.appid && /^\d+$/.test(game.appid) && !failed) {
@@ -127,6 +141,12 @@ export default function App() {
   const [firmware, setFirmware] = useState('');
   const [version, setVersion] = useState('');
   const [sort, setSort] = useState('latest');
+  const [night, setNight] = useState(document.documentElement.dataset.theme !== 'light');
+  const changeTheme = (toNight) => {
+    document.documentElement.dataset.theme = toNight ? 'dark' : 'light';
+    try { localStorage.setItem('theme', toNight ? 'dark' : 'light'); } catch { /* not remembered */ }
+    setNight(toNight);
+  };
 
   const firmwares = useMemo(() => [...new Set(reports.map((r) => r.firmware))].sort(byVersion), [reports]);
   const versions = useMemo(() => [...new Set(reports.map((r) => r.version))].sort(byVersion), [reports]);
@@ -153,14 +173,12 @@ export default function App() {
           <a href="#report">How to report</a>
         </nav>
         {FORM_URL && <a className="button primary report-button" href={FORM_URL} target="_blank" rel="noopener noreferrer">Report a game</a>}
+        <ThemeToggle night={night} onChange={changeTheme} />
       </header>
 
       <main id="top">
         <section className="hero glass">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcSet={bannerNight} />
-            <img src={bannerDay} alt="" width="1280" height="400" />
-          </picture>
+          <img src={night ? bannerNight : bannerDay} alt="" width="1280" height="400" />
           <div className="hero-text">
             <h1>Which Windows games run on MihawkOS?</h1>
             <p className="lead">Reports from players who tried their own games on their own PS5. Every report is read before it appears here.</p>

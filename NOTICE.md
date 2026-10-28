@@ -10,7 +10,7 @@ like the same product as MihawkOS's WebUI.
 
 | File here | Origin | Licence | Changes |
 | --- | --- | --- | --- |
-| `src/app.css` | `webui/app.css`: the WebUI's Frutiger Aero look (sky and grass, palette, glass panels, glossy pills, rising bubbles, night colours) | GPL-3.0-or-later | Adapted: the WebUI's tokens, background, bubbles, glass, bar, buttons and fields kept; this page's layout, rating badges and a starry night sky added. Badge and button colours made darker so white text keeps 4.5:1 under the gloss. |
+| `src/app.css` | `webui/app.css`: the WebUI's Frutiger Aero look (sky and grass, palette, glass panels, glossy pills, rising bubbles, night colours) | GPL-3.0-or-later | Adapted: the WebUI's tokens, background, bubbles, glass, bar, buttons and fields kept; this page's layout, rating badges, a starry night sky and a Day/Night slider added; night is the default, set by the slider instead of the system theme. Badge and button colours made darker so white text keeps 4.5:1 under the gloss. |
 | `src/assets/banner-day.svg`, `src/assets/banner-night.svg` | `docs/media/readme/banner-{day,night}.svg`: the README's banner, drawing the Mihawk mark | LGPL-2.1-or-later (SPDX line kept in each file) | Its SMIL `<animate>` and `<animateTransform>` elements removed, so the picture is still and reduced motion holds. Otherwise unchanged. |
 | `src/assets/divider-day.svg`, `src/assets/divider-night.svg` | `docs/media/readme/divider-{day,night}.svg` | LGPL-2.1-or-later (SPDX line kept) | Unchanged. |
 | `public/mark.svg` | `themes/windows11/start.svg`: the Mihawk OS mark | LGPL-2.1-or-later (SPDX line kept) | Unchanged. |

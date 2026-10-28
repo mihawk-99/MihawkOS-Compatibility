@@ -19,18 +19,17 @@
   --button-top: #1a64bd; --button-bottom: #0f4c96;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sky-top: #081a36; --sky-mid: #123b6e; --sky-haze: #2b5f8f;
-    --grass-far: #1f4a35; --grass: #2e6b2a; --grass-deep: #173d18;
-    --ink: #eaf3ff; --muted: #a9bdd6; --primary: #4aa3ff; --primary-deep: #2a7ad6; --green: #4cd264; --danger: #ff6b6b;
-    --link: #8cc8ff;
-    --glass: rgba(16, 34, 60, .58); --glass-edge: rgba(150, 200, 255, .28); --glass-shine: rgba(150, 200, 255, .16);
-    --field: rgba(8, 22, 44, .7); --line: rgba(200, 225, 255, .16); --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-    --soft: rgba(150, 200, 255, .1);
-    --stars: .85;
-    color-scheme: dark;
-  }
+/* Night is the default (index.html); the header's slider switches, and the choice is remembered (main.jsx) */
+:root[data-theme="dark"] {
+  --sky-top: #081a36; --sky-mid: #123b6e; --sky-haze: #2b5f8f;
+  --grass-far: #1f4a35; --grass: #2e6b2a; --grass-deep: #173d18;
+  --ink: #eaf3ff; --muted: #a9bdd6; --primary: #4aa3ff; --primary-deep: #2a7ad6; --green: #4cd264; --danger: #ff6b6b;
+  --link: #8cc8ff;
+  --glass: rgba(16, 34, 60, .58); --glass-edge: rgba(150, 200, 255, .28); --glass-shine: rgba(150, 200, 255, .16);
+  --field: rgba(8, 22, 44, .7); --line: rgba(200, 225, 255, .16); --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  --soft: rgba(150, 200, 255, .1);
+  --stars: .85;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -91,6 +90,26 @@ nav a { padding: 7px 14px; border-radius: 999px; color: var(--ink); text-decorat
 nav a:hover { background: var(--soft); }
 .report-button { margin-left: auto; white-space: nowrap; }
 
+/* The Day/Night slider: a sky pill with the sun on the right by day, a starry pill with the moon on the left at night */
+.theme-toggle { position: relative; flex: none; margin-left: auto; width: 152px; height: 40px; padding: 0; border-radius: 999px; cursor: pointer;
+  font: 600 14px Inter, system-ui, sans-serif; border: 1px solid rgba(255, 255, 255, .8); overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, .25), 0 1px 3px rgba(0, 0, 0, .2);
+  background: radial-gradient(ellipse 30px 10px at 30% 85%, rgba(255, 255, 255, .85), transparent 70%),
+    radial-gradient(ellipse 24px 8px at 62% 92%, rgba(255, 255, 255, .7), transparent 70%),
+    linear-gradient(180deg, #5aa9ea, #a9dcfb); }
+.report-button + .theme-toggle { margin-left: 0; }
+.theme-toggle .label { position: absolute; top: 0; bottom: 0; left: 16px; display: flex; align-items: center; color: #1d5fa8;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6); transition: left .3s ease; }
+.theme-toggle .knob { position: absolute; top: 3px; left: calc(100% - 35px); width: 32px; height: 32px; border-radius: 50%; display: grid;
+  place-items: center; background: linear-gradient(180deg, #fff, #e3e9f0); box-shadow: 0 2px 5px rgba(0, 0, 0, .3); transition: left .3s ease; }
+.theme-toggle svg { width: 22px; height: 22px; }
+.theme-toggle.night { border-color: rgba(150, 200, 255, .35);
+  background: radial-gradient(1px 1px at 40% 30%, #fff 50%, transparent 52%), radial-gradient(1.5px 1.5px at 58% 65%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 72% 25%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 86% 70%, #fff 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 93% 35%, #fff 50%, transparent 52%), linear-gradient(180deg, #0a1a33, #1d3358); }
+.theme-toggle.night .label { left: 52px; color: #eaf3ff; text-shadow: 0 1px 2px rgba(0, 0, 0, .5); }
+.theme-toggle.night .knob { left: 3px; background: linear-gradient(180deg, #f4f7fb, #c9d3df); }
+
 main { position: relative; z-index: 1; max-width: 1180px; width: calc(100% - 32px); margin: 0 auto; padding: 20px 0 40px; }
 h1 { font-size: 32px; line-height: 1.2; font-weight: 600; margin: 0 0 6px; }
 h2 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
@@ -112,7 +131,7 @@ h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
 
 /* The hero: the README's banner in a glass frame */
 .hero { overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; }
-.hero picture img { display: block; width: 100%; height: auto; }
+.hero > img { display: block; width: 100%; height: auto; }
 .hero-text { padding: 22px 28px; }
 .lead { font-size: 16.5px; margin: 0 0 14px; }
 .stats { list-style: none; padding: 0; margin: 0; display: flex; gap: 8px; flex-wrap: wrap; }
@@ -175,7 +194,7 @@ input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); o
 footer { position: relative; z-index: 1; max-width: 1180px; width: calc(100% - 32px); margin: 0 auto; padding: 0 4px 40px; font-size: 13.5px; }
 footer p { margin: 4px 0; }
 footer, footer a { color: var(--ink); }
-@media (prefers-color-scheme: light) { footer { text-shadow: 0 1px 0 rgba(255, 255, 255, .6); } }
+:root[data-theme="light"] footer { text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
 
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
@@ -190,7 +209,11 @@ footer, footer a { color: var(--ink); }
   nav::-webkit-scrollbar { display: none; }
   nav a { padding: 6px 10px; }
   .report-button { padding: 7px 12px; font-size: 13px; }
-  .bar:has(.report-button) nav a[href="#report"] { display: none; }
+  .bar:has(.report-button) nav a[href="#report"], .bar:has(.report-button) nav a[href="#ratings"] { display: none; }
+  .theme-toggle { width: 64px; height: 36px; }
+  .theme-toggle .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .theme-toggle .knob { top: 2px; width: 30px; height: 30px; left: calc(100% - 33px); }
+  .theme-toggle.night .knob { left: 2px; }
   h1 { font-size: 25px; }
   .hero-text { padding: 16px 18px 18px; }
   .game { grid-template-columns: 112px minmax(0, 1fr); }
@@ -205,4 +228,5 @@ footer, footer a { color: var(--ink); }
   .sky i { animation: none; display: none; }
   .sky::after { animation: none; }
   .game, .game:hover { transition: none; transform: none; }
+  .theme-toggle .label, .theme-toggle .knob { transition: none; }
 }
