@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs';
 import TEXT from '../src/i18n-text.js';
 import { RATINGS } from '../src/fields.js';
 
-const source = ['App.jsx', 'ReportPage.jsx', 'shell.jsx', 'i18n.jsx'].map((f) => readFileSync(new URL(`../src/${f}`, import.meta.url), 'utf8')).join('\n');
+const source = ['App.jsx', 'ReportPage.jsx', 'shell.jsx', 'i18n.jsx', 'music.jsx'].map((f) => readFileSync(new URL(`../src/${f}`, import.meta.url), 'utf8')).join('\n');
 const literals = (re) => [...source.matchAll(re)].map((m) => m[2]);
 export const KEYS = [...new Set([
   ...literals(/\bt\((['"])((?:(?!\1)[^\\]|\\.)*)\1/g), // t('...')

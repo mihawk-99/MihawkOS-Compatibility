@@ -36,7 +36,8 @@ also shows the launcher the game was started from, with its logo.
 It opens at night; the Day/Night slider in the header switches, and your browser remembers the choice on your
 device. Both pages speak the WebUI's ten languages (English, French, Spanish, German, Italian, Russian, Simplified
 Chinese, Japanese, Brazilian Portuguese, Polish): the flag in the header picks one, and a first visit follows the
-browser's language. It is a plain web page on GitHub Pages: no account, no cookies, no trackers, no analytics.
+browser's language. The note button beside the flag plays MihawkOS's own three Frutiger Aero pieces, Bubble Garden, Glass Meadow and Sky
+Lounge, one after another; nothing is downloaded until you press it. It is a plain web page on GitHub Pages: no account, no cookies, no trackers, no analytics.
 
 | Day | Night |
 | --- | --- |

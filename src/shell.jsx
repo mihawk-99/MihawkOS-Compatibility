@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // What both pages share: the theme (night by default, the visitor's choice remembered), the glass header with the
-// Day/Night slider, and the footer.
+// Day/Night slider, the music button and the language picker, and the footer.
 import { useState } from 'react';
 import { LAUNCHER_ICONS } from './launchers.js';
 import { LanguagePicker, useT } from './i18n.jsx';
+import { MusicButton } from './music.jsx';
 import './app.css';
 
 try {
@@ -47,6 +48,7 @@ export function Bar({ root, night, onTheme, children, report = true }) {
       <a className="brand" href={root}><img src={`${root}mark.svg`} alt="" width="36" height="36" /><span>MihawkOS <em>{t('Compatibility')}</em></span></a>
       <nav aria-label={t('Sections')}>{children}</nav>
       {report && <a className="button primary report-button" href={`${root}report/`}>{t('Report games')}</a>}
+      <MusicButton />
       <LanguagePicker root={root} />
       <ThemeToggle night={night} onChange={onTheme} />
     </header>
