@@ -3,6 +3,34 @@
  "reports": [
   {
    "date": "2026-10-28",
+   "game": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
+   "appid": "2833580",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Grand Theft Auto IV: The Complete Edition",
+   "appid": "12210",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "High Settings",
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Hollow Knight: Silksong",
    "appid": "1030300",
    "launcher": "Steam",
@@ -12,6 +40,48 @@
    "rating": "Perfect",
    "fps": 120,
    "settings": "120Hz",
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Resident Evil 3",
+   "appid": "952060",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Highest Settings",
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "The Elder Scrolls V: Skyrim",
+   "appid": "72850",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Tomb Raider",
+   "appid": "203160",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": null,
    "notes": null,
    "nickname": null
   }
