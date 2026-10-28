@@ -1,0 +1,205 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later
+ * MihawkOS's WebUI in Frutiger Aero (PS5_MihawkOS webui/app.css at 77db136, NOTICE.md): its sky and grass, the Gloss
+ * theme's ink and accents (#1b2430, #2f8cf0, #35b44a), frosted glass panels, glossy pills and rising bubbles; at night
+ * the same scene after dark, with the README banner's stars. Inter is the launcher's own face (OFL-1.1). */
+@font-face { font-family: Inter; src: url(./assets/fonts/Inter-Regular.ttf) format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: Inter; src: url(./assets/fonts/Inter-SemiBold.ttf) format("truetype"); font-weight: 600; font-display: swap; }
+
+:root {
+  --sky-top: #5aa9ea; --sky-mid: #94d1fb; --sky-haze: #e6f9ff;
+  --grass-far: #b3e69e; --grass: #a3eb45; --grass-deep: #5cb32b;
+  --ink: #1b2430; --muted: #4d5d72; --primary: #2f8cf0; --primary-deep: #1767c4; --green: #35b44a; --danger: #d64545;
+  --link: #1255a6;
+  --glass: rgba(255, 255, 255, .58); --glass-edge: rgba(255, 255, 255, .85); --glass-shine: rgba(255, 255, 255, .7);
+  --field: rgba(255, 255, 255, .82); --line: rgba(27, 36, 48, .14); --shadow: 0 10px 30px rgba(18, 52, 92, .18);
+  --soft: rgba(255, 255, 255, .35);
+  --radius: 18px; --stars: 0;
+  /* Ratings and primary buttons: white text keeps 4.5:1 (WCAG AA) even under the gloss, so a shade darker than the WebUI */
+  --perfect: #16652a; --playable: #1258ad; --issues: #7f4900; --boots: #5a4190; --broken: #a1211a;
+  --button-top: #1a64bd; --button-bottom: #0f4c96;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sky-top: #081a36; --sky-mid: #123b6e; --sky-haze: #2b5f8f;
+    --grass-far: #1f4a35; --grass: #2e6b2a; --grass-deep: #173d18;
+    --ink: #eaf3ff; --muted: #a9bdd6; --primary: #4aa3ff; --primary-deep: #2a7ad6; --green: #4cd264; --danger: #ff6b6b;
+    --link: #8cc8ff;
+    --glass: rgba(16, 34, 60, .58); --glass-edge: rgba(150, 200, 255, .28); --glass-shine: rgba(150, 200, 255, .16);
+    --field: rgba(8, 22, 44, .7); --line: rgba(200, 225, 255, .16); --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    --soft: rgba(150, 200, 255, .1);
+    --stars: .85;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  font: 400 15px/1.5 Inter, "Segoe UI", system-ui, sans-serif; color: var(--ink);
+  background:
+    radial-gradient(ellipse 120% 40% at 70% 100%, var(--grass-deep) 0, transparent 60%),
+    radial-gradient(ellipse 140% 34% at 20% 104%, var(--grass) 0, var(--grass-deep) 60%, transparent 61%),
+    radial-gradient(ellipse 160% 30% at 60% 96%, var(--grass-far) 0, transparent 55%),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, .55), transparent 28%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-haze) 78%, var(--grass-far) 100%);
+  background-attachment: fixed; background-color: var(--sky-mid);
+}
+
+/* Bubbles rise as in the WebUI; at night stars twinkle above them */
+.sky { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.sky i { position: absolute; border-radius: 50%; opacity: .55;
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, .95) 0 8%, rgba(255, 255, 255, .25) 9% 40%, rgba(160, 230, 255, .18) 62%, rgba(255, 255, 255, .55) 70%, transparent 72%);
+  animation: rise 26s linear infinite; }
+.sky i:nth-child(1) { width: 90px; height: 90px; left: 6%; bottom: -120px; animation-duration: 31s; }
+.sky i:nth-child(2) { width: 46px; height: 46px; left: 22%; bottom: -80px; animation-duration: 23s; animation-delay: -9s; }
+.sky i:nth-child(3) { width: 130px; height: 130px; left: 61%; bottom: -160px; animation-duration: 38s; animation-delay: -20s; }
+.sky i:nth-child(4) { width: 60px; height: 60px; left: 80%; bottom: -90px; animation-duration: 27s; animation-delay: -4s; }
+.sky i:nth-child(5) { width: 34px; height: 34px; left: 44%; bottom: -60px; animation-duration: 21s; animation-delay: -14s; }
+.sky i:nth-child(6) { width: 76px; height: 76px; left: 92%; bottom: -110px; animation-duration: 34s; animation-delay: -26s; }
+@keyframes rise { to { transform: translateY(-120vh) translateX(40px); } }
+.sky::before, .sky::after { content: ""; position: absolute; inset: 0 0 45% 0; opacity: var(--stars);
+  background-image: radial-gradient(1.5px 1.5px at 7% 12%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 18% 34%, #fff 50%, transparent 52%),
+    radial-gradient(2px 2px at 29% 8%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 41% 26%, #fff 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 53% 6%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 66% 31%, #fff 50%, transparent 52%),
+    radial-gradient(2px 2px at 74% 18%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 91% 36%, #fff 50%, transparent 52%); }
+.sky::after { background-image: radial-gradient(1px 1px at 12% 44%, #fff 50%, transparent 52%), radial-gradient(1.5px 1.5px at 35% 52%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 58% 46%, #fff 50%, transparent 52%), radial-gradient(1.5px 1.5px at 96% 9%, #fff 50%, transparent 52%),
+    radial-gradient(1px 1px at 81% 55%, #fff 50%, transparent 52%), radial-gradient(1px 1px at 3% 60%, #fff 50%, transparent 52%);
+  animation: twinkle 5s ease-in-out infinite alternate; }
+@keyframes twinkle { from { opacity: calc(var(--stars) * .25); } }
+
+.glass {
+  background: linear-gradient(180deg, var(--glass-shine), transparent 42%), var(--glass);
+  border: 1px solid var(--glass-edge); border-radius: var(--radius); box-shadow: var(--shadow), inset 0 1px 0 var(--glass-shine);
+  -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+}
+.skip { position: absolute; left: 16px; top: -60px; z-index: 30; padding: 8px 14px; border-radius: 999px; background: var(--primary-deep); color: #fff; font-weight: 600; }
+.skip:focus { top: 12px; }
+a { color: var(--link); }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+.bar { position: sticky; top: 12px; z-index: 5; margin: 12px auto 0; max-width: 1180px; width: calc(100% - 32px);
+  display: flex; align-items: center; gap: 18px; padding: 10px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 19px; white-space: nowrap; }
+.brand img { width: 36px; height: 36px; border-radius: 11px; box-shadow: 0 2px 6px rgba(0, 0, 0, .2); }
+.brand em { font-style: normal; font-weight: 400; color: var(--muted); }
+nav { display: flex; gap: 6px; flex: 1; min-width: 0; }
+nav a { padding: 7px 14px; border-radius: 999px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap;
+  border: 1px solid transparent; }
+nav a:hover { background: var(--soft); }
+.report-button { margin-left: auto; white-space: nowrap; }
+
+main { position: relative; z-index: 1; max-width: 1180px; width: calc(100% - 32px); margin: 0 auto; padding: 20px 0 40px; }
+h1 { font-size: 32px; line-height: 1.2; font-weight: 600; margin: 0 0 6px; }
+h2 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+.muted { color: var(--muted); margin: 0; }
+.card { padding: 18px 20px; }
+.section-title { margin: 30px 4px 12px; text-shadow: 0 1px 0 var(--soft); }
+
+.button { font: 600 14px Inter, system-ui, sans-serif; cursor: pointer; padding: 9px 18px; border-radius: 999px;
+  border: 1px solid rgba(27, 36, 48, .18); text-decoration: none; display: inline-block;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(255, 255, 255, .55) 50%, rgba(220, 232, 245, .7) 51%, rgba(255, 255, 255, .85));
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12), inset 0 1px 0 #fff; color: #1b2430; }
+.button:hover { filter: brightness(1.04); }
+.button.primary { color: #fff; border-color: rgba(10, 60, 130, .45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .06) 50%, transparent 51%), linear-gradient(180deg, var(--button-top), var(--button-bottom));
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .35); }
+.button.small { padding: 6px 14px; font-size: 13px; }
+.link { font: inherit; color: var(--link); background: none; border: 0; padding: 0 0 0 10px; cursor: pointer; text-decoration: underline; }
+
+/* The hero: the README's banner in a glass frame */
+.hero { overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; }
+.hero picture img { display: block; width: 100%; height: auto; }
+.hero-text { padding: 22px 28px; }
+.lead { font-size: 16.5px; margin: 0 0 14px; }
+.stats { list-style: none; padding: 0; margin: 0; display: flex; gap: 8px; flex-wrap: wrap; }
+.stats li { padding: 6px 14px; border-radius: 999px; background: var(--soft); border: 1px solid var(--glass-edge); font-size: 14px; }
+.stats strong { font-size: 16px; }
+.banner { margin-top: 14px; padding: 12px 18px; display: flex; gap: 6px 14px; align-items: baseline; flex-wrap: wrap; border-color: rgba(255, 176, 32, .7); }
+
+.filters { display: grid; grid-template-columns: minmax(200px, 2fr) repeat(5, minmax(120px, 1fr)); gap: 12px; padding: 14px 16px; }
+label { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+input, select {
+  font: 400 14px Inter, system-ui, sans-serif; color: var(--ink); background: var(--field); border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 11px; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .08); min-width: 0; width: 100%; }
+select option { color: #1b2430; background: #fff; }
+input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.result-line { margin: 12px 4px; font-weight: 600; }
+
+/* One row per game: its picture, its best and latest rating, its reports under it */
+.games, .reports, .ratings { list-style: none; padding: 0; margin: 0; }
+.games { display: grid; gap: 14px; }
+.game { display: grid; grid-template-columns: 230px 1fr; overflow: hidden; transition: transform .15s ease, box-shadow .15s ease; }
+.game:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(18, 52, 92, .26); }
+.game .art { aspect-ratio: 460 / 215; display: grid; place-items: center; align-self: start; margin: 12px 0 12px 12px; border-radius: 12px; overflow: hidden;
+  background: linear-gradient(160deg, #6fc3ff, #2f8cf0 55%, #35b44a); box-shadow: 0 2px 8px rgba(0, 0, 0, .18); }
+.game .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.game .letter { font-size: 42px; font-weight: 600; color: #fff; text-shadow: 0 2px 6px rgba(0, 0, 0, .3); }
+.game-body { padding: 12px 18px 14px; min-width: 0; }
+.name { overflow-wrap: anywhere; }
+.verdicts { margin: 6px 0 10px; display: grid; gap: 6px; }
+.verdicts div { display: flex; gap: 10px; align-items: baseline; }
+.verdicts dt { width: 48px; flex: none; font-size: 13px; color: var(--muted); font-weight: 600; }
+.verdicts dd { margin: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 13.5px; }
+.reports { grid-column: 1 / -1; display: grid; gap: 8px; padding: 0 12px 12px; }
+.report { padding: 12px 14px; border-radius: 12px; background: var(--soft); border: 1px solid var(--line); }
+.report-head { display: flex; gap: 6px 10px; align-items: baseline; flex-wrap: wrap; font-size: 13.5px; }
+.report-head time { margin-left: auto; color: var(--muted); }
+.report p { margin: 6px 0 0; overflow-wrap: anywhere; }
+.report .notes { white-space: pre-line; }
+.report .by { color: var(--muted); font-size: 13px; }
+.report .by::before { content: "— "; }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 600; color: #fff; white-space: nowrap;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25); border: 1px solid rgba(255, 255, 255, .45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .28), transparent 55%), var(--rating); box-shadow: 0 1px 3px rgba(0, 0, 0, .18); }
+.rating-perfect { --rating: var(--perfect); }
+.rating-playable { --rating: var(--playable); }
+.rating-runs-with-issues { --rating: var(--issues); }
+.rating-boots-only { --rating: var(--boots); }
+.rating-broken { --rating: var(--broken); }
+
+.ratings { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.ratings p { margin: 8px 0 0; }
+.empty { text-align: center; }
+.how { margin-top: 30px; max-width: 760px; }
+.steps { margin: 6px 0 12px; padding-left: 22px; display: grid; gap: 6px; }
+.actions { margin-top: 14px; }
+
+footer { position: relative; z-index: 1; max-width: 1180px; width: calc(100% - 32px); margin: 0 auto; padding: 0 4px 40px; font-size: 13.5px; }
+footer p { margin: 4px 0; }
+footer, footer a { color: var(--ink); }
+@media (prefers-color-scheme: light) { footer { text-shadow: 0 1px 0 rgba(255, 255, 255, .6); } }
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; }
+  .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filters .search { grid-column: 1 / -1; }
+}
+/* A phone: the sections in one row that scrolls, the picture beside a game's name */
+@media (max-width: 720px) {
+  .bar { gap: 8px; padding: 8px 10px; top: 8px; }
+  .brand span { display: none; }
+  nav { overflow-x: auto; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { padding: 6px 10px; }
+  .report-button { padding: 7px 12px; font-size: 13px; }
+  .bar:has(.report-button) nav a[href="#report"] { display: none; }
+  h1 { font-size: 25px; }
+  .hero-text { padding: 16px 18px 18px; }
+  .game { grid-template-columns: 112px minmax(0, 1fr); }
+  .game .art { margin: 12px 0 0 12px; border-radius: 9px; }
+  .game .letter { font-size: 26px; }
+  .game-body { padding: 10px 12px 12px; }
+  .verdicts dt { width: 42px; }
+  .report-head time { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sky i { animation: none; display: none; }
+  .sky::after { animation: none; }
+  .game, .game:hover { transition: none; transform: none; }
+}

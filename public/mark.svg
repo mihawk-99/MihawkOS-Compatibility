@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: LGPL-2.1-or-later
+     Mihawk OS mark: original artwork drawn for this project (a white squircle, an amber inner frame and a
+     navy M). It is not derived from any Microsoft, Sony or One Piece asset. The M's mitred corners rise above
+     its stems, so the polyline is placed by its true extent (y 19.4 to 80.5), centred on the frame (y 50). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img">
+  <title>Mihawk OS</title>
+  <rect x="1" y="1" width="98" height="98" rx="30" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="2"/>
+  <rect x="6" y="6" width="88" height="88" rx="25" fill="none" stroke="#FFB020" stroke-width="2"/>
+  <polyline points="25,80.5 25,34.5 50,64.5 75,34.5 75,80.5" fill="none" stroke="#0E2B46" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="8"/>
+</svg>

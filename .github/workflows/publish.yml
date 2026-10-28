@@ -1,0 +1,88 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Once a day (and on demand): read the moderated sheet, keep its approved rows, commit data/reports.json if it
+# changed, then build the page and publish it to GitHub Pages.
+#
+# Safety: every action is pinned to a commit; each job has only the permissions it needs; the job that can push runs
+# no third-party code (no npm install) and treats submissions as text; the jobs that install packages cannot push.
+name: Publish
+
+on:
+  schedule:
+    - cron: "23 4 * * *" # 04:23 UTC daily
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  data:
+    name: Update reports
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Read the sheet and validate it
+        env:
+          # A secret keeps the link out of the logs; a repository variable works too.
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL || vars.SHEET_CSV_URL }}
+        run: node scripts/build-reports.mjs
+      - name: Commit data/reports.json if it changed
+        run: |
+          if git diff --quiet -- data/reports.json; then
+            echo "No change in the reports."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/reports.json
+          git commit -m "Update the reports from the moderated sheet"
+          git push
+
+  build:
+    name: Build the page
+    needs: data
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref_name }} # the data job's commit, if it made one
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_FORM_URL: ${{ vars.FORM_URL }}
+          VITE_SOURCE_URL: ${{ github.server_url }}/${{ github.repository }}
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: build
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

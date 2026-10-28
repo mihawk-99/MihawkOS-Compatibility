@@ -1,0 +1,88 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// node --test scripts/   (npm test)
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { buildReports, parseCsv, cleanText, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
+
+const fixture = (name) => readFileSync(new URL(`fixtures/${name}`, import.meta.url), 'utf8');
+const HEADER = 'Timestamp,Game,Steam AppID,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
+const csvCell = (s) => `"${String(s).replace(/"/g, '""')}"`;
+
+test('the sample sheet keeps only approved, valid rows, newest first', () => {
+  const { reports, dropped, rows } = buildReports(fixture('sample.csv'));
+  assert.equal(rows, 7);
+  assert.equal(reports.length, 5);
+  assert.deepEqual(dropped, { 'not approved': 2 });
+  assert.deepEqual(reports.map((r) => r.date), ['2026-10-24', '2026-10-24', '2026-10-23', '2026-10-22', '2026-10-21']);
+  const pro = reports.find((r) => r.rating === 'Boots only');
+  assert.equal(pro.firmware, '10.10'); // the sheet's number 10.1
+  assert.equal(pro.version, 'v3.0.0-alpha-3');
+  const multi = reports.find((r) => r.date === '2026-10-22');
+  assert.equal(multi.notes, 'Example row.\nThe first load takes a minute.');
+  assert.equal(multi.nickname, null);
+  assert.equal(multi.fps, 60);
+});
+
+test('hostile rows: no markup, links, e-mail or invisible characters survive; fields are capped', () => {
+  const { reports, dropped } = buildReports(fixture('hostile.csv'));
+  assert.deepEqual(dropped, {
+    'bad console': 1, 'bad rating': 1, 'bad firmware': 1, 'bad version': 1, 'bad game': 1, 'bad date': 1, 'not approved': 2,
+  });
+  // "Short row" has no Approved cell, so it counts as not approved: 11 rows, 3 kept.
+  assert.equal(reports.length, 3);
+  const text = JSON.stringify(reports);
+  for (const bad of ['<', '>', 'script', 'onerror', 'http', 'www.', 'evil.com', 'bad.ru', 'spam.net', 'javascript:', '@', '‮', '​']) {
+    assert.ok(!text.includes(bad), `"${bad}" survived`);
+  }
+  const evil = reports.find((r) => r.game.startsWith('Evil'));
+  assert.equal(evil.game, 'Evil Game');
+  assert.equal(evil.appid, '620');
+  assert.equal(evil.settings, 'high');
+  assert.equal(evil.nickname, 'nick');
+  const odd = reports.find((r) => r.rating === 'Broken');
+  assert.equal(odd.console, 'PS5 Pro');
+  assert.equal(odd.version, 'v4.0.0-alpha-4');
+  assert.equal(odd.firmware, '9.60');
+  assert.equal(odd.appid, '440');
+  assert.equal(odd.fps, 60);
+  assert.equal(odd.notes, 'line1\n\nline2');
+  assert.equal(odd.game, '=HYPERLINK("'); // plain text: React shows it as written, nothing runs it
+});
+
+test('huge cells are cut to their limits', () => {
+  const huge = 'A'.repeat(200000);
+  const row = ['2026-10-26 10:01:00', huge, '123abc', 'v4.0.0-alpha-4', 'PS5', '13.40', 'Playable', '999999', huge, huge, huge, 'TRUE'];
+  const { reports } = buildReports(`${HEADER}\n${row.map(csvCell).join(',')}\n`);
+  const [r] = reports;
+  assert.equal([...r.game].length, 100);
+  assert.ok(r.game.endsWith('…'));
+  assert.equal([...r.settings].length, 300);
+  assert.equal([...r.notes].length, 1000);
+  assert.equal([...r.nickname].length, 32);
+  assert.equal(r.appid, null);
+  assert.equal(r.fps, null);
+});
+
+test('a sheet without the expected columns is refused, not guessed', () => {
+  assert.throws(() => buildReports('Game,Rating\nX,Perfect\n'), /no "Timestamp" column/);
+});
+
+test('CSV parsing follows RFC 4180', () => {
+  assert.deepEqual(parseCsv('﻿a,"b,""c""",d\r\n"multi\nline",,\n'), [['a', 'b,"c"', 'd'], ['multi\nline', '', '']]);
+});
+
+test('field cleaners', () => {
+  assert.equal(cleanText('  a\u0000b <i>c</i>  ', 10), 'ab c');
+  assert.equal(cleanText('<scr<script>ipt>alert(1)</script>', 50), '');
+  assert.equal(cleanAppId('0'), null);
+  assert.equal(cleanAppId('12345678901'), null);
+  assert.equal(cleanFirmware('13.4'), '13.40');
+  assert.equal(cleanFirmware('13.400'), null);
+  assert.equal(cleanFps('0'), null);
+  assert.equal(cleanFps('29,97'), 30);
+  assert.equal(cleanVersion('4.0.0-alpha-4'), 'v4.0.0-alpha-4');
+  assert.equal(cleanVersion('latest'), null);
+  assert.equal(cleanDate('2/30/2026 10:00:00'), null);
+  assert.equal(cleanDate('2026-10-27T10:00:00Z'), '2026-10-27');
+});
