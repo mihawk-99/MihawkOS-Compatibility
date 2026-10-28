@@ -7,6 +7,10 @@
   "name": "Mafia",
   "header": ""
  },
+ "44444": {
+  "name": "",
+  "header": ""
+ },
  "72850": {
   "name": "The Elder Scrolls V: Skyrim",
   "header": ""
@@ -23,8 +27,20 @@
   "name": "Batman™: Arkham Knight",
   "header": ""
  },
+ "220240": {
+  "name": "Far Cry 3",
+  "header": "3848aafeb6e5cff40cbf6210c34413f3034150da"
+ },
  "234080": {
   "name": "Castlevania: Lords of Shadow – Ultimate Edition",
+  "header": ""
+ },
+ "243470": {
+  "name": "Watch_Dogs™",
+  "header": ""
+ },
+ "307690": {
+  "name": "Sleeping Dogs: Definitive Edition",
   "header": ""
  },
  "413150": {
@@ -51,6 +67,14 @@
   "name": "Hollow Knight: Silksong",
   "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
  },
+ "1167630": {
+  "name": "Teardown",
+  "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87"
+ },
+ "1222680": {
+  "name": "Need for Speed™ Heat",
+  "header": ""
+ },
  "1229490": {
   "name": "ULTRAKILL",
   "header": ""
@@ -74,6 +98,10 @@
  "3353470": {
   "name": "The Binding of Isaac: Repentance+",
   "header": ""
+ },
+ "3404260": {
+  "name": "Dead as Disco",
+  "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
  },
  "3905010": {
   "name": "ONE PIECE: Grand Gourmet",

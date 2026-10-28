@@ -9,6 +9,10 @@
    "name": "Mafia",
    "header": ""
   },
+  "44444": {
+   "name": "",
+   "header": ""
+  },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
    "header": ""
@@ -25,8 +29,20 @@
    "name": "Batman™: Arkham Knight",
    "header": ""
   },
+  "220240": {
+   "name": "Far Cry 3",
+   "header": "3848aafeb6e5cff40cbf6210c34413f3034150da"
+  },
   "234080": {
    "name": "Castlevania: Lords of Shadow – Ultimate Edition",
+   "header": ""
+  },
+  "243470": {
+   "name": "Watch_Dogs™",
+   "header": ""
+  },
+  "307690": {
+   "name": "Sleeping Dogs: Definitive Edition",
    "header": ""
   },
   "413150": {
@@ -53,6 +69,14 @@
    "name": "Hollow Knight: Silksong",
    "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
   },
+  "1167630": {
+   "name": "Teardown",
+   "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87"
+  },
+  "1222680": {
+   "name": "Need for Speed™ Heat",
+   "header": ""
+  },
   "1229490": {
    "name": "ULTRAKILL",
    "header": ""
@@ -76,6 +100,10 @@
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
    "header": ""
+  },
+  "3404260": {
+   "name": "Dead as Disco",
+   "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
   },
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
@@ -155,6 +183,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Dead as Disco",
+   "appid": "3404260",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "Max",
+   "notes": "Very smooth 60fps",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Dragon Ball Z Budokai Tenkaichi 3 Decomp PC",
    "appid": null,
    "launcher": "None",
@@ -179,6 +221,20 @@
    "fps": null,
    "settings": null,
    "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Far Cry 3",
+   "appid": "220240",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": 20,
+   "settings": "Ultra",
+   "notes": "Playbale but very low fps",
    "nickname": null
   },
   {
@@ -281,6 +337,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Need for Speed™ Heat",
+   "appid": "1222680",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Doesn't boot up",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "ONE PIECE: Grand Gourmet",
    "appid": "3905010",
    "launcher": null,
@@ -309,6 +379,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Sleeping Dogs: Definitive Edition",
+   "appid": "307690",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "Perfect.",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Stardew Valley",
    "appid": "413150",
    "launcher": "Steam",
@@ -319,6 +403,20 @@
    "fps": null,
    "settings": null,
    "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Teardown",
+   "appid": "1167630",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "Max",
+   "notes": "60fps",
    "nickname": null
   },
   {
@@ -376,6 +474,48 @@
    "settings": null,
    "notes": "Works well, but is quite laggy. (unexpectedly)",
    "nickname": "A4ravcado"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "ULTRAKILL",
+   "appid": "1229490",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Max",
+   "notes": "Run very smooth",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Watch_Dogs™",
+   "appid": "243470",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Doesn't boot too",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Yandere simulator",
+   "appid": "44444",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Crashes",
+   "nickname": null
   }
  ]
 }
