@@ -31,20 +31,6 @@
   },
   {
    "date": "2026-10-28",
-   "game": "DC Universe Online",
-   "appid": "24200",
-   "launcher": "Steam",
-   "version": "v3.0.0-alpha-3",
-   "console": "PS5 Slim",
-   "firmware": "13.60",
-   "rating": "Broken",
-   "fps": 1,
-   "settings": "1",
-   "notes": "It won't open",
-   "nickname": "jdznzz"
-  },
-  {
-   "date": "2026-10-28",
    "game": "DRAGON QUEST VII Reimagined",
    "appid": "2499860",
    "launcher": "Steam",
@@ -83,20 +69,6 @@
    "fps": 120,
    "settings": "120Hz",
    "notes": null,
-   "nickname": null
-  },
-  {
-   "date": "2026-10-28",
-   "game": "Hood Warfare 2",
-   "appid": "5155360",
-   "launcher": "Steam",
-   "version": "v4.0.0-alpha-4",
-   "console": "PS5 Slim",
-   "firmware": "12.30",
-   "rating": "Runs with issues",
-   "fps": 60,
-   "settings": null,
-   "notes": "auntie cheat error",
    "nickname": null
   },
   {
