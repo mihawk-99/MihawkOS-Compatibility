@@ -7,7 +7,9 @@ all eleven questions, checks and settings, published to anyone with the link:
 https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) and step 2 (the sheet "MihawkOS game report (Responses)", with the Approved checkbox column and the `Published`
 tab). Step 3 was done on 2026-10-28 in the owner's own browser (Google asks a confirm popup that the desktop app's
 browser pane cannot show); the raw responses tab was checked to answer with a sign-in page, and the `Published` CSV
-to give the header and nothing approved. **Not done:** everything on GitHub (steps 4 and 5). The `FORM_URL` of step 4.3 is
+to give the header and nothing approved. Steps 4 and 5 were done on 2026-10-28: the repository is public, the
+secret and variable are set, Pages deploys from Actions, and the first successful run published the site at
+https://mihawk-99.github.io/MihawkOS-Compatibility/. What remains is moderating (below). The `FORM_URL` of step 4.3 is
 the form link above.
 
 You need a Google account (a personal one is fine) and the `mihawk-99` GitHub account.
