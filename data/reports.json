@@ -3,6 +3,20 @@
  "reports": [
   {
    "date": "2026-10-28",
+   "game": "Batman: Arkham Knight",
+   "appid": "208650",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Highest, default mos settings",
+   "notes": "Everything did but the bmsdk mod, there were mini stutters too",
+   "nickname": "glooty"
+  },
+  {
+   "date": "2026-10-28",
    "game": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
    "appid": "2833580",
    "launcher": "GOG Galaxy",
@@ -59,6 +73,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Gravity circuit",
+   "appid": "858710",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Default Settings 1080p 60",
+   "notes": "The only problem that came to me is that when I want to close the game or close the Steam I get a black screen I can't turn off the Mihawk OS so I have to close the whole application and I expect that it will damage the system",
+   "nickname": "Zezo (slim 13.60)"
+  },
+  {
+   "date": "2026-10-28",
    "game": "Hollow Knight: Silksong",
    "appid": "1030300",
    "launcher": "Steam",
@@ -70,6 +98,20 @@
    "settings": "120Hz",
    "notes": null,
    "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Mafia",
+   "appid": "40990",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "12.40",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Seems to be some sort of graphical error",
+   "nickname": "A4ravcado"
   },
   {
    "date": "2026-10-28",
@@ -140,6 +182,20 @@
    "settings": null,
    "notes": null,
    "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Ultrakill",
+   "appid": "1229490",
+   "launcher": "None",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Slim",
+   "firmware": "12.40",
+   "rating": "Playable",
+   "fps": 45,
+   "settings": null,
+   "notes": "Works well, but is quite laggy. (unexpectedly)",
+   "nickname": "A4ravcado"
   }
  ]
 }
