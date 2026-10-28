@@ -37,6 +37,10 @@
    "name": "Far Cry 3",
    "header": "3848aafeb6e5cff40cbf6210c34413f3034150da"
   },
+  "227300": {
+   "name": "Euro Truck Simulator 2",
+   "header": ""
+  },
   "234080": {
    "name": "Castlevania: Lords of Shadow – Ultimate Edition",
    "header": ""
@@ -117,6 +121,10 @@
    "name": "Need for Speed™ Most Wanted",
    "header": ""
   },
+  "1262580": {
+   "name": "Need for Speed™ Payback",
+   "header": ""
+  },
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
@@ -173,6 +181,10 @@
    "name": "Dead as Disco",
    "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
   },
+  "3469230": {
+   "name": "Baki Hanma: Blood Arena",
+   "header": ""
+  },
   "3747730": {
    "name": "Legacy of Kain: Defiance Remastered",
    "header": "f0b68c0f6aa4adba527cf5635cf08d58464f9dcc"
@@ -183,6 +195,48 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-28",
+   "game": "Euro Truck Simulator 2",
+   "appid": "227300",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "12.20",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": null,
+   "notes": "O jogo funciona bem e fluido mesmo nas configurações mais pesadas, mas durante a gameplay em algum momento, o jogo congela completamente e é fechado, não sendo mais possível iniciar o jogo novamente sem fazer uma reinicialização no PS5.",
+   "nickname": "FeLizDePaZz"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Baki Hanma: Blood Arena",
+   "appid": "3469230",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "it works well, thats all i gotta say",
+   "nickname": "kool"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Need for Speed™ Payback",
+   "appid": "1262580",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
   {
    "date": "2026-10-28",
    "game": "Fable - The Lost Chapters",
