@@ -47,7 +47,12 @@ export function Bar({ root, night, onTheme, children, report = true }) {
     <header className="bar glass">
       <a className="brand" href={root}><img src={`${root}mark.svg`} alt="" width="36" height="36" /><span>MihawkOS <em>{t('Compatibility')}</em></span></a>
       <nav aria-label={t('Sections')}>{children}</nav>
-      {report && <a className="button primary report-button" href={`${root}report/`}>{t('Report games')}</a>}
+      {report && (
+        <a className="button primary report-button" href={`${root}report/`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h4L19 9l-4-4L4 16Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" /><path d="m13.5 6.5 4 4" stroke="currentColor" strokeWidth="2" /></svg>
+          <span className="label">{t('Report games')}</span>
+        </a>
+      )}
       <MusicButton />
       <LanguagePicker root={root} />
       <ThemeToggle night={night} onChange={onTheme} />

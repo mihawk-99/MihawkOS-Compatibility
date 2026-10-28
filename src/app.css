@@ -90,6 +90,7 @@ nav a { padding: 7px 14px; border-radius: 999px; color: var(--ink); text-decorat
   border: 1px solid transparent; }
 nav a:hover { background: var(--soft); }
 .report-button { margin-left: auto; white-space: nowrap; }
+.report-button svg { display: none; width: 18px; height: 18px; }
 
 /* The Day/Night slider: a sky pill with the sun on the right by day, a starry pill with the moon on the left at night */
 .theme-toggle { position: relative; flex: none; width: 152px; height: 40px; padding: 0; border-radius: 999px; cursor: pointer;
@@ -290,7 +291,17 @@ nav a .icon { margin-right: 4px; }
 @keyframes eq { 0%, 100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
 :root[data-theme="dark"] .music-button:not(.playing) { color: #cfe6ff; border-color: rgba(150, 200, 255, .3); background: rgba(255, 255, 255, .08); }
 :root[data-theme="dark"] .music-button:not(.playing):hover { background: rgba(255, 255, 255, .16); }
-@media (max-width: 720px) { .music-button { width: 36px; height: 36px; } }
+.music { flex: none; display: flex; align-items: center; gap: 6px; border-radius: 999px; }
+.music.open { padding: 2px 3px 2px 2px; border: 1px solid rgba(27, 36, 48, .12); background: rgba(255, 255, 255, .3); }
+.music-title { font-size: 13px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.music-next { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; padding: 0; cursor: pointer;
+  color: #1d5fa8; border: 0; background: transparent; }
+.music-next:hover { background: rgba(47, 140, 240, .16); }
+.music-next svg { width: 18px; height: 18px; }
+:root[data-theme="dark"] .music.open { border-color: rgba(150, 200, 255, .25); background: rgba(255, 255, 255, .06); }
+:root[data-theme="dark"] .music-next { color: #cfe6ff; }
+@media (max-width: 1100px) { .music-title { display: none; } }
+@media (max-width: 720px) { .music-button { width: 36px; height: 36px; } .music-next { width: 28px; height: 28px; } }
 @media (prefers-reduced-motion: reduce) { .music-button .eq i { animation: none; } .music-button .eq i:nth-child(2) { transform: scaleY(.7); } .music-button .eq i:nth-child(odd) { transform: scaleY(.45); } }
 /* The WebUI's language picker (PS5_Proton webui/app.css): the current language's flag, every language under it */
 .language { position: relative; flex: none; }
@@ -309,7 +320,7 @@ nav a .icon { margin-right: 4px; }
 :root[data-theme="dark"] .language-button { border-color: rgba(150, 200, 255, .3); background: rgba(255, 255, 255, .08); }
 :root[data-theme="dark"] .language-button:hover { background: rgba(255, 255, 255, .16); }
 :root[data-theme="dark"] .language-list { background: rgba(12, 28, 52, .97); }
-@media (max-width: 720px) { .language-list { position: fixed; right: 16px; left: auto; top: 64px; } .language-button { padding: 5px 8px; } }
+@media (max-width: 720px) { .language-list { position: fixed; right: 16px; left: auto; top: 64px; } }
 .combo { position: relative; }
 .game-row:focus-within { position: relative; z-index: 5; } /* its suggestions open above the sticky Send bar */
 .suggestions { position: absolute; z-index: 6; left: 0; right: 0; top: calc(100% + 6px); list-style: none; margin: 0; padding: 6px;
@@ -331,10 +342,17 @@ nav a .icon { margin-right: 4px; }
 }
 /* A phone: the sections in one row that scrolls, the picture beside a game's name */
 @media (max-width: 720px) {
-  .bar { gap: 8px; padding: 8px 10px; top: 8px; }
+  .bar { gap: 6px; padding: 8px 10px; top: 8px; }
   .brand span { display: none; }
   nav a { padding: 6px 10px; }
-  .report-button { padding: 7px 12px; font-size: 13px; }
+  .bar:has(.report-button) nav { visibility: hidden; } /* the list's own sections are a scroll away; keep the space */
+  .report-button { width: 36px; height: 36px; padding: 0; border-radius: 50%; display: grid; place-items: center; }
+  .report-button svg { display: block; }
+  .report-button .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .language-button { padding: 5px 6px; }
+  .language-button .chevron { display: none; }
+  .music { gap: 0; }
+  .music.open { padding: 0; }
   .form-actions.glass { flex-wrap: nowrap; gap: 8px; padding: 8px; bottom: 8px; }
   .form-actions .button { flex: 1 1 0; min-width: 0; justify-content: center; padding: 9px 10px; font-size: 13.5px; line-height: 1.2; text-align: center; }
   .form-actions .error { display: none; }
