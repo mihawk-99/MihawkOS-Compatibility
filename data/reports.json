@@ -57,6 +57,14 @@
    "name": "Sleeping Dogs: Definitive Edition",
    "header": ""
   },
+  "338930": {
+   "name": "TRANSFORMERS: Devastation",
+   "header": ""
+  },
+  "367520": {
+   "name": "Hollow Knight",
+   "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
+  },
   "413150": {
    "name": "Stardew Valley",
    "header": ""
@@ -173,6 +181,20 @@
  "reports": [
   {
    "date": "2026-10-28",
+   "game": "Hollow Knight",
+   "appid": "367520",
+   "launcher": "None",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5 Slim",
+   "firmware": "12.70",
+   "rating": "Perfect",
+   "fps": 85,
+   "settings": null,
+   "notes": null,
+   "nickname": "Dr+"
+  },
+  {
+   "date": "2026-10-28",
    "game": "Portal 2",
    "appid": "620",
    "launcher": "Steam",
@@ -272,7 +294,7 @@
   {
    "date": "2026-10-28",
    "game": "Transformers Devastation",
-   "appid": null,
+   "appid": "338930",
    "launcher": "None",
    "version": "v4.0.0-alpha-4",
    "console": "PS5",
@@ -355,8 +377,8 @@
   },
   {
    "date": "2026-10-28",
-   "game": "Marvel guardians of the Glaxy",
-   "appid": null,
+   "game": "Marvel's Guardians of the Galaxy: The Telltale Series",
+   "appid": "579950",
    "launcher": "None",
    "version": "v4.0.0-alpha-4",
    "console": "PS5",
@@ -488,7 +510,7 @@
    "console": "PS5 Slim",
    "firmware": "13.60",
    "rating": "Perfect",
-   "fps": null,
+   "fps": 60,
    "settings": "Max",
    "notes": "Very smooth 60fps",
    "nickname": null
