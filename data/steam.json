@@ -55,6 +55,10 @@
   "name": "ULTRAKILL",
   "header": ""
  },
+ "2146170": {
+  "name": "Baten Kaitos I & II HD Remaster",
+  "header": ""
+ },
  "2499860": {
   "name": "DRAGON QUEST VII Reimagined",
   "header": "ea0c655407c078a8994b7e91256c79d90169133a"
@@ -63,8 +67,16 @@
   "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
   "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
  },
+ "3010850": {
+  "name": "Gears of War: E-Day",
+  "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
+ },
  "3353470": {
   "name": "The Binding of Isaac: Repentance+",
   "header": ""
+ },
+ "3905010": {
+  "name": "ONE PIECE: Grand Gourmet",
+  "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
  }
 }

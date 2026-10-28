@@ -57,6 +57,10 @@
    "name": "ULTRAKILL",
    "header": ""
   },
+  "2146170": {
+   "name": "Baten Kaitos I & II HD Remaster",
+   "header": ""
+  },
   "2499860": {
    "name": "DRAGON QUEST VII Reimagined",
    "header": "ea0c655407c078a8994b7e91256c79d90169133a"
@@ -65,12 +69,34 @@
    "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
    "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
   },
+  "3010850": {
+   "name": "Gears of War: E-Day",
+   "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
+  },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
    "header": ""
+  },
+  "3905010": {
+   "name": "ONE PIECE: Grand Gourmet",
+   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
   }
  },
  "reports": [
+  {
+   "date": "2026-10-28",
+   "game": "Baten Kaitos I & II HD Remaster",
+   "appid": "2146170",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "When the game asks me to enter a name, the on-screen keyboard doesn't pop up. The only way to enter a name is by using a USB keyboard.",
+   "nickname": null
+  },
   {
    "date": "2026-10-28",
    "game": "Batman: Arkham Knight",
@@ -157,6 +183,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Gears of War: E-Day",
+   "appid": "3010850",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Message: DirectX 12 is not supported.",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Grand Theft Auto IV: The Complete Edition",
    "appid": "12210",
    "launcher": "GOG Galaxy",
@@ -237,6 +277,20 @@
    "fps": null,
    "settings": null,
    "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "ONE PIECE: Grand Gourmet",
+   "appid": "3905010",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "It doesn't recognize the controller",
    "nickname": null
   },
   {
