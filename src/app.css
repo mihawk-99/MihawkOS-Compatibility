@@ -183,7 +183,7 @@ input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); o
 .launcher[class*="launcher-"]:not(.launcher-none) { color: var(--brand-ink, #fff); border-color: rgba(255, 255, 255, .35);
   background: linear-gradient(180deg, rgba(255, 255, 255, .3), transparent 55%), linear-gradient(180deg, var(--brand), var(--brand-2));
   text-shadow: var(--brand-shadow, 0 1px 1px rgba(0, 0, 0, .3)); box-shadow: 0 1px 3px rgba(0, 0, 0, .18); }
-.launcher-steam { --brand: #2a475e; --brand-2: #1b2838; }
+.launcher-steam { --brand: #0b1d45; --brand-2: #1676a8; } /* the logo's navy into its blue */
 .launcher-epic-games-store { --brand: #3a3a3a; --brand-2: #1a1a1a; }
 .launcher-gog-galaxy { --brand: #86328a; --brand-2: #5e1f61; }
 .launcher-ea-app { --brand: #c22c2c; --brand-2: #a8201f; }
