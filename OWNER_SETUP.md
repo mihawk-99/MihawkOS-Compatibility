@@ -5,8 +5,9 @@ The steps to put the compatibility list online, in order. They take about half a
 **Done on 2026-10-27**, in your Google account, through the browser pane: step 1 (the form "MihawkOS game report",
 all eleven questions, checks and settings, published to anyone with the link:
 https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) and step 2 (the sheet "MihawkOS game report (Responses)", with the Approved checkbox column and the `Published`
-tab). **Not done:** step 3, publishing the CSV (Google asks a confirm popup that the desktop app's browser pane
-cannot show, so do it in your own browser), and everything on GitHub (steps 4 and 5). The `FORM_URL` of step 4.3 is
+tab). Step 3 was done on 2026-10-28 in the owner's own browser (Google asks a confirm popup that the desktop app's
+browser pane cannot show); the raw responses tab was checked to answer with a sign-in page, and the `Published` CSV
+to give the header and nothing approved. **Not done:** everything on GitHub (steps 4 and 5). The `FORM_URL` of step 4.3 is
 the form link above.
 
 You need a Google account (a personal one is fine) and the `mihawk-99` GitHub account.
@@ -63,6 +64,12 @@ You need a Google account (a personal one is fine) and the `mihawk-99` GitHub ac
    can take up to five minutes to show a change.
 
 Only the `Published` tab is public. The responses tab, with the rows nobody has approved, stays private.
+
+**Check it.** What is public is decided by **Published content & settings**, not by the **Link** row above it,
+which only picks which link to show. If the lower button says **Entire document**, the raw responses are public too:
+a link without `gid=` then serves the first tab, Form Responses 1. Open the responses tab's own CSV link (its `gid`
+is in the sheet's address bar) in a private window: it must show a Google sign-in page, not CSV. Google can take a
+few minutes to apply a change.
 
 ## 4. Create the GitHub repository and push
 
