@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildReports, findAppIds, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
+import { buildReports, findAppIds, findHeaders, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
 
 const fixture = (name) => readFileSync(new URL(`fixtures/${name}`, import.meta.url), 'utf8');
 const HEADER = 'Timestamp,Game,Steam AppID,Launcher,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
@@ -114,4 +114,26 @@ test('a report without an AppID takes one from Steam only for the exact name', a
   const quiet = [{ game: 'Other' }];
   await findAppIds(quiet, {}, async () => { throw new Error('down'); });
   assert.equal(quiet[0].appid, undefined);
+});
+
+test('a header picture under a content hash is found once per AppID', async () => {
+  const hash = 'ea0c655407c078a8994b7e91256c79d90169133a';
+  const asked = [];
+  const details = async (id) => {
+    asked.push(id);
+    if (id === '2499860') return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2499860/${hash}/header.jpg?t=1`;
+    if (id === '9') throw new Error('down');
+    return 'https://cdn.example/apps/620/header.jpg'; // the plain path: no hash
+  };
+  const cache = { 1030300: '7983574d464e6559ac7e24275727f73a8bcca1f3' };
+  const reports = [{ appid: '2499860' }, { appid: '2499860' }, { appid: '620' }, { appid: '1030300' }, { appid: '9' }, { appid: null }];
+  const headers = await findHeaders(reports, cache, details);
+  assert.deepEqual(asked, ['2499860', '620', '9']); // each once, never a cached one
+  assert.deepEqual(headers, { 2499860: hash, 1030300: '7983574d464e6559ac7e24275727f73a8bcca1f3' });
+  assert.equal(cache['620'], '');
+  assert.ok(!('9' in cache)); // Steam not answering is asked again next run
+  // A hash belonging to another AppID, or not 40 hex digits, is not taken.
+  const odd = {};
+  await findHeaders([{ appid: '5' }], odd, async () => `https://x/apps/6/${hash}/header.jpg`);
+  assert.equal(odd['5'], '');
 });

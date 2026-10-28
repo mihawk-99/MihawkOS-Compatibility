@@ -97,7 +97,9 @@ Steam's public store search (`store.steampowered.com/api/storesearch`) for the g
 when a result has exactly that name (case, accents, ™ and punctuation aside), so a near match never shows another
 game's art. Found AppIDs are kept in `data/appids.json`, so a day Steam does not answer changes nothing, and each name
 is asked once. At most 50 new names are asked per run; the rest wait for the next. A wrong match is fixed by
-deleting its line from `data/appids.json` and asking reporters for the AppID. Games not on Steam keep their letter.
+deleting its line from `data/appids.json` and asking reporters for the AppID. Games not on Steam keep their letter. Newer games keep their picture under a content hash (`.../apps/<AppID>/<hash>/header.jpg`); the run asks
+Steam's store API (`store.steampowered.com/api/appdetails`) once per AppID for it and keeps it in `data/headers.json`
+(an empty value means the plain address is the picture).
 
 ## Tally instead of Google Forms
 

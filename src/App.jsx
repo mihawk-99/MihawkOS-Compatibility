@@ -73,8 +73,11 @@ function ThemeToggle({ night, onChange }) {
 function Cover({ game }) {
   const [failed, setFailed] = useState(false);
   if (game.appid && /^\d+$/.test(game.appid) && !failed) {
+    // Newer games' pictures sit under a content hash (data/headers.json, from scripts/build-reports.mjs).
+    const hash = data.headers?.[game.appid];
+    const path = /^[0-9a-f]{40}$/.test(hash ?? '') ? `${game.appid}/${hash}` : game.appid;
     return (
-      <img src={`https://shared.steamstatic.com/store_item_assets/steam/apps/${game.appid}/header.jpg`} alt=""
+      <img src={`https://shared.steamstatic.com/store_item_assets/steam/apps/${path}/header.jpg`} alt=""
         loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
     );
   }
