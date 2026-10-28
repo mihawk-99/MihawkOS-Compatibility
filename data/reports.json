@@ -1,9 +1,74 @@
 {
  "examples": false,
- "headers": {
-  "1030300": "7983574d464e6559ac7e24275727f73a8bcca1f3",
-  "2499860": "ea0c655407c078a8994b7e91256c79d90169133a",
-  "2833580": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
+ "steam": {
+  "12210": {
+   "name": "Grand Theft Auto IV: The Complete Edition",
+   "header": ""
+  },
+  "40990": {
+   "name": "Mafia",
+   "header": ""
+  },
+  "72850": {
+   "name": "The Elder Scrolls V: Skyrim",
+   "header": ""
+  },
+  "110800": {
+   "name": "L.A. Noire",
+   "header": ""
+  },
+  "203160": {
+   "name": "Tomb Raider Game of the Year",
+   "header": ""
+  },
+  "208650": {
+   "name": "Batman™: Arkham Knight",
+   "header": ""
+  },
+  "234080": {
+   "name": "Castlevania: Lords of Shadow – Ultimate Edition",
+   "header": ""
+  },
+  "413150": {
+   "name": "Stardew Valley",
+   "header": ""
+  },
+  "504230": {
+   "name": "Celeste",
+   "header": ""
+  },
+  "579950": {
+   "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
+   "header": ""
+  },
+  "858710": {
+   "name": "Gravity Circuit",
+   "header": ""
+  },
+  "952060": {
+   "name": "Resident Evil 3",
+   "header": ""
+  },
+  "1030300": {
+   "name": "Hollow Knight: Silksong",
+   "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
+  },
+  "1229490": {
+   "name": "ULTRAKILL",
+   "header": ""
+  },
+  "2499860": {
+   "name": "DRAGON QUEST VII Reimagined",
+   "header": "ea0c655407c078a8994b7e91256c79d90169133a"
+  },
+  "2833580": {
+   "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
+   "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
+  },
+  "3353470": {
+   "name": "The Binding of Isaac: Repentance+",
+   "header": ""
+  }
  },
  "reports": [
   {
@@ -36,6 +101,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "Castlevania: Lords of Shadow - Ultimate Edition",
+   "appid": "234080",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Celeste",
    "appid": "504230",
    "launcher": "Steam",
@@ -44,6 +123,20 @@
    "firmware": "10.01",
    "rating": "Perfect",
    "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Dragon Ball Z Budokai Tenkaichi 3 Decomp PC",
+   "appid": null,
+   "launcher": "None",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
    "settings": null,
    "notes": null,
    "nickname": null
@@ -106,6 +199,20 @@
   },
   {
    "date": "2026-10-28",
+   "game": "L.A. Noire",
+   "appid": "110800",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-28",
    "game": "Mafia",
    "appid": "40990",
    "launcher": "Steam",
@@ -117,6 +224,20 @@
    "settings": null,
    "notes": "Seems to be some sort of graphical error",
    "nickname": "A4ravcado"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Marvel's Guardians of the Galaxy: The Telltale Series",
+   "appid": "579950",
+   "launcher": "GOG Galaxy",
+   "version": "v3.0.0-alpha-3",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
   },
   {
    "date": "2026-10-28",

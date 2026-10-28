@@ -4,7 +4,7 @@
 
 **Which Windows games run on MihawkOS, from the players who tried them.**
 
-[The list](https://mihawk-99.github.io/MihawkOS-Compatibility/) · [Report a game](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) · [Ratings](#what-the-ratings-mean) · [Moderation](#how-reports-are-moderated) · [MihawkOS](https://github.com/mihawk-99/PS5_MihawkOS)
+[The list](https://mihawk-99.github.io/MihawkOS-Compatibility/) · [Report games](https://mihawk-99.github.io/MihawkOS-Compatibility/report/) · [Ratings](#what-the-ratings-mean) · [Moderation](#how-reports-are-moderated) · [MihawkOS](https://github.com/mihawk-99/PS5_MihawkOS)
 
 </div>
 
@@ -42,14 +42,18 @@ device. It is a plain web page on GitHub Pages: no account, no cookies, no track
 
 The screenshots show made-up examples.
 
-## Report a game
+## Report games
 
-1. Play a game you own on MihawkOS.
-2. Open [the report form](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) (also **Report a game** on [the list](https://mihawk-99.github.io/MihawkOS-Compatibility/)) and fill it in.
-   It needs no account and no e-mail.
-3. Your report is read, then it appears on the list, usually within a day.
+1. Play games you own on MihawkOS.
+2. Open [the report page](https://mihawk-99.github.io/MihawkOS-Compatibility/report/) (**Report games** on the list). Fill in your console, firmware and
+   MihawkOS version once, then one row per game; **+ Add another game** adds a row. It needs no account and no
+   e-mail, and your console details are remembered on your device for next time.
+3. Type a Steam AppID (or paste the game's Steam link) and the page shows the game's Steam picture and name, so you
+   can see it is the right one.
+4. Your reports are read, then they appear on the list, usually within a day.
 
-The form asks for:
+The page sends each game to the project's [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform), which still works on its own, one game at a
+time. Each report has:
 
 | Field | |
 | --- | --- |

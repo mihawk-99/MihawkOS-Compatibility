@@ -121,6 +121,11 @@ After that it runs every 15 minutes (GitHub may start a scheduled run a few minu
 - Before ticking, check that the report is about one game, and that the console, firmware and version look real.
   Reject requests for games, keys or firmware, and anything else MihawkOS's README turns away.
 
+## When MihawkOS has a new release
+
+Add the version at the top of the form's **MihawkOS version** dropdown, and to `VERSIONS` in `src/fields.js` (the
+report page offers only those). Push the change; the site rebuilds itself.
+
 ## If something goes wrong
 
 | The run says | Do this |

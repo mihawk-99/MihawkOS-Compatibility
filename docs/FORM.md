@@ -108,7 +108,31 @@ simple. Two differences: Tally adds its own columns (submission id, respondent i
 column has another name. The `Published` tab then needs its first row typed by hand with the thirteen titles above,
 and FILTER picks Tally's columns in that order. Google Forms needs neither step, so it stays the default.
 
+## The report page
+
+`report/index.html` (`src/ReportPage.jsx`, its rules in `src/submit.js`) is the site's own form: the console's
+details once, then one row per game. On Send, each row is posted to the Google Form's `formResponse` address with
+the field ids of `FORM_ENTRIES` in `src/fields.js`, one response per game, so the sheet, the Approved box and the
+build are unchanged. Google answers another site's page without telling it the result (`no-cors`), so the page
+checks every field the way the form does (`problems()`, tested in `scripts/report-form.test.mjs`) before sending.
+
+- **Remembered:** console, firmware, version and nickname, in the visitor's browser (`localStorage`), after a send.
+- **Pre-filled by a link:** `…/report/?game=&appid=&launcher=&rating=&fps=&settings=&model=&fw=&version=` (also
+  `console=`, `firmware=`). Unknown choices are ignored. A game the list knows gets its AppID filled in.
+- **"Is it the right game?":** an AppID shows its Steam picture, the name Steam gives it when the list knows it
+  (`data/steam.json`, from the build), and a link to its Steam page. Steam's store API does not answer other sites'
+  pages, so a new AppID shows its picture and the link only.
+- **When the form changes:** a new MihawkOS release goes into `VERSIONS` in `src/fields.js` as well as the form's
+  dropdown. A question deleted and made again gets a new `entry.` id, to copy into `FORM_ENTRIES`. A new question
+  needs the page, the script and `src/fields.js`.
+- The page's Content-Security-Policy allows `connect-src https://docs.google.com` for the sends; the list page does
+  not.
+
 ## A future hook: "Report this game" from the WebUI
+
+**Simplest now:** open the report page with the game's details in its address, for example
+`https://mihawk-99.github.io/MihawkOS-Compatibility/report/?game=Hades&appid=1145360&launcher=Steam&model=PS5%20Pro&fw=10.01&version=v4.0.0-alpha-4`.
+The player picks the rating and sends. The Google Form's own pre-filled link below also works.
 
 MihawkOS's WebUI (port 6767) already knows the console, its firmware, MihawkOS's version, the game's name, often its
 Steam AppID, and sometimes its frame rate. A button on a game's page could open the form with those answers filled

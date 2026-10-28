@@ -5,14 +5,12 @@ import { useMemo, useState } from 'react';
 import data from '../data/reports.json';
 import { RATINGS, CONSOLES } from './fields.js';
 import { LAUNCHER_ICONS } from './launchers.js';
+import { Bar, Footer, FORM_URL, steamHeader, useNight } from './shell.jsx';
 import bannerDay from './assets/banner-day.svg';
 import bannerNight from './assets/banner-night.svg';
 
 const RANK = Object.fromEntries(RATINGS.map((r, i) => [r.name, i]));
 const slug = (rating) => rating.toLowerCase().replace(/\s+/g, '-');
-const FORM_URL = /^https:\/\/(docs\.google\.com\/forms\/|forms\.gle\/|tally\.so\/)/.test(import.meta.env.VITE_FORM_URL ?? '')
-  ? import.meta.env.VITE_FORM_URL : null;
-const SOURCE_URL = /^https:\/\/github\.com\//.test(import.meta.env.VITE_SOURCE_URL ?? '') ? import.meta.env.VITE_SOURCE_URL : null;
 const byVersion = (a, b) => b.localeCompare(a, 'en', { numeric: true });
 const day = (date) => new Date(`${date}T00:00:00Z`).toLocaleDateString(undefined, { timeZone: 'UTC', dateStyle: 'medium' });
 
@@ -56,28 +54,11 @@ function Launcher({ name }) {
   );
 }
 
-function ThemeToggle({ night, onChange }) {
-  return (
-    <button type="button" role="switch" aria-checked={night} aria-label="Night mode" className={`theme-toggle${night ? ' night' : ''}`}
-      onClick={() => onChange(!night)}>
-      <span className="label" aria-hidden="true">{night ? 'Night Mode' : 'Day Mode'}</span>
-      <span className="knob" aria-hidden="true">
-        {night
-          ? <svg viewBox="0 0 24 24"><path d="M15.5 3.2a8.5 8.5 0 1 0 5.3 13.3A7 7 0 0 1 15.5 3.2Z" fill="#2c3e5c" /><path d="m17.5 6 .6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z" fill="#2c3e5c" /></svg>
-          : <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.6" fill="#ffb020" /><g stroke="#ffb020" strokeWidth="2" strokeLinecap="round"><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5" /></g></svg>}
-      </span>
-    </button>
-  );
-}
-
 function Cover({ game }) {
   const [failed, setFailed] = useState(false);
   if (game.appid && /^\d+$/.test(game.appid) && !failed) {
-    // Newer games' pictures sit under a content hash (data/headers.json, from scripts/build-reports.mjs).
-    const hash = data.headers?.[game.appid];
-    const path = /^[0-9a-f]{40}$/.test(hash ?? '') ? `${game.appid}/${hash}` : game.appid;
     return (
-      <img src={`https://shared.steamstatic.com/store_item_assets/steam/apps/${path}/header.jpg`} alt=""
+      <img src={steamHeader(game.appid, data.steam)} alt=""
         loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
     );
   }
@@ -144,12 +125,7 @@ export default function App() {
   const [firmware, setFirmware] = useState('');
   const [version, setVersion] = useState('');
   const [sort, setSort] = useState('latest');
-  const [night, setNight] = useState(document.documentElement.dataset.theme !== 'light');
-  const changeTheme = (toNight) => {
-    document.documentElement.dataset.theme = toNight ? 'dark' : 'light';
-    try { localStorage.setItem('theme', toNight ? 'dark' : 'light'); } catch { /* not remembered */ }
-    setNight(toNight);
-  };
+  const [night, changeTheme] = useNight();
 
   const firmwares = useMemo(() => [...new Set(reports.map((r) => r.firmware))].sort(byVersion), [reports]);
   const versions = useMemo(() => [...new Set(reports.map((r) => r.version))].sort(byVersion), [reports]);
@@ -168,16 +144,11 @@ export default function App() {
   return (
     <>
       <a className="skip" href="#games">Skip to the games</a>
-      <header className="bar glass">
-        <a className="brand" href="#top"><img src="./mark.svg" alt="" width="36" height="36" /><span>MihawkOS <em>Compatibility</em></span></a>
-        <nav aria-label="Sections">
-          <a href="#games">Games</a>
-          <a href="#ratings">Ratings</a>
-          <a href="#report">How to report</a>
-        </nav>
-        {FORM_URL && <a className="button primary report-button" href={FORM_URL} target="_blank" rel="noopener noreferrer">Report a game</a>}
-        <ThemeToggle night={night} onChange={changeTheme} />
-      </header>
+      <Bar root="./" night={night} onTheme={changeTheme}>
+        <a href="#games">Games</a>
+        <a href="#ratings">Ratings</a>
+        <a href="#report">How to report</a>
+      </Bar>
 
       <main id="top">
         <section className="hero glass">
@@ -235,25 +206,21 @@ export default function App() {
         </section>
 
         <section id="report" aria-labelledby="report-title" className="glass card how">
-          <h2 id="report-title">Report a game</h2>
+          <h2 id="report-title">Report games</h2>
           <ol className="steps">
-            <li>Play a game you own on MihawkOS.</li>
-            <li>Fill in the short form: the game, your console and firmware, MihawkOS's version and how it ran. No account, no e-mail.</li>
-            <li>Your report is read, then it appears here, usually within a day.</li>
+            <li>Play games you own on MihawkOS.</li>
+            <li>Fill in the report page: your console, firmware and MihawkOS version once, then one row per game with how it ran. No account, no e-mail.</li>
+            <li>Your reports are read, then they appear here, usually within a day.</li>
           </ol>
-          <p className="muted">Please write only about the game: no links, no personal details. A nickname is optional and shown with your report.</p>
-          {FORM_URL
-            ? <div className="actions"><a className="button primary" href={FORM_URL} target="_blank" rel="noopener noreferrer">Open the form</a></div>
-            : <p className="muted"><em>The form opens here once it is set up.</em></p>}
+          <p className="muted">Please write only about the games: no links, no personal details. A nickname is optional and shown with your reports.</p>
+          <div className="actions">
+            <a className="button primary" href="./report/">Report games</a>
+            {FORM_URL && <a className="link" href={FORM_URL} target="_blank" rel="noopener noreferrer">or use the Google Form</a>}
+          </div>
         </section>
       </main>
 
-      <footer>
-        <p>MihawkOS is a passion project, not a piracy project. Use only games you own. <a href="https://github.com/mihawk-99/PS5_MihawkOS">MihawkOS on GitHub</a></p>
-        <p>No trackers, no analytics, no cookies. Game pictures come from Steam's public image server.</p>
-        <p>{SOURCE_URL && <><a href={SOURCE_URL}>Source</a> (GPL-3.0-or-later) · </>}
-          <a href="./licenses/LGPL-2.1.txt">Art and mark: LGPL-2.1-or-later</a> · <a href="./licenses/OFL-1.1-Inter.txt">Inter: OFL-1.1</a> · <a href="./licenses/react-MIT.txt">React: MIT</a></p>
-      </footer>
+      <Footer root="./" />
     </>
   );
 }

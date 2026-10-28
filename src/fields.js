@@ -35,3 +35,22 @@ export const COLUMNS = {
 };
 
 export const LIMITS = { game: 100, settings: 300, notes: 1000, nickname: 32 };
+
+// The form's MihawkOS version options, newest first. Add each new release here and in the Google Form.
+export const VERSIONS = ['v4.0.0-alpha-4', 'v3.0.0-alpha-3', 'v2.0.0-alpha-2', 'v1.0.0-alpha-1'];
+
+// The Google Form's field ids (its pre-fill link, docs/FORM.md). The report page posts each game to the form with these;
+// a question deleted and made again gets a new id, which must be copied here.
+export const FORM_ENTRIES = {
+  game: 'entry.360954',
+  appid: 'entry.1142179574',
+  launcher: 'entry.346947463',
+  version: 'entry.1455217213',
+  console: 'entry.675106169',
+  firmware: 'entry.412913000',
+  rating: 'entry.1075560426',
+  fps: 'entry.608722964',
+  settings: 'entry.657180200',
+  notes: 'entry.763652494',
+  nickname: 'entry.1272920297',
+};

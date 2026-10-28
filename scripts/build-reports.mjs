@@ -2,7 +2,7 @@
 // Turn the moderated sheet's published CSV into data/reports.json, the only data the page reads.
 //
 //   SHEET_CSV_URL=https://docs.google.com/... node scripts/build-reports.mjs
-//   node scripts/build-reports.mjs --csv scripts/fixtures/sample.csv [--out file] [--appids file] [--headers file] [--offline]
+//   node scripts/build-reports.mjs --csv scripts/fixtures/sample.csv [--out file] [--appids file] [--steam file] [--offline]
 //
 // Submissions are untrusted text from anyone. Nothing here evaluates them: each cell is parsed as text, cleaned
 // (HTML, links, e-mail addresses and invisible characters removed, lengths capped), checked against the known
@@ -182,25 +182,29 @@ async function steamSearch(term) {
   return Array.isArray(body?.items) ? body.items : [];
 }
 
-// Newer games keep their header picture under a content hash (.../apps/<id>/<hash>/header.jpg) and answer 404 at the
-// plain .../apps/<id>/header.jpg. Steam's appdetails names the picture; its hash is kept per AppID in data/headers.json
-// ("" when the plain path is the picture), so each AppID is asked once.
-export async function findHeaders(reports, cache, details) {
+// For each AppID, Steam's appdetails gives the game's name (the report page's "is it the right game?") and its header
+// picture. Newer games keep that picture under a content hash (.../apps/<id>/<hash>/header.jpg) and answer 404 at the
+// plain .../apps/<id>/header.jpg. Both are kept per AppID in data/steam.json ({ name, header }, header "" when the plain
+// path is the picture), so each AppID is asked once.
+export async function findSteam(reports, cache, details) {
   const ids = [...new Set(reports.map((r) => r.appid).filter((id) => id && !(id in cache)))];
   for (const id of ids.slice(0, MAX_LOOKUPS)) {
-    const image = await details(id).catch(() => null);
-    if (image === null) continue; // not answered: asked again on the next run
-    cache[id] = new RegExp(`/apps/${id}/([0-9a-f]{40})/header\\.jpg`).exec(image)?.[1] ?? '';
+    const info = await details(id).catch(() => null);
+    if (info === null) continue; // not answered: asked again on the next run
+    cache[id] = {
+      name: cleanText(info.name, LIMITS.game),
+      header: new RegExp(`/apps/${id}/([0-9a-f]{40})/header\\.jpg`).exec(String(info.header_image ?? ''))?.[1] ?? '',
+    };
   }
-  return Object.fromEntries(Object.entries(cache).filter(([id, hash]) => hash && reports.some((r) => r.appid === id)));
+  return Object.fromEntries(Object.entries(cache).filter(([id]) => reports.some((r) => r.appid === id)));
 }
 
-async function steamHeader(id) {
+async function steamDetails(id) {
   const url = new URL('https://store.steampowered.com/api/appdetails');
   url.search = new URLSearchParams({ appids: id, filters: 'basic' });
   const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return String((await res.json())?.[id]?.data?.header_image ?? '');
+  return (await res.json())?.[id]?.data ?? {};
 }
 
 async function fetchCsv(url) {
@@ -232,15 +236,15 @@ async function main(argv) {
   const cache = JSON.parse(await readFile(cacheFile, 'utf8').catch(() => '{}'));
   const offline = argv.includes('--offline');
   const lookups = await findAppIds(reports, cache, offline ? async () => [] : steamSearch);
-  const headersFile = arg('--headers') ?? fileURLToPath(new URL('../data/headers.json', import.meta.url));
-  const headerCache = JSON.parse(await readFile(headersFile, 'utf8').catch(() => '{}'));
-  const headers = await findHeaders(reports, headerCache, offline ? async () => null : steamHeader);
+  const steamFile = arg('--steam') ?? fileURLToPath(new URL('../data/steam.json', import.meta.url));
+  const steamCache = JSON.parse(await readFile(steamFile, 'utf8').catch(() => '{}'));
+  const steam = await findSteam(reports, steamCache, offline ? async () => null : steamDetails);
   const sorted = (o) => JSON.stringify(Object.fromEntries(Object.entries(o).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n';
   if (!offline) {
     await writeFile(cacheFile, sorted(cache));
-    await writeFile(headersFile, sorted(headerCache));
+    await writeFile(steamFile, sorted(steamCache));
   }
-  await writeFile(out, JSON.stringify({ examples: false, headers: JSON.parse(sorted(headers)), reports }, null, 1) + '\n');
+  await writeFile(out, JSON.stringify({ examples: false, steam: JSON.parse(sorted(steam)), reports }, null, 1) + '\n');
   console.log(`rows ${rows}, published ${reports.length}, left out ${JSON.stringify(dropped)}, Steam searches ${lookups.searched}, AppIDs found ${lookups.found}`);
 }
 

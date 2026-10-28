@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildReports, findAppIds, findHeaders, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
+import { buildReports, findAppIds, findSteam, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
 
 const fixture = (name) => readFileSync(new URL(`fixtures/${name}`, import.meta.url), 'utf8');
 const HEADER = 'Timestamp,Game,Steam AppID,Launcher,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
@@ -116,24 +116,26 @@ test('a report without an AppID takes one from Steam only for the exact name', a
   assert.equal(quiet[0].appid, undefined);
 });
 
-test('a header picture under a content hash is found once per AppID', async () => {
+test('Steam names and hashed header pictures are found once per AppID', async () => {
   const hash = 'ea0c655407c078a8994b7e91256c79d90169133a';
   const asked = [];
   const details = async (id) => {
     asked.push(id);
-    if (id === '2499860') return `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2499860/${hash}/header.jpg?t=1`;
+    if (id === '2499860') return { name: 'DRAGON QUEST VII <b>Reimagined</b>', header_image: `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2499860/${hash}/header.jpg?t=1` };
     if (id === '9') throw new Error('down');
-    return 'https://cdn.example/apps/620/header.jpg'; // the plain path: no hash
+    return { name: 'Portal 2', header_image: 'https://cdn.example/apps/620/header.jpg' }; // the plain path: no hash
   };
-  const cache = { 1030300: '7983574d464e6559ac7e24275727f73a8bcca1f3' };
+  const cache = { 1030300: { name: 'Hollow Knight: Silksong', header: '7983574d464e6559ac7e24275727f73a8bcca1f3' }, 77: { name: 'Gone', header: '' } };
   const reports = [{ appid: '2499860' }, { appid: '2499860' }, { appid: '620' }, { appid: '1030300' }, { appid: '9' }, { appid: null }];
-  const headers = await findHeaders(reports, cache, details);
+  const steam = await findSteam(reports, cache, details);
   assert.deepEqual(asked, ['2499860', '620', '9']); // each once, never a cached one
-  assert.deepEqual(headers, { 2499860: hash, 1030300: '7983574d464e6559ac7e24275727f73a8bcca1f3' });
-  assert.equal(cache['620'], '');
+  assert.deepEqual(steam, {
+    2499860: { name: 'DRAGON QUEST VII Reimagined', header: hash }, // the name is cleaned like a report's text
+    620: { name: 'Portal 2', header: '' },
+    1030300: { name: 'Hollow Knight: Silksong', header: '7983574d464e6559ac7e24275727f73a8bcca1f3' },
+  }); // only AppIDs of published reports
   assert.ok(!('9' in cache)); // Steam not answering is asked again next run
-  // A hash belonging to another AppID, or not 40 hex digits, is not taken.
   const odd = {};
-  await findHeaders([{ appid: '5' }], odd, async () => `https://x/apps/6/${hash}/header.jpg`);
-  assert.equal(odd['5'], '');
+  await findSteam([{ appid: '5' }], odd, async () => ({ header_image: `https://x/apps/6/${hash}/header.jpg` }));
+  assert.deepEqual(odd['5'], { name: '', header: '' }); // another AppID's hash is not taken
 });

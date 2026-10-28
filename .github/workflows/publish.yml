@@ -48,7 +48,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/reports.json data/appids.json data/headers.json
+          git add data/reports.json data/appids.json data/steam.json
           git commit -m "Update the reports from the moderated sheet"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"

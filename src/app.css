@@ -210,6 +210,35 @@ footer p { margin: 4px 0; }
 footer, footer a { color: var(--ink); }
 :root[data-theme="light"] footer { text-shadow: 0 1px 0 rgba(255, 255, 255, .6); }
 
+/* The report page: the console once, then one glass card per game */
+.intro h1 { margin-bottom: 8px; }
+.notice { margin: 14px 0 0; padding: 10px 14px; border-radius: 12px; font-weight: 600; border: 1px solid; }
+.notice.good { border-color: rgba(53, 180, 74, .6); background: rgba(53, 180, 74, .14); }
+.notice.bad { border-color: rgba(214, 69, 69, .6); background: rgba(214, 69, 69, .12); }
+.console { margin-top: 18px; }
+.row-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px 14px; margin-top: 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px; }
+.field.wide { grid-column: 1 / -1; }
+.field em { font-style: normal; font-weight: 400; font-size: 12.5px; }
+.field .hint { color: var(--muted); }
+.field .error { color: var(--danger); font-weight: 600; margin: 0; min-height: 0; }
+.field.bad input, .field.bad select, .field.bad textarea { border-color: var(--danger); }
+textarea { font: 400 14px Inter, system-ui, sans-serif; color: var(--ink); background: var(--field); border: 1px solid var(--line);
+  border-radius: 10px; padding: 9px 11px; resize: vertical; width: 100%; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .08); }
+textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.game-rows { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.game-row { padding: 16px 18px; }
+.row-head { display: flex; justify-content: space-between; align-items: baseline; }
+.row-head h3 { margin: 0; }
+.rating-means { margin: 10px 0 0; font-size: 13.5px; }
+.steam-check { display: flex; gap: 12px; align-items: center; margin-top: 12px; padding: 8px; border-radius: 12px; background: var(--soft);
+  border: 1px solid var(--line); font-size: 13.5px; flex-wrap: wrap; }
+.steam-check img { width: 138px; aspect-ratio: 460 / 215; object-fit: cover; border-radius: 8px; flex: none; }
+.steam-check p { margin: 0; flex: 1; min-width: 180px; }
+.steam-check .good { color: var(--green); }
+.form-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 16px 0 6px; }
+.fallback { margin: 6px 4px 0; font-size: 13.5px; }
+.actions .link { margin-left: 6px; }
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
