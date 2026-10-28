@@ -145,6 +145,13 @@ games already on the list. Setting it up takes about five minutes:
 10. On GitHub, open the repository's **Settings > Secrets and variables > Actions > Variables > New repository
     variable**. Name `STEAM_LOOKUP_URL`, value the Web app URL. Then **Actions > Publish > Run workflow**.
 
+**Signed in to several Google accounts?** The authorisation popup may answer "Sorry, unable to open the file at
+present", and test links may carry `/macros/u/1/s/...`. Do steps 4 to 8 in a private window signed in to the sheet's
+account only, and use the address without `/u/1` (`https://script.google.com/macros/s/.../exec`).
+
+Done on 2026-10-28: the lookup is deployed from the sheet's account, `STEAM_LOOKUP_URL` is set, and the live page
+suggests any Steam game with its picture.
+
 To change the script later, paste the new code, save, then **Deploy > Manage deployments**, click the pencil, set
 **Version** to **New version** and click **Deploy**. The URL stays the same.
 
