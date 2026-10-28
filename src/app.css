@@ -178,6 +178,20 @@ input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); o
 .launcher { display: inline-flex; align-items: center; gap: 5px; padding: 1px 9px 1px 7px; border-radius: 999px; white-space: nowrap;
   font-size: 12.5px; font-weight: 600; color: var(--ink); background: var(--soft); border: 1px solid var(--line); }
 .launcher svg { width: 14px; height: 14px; fill: currentColor; flex: none; }
+/* Each launcher in its own colours (its logo's, from Simple Icons, or its store's where the logo is black), glossy like
+   the rating badges; text keeps about 4.5:1 under the gloss. "None" stays plain glass. */
+.launcher[class*="launcher-"]:not(.launcher-none) { color: var(--brand-ink, #fff); border-color: rgba(255, 255, 255, .35);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .3), transparent 55%), linear-gradient(180deg, var(--brand), var(--brand-2));
+  text-shadow: var(--brand-shadow, 0 1px 1px rgba(0, 0, 0, .3)); box-shadow: 0 1px 3px rgba(0, 0, 0, .18); }
+.launcher-steam { --brand: #2a475e; --brand-2: #1b2838; }
+.launcher-epic-games-store { --brand: #3a3a3a; --brand-2: #1a1a1a; }
+.launcher-gog-galaxy { --brand: #86328a; --brand-2: #5e1f61; }
+.launcher-ea-app { --brand: #c22c2c; --brand-2: #a8201f; }
+.launcher-ubisoft-connect { --brand: #0753bd; --brand-2: #0647a8; }
+.launcher-battle-net { --brand: #2a62a3; --brand-2: #1d4f8a; }
+.launcher-rockstar-games-launcher { --brand: #fcaf17; --brand-2: #e0950a; --brand-ink: #141414; --brand-shadow: none; }
+.launcher-itch-io { --brand: #b83239; --brand-2: #9c262c; }
+.launcher-other { --brand: #536071; --brand-2: #465263; }
 .rating-perfect { --rating: var(--perfect); }
 .rating-playable { --rating: var(--playable); }
 .rating-runs-with-issues { --rating: var(--issues); }

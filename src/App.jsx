@@ -49,7 +49,7 @@ function Badge({ rating }) {
 function Launcher({ name }) {
   const path = LAUNCHER_ICONS[name];
   return (
-    <span className="launcher">
+    <span className={`launcher launcher-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
       {path && <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={path} /></svg>}
       {name === 'None' ? 'No launcher' : name}
     </span>

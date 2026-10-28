@@ -36,8 +36,9 @@ with that title. The licence is published with the site.
 the 24x24 SVG paths of [Simple Icons](https://simpleicons.org) 16.35.0 (npm `simple-icons`, tarball SHA-256
 `20ebead4f6bc93464812a5e260d19fc4d84772e5eeff69a6fbea263ca2441c5f`), copied unchanged from its `icons/*.svg`. Simple Icons
 is CC0-1.0, and none of these eight icons names another licence in its data. The marks remain the trademarks of their
-owners. The page draws them small and in one colour beside the launcher's name, only to say which launcher a report
-used, as Simple Icons' disclaimer asks; it does not suggest that any of them endorses this project. Brand guidelines
+owners. The page draws them small beside the launcher's name, on a pill in the brand's colour (Simple Icons' hex where
+it is not black: GOG.com, Rockstar Games, itch.io, Battle.net; otherwise the store's own dark or blue, darkened
+where needed so white text stays readable), only to say which launcher a report used, as Simple Icons' disclaimer asks; it does not suggest that any of them endorses this project. Brand guidelines
 named in Simple Icons' data: [Steam](https://partner.steamgames.com/doc/marketing/branding),
 [Epic Games](https://dev.epicgames.com/docs/services/en-US/EpicAccountServices/DesignGuidelines/index.html#epicgamesbrandguidelines),
 [itch.io](https://itch.io/press-kit).
