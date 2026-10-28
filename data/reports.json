@@ -9,10 +9,6 @@
    "name": "Mafia",
    "header": ""
   },
-  "44444": {
-   "name": "",
-   "header": ""
-  },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
    "header": ""
@@ -81,6 +77,10 @@
    "name": "ULTRAKILL",
    "header": ""
   },
+  "1683460": {
+   "name": "",
+   "header": ""
+  },
   "2146170": {
    "name": "Baten Kaitos I & II HD Remaster",
    "header": ""
@@ -96,6 +96,10 @@
   "3010850": {
    "name": "Gears of War: E-Day",
    "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
+  },
+  "3081840": {
+   "name": "Chrono Gear: Warden of Time",
+   "header": "b98eec081f9c4a6c1a8c89ea677a806204230711"
   },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
@@ -180,6 +184,20 @@
    "settings": null,
    "notes": null,
    "nickname": null
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Chrono Gear: Warden of Time",
+   "appid": "3081840",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "I haven’t tested 120fps but with how light the game is, I’m sure it’ll run just fine.",
+   "nickname": "Ebi"
   },
   {
    "date": "2026-10-28",
@@ -506,7 +524,7 @@
   {
    "date": "2026-10-28",
    "game": "Yandere simulator",
-   "appid": "44444",
+   "appid": "1683460",
    "launcher": null,
    "version": "v4.0.0-alpha-4",
    "console": "PS5 Slim",
