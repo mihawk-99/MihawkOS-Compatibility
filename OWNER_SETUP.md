@@ -1,7 +1,11 @@
 # Owner setup
 
-The steps to put the compatibility list online, in order. They take about half an hour. Nothing here has been
-created yet: no form, no sheet, no GitHub repository. Every step below is yours to take.
+The steps to put the compatibility list online, in order. They take about half an hour.
+
+**Done on 2026-10-27**, in your Google account, through the browser pane: steps 1.1 to 1.4 (the form "MihawkOS game
+report", all eleven questions, checks and settings) and step 2 (the sheet "MihawkOS game report (Responses)", with
+the Approved checkbox column and the `Published` tab). **Not done:** publishing the form (1.5 to 1.7), publishing the
+CSV (step 3) and everything on GitHub (steps 4 and 5).
 
 You need a Google account (a personal one is fine) and the `mihawk-99` GitHub account.
 
@@ -31,14 +35,15 @@ You need a Google account (a personal one is fine) and the `mihawk-99` GitHub ac
    Google opens a sheet with a tab named `Form Responses 1`.
 2. Send one test report through the form link, so the header row appears (Timestamp, then Game through Nickname, A
    to L).
-3. Click **M1** and type `Approved`. Select **M2** down to the last row (click M2, then Ctrl+Shift+↓) and choose
-   **Insert > Checkbox**.
-4. Select column **A**, choose **Format > Number > Custom date and time**, delete what is in the box, type
-   `yyyy-mm-dd hh:mm:ss` and choose **Apply**.
+3. Click **M1** and type `Approved`. The responses are a table, which takes the new column in: open the ▾ on its
+   header > **Edit column type** > **Checkbox**.
+4. Check **File > Settings > Locale**. If it is **United States**, skip this step. Otherwise select column **A**,
+   choose **Format > Number > Custom date and time**, delete what is in the box, type `yyyy-mm-dd hh:mm:ss` and
+   choose **Apply**.
 5. Add the published tab: click **+** (bottom left) and rename the new tab (double-click its name) to `Published`.
    - In **A1** paste `={'Form Responses 1'!A1:M1}`
    - In **A2** paste `=FILTER('Form Responses 1'!A2:M, 'Form Responses 1'!M2:M=TRUE)`
-   - Format its column **A** with `yyyy-mm-dd hh:mm:ss`, as in step 4.
+   - If you formatted dates in step 4, format this tab's column **A** the same way.
    - A2 shows `#N/A` until a box is ticked. That is expected.
 6. Tick your test report's box in `Form Responses 1` and check that it appears in `Published`. Then untick it, or
    delete its row.

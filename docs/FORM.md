@@ -49,8 +49,9 @@ and the script finds the columns by those headers. Case does not matter. The que
 Google names the responses tab `Form Responses 1`, with the columns `Timestamp`, then the ten questions in order
 (A to L). The owner adds two things:
 
-1. **The `Approved` column (M).** Type `Approved` in M1, select M2 down to the end of the sheet and choose
-   Insert > Checkbox. A ticked box publishes the row; an empty one keeps it private.
+1. **The `Approved` column (M).** Type `Approved` in M1. Google now keeps form responses in a table, which takes the
+   new column in; open its header's ▾ menu > Edit column type > Checkbox. (In a sheet without a table: select M2
+   down to the end and choose Insert > Checkbox.) A ticked box publishes the row; an empty one keeps it private.
 2. **A tab named `Published`**, which holds only the ticked rows. Only this tab is published to the web, so a row
    nobody has approved never leaves Google.
    - A1: `={'Form Responses 1'!A1:M1}`
@@ -58,9 +59,10 @@ Google names the responses tab `Form Responses 1`, with the columns `Timestamp`,
 
    While nothing is ticked, A2 shows `#N/A`. The script reads that row as not approved and leaves it out.
 
-**Dates.** Select column A on both tabs and choose Format > Number > Custom date and time, then type
-`yyyy-mm-dd hh:mm:ss`. The script reads that format, or the US `m/d/yyyy`. A sheet in another locale would write
-`27/10/2026`, which cannot be told apart from a US date. Only the day is published.
+**Dates.** The script reads `yyyy-mm-dd` or the US `m/d/yyyy`. A sheet whose locale is United States (File >
+Settings > Locale) writes the US form, and needs nothing more; the sheet made on 2026-10-27 is one. In any other
+locale, select column A on both tabs and choose Format > Number > Custom date and time, then type
+`yyyy-mm-dd hh:mm:ss`: `27/10/2026` cannot be told apart from a US date. Only the day is published.
 
 **What the script checks.** It reads the published CSV and keeps a row only if `Approved` is ticked and the
 required fields are valid:
@@ -122,17 +124,23 @@ https://docs.google.com/forms/d/e/<FORM_ID>/viewform?usp=pp_url
   &entry.<FPS_ID>=60
 ```
 
-(one line in practice). Record the seven ids here once the form exists:
+(one line in practice). The ids of the form created on 2026-10-27, read from its pre-fill page:
 
 | Field | Entry id |
 | --- | --- |
-| Game | `entry.…` |
-| Steam AppID | `entry.…` |
-| Launcher | `entry.…` |
-| MihawkOS version | `entry.…` |
-| Console | `entry.…` |
-| Firmware | `entry.…` |
-| FPS | `entry.…` |
+| Game | `entry.360954` |
+| Steam AppID | `entry.1142179574` |
+| Launcher | `entry.346947463` |
+| MihawkOS version | `entry.1455217213` |
+| Console | `entry.675106169` |
+| Firmware | `entry.412913000` |
+| Rating | `entry.1075560426` |
+| FPS | `entry.608722964` |
+| Settings | `entry.657180200` |
+| Notes | `entry.763652494` |
+| Nickname | `entry.1272920297` |
+
+An id stays the same while its question exists; a question deleted and made again gets a new one.
 
 **Rules for the values.** Each value is URL-encoded (`URLSearchParams` does it). The launcher, the version and the console must
 match an option exactly, or Google leaves the question empty. The WebUI should send `Steam` for a game it started through Steam, and `PS5 Pro` or `PS5` as it knows,
@@ -143,7 +151,8 @@ a report is their judgement, not the console's.
 
 ```js
 const REPORT_FORM = 'https://docs.google.com/forms/d/e/<FORM_ID>/viewform';
-const REPORT_FIELDS = { game: 'entry.…', appid: 'entry.…', launcher: 'entry.…', version: 'entry.…', console: 'entry.…', firmware: 'entry.…', fps: 'entry.…' };
+const REPORT_FIELDS = { game: 'entry.360954', appid: 'entry.1142179574', launcher: 'entry.346947463', version: 'entry.1455217213',
+  console: 'entry.675106169', firmware: 'entry.412913000', fps: 'entry.608722964' };
 
 function reportLink(values) { // { game, appid, launcher, version, console, firmware, fps }
   const query = new URLSearchParams({ usp: 'pp_url' });
