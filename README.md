@@ -4,7 +4,7 @@
 
 **Which Windows games run on MihawkOS, from the players who tried them.**
 
-[The list](https://mihawk-99.github.io/MihawkOS-Compatibility/) · [Report a game](#report-a-game) · [Ratings](#what-the-ratings-mean) · [Moderation](#how-reports-are-moderated) · [MihawkOS](https://github.com/mihawk-99/PS5_MihawkOS)
+[The list](https://mihawk-99.github.io/MihawkOS-Compatibility/) · [Report a game](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) · [Ratings](#what-the-ratings-mean) · [Moderation](#how-reports-are-moderated) · [MihawkOS](https://github.com/mihawk-99/PS5_MihawkOS)
 
 </div>
 
@@ -45,7 +45,7 @@ The screenshots show made-up examples.
 ## Report a game
 
 1. Play a game you own on MihawkOS.
-2. Press **Report a game** on [the list](https://mihawk-99.github.io/MihawkOS-Compatibility/) and fill in the short form.
+2. Open [the report form](https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) (also **Report a game** on [the list](https://mihawk-99.github.io/MihawkOS-Compatibility/)) and fill it in.
    It needs no account and no e-mail.
 3. Your report is read, then it appears on the list, usually within a day.
 

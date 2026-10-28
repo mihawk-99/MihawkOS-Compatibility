@@ -2,10 +2,12 @@
 
 The steps to put the compatibility list online, in order. They take about half an hour.
 
-**Done on 2026-10-27**, in your Google account, through the browser pane: steps 1.1 to 1.4 (the form "MihawkOS game
-report", all eleven questions, checks and settings) and step 2 (the sheet "MihawkOS game report (Responses)", with
-the Approved checkbox column and the `Published` tab). **Not done:** publishing the form (1.5 to 1.7), publishing the
-CSV (step 3) and everything on GitHub (steps 4 and 5).
+**Done on 2026-10-27**, in your Google account, through the browser pane: step 1 (the form "MihawkOS game report",
+all eleven questions, checks and settings, published to anyone with the link:
+https://docs.google.com/forms/d/e/1FAIpQLSeju5lQnO8gcxxU9KVjUjIqPN70zaKz_oYwSkSxlaODLEw8Ng/viewform) and step 2 (the sheet "MihawkOS game report (Responses)", with the Approved checkbox column and the `Published`
+tab). **Not done:** step 3, publishing the CSV (Google asks a confirm popup that the desktop app's browser pane
+cannot show, so do it in your own browser), and everything on GitHub (steps 4 and 5). The `FORM_URL` of step 4.3 is
+the form link above.
 
 You need a Google account (a personal one is fine) and the `mihawk-99` GitHub account.
 
