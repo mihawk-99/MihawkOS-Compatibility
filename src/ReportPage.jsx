@@ -1,17 +1,36 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// The report page: the console's details once, then one row per game. Each row is posted to the Google Form as its own
-// response (src/submit.js), so the sheet, its Approved box and the list's build stay as they are.
+// The report page: the console's details once, then one card per game. Each game is posted to the Google Form as its
+// own response (src/submit.js), so the sheet, its Approved box and the list's build stay as they are.
 import { useMemo, useRef, useState } from 'react';
 import data from '../data/reports.json';
-import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS } from './fields.js';
+import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, FIRMWARES } from './fields.js';
 import { appidFrom, formBody, prefill, problems, responseUrl } from './submit.js';
-import { Bar, Footer, FORM_URL, steamHeader, useNight } from './shell.jsx';
+import { Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
+import documentDay from './assets/orbs/document-day.svg';
+import documentNight from './assets/orbs/document-night.svg';
+import consoleDay from './assets/orbs/this-pc-day.svg';
+import consoleNight from './assets/orbs/this-pc-night.svg';
+import gamesDay from './assets/orbs/games-day.svg';
+import gamesNight from './assets/orbs/games-night.svg';
 
 const POST_URL = responseUrl(FORM_URL);
 const SAVED = 'report-console'; // this device's console, firmware, version and nickname
 const key = (name) => String(name ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 let nextId = 1;
 const emptyRow = (fill = {}) => ({ id: nextId++, game: '', appid: '', launcher: '', rating: '', fps: '', settings: '', notes: '', ...fill });
+
+// Small line icons for the buttons, drawn here (GPL-3.0-or-later like the page).
+const ICONS = {
+  plus: 'M12 5v14M5 12h14',
+  send: 'M4 12 20 4l-5 16-3.5-6.5L4 12Zm7.5 1.5L20 4',
+  trash: 'M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12M10 11v5M14 11v5',
+  check: 'M5 12.5 10 17 19 7',
+  list: 'M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01',
+};
+const Icon = ({ name }) => (
+  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={ICONS[name]} /></svg>
+);
 
 function loadShared() {
   let saved = {};
@@ -41,6 +60,24 @@ function Field({ label, error, hint, children, wide }) {
   );
 }
 
+// A row of glossy choices that behave as radio buttons (arrow keys move between them).
+function Chips({ legend, name, value, onChange, options, error, hint, render, wide }) {
+  return (
+    <fieldset className={`field chips${wide ? ' wide' : ''}${error ? ' bad' : ''}`}>
+      <legend>{legend}</legend>
+      <div className="chip-row">
+        {options.map((o) => (
+          <label key={o.value} className={`chip${value === o.value ? ' on' : ''}`}>
+            <input type="radio" name={name} value={o.value} checked={value === o.value} onChange={() => onChange(o.value)} />
+            {render ? render(o) : o.label}
+          </label>
+        ))}
+      </div>
+      {error ? <em className="error">{error}</em> : hint && <em className="hint">{hint}</em>}
+    </fieldset>
+  );
+}
+
 // "Is it the right game?": the AppID's Steam picture and name, and a link to check on Steam.
 function SteamCheck({ appid, game, known }) {
   const [state, setState] = useState({ id: null, ok: true });
@@ -49,12 +86,12 @@ function SteamCheck({ appid, game, known }) {
   const name = known.byId.get(appid);
   const matches = name && key(name) === key(game);
   return (
-    <div className="steam-check" aria-live="polite">
+    <div className={`steam-check${matches ? ' matches' : ''}`} aria-live="polite">
       {!failed && <img src={steamHeader(appid, data.steam)} alt="" referrerPolicy="no-referrer"
         onLoad={() => setState({ id: appid, ok: true })} onError={() => setState({ id: appid, ok: false })} />}
       <p>
         {name
-          ? (matches ? <strong className="good">✓ Steam AppID {appid} is {name}.</strong>
+          ? (matches ? <strong className="good"><Icon name="check" /> This is {name} on Steam.</strong>
             : <><strong>Steam AppID {appid} is {name}.</strong> Is that your game?</>)
           : failed ? <>No picture for {appid}. Check that it is your game:</> : <>Is this your game?</>}
         {' '}<a href={`https://store.steampowered.com/app/${appid}/`} target="_blank" rel="noopener noreferrer">Open its Steam page</a>
@@ -63,53 +100,53 @@ function SteamCheck({ appid, game, known }) {
   );
 }
 
-function GameRow({ row, index, count, errors, known, onChange, onRemove }) {
+function GameCard({ row, index, count, errors, known, onChange, onRemove }) {
   const set = (field) => (e) => onChange({ ...row, [field]: e.target.value });
   const setGame = (e) => {
     const game = e.target.value;
-    // A game the list knows fills its AppID in, unless one was typed.
-    const id = known.byName.get(key(game));
+    const id = known.byName.get(key(game)); // a game the list knows fills its AppID in, unless one was typed
     onChange({ ...row, game, appid: row.appid || id || '' });
   };
   return (
     <li className="game-row glass">
       <div className="row-head">
-        <h3>Game {index + 1}</h3>
-        {count > 1 && <button type="button" className="link" onClick={onRemove}>Remove</button>}
+        <h3><span className="row-number" aria-hidden="true">{index + 1}</span>{row.game.trim() || `Game ${index + 1}`}</h3>
+        {count > 1 && <button type="button" className="button small quiet" onClick={onRemove} aria-label={`Remove game ${index + 1}`}><Icon name="trash" /> Remove</button>}
       </div>
       <div className="row-fields">
-        <Field label="Game *" error={errors.game} wide>
-          <input value={row.game} onChange={setGame} list="known-games" maxLength={100} autoComplete="off" placeholder="As on its store page" />
+        <Field label="Game *" error={errors.game}>
+          <input value={row.game} onChange={setGame} list="known-games" maxLength={100} autoComplete="off" placeholder="Start typing its name" />
         </Field>
-        <Field label="Steam AppID" error={errors.appid} hint="Optional. The number in its Steam link, or paste the link.">
+        <Field label="Steam AppID" error={errors.appid} hint="Optional. Its number, or paste its Steam link.">
           <input value={row.appid} onChange={(e) => onChange({ ...row, appid: appidFrom(e.target.value) })} inputMode="numeric" autoComplete="off" placeholder="e.g. 620" />
         </Field>
-        <Field label="Launcher" error={errors.launcher} hint="Optional. What you started it from.">
-          <select value={row.launcher} onChange={set('launcher')}>
-            <option value="">Not saying</option>
-            {LAUNCHERS.map((l) => <option key={l} value={l}>{l === 'None' ? "None (the game's own program)" : l}</option>)}
-          </select>
-        </Field>
-        <Field label="How it ran *" error={errors.rating}>
-          <select value={row.rating} onChange={set('rating')}>
-            <option value="">Choose…</option>
-            {RATINGS.map((r) => <option key={r.name} value={r.name}>{r.name}</option>)}
-          </select>
-        </Field>
+      </div>
+      <SteamCheck appid={row.appid} game={row.game} known={known} />
+      <Chips legend="How did it run? *" name={`rating-${row.id}`} value={row.rating} onChange={(rating) => onChange({ ...row, rating })}
+        error={errors.rating} wide hint={RATINGS.find((r) => r.name === row.rating)?.means ?? 'Choose the one that fits best.'}
+        options={RATINGS.map((r) => ({ value: r.name }))}
+        render={(o) => <span className={`badge rating-${slug(o.value)}`}>{o.value}</span>} />
+      <Chips legend="Started from" name={`launcher-${row.id}`} value={row.launcher} onChange={(launcher) => onChange({ ...row, launcher })}
+        error={errors.launcher} wide hint="Optional. None: you started the game's own program."
+        options={[{ value: '' }, ...LAUNCHERS.map((l) => ({ value: l }))]}
+        render={(o) => (o.value ? <Launcher name={o.value} /> : <span className="launcher">Not saying</span>)} />
+      <div className="row-fields">
         <Field label="FPS" error={errors.fps} hint="Optional, about.">
           <input value={row.fps} onChange={set('fps')} inputMode="numeric" maxLength={3} placeholder="e.g. 60" />
         </Field>
-        <Field label="Settings" error={errors.settings} hint="Optional: 120 Hz, Game Mode, controller…" wide>
+        <Field label="Settings" error={errors.settings} hint="Optional: 120 Hz, Game Mode, controller…">
           <input value={row.settings} onChange={set('settings')} maxLength={300} />
         </Field>
         <Field label="Notes" error={errors.notes} hint="Optional: what worked and what did not." wide>
-          <textarea value={row.notes} onChange={set('notes')} maxLength={1000} rows={3} />
+          <textarea value={row.notes} onChange={set('notes')} maxLength={1000} rows={2} />
         </Field>
       </div>
-      {row.rating && <p className="rating-means muted">{RATINGS.find((r) => r.name === row.rating)?.means}</p>}
-      <SteamCheck appid={row.appid} game={row.game} known={known} />
     </li>
   );
+}
+
+function Orb({ night, day, dark }) {
+  return <img className="orb" src={night ? dark : day} alt="" width="44" height="44" />;
 }
 
 export default function ReportPage() {
@@ -121,6 +158,8 @@ export default function ReportPage() {
     for (const [k, v] of Object.entries(start.shared)) if (v) s[k] = v;
     return s;
   });
+  // The firmware is a list; "Not in the list?" turns it into a field for a newer one.
+  const [ownFirmware, setOwnFirmware] = useState(() => Boolean(shared.firmware) && !FIRMWARES.includes(shared.firmware));
   const [rows, setRows] = useState(() => {
     const row = Object.fromEntries(Object.entries(start.row).filter(([, v]) => v));
     if (row.game && !row.appid && known.byName.has(key(row.game))) row.appid = known.byName.get(key(row.game));
@@ -132,13 +171,13 @@ export default function ReportPage() {
 
   const errorsOf = (row) => (showErrors ? problems(shared, row) : {});
   const sharedErrors = showErrors ? problems(shared, { game: 'x', rating: RATINGS[0].name }) : {};
-  const setS = (field) => (e) => setShared({ ...shared, [field]: e.target.value });
+  const setS = (field) => (value) => setShared({ ...shared, [field]: value });
+  const pending = rows.filter((r) => Object.keys(problems(shared, r)).length).length;
 
   async function send(e) {
     e.preventDefault();
     setShowErrors(true);
-    const bad = rows.some((r) => Object.keys(problems(shared, r)).length);
-    if (bad) {
+    if (pending) {
       setStatus(null);
       setTimeout(() => document.querySelector('.field.bad input, .field.bad select, .field.bad textarea')?.focus(), 0);
       return;
@@ -168,17 +207,27 @@ export default function ReportPage() {
     <>
       <a className="skip" href="#report-form">Skip to the form</a>
       <Bar root="../" night={night} onTheme={changeTheme} report={false}>
-        <a href="../">All games</a>
+        <a href="../"><Icon name="list" /> All games</a>
         <a href="../#ratings">Ratings</a>
       </Bar>
       <main id="top">
         <section className="glass card intro" ref={top}>
-          <h1>Report games</h1>
-          <p className="lead">Tell other players how your games ran on MihawkOS. No account, no e-mail. Every report is read before it
-            appears on the list, usually within a day. Write only about the games: no links, no personal details.</p>
+          <div className="titled">
+            <Orb night={night} day={documentDay} dark={documentNight} />
+            <div>
+              <h1>Report games</h1>
+              <p className="lead">Tell other players how your games ran on MihawkOS: as many as you like, in one go. No account, no
+                e-mail. Every report is read before it appears on the list, usually within a day.</p>
+            </div>
+          </div>
+          <ol className="how-steps" aria-label="How it works">
+            <li><span>1</span>Your console, once</li>
+            <li><span>2</span>One card per game</li>
+            <li><span>3</span>Send them all</li>
+          </ol>
           {status?.kind === 'done' && (
-            <p className="notice good" role="status">Thank you! {status.sent} {status.sent === 1 ? 'report' : 'reports'} sent. They will
-              appear on the list once read. Your console details are remembered on this device for next time.</p>
+            <p className="notice good" role="status"><Icon name="check" /> Thank you! {status.sent} {status.sent === 1 ? 'report' : 'reports'} sent.
+              They will appear on the list once read. Your console details are remembered on this device for next time.</p>
           )}
           {status?.kind === 'failed' && (
             <p className="notice bad" role="alert">{status.sent} of {status.total} sent. The rest could not leave this device (no internet?).
@@ -190,45 +239,59 @@ export default function ReportPage() {
         <form id="report-form" onSubmit={send} noValidate>
           <datalist id="known-games">{known.names.map((n) => <option key={n} value={n} />)}</datalist>
           <section className="glass card console" aria-labelledby="console-title">
-            <h2 id="console-title">Your console</h2>
-            <p className="muted">Filled in once for all the games below, and remembered on this device.</p>
+            <div className="titled">
+              <Orb night={night} day={consoleDay} dark={consoleNight} />
+              <div>
+                <h2 id="console-title">Your console</h2>
+                <p className="muted">Filled in once for all your games, and remembered on this device.</p>
+              </div>
+            </div>
+            <Chips legend="Console *" name="console" value={shared.console} onChange={setS('console')} error={sharedErrors.console} wide
+              hint="Digital Edition: any PS5 without a disc drive." options={CONSOLES.map((c) => ({ value: c, label: c }))} />
             <div className="row-fields">
-              <Field label="Console *" error={sharedErrors.console} hint="Digital Edition: any PS5 without a disc drive.">
-                <select value={shared.console} onChange={setS('console')}>
-                  <option value="">Choose…</option>
-                  {CONSOLES.map((c) => <option key={c}>{c}</option>)}
-                </select>
-              </Field>
-              <Field label="Firmware *" error={sharedErrors.firmware} hint="Settings > System > System Software > Console Information.">
-                <input value={shared.firmware} onChange={setS('firmware')} inputMode="decimal" maxLength={5} placeholder="e.g. 10.01" />
-              </Field>
+              {ownFirmware ? (
+                <Field label="Firmware *" error={sharedErrors.firmware}
+                  hint={<>Like 13.80. <button type="button" className="link" onClick={() => { setOwnFirmware(false); setS('firmware')(''); }}>Choose from the list</button></>}>
+                  <input value={shared.firmware} onChange={(e) => setS('firmware')(e.target.value)} inputMode="decimal" maxLength={5} placeholder="e.g. 13.80" autoFocus />
+                </Field>
+              ) : (
+                <Field label="Firmware *" error={sharedErrors.firmware} hint="Settings > System > System Software > Console Information.">
+                  <select value={shared.firmware} onChange={(e) => (e.target.value === 'other' ? (setOwnFirmware(true), setS('firmware')('')) : setS('firmware')(e.target.value))}>
+                    <option value="">Choose…</option>
+                    {FIRMWARES.map((f) => <option key={f}>{f}</option>)}
+                    <option value="other">Not in the list?</option>
+                  </select>
+                </Field>
+              )}
               <Field label="MihawkOS version *" error={sharedErrors.version} hint="On its wallpaper and the WebUI's Help page.">
-                <select value={shared.version} onChange={setS('version')}>
+                <select value={shared.version} onChange={(e) => setS('version')(e.target.value)}>
                   {VERSIONS.map((v) => <option key={v}>{v}</option>)}
                 </select>
               </Field>
               <Field label="Nickname" error={sharedErrors.nickname} hint="Optional, shown with your reports. Not your e-mail.">
-                <input value={shared.nickname} onChange={setS('nickname')} maxLength={32} autoComplete="nickname" />
+                <input value={shared.nickname} onChange={(e) => setS('nickname')(e.target.value)} maxLength={32} autoComplete="nickname" />
               </Field>
             </div>
           </section>
 
-          <h2 className="section-title">Your games</h2>
+          <div className="titled section-title">
+            <Orb night={night} day={gamesDay} dark={gamesNight} />
+            <h2>Your games <span className="count">{rows.length}</span></h2>
+          </div>
           <ul className="game-rows">
             {rows.map((row, i) => (
-              <GameRow key={row.id} row={row} index={i} count={rows.length} errors={errorsOf(row)} known={known}
+              <GameCard key={row.id} row={row} index={i} count={rows.length} errors={errorsOf(row)} known={known}
                 onChange={(next) => setRows(rows.map((r) => (r.id === row.id ? next : r)))}
                 onRemove={() => setRows(rows.filter((r) => r.id !== row.id))} />
             ))}
           </ul>
-          <div className="actions form-actions">
-            <button type="button" className="button" onClick={() => setRows([...rows, emptyRow()])}>+ Add another game</button>
-            <button type="submit" className="button primary" disabled={!POST_URL || status?.kind === 'sending'}>
+          <div className="form-actions glass">
+            <button type="button" className="button" onClick={() => setRows([...rows, emptyRow()])}><Icon name="plus" /> Add another game</button>
+            <button type="submit" className="button primary big" disabled={!POST_URL || status?.kind === 'sending'}>
+              <Icon name="send" />
               {status?.kind === 'sending' ? `Sending ${status.sent + 1} of ${status.total}…` : `Send ${rows.length} ${rows.length === 1 ? 'report' : 'reports'}`}
             </button>
-            {showErrors && rows.some((r) => Object.keys(problems(shared, r)).length) && (
-              <span className="error" role="alert">Some fields need a look (in red above).</span>
-            )}
+            {showErrors && pending > 0 && <span className="error" role="alert">Some fields need a look (in red above).</span>}
           </div>
           {FORM_URL && <p className="muted fallback">Prefer Google's own page? <a href={FORM_URL} target="_blank" rel="noopener noreferrer">Open the Google Form</a> (one game at a time).</p>}
         </form>

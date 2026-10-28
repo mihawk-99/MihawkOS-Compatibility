@@ -116,6 +116,8 @@ the field ids of `FORM_ENTRIES` in `src/fields.js`, one response per game, so th
 build are unchanged. Google answers another site's page without telling it the result (`no-cors`), so the page
 checks every field the way the form does (`problems()`, tested in `scripts/report-form.test.mjs`) before sending.
 
+- **Firmware** is a list: every firmware the homebrew SDK has a kernel table for (`FIRMWARES` in `src/fields.js`,
+  from PS5_PayloadSDK `crt/kernel.c`), with **Not in the list?** turning it into a field for a newer one.
 - **Remembered:** console, firmware, version and nickname, in the visitor's browser (`localStorage`), after a send.
 - **Pre-filled by a link:** `…/report/?game=&appid=&launcher=&rating=&fps=&settings=&model=&fw=&version=` (also
   `console=`, `firmware=`). Unknown choices are ignored. A game the list knows gets its AppID filled in.

@@ -124,7 +124,8 @@ After that it runs every 15 minutes (GitHub may start a scheduled run a few minu
 ## When MihawkOS has a new release
 
 Add the version at the top of the form's **MihawkOS version** dropdown, and to `VERSIONS` in `src/fields.js` (the
-report page offers only those). Push the change; the site rebuilds itself.
+report page offers only those). Push the change; the site rebuilds itself. When the homebrew SDK supports a new firmware, add it at the top of
+`FIRMWARES` in the same file; until then, players choose **Not in the list?** and type it.
 
 ## If something goes wrong
 

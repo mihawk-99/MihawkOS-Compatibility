@@ -237,8 +237,45 @@ textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px;
 .steam-check p { margin: 0; flex: 1; min-width: 180px; }
 .steam-check .good { color: var(--green); }
 .form-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 16px 0 6px; }
+@media (prefers-reduced-motion: reduce) { .chip, .chip:hover { transition: none; transform: none; } }
 .fallback { margin: 6px 4px 0; font-size: 13.5px; }
 .actions .link { margin-left: 6px; }
+/* Report page, friendlier: orbs on titles, a three-step strip, glossy choice chips, line icons */
+.icon { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -.2em; flex: none; }
+.button { display: inline-flex; align-items: center; gap: 7px; }
+.button.big { padding: 11px 22px; font-size: 15.5px; }
+.button.quiet { background: var(--soft); color: var(--ink); border-color: var(--line); box-shadow: none; }
+.titled { display: flex; align-items: center; gap: 14px; }
+.titled h1, .titled h2 { margin: 0 0 2px; }
+.orb { width: 44px; height: 44px; flex: none; filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .25)); }
+.section-title.titled { margin: 30px 4px 12px; }
+.count { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 8px; margin-left: 6px; border-radius: 999px;
+  font-size: 14px; vertical-align: 3px; color: #fff; background: linear-gradient(180deg, rgba(255, 255, 255, .35), transparent 55%), var(--button-bottom); }
+.how-steps { list-style: none; padding: 0; margin: 16px 0 0; display: flex; gap: 8px; flex-wrap: wrap; }
+.how-steps li { display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: var(--soft);
+  border: 1px solid var(--glass-edge); font-weight: 600; font-size: 14px; }
+.how-steps span, .row-number { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; font-size: 13px; color: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .45), transparent 55%), linear-gradient(180deg, var(--button-top), var(--button-bottom)); }
+.row-number { margin-right: 10px; vertical-align: 1px; }
+.row-head h3 { display: flex; align-items: center; overflow-wrap: anywhere; }
+.chips { border: 0; padding: 0; margin: 14px 0 0; min-width: 0; }
+.chips legend { padding: 0; margin-bottom: 7px; font-weight: 600; font-size: 13px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  font-weight: 600; font-size: 14px; background: var(--soft); border: 1px solid var(--line); transition: transform .12s ease, box-shadow .12s ease; }
+.chip:hover { transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0, 0, 0, .15); }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip:has(input:focus-visible) { outline: 3px solid var(--primary); outline-offset: 2px; }
+.chip.on { border-color: var(--primary); background: rgba(74, 163, 255, .18); box-shadow: 0 0 0 2px var(--primary) inset; }
+.chip .badge, .chip .launcher { margin: 0; pointer-events: none; }
+.chip:has(.badge), .chip:has(.launcher) { padding: 4px; }
+.chip.on:has(.badge), .chip.on:has(.launcher) { box-shadow: 0 0 0 2px var(--primary); background: transparent; }
+.chips .hint, .chips .error { display: block; margin-top: 6px; }
+.steam-check.matches { border-color: rgba(53, 180, 74, .55); background: rgba(53, 180, 74, .1); }
+.form-actions.glass { position: sticky; bottom: 12px; z-index: 4; padding: 12px 14px; margin-top: 18px; }
+.notice .icon { margin-right: 4px; }
+nav a .icon { margin-right: 4px; }
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -253,6 +290,9 @@ textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px;
   nav a { padding: 6px 10px; }
   .report-button { padding: 7px 12px; font-size: 13px; }
   .bar:has(.report-button) nav a[href="#report"], .bar:has(.report-button) nav a[href="#ratings"] { display: none; }
+  .form-actions.glass { flex-wrap: nowrap; gap: 8px; padding: 8px; bottom: 8px; }
+  .form-actions .button { flex: 1; justify-content: center; padding: 9px 10px; font-size: 13.5px; white-space: nowrap; }
+  .form-actions .error { display: none; }
   .theme-toggle { width: 64px; height: 36px; }
   .theme-toggle .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .theme-toggle .knob { top: 2px; width: 30px; height: 30px; left: calc(100% - 33px); }

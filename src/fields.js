@@ -54,3 +54,12 @@ export const FORM_ENTRIES = {
   notes: 'entry.763652494',
   nickname: 'entry.1272920297',
 };
+
+// Every PS5 firmware the homebrew SDK MihawkOS builds on has a kernel table for, newest first: PS5_PayloadSDK
+// crt/kernel.c at 3e31e0b (2026-10-24), its "case 0xMMmm0000" lines. The report page offers these, and "Not in the
+// list?" for a newer one; the check stays NN.NN either way.
+export const FIRMWARES = ['13.60', '13.42', '13.40', '13.20', '13.00', '12.70', '12.60', '12.40', '12.20', '12.02', '12.00',
+  '11.60', '11.40', '11.20', '11.00', '10.60', '10.40', '10.20', '10.01', '10.00', '9.60', '9.40', '9.20', '9.05', '9.00',
+  '8.60', '8.40', '8.20', '8.00', '7.61', '7.60', '7.40', '7.20', '7.01', '7.00', '6.50', '6.02', '6.00', '5.50', '5.10',
+  '5.02', '5.00', '4.51', '4.50', '4.03', '4.02', '4.00', '3.21', '3.20', '3.10', '3.00', '2.70', '2.50', '2.30', '2.26',
+  '2.25', '2.20', '2.00', '1.14', '1.13', '1.12', '1.11', '1.10', '1.05', '1.02', '1.01', '1.00'];

@@ -2,6 +2,7 @@
 // What both pages share: the theme (night by default, the visitor's choice remembered), the glass header with the
 // Day/Night slider, and the footer.
 import { useState } from 'react';
+import { LAUNCHER_ICONS } from './launchers.js';
 import './app.css';
 
 try {
@@ -56,6 +57,17 @@ export function Footer({ root }) {
       <p>{SOURCE_URL && <><a href={SOURCE_URL}>Source</a> (GPL-3.0-or-later) · </>}
         <a href={`${root}licenses/LGPL-2.1.txt`}>Art and mark: LGPL-2.1-or-later</a> · <a href={`${root}licenses/OFL-1.1-Inter.txt`}>Inter: OFL-1.1</a> · <a href={`${root}licenses/react-MIT.txt`}>React: MIT</a></p>
     </footer>
+  );
+}
+
+// A launcher's badge: its logo on its brand colour (app.css), or plain glass for None.
+export function Launcher({ name }) {
+  const path = LAUNCHER_ICONS[name];
+  return (
+    <span className={`launcher launcher-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+      {path && <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={path} /></svg>}
+      {name === 'None' ? 'No launcher' : name}
+    </span>
   );
 }
 

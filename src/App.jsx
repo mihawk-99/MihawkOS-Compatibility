@@ -4,8 +4,7 @@
 import { useMemo, useState } from 'react';
 import data from '../data/reports.json';
 import { RATINGS, CONSOLES } from './fields.js';
-import { LAUNCHER_ICONS } from './launchers.js';
-import { Bar, Footer, FORM_URL, steamHeader, useNight } from './shell.jsx';
+import { Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
 import bannerDay from './assets/banner-day.svg';
 import bannerNight from './assets/banner-night.svg';
 
@@ -42,16 +41,6 @@ const SORTS = {
 
 function Badge({ rating }) {
   return <span className={`badge rating-${slug(rating)}`}>{rating}</span>;
-}
-
-function Launcher({ name }) {
-  const path = LAUNCHER_ICONS[name];
-  return (
-    <span className={`launcher launcher-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-      {path && <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={path} /></svg>}
-      {name === 'None' ? 'No launcher' : name}
-    </span>
-  );
 }
 
 function Cover({ game }) {
