@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// node --test scripts/   (npm test)
+// npm test  (node --test "scripts/*.test.mjs": a pattern, as Node 22 reads a bare folder as a file)
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
