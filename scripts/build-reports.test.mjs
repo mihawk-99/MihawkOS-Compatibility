@@ -23,7 +23,14 @@ test('the sample sheet keeps only approved, valid rows, newest first', () => {
   assert.equal(multi.nickname, null);
   assert.equal(multi.fps, 60);
   assert.equal(multi.launcher, 'None');
-  assert.deepEqual(reports.map((r) => r.launcher), ['Epic Games Store', 'Steam', null, 'None', 'Steam']);
+  assert.deepEqual(reports.map((r) => r.launcher), ['Steam', 'Epic Games Store', null, 'None', 'Steam']); // same day: the lower row first
+});
+
+test('within one day, a lower sheet row is a later report and comes first', () => {
+  const row = (time, game) => `10/28/2026 ${time},${game},,,v4.0.0-alpha-4,PS5 Pro,10.01,Perfect,,,,,TRUE`;
+  const { reports } = buildReports([HEADER, row('0:23:45', 'Zeta'), row('10:31:09', 'Alpha'), row('9:50:16', 'Mid'),
+    '10/27/2026 23:59:00,Older,,,v4.0.0-alpha-4,PS5,10.01,Perfect,,,,,TRUE'].join('\n'));
+  assert.deepEqual(reports.map((r) => r.game), ['Mid', 'Alpha', 'Zeta', 'Older']);
 });
 
 test('hostile rows: no markup, links, e-mail or invisible characters survive; fields are capped', () => {

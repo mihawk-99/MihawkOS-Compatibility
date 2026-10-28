@@ -10,6 +10,7 @@ import bannerDay from './assets/banner-day.svg';
 import bannerNight from './assets/banner-night.svg';
 
 const RANK = Object.fromEntries(RATINGS.map((r, i) => [r.name, i]));
+const ORDER = new Map(data.reports.map((r, i) => [r, i])); // 0 = the newest report
 const byVersion = (a, b) => b.localeCompare(a, 'en', { numeric: true });
 const day = (date, lang) => new Date(`${date}T00:00:00Z`).toLocaleDateString(lang, { timeZone: 'UTC', dateStyle: 'medium' });
 
@@ -23,8 +24,7 @@ function groupGames(reports) {
     games.get(key).reports.push(r);
   }
   return [...games.values()].map((g) => {
-    g.reports.sort((a, b) => b.date.localeCompare(a.date));
-    g.latest = g.reports[0];
+    g.latest = g.reports[0]; // reports.json is newest first, the same day included (scripts/build-reports.mjs)
     g.best = g.reports.reduce((best, r) => (RANK[r.rating] < RANK[best.rating] ? r : best));
     g.name = g.latest.game;
     g.appid = g.reports.find((r) => r.appid)?.appid ?? null;
@@ -33,7 +33,7 @@ function groupGames(reports) {
 }
 
 const SORTS = {
-  latest: { label: 'Latest report', compare: (a, b) => b.latest.date.localeCompare(a.latest.date) },
+  latest: { label: 'Latest report', compare: (a, b) => ORDER.get(a.latest) - ORDER.get(b.latest) },
   best: { label: 'Best rating', compare: (a, b) => RANK[a.best.rating] - RANK[b.best.rating] },
   name: { label: 'Name', compare: (a, b) => a.name.localeCompare(b.name) },
   count: { label: 'Most reports', compare: (a, b) => b.reports.length - a.reports.length },

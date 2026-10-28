@@ -143,15 +143,16 @@ export function buildReports(csvText) {
   }
   const reports = [];
   const dropped = {};
-  for (const cells of rows) {
-    if (cells.every((c) => c.trim() === '')) continue;
+  const row = new Map();
+  rows.forEach((cells, i) => {
+    if (cells.every((c) => c.trim() === '')) return;
     const raw = Object.fromEntries(Object.entries(index).map(([field, i]) => [field, cells[i] ?? '']));
     const { report, drop } = normalizeRow(raw);
-    if (report) reports.push(report);
-    else dropped[drop] = (dropped[drop] ?? 0) + 1;
-  }
-  // Newest first, then by name, so the same sheet always gives the same file and an unchanged day commits nothing.
-  reports.sort((a, b) => b.date.localeCompare(a.date) || a.game.localeCompare(b.game) || JSON.stringify(a).localeCompare(JSON.stringify(b)));
+    if (report) { reports.push(report); row.set(report, i); } else dropped[drop] = (dropped[drop] ?? 0) + 1;
+  });
+  // Newest first. Only the day is published, so within a day the sheet's own order decides: the form adds each answer
+  // below the last, so a lower row is a later report. The file's order is the page's "latest" order.
+  reports.sort((a, b) => b.date.localeCompare(a.date) || row.get(b) - row.get(a));
   return { reports, dropped, rows: rows.length };
 }
 
