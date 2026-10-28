@@ -1,6 +1,10 @@
 {
  "examples": false,
  "steam": {
+  "620": {
+   "name": "Portal 2",
+   "header": "faffc0f560786e2f05104a8d2fac837c6969bf13"
+  },
   "12210": {
    "name": "Grand Theft Auto IV: The Complete Edition",
    "header": ""
@@ -33,8 +37,16 @@
    "name": "Castlevania: Lords of Shadow – Ultimate Edition",
    "header": ""
   },
+  "235460": {
+   "name": "METAL GEAR RISING: REVENGEANCE",
+   "header": ""
+  },
   "243470": {
    "name": "Watch_Dogs™",
+   "header": ""
+  },
+  "265550": {
+   "name": "Dead Rising 3 Apocalypse Edition",
    "header": ""
   },
   "291550": {
@@ -47,6 +59,14 @@
   },
   "413150": {
    "name": "Stardew Valley",
+   "header": ""
+  },
+  "490110": {
+   "name": "The Precinct",
+   "header": ""
+  },
+  "498240": {
+   "name": "Batman - The Telltale Series",
    "header": ""
   },
   "504230": {
@@ -81,6 +101,14 @@
    "name": "ULTRAKILL",
    "header": ""
   },
+  "1262560": {
+   "name": "Need for Speed™ Most Wanted",
+   "header": ""
+  },
+  "1663850": {
+   "name": "REPLACED",
+   "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
+  },
   "1683460": {
    "name": "",
    "header": ""
@@ -93,13 +121,25 @@
    "name": "HoloCure - Save the Fans!",
    "header": ""
   },
+  "2492670": {
+   "name": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
+   "header": "458033bb7aad4e6b8a61af0f7798d23db2683864"
+  },
   "2499860": {
    "name": "DRAGON QUEST VII Reimagined",
    "header": "ea0c655407c078a8994b7e91256c79d90169133a"
   },
+  "2521380": {
+   "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
+   "header": ""
+  },
   "2833580": {
    "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
    "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
+  },
+  "2950790": {
+   "name": "IRON NEST: Heavy Turret Simulator",
+   "header": "e6c9e990560078611472e5dab98e79a405ed33f4"
   },
   "3010850": {
    "name": "Gears of War: E-Day",
@@ -109,6 +149,10 @@
    "name": "Chrono Gear: Warden of Time",
    "header": "b98eec081f9c4a6c1a8c89ea677a806204230711"
   },
+  "3090810": {
+   "name": "Truckful",
+   "header": "84527335c4107d4ad2e459e97f0af3b0343ffbc2"
+  },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
    "header": ""
@@ -117,12 +161,254 @@
    "name": "Dead as Disco",
    "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
   },
+  "3747730": {
+   "name": "Legacy of Kain: Defiance Remastered",
+   "header": "f0b68c0f6aa4adba527cf5635cf08d58464f9dcc"
+  },
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
    "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
   }
  },
  "reports": [
+  {
+   "date": "2026-10-28",
+   "game": "Portal 2",
+   "appid": "620",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Ultra",
+   "notes": null,
+   "nickname": "OverkillLabs"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "L.A. Noire",
+   "appid": "110800",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "The camera kept turning, I don't know if it's already been fixed",
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "METAL GEAR RISING: REVENGEANCE",
+   "appid": "235460",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
+   "appid": "2492670",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Legacy of Kain: Defiance Remastered",
+   "appid": "3747730",
+   "launcher": "GOG Galaxy",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
+   "appid": "2521380",
+   "launcher": "GOG Galaxy",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "The Precinct",
+   "appid": "490110",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Transformers Devastation",
+   "appid": null,
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "IRON NEST: Heavy Turret Simulator",
+   "appid": "2950790",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "It takes a while to boot",
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Need for Speed™ Most Wanted",
+   "appid": "1262560",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Castlevania: Lords of Shadow – Ultimate Edition",
+   "appid": "234080",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Batman - The Telltale Series",
+   "appid": "498240",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "REPLACED",
+   "appid": "1663850",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Marvel guardians of the Glaxy",
+   "appid": null,
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "N30RYU"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "NFS THE RUN",
+   "appid": null,
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "9.05",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Ultra",
+   "notes": "Works perfect load from usb ssd",
+   "nickname": "Inspector gadget"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Dead Rising 3 Apocalypse Edition",
+   "appid": "265550",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": "60 fps, High",
+   "notes": "audio is bugged",
+   "nickname": "machina_"
+  },
+  {
+   "date": "2026-10-28",
+   "game": "Truckful",
+   "appid": "3090810",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.42",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "King mo"
+  },
   {
    "date": "2026-10-28",
    "game": "Brawlhalla",
@@ -385,7 +671,7 @@
    "firmware": "13.60",
    "rating": "Perfect",
    "fps": 60,
-   "settings": "Highest, default mos settings",
+   "settings": "Highest, default most settings",
    "notes": "Everything did but the bmsdk mod, there were mini stutters too",
    "nickname": "glooty"
   },
