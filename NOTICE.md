@@ -15,6 +15,7 @@ like the same product as MihawkOS's WebUI.
 | `src/assets/orbs/document-{day,night}.svg` | `docs/media/readme/orb-document-{day,night}.svg`: a README heading orb | LGPL-2.1-or-later (SPDX line kept) | Unchanged; the report page's title icon. |
 | `src/assets/orbs/{ps5,dualsense}-{day,night}.svg` | the README orb's frame (`docs/media/readme/orb-*`) | LGPL-2.1-or-later (SPDX line kept) | New glyphs drawn here, a console and a controller: original drawings, not Sony artwork. PlayStation, PS5 and DualSense are trademarks of Sony Interactive Entertainment. |
 | `src/assets/divider-day.svg`, `src/assets/divider-night.svg` | `docs/media/readme/divider-{day,night}.svg` | LGPL-2.1-or-later (SPDX line kept) | Unchanged. |
+| `src/i18n.jsx` (languages, picker), `src/app.css` (picker styles) | `webui/i18n.js`, `webui/app.js` and `webui/app.css`: the WebUI's ten languages, the stored choice (`mihawk-language`) and its flag picker | GPL-3.0-or-later | Rewritten as a React provider and component; same languages, order, flags and storage key. The translations in `src/i18n-text.js` are this site's own words, written here. |
 | `public/mark.svg` | `themes/windows11/start.svg`: the Mihawk OS mark | LGPL-2.1-or-later (SPDX line kept) | Unchanged. |
 | `public/licenses/LGPL-2.1.txt` | `themes/windows11/COPYING.LIB` | the licence text | Unchanged. |
 
@@ -31,6 +32,14 @@ from the MihawkOS v4.0.0-alpha-4 title (`assets/hui/fonts/`):
 
 SIL Open Font License 1.1: [`public/licenses/OFL-1.1-Inter.txt`](public/licenses/OFL-1.1-Inter.txt), the copy shipped
 with that title. The licence is published with the site.
+
+## Country flags
+
+`public/flags/{us,fr,es,de,it,ru,cn,jp,br,pl}.svg` are from [lipis/flag-icons](https://github.com/lipis/flag-icons) at
+`086f7e97d657358203916dbe84f61c2bccaa81eb` (the 4x3 set), copied unchanged from MihawkOS's `ps5/assets/flags` at
+`77db136`, where each file's SHA-256 is checked against that revision. MIT, Panayiotis Lipiridis:
+[`public/licenses/flag-icons-MIT.txt`](public/licenses/flag-icons-MIT.txt), published with the site. A flag stands
+for a language in the picker, as in the WebUI.
 
 ## Launcher logos
 

@@ -3,6 +3,7 @@
 // Day/Night slider, and the footer.
 import { useState } from 'react';
 import { LAUNCHER_ICONS } from './launchers.js';
+import { LanguagePicker, useT } from './i18n.jsx';
 import './app.css';
 
 try {
@@ -24,10 +25,11 @@ export function useNight() {
 }
 
 function ThemeToggle({ night, onChange }) {
+  const { t } = useT();
   return (
-    <button type="button" role="switch" aria-checked={night} aria-label="Night mode" className={`theme-toggle${night ? ' night' : ''}`}
+    <button type="button" role="switch" aria-checked={night} aria-label={t('Night mode')} className={`theme-toggle${night ? ' night' : ''}`}
       onClick={() => onChange(!night)}>
-      <span className="label" aria-hidden="true">{night ? 'Night Mode' : 'Day Mode'}</span>
+      <span className="label" aria-hidden="true">{night ? t('Night Mode') : t('Day Mode')}</span>
       <span className="knob" aria-hidden="true">
         {night
           ? <svg viewBox="0 0 24 24"><path d="M15.5 3.2a8.5 8.5 0 1 0 5.3 13.3A7 7 0 0 1 15.5 3.2Z" fill="#2c3e5c" /><path d="m17.5 6 .6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z" fill="#2c3e5c" /></svg>
@@ -39,36 +41,46 @@ function ThemeToggle({ night, onChange }) {
 
 // root: the path back to the site's top ('./' on the list, '../' on the report page).
 export function Bar({ root, night, onTheme, children, report = true }) {
+  const { t } = useT();
   return (
     <header className="bar glass">
-      <a className="brand" href={root}><img src={`${root}mark.svg`} alt="" width="36" height="36" /><span>MihawkOS <em>Compatibility</em></span></a>
-      <nav aria-label="Sections">{children}</nav>
-      {report && <a className="button primary report-button" href={`${root}report/`}>Report games</a>}
+      <a className="brand" href={root}><img src={`${root}mark.svg`} alt="" width="36" height="36" /><span>MihawkOS <em>{t('Compatibility')}</em></span></a>
+      <nav aria-label={t('Sections')}>{children}</nav>
+      {report && <a className="button primary report-button" href={`${root}report/`}>{t('Report games')}</a>}
+      <LanguagePicker root={root} />
       <ThemeToggle night={night} onChange={onTheme} />
     </header>
   );
 }
 
 export function Footer({ root }) {
+  const { t } = useT();
   return (
     <footer>
-      <p>MihawkOS is a passion project, not a piracy project. Use only games you own. <a href="https://github.com/mihawk-99/PS5_MihawkOS">MihawkOS on GitHub</a></p>
-      <p>No trackers, no analytics, no cookies. Game pictures come from Steam's public image server.</p>
-      <p>{SOURCE_URL && <><a href={SOURCE_URL}>Source</a> (GPL-3.0-or-later) · </>}
-        <a href={`${root}licenses/LGPL-2.1.txt`}>Art and mark: LGPL-2.1-or-later</a> · <a href={`${root}licenses/OFL-1.1-Inter.txt`}>Inter: OFL-1.1</a> · <a href={`${root}licenses/react-MIT.txt`}>React: MIT</a></p>
+      <p>{t('MihawkOS is a passion project, not a piracy project. Use only games you own.')} <a href="https://github.com/mihawk-99/PS5_MihawkOS">{t('MihawkOS on GitHub')}</a></p>
+      <p>{t("No trackers, no analytics, no cookies. Game pictures come from Steam's public image server.")}</p>
+      <p>{SOURCE_URL && <><a href={SOURCE_URL}>{t('Source')}</a> (GPL-3.0-or-later) · </>}
+        <a href={`${root}licenses/LGPL-2.1.txt`}>{t('Art and mark')}: LGPL-2.1-or-later</a> · <a href={`${root}licenses/OFL-1.1-Inter.txt`}>Inter: OFL-1.1</a> · <a href={`${root}licenses/react-MIT.txt`}>React: MIT</a> · <a href={`${root}licenses/flag-icons-MIT.txt`}>{t('Flags')}: MIT</a></p>
     </footer>
   );
 }
 
 // A launcher's badge: its logo on its brand colour (app.css), or plain glass for None.
 export function Launcher({ name }) {
+  const { t } = useT();
   const path = LAUNCHER_ICONS[name];
   return (
     <span className={`launcher launcher-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
       {path && <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d={path} /></svg>}
-      {name === 'None' ? 'No launcher' : name}
+      {name === 'None' ? t('No launcher') : name === 'Other' ? t('Other') : name}
     </span>
   );
+}
+
+// A rating badge in its colour (app.css), its name in the page's language.
+export function Badge({ rating }) {
+  const { t } = useT();
+  return <span className={`badge rating-${rating.toLowerCase().replace(/\s+/g, '-')}`}>{t(rating)}</span>;
 }
 
 // A game's Steam header picture: under its content hash when the build found one (data/reports.json "steam").

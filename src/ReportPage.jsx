@@ -5,7 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import data from '../data/reports.json';
 import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, FIRMWARES } from './fields.js';
 import { appidFrom, cleanGame, cleanGames, formBody, lookupUrl, prefill, problems, responseUrl } from './submit.js';
-import { Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
+import { Badge, Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
+import { useT } from './i18n.jsx';
 import documentDay from './assets/orbs/document-day.svg';
 import documentNight from './assets/orbs/document-night.svg';
 import consoleDay from './assets/orbs/ps5-day.svg';
@@ -17,7 +18,6 @@ const POST_URL = responseUrl(FORM_URL);
 const LOOKUP = lookupUrl(import.meta.env.VITE_STEAM_LOOKUP); // tools/steam-lookup.gs, if deployed
 const SAVED = 'report-console'; // this device's console, firmware, version and nickname
 const key = (name) => String(name ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 let nextId = 1;
 // steam: the Steam game the AppID stands for ({ id, name, img }), from the list or the Steam lookup; auto: the AppID came
 // from choosing a suggestion, so editing the name takes it away again.
@@ -54,17 +54,19 @@ function useKnownGames() {
 }
 
 function Field({ label, error, hint, children, wide }) {
+  const { t } = useT();
   return (
     <label className={`field${wide ? ' wide' : ''}${error ? ' bad' : ''}`}>
       <span>{label}</span>
       {children}
-      {error ? <em className="error">{error}</em> : hint && <em className="hint">{hint}</em>}
+      {error ? <em className="error">{t(error)}</em> : hint && <em className="hint">{hint}</em>}
     </label>
   );
 }
 
 // A row of glossy choices that behave as radio buttons (arrow keys move between them).
 function Chips({ legend, name, value, onChange, options, error, hint, render, wide }) {
+  const { t } = useT();
   return (
     <fieldset className={`field chips${wide ? ' wide' : ''}${error ? ' bad' : ''}`}>
       <legend>{legend}</legend>
@@ -76,7 +78,7 @@ function Chips({ legend, name, value, onChange, options, error, hint, render, wi
           </label>
         ))}
       </div>
-      {error ? <em className="error">{error}</em> : hint && <em className="hint">{hint}</em>}
+      {error ? <em className="error">{t(error)}</em> : hint && <em className="hint">{hint}</em>}
     </fieldset>
   );
 }
@@ -108,6 +110,7 @@ function useSuggestions(text, known) {
 
 // The game's name, with suggestions as you type (a combobox: arrow keys, Enter, Escape).
 function GameName({ row, error, known, onChange }) {
+  const { t } = useT();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
   const list = useSuggestions(row.game, known);
@@ -134,12 +137,12 @@ function GameName({ row, error, known, onChange }) {
     else if (e.key === 'Escape') setOpen(false);
   };
   return (
-    <Field label="Game *" error={error} hint={LOOKUP ? 'Start typing, then choose it from the list.' : undefined}>
+    <Field label={`${t('Game')} *`} error={error} hint={LOOKUP ? t('Start typing, then choose it from the list.') : undefined}>
       <div className="combo">
         <input value={row.game} onChange={type} onKeyDown={keys} onFocus={() => setOpen(true)} onBlur={() => setTimeout(() => setOpen(false), 120)}
           role="combobox" aria-expanded={showing} aria-controls={listId} aria-autocomplete="list"
           aria-activedescendant={showing && active >= 0 ? `${listId}-${active}` : undefined}
-          maxLength={100} autoComplete="off" placeholder="Start typing its name" />
+          maxLength={100} autoComplete="off" placeholder={t('Start typing its name')} />
         {showing && (
           <ul className="suggestions glass" id={listId} role="listbox">
             {list.map((g, i) => (
@@ -159,6 +162,7 @@ function GameName({ row, error, known, onChange }) {
 
 // "Is it the right game?": the AppID's Steam picture and name, and a link to check on Steam.
 function SteamCheck({ row, known }) {
+  const { t } = useT();
   const [failed, setFailed] = useState(null);
   const { appid, game } = row;
   if (!/^\d{1,10}$/.test(appid)) return null;
@@ -171,16 +175,17 @@ function SteamCheck({ row, known }) {
       {failed !== img && <img src={img} alt="" referrerPolicy="no-referrer" onError={() => setFailed(img)} />}
       <p>
         {name
-          ? (matches ? <strong className="good"><Icon name="check" /> This is {name} on Steam.</strong>
-            : <><strong>Steam AppID {appid} is {name}.</strong> Is that your game?</>)
-          : failed === img ? <>No picture for {appid}. Check that it is your game:</> : <>Is this your game?</>}
-        {' '}<a href={`https://store.steampowered.com/app/${appid}/`} target="_blank" rel="noopener noreferrer">Open its Steam page</a>
+          ? (matches ? <strong className="good"><Icon name="check" /> {t('This is {0} on Steam.', name)}</strong>
+            : <><strong>{t('Steam AppID {0} is {1}.', appid, name)}</strong> {t('Is that your game?')}</>)
+          : failed === img ? t('No picture for {0}. Check that it is your game:', appid) : t('Is this your game?')}
+        {' '}<a href={`https://store.steampowered.com/app/${appid}/`} target="_blank" rel="noopener noreferrer">{t('Open its Steam page')}</a>
       </p>
     </div>
   );
 }
 
 function GameCard({ row, index, count, errors, known, onChange, onRemove }) {
+  const { t } = useT();
   const set = (field) => (e) => onChange({ ...row, [field]: e.target.value });
   const latest = useRef(row);
   latest.current = row;
@@ -200,32 +205,33 @@ function GameCard({ row, index, count, errors, known, onChange, onRemove }) {
   return (
     <li className="game-row glass">
       <div className="row-head">
-        <h3><span className="row-number" aria-hidden="true">{index + 1}</span>{row.game.trim() || `Game ${index + 1}`}</h3>
-        {count > 1 && <button type="button" className="button small quiet" onClick={onRemove} aria-label={`Remove game ${index + 1}`}><Icon name="trash" /> Remove</button>}
+        <h3><span className="row-number" aria-hidden="true">{index + 1}</span>{row.game.trim() || t('Game {0}', index + 1)}</h3>
+        {count > 1 && <button type="button" className="button small quiet" onClick={onRemove} aria-label={t('Remove game {0}', index + 1)}><Icon name="trash" /> {t('Remove')}</button>}
       </div>
       <div className="row-fields">
         <GameName row={row} error={errors.game} known={known} onChange={onChange} />
-        <Field label="Steam AppID" error={errors.appid} hint="Filled in when you choose the game. Or type its number, or paste its Steam link.">
-          <input value={row.appid} onChange={(e) => onChange({ ...row, appid: appidFrom(e.target.value), auto: false })} inputMode="numeric" autoComplete="off" placeholder="e.g. 620" />
+        <Field label="Steam AppID" error={errors.appid}
+          hint={t("Used to show the game's picture on the list, so it matters even if you did not play it through Steam. Filled in when you choose the game; or type its number, or paste its Steam link.")}>
+          <input value={row.appid} onChange={(e) => onChange({ ...row, appid: appidFrom(e.target.value), auto: false })} inputMode="numeric" autoComplete="off" placeholder={t('e.g. {0}', 620)} />
         </Field>
       </div>
       <SteamCheck row={row} known={known} />
-      <Chips legend="How did it run? *" name={`rating-${row.id}`} value={row.rating} onChange={(rating) => onChange({ ...row, rating })}
-        error={errors.rating} wide hint={RATINGS.find((r) => r.name === row.rating)?.means ?? 'Choose the one that fits best.'}
+      <Chips legend={`${t('How did it run?')} *`} name={`rating-${row.id}`} value={row.rating} onChange={(rating) => onChange({ ...row, rating })}
+        error={errors.rating} wide hint={t(RATINGS.find((r) => r.name === row.rating)?.means ?? 'Choose the one that fits best.')}
         options={RATINGS.map((r) => ({ value: r.name }))}
-        render={(o) => <span className={`badge rating-${slug(o.value)}`}>{o.value}</span>} />
-      <Chips legend="Started from" name={`launcher-${row.id}`} value={row.launcher} onChange={(launcher) => onChange({ ...row, launcher })}
-        error={errors.launcher} wide hint="Optional. None: you started the game's own program."
+        render={(o) => <Badge rating={o.value} />} />
+      <Chips legend={t('Started from')} name={`launcher-${row.id}`} value={row.launcher} onChange={(launcher) => onChange({ ...row, launcher })}
+        error={errors.launcher} wide hint={t("Optional. No launcher: you started the game's own program.")}
         options={[{ value: '' }, ...LAUNCHERS.map((l) => ({ value: l }))]}
-        render={(o) => (o.value ? <Launcher name={o.value} /> : <span className="launcher">Not saying</span>)} />
+        render={(o) => (o.value ? <Launcher name={o.value} /> : <span className="launcher">{t('Not saying')}</span>)} />
       <div className="row-fields">
-        <Field label="FPS" error={errors.fps} hint="Optional, about.">
-          <input value={row.fps} onChange={set('fps')} inputMode="numeric" maxLength={3} placeholder="e.g. 60" />
+        <Field label="FPS" error={errors.fps} hint={t('Optional, about.')}>
+          <input value={row.fps} onChange={set('fps')} inputMode="numeric" maxLength={3} placeholder={t('e.g. {0}', 60)} />
         </Field>
-        <Field label="Settings" error={errors.settings} hint="Optional: 120 Hz, Game Mode, controller…">
+        <Field label={t('Settings')} error={errors.settings} hint={t('Optional: 120 Hz, Game Mode, controller…')}>
           <input value={row.settings} onChange={set('settings')} maxLength={300} />
         </Field>
-        <Field label="Notes" error={errors.notes} hint="Optional: what worked and what did not." wide>
+        <Field label={t('Notes')} error={errors.notes} hint={t('Optional: what worked and what did not.')} wide>
           <textarea value={row.notes} onChange={set('notes')} maxLength={1000} rows={2} />
         </Field>
       </div>
@@ -238,6 +244,7 @@ function Orb({ night, day, dark }) {
 }
 
 export default function ReportPage() {
+  const { t } = useT();
   const [night, changeTheme] = useNight();
   const known = useKnownGames();
   const start = useMemo(() => prefill(window.location.search), []);
@@ -294,35 +301,32 @@ export default function ReportPage() {
 
   return (
     <>
-      <a className="skip" href="#report-form">Skip to the form</a>
+      <a className="skip" href="#report-form">{t('Skip to the form')}</a>
       <Bar root="../" night={night} onTheme={changeTheme} report={false}>
-        <a href="../"><Icon name="list" /> All games</a>
-        <a href="../#ratings">Ratings</a>
+        <a href="../"><Icon name="list" /> {t('All games')}</a>
+        <a href="../#ratings">{t('Ratings')}</a>
       </Bar>
       <main id="top">
         <section className="glass card intro" ref={top}>
           <div className="titled">
             <Orb night={night} day={documentDay} dark={documentNight} />
             <div>
-              <h1>Report games</h1>
-              <p className="lead">Tell other players how your games ran on MihawkOS: as many as you like, in one go. No account, no
-                e-mail. Every report is read before it appears on the list, usually within a day.</p>
+              <h1>{t('Report games')}</h1>
+              <p className="lead">{t('Tell other players how your games ran on MihawkOS: as many as you like, in one go. No account, no e-mail. Every report is read before it appears on the list, usually within a day.')}</p>
             </div>
           </div>
-          <ol className="how-steps" aria-label="How it works">
-            <li><span>1</span>Your console, once</li>
-            <li><span>2</span>One card per game</li>
-            <li><span>3</span>Send them all</li>
+          <ol className="how-steps" aria-label={t('How it works')}>
+            <li><span>1</span>{t('Your console, once')}</li>
+            <li><span>2</span>{t('One card per game')}</li>
+            <li><span>3</span>{t('Send them all')}</li>
           </ol>
           {status?.kind === 'done' && (
-            <p className="notice good" role="status"><Icon name="check" /> Thank you! {status.sent} {status.sent === 1 ? 'report' : 'reports'} sent.
-              They will appear on the list once read. Your console details are remembered on this device for next time.</p>
+            <p className="notice good" role="status"><Icon name="check" /> {t('Thank you! Reports sent: {0}. They will appear on the list once read. Your console details are remembered on this device for next time.', status.sent)}</p>
           )}
           {status?.kind === 'failed' && (
-            <p className="notice bad" role="alert">{status.sent} of {status.total} sent. The rest could not leave this device (no internet?).
-              They are still below: press Send again.</p>
+            <p className="notice bad" role="alert">{t('{0} of {1} sent. The rest could not leave this device (no internet?). They are still below: press Send again.', status.sent, status.total)}</p>
           )}
-          {!POST_URL && <p className="notice bad" role="alert">The report form is not set up yet.</p>}
+          {!POST_URL && <p className="notice bad" role="alert">{t('The report form is not set up yet.')}</p>}
         </section>
 
         <form id="report-form" onSubmit={send} noValidate>
@@ -330,33 +334,33 @@ export default function ReportPage() {
             <div className="titled">
               <Orb night={night} day={consoleDay} dark={consoleNight} />
               <div>
-                <h2 id="console-title">Your console</h2>
-                <p className="muted">Filled in once for all your games, and remembered on this device.</p>
+                <h2 id="console-title">{t('Your console')}</h2>
+                <p className="muted">{t('Filled in once for all your games, and remembered on this device.')}</p>
               </div>
             </div>
-            <Chips legend="Console *" name="console" value={shared.console} onChange={setS('console')} error={sharedErrors.console} wide
-              hint="Digital Edition: any PS5 without a disc drive." options={CONSOLES.map((c) => ({ value: c, label: c }))} />
+            <Chips legend={`${t('Console')} *`} name="console" value={shared.console} onChange={setS('console')} error={sharedErrors.console} wide
+              hint={t('Digital Edition: any PS5 without a disc drive.')} options={CONSOLES.map((c) => ({ value: c, label: c }))} />
             <div className="row-fields">
               {ownFirmware ? (
-                <Field label="Firmware *" error={sharedErrors.firmware}
-                  hint={<>Like 13.80. <button type="button" className="link" onClick={() => { setOwnFirmware(false); setS('firmware')(''); }}>Choose from the list</button></>}>
-                  <input value={shared.firmware} onChange={(e) => setS('firmware')(e.target.value)} inputMode="decimal" maxLength={5} placeholder="e.g. 13.80" autoFocus />
+                <Field label={`${t('Firmware')} *`} error={sharedErrors.firmware}
+                  hint={<>{t('Like {0}.', '13.80')} <button type="button" className="link" onClick={() => { setOwnFirmware(false); setS('firmware')(''); }}>{t('Choose from the list')}</button></>}>
+                  <input value={shared.firmware} onChange={(e) => setS('firmware')(e.target.value)} inputMode="decimal" maxLength={5} placeholder={t('e.g. {0}', '13.80')} autoFocus />
                 </Field>
               ) : (
-                <Field label="Firmware *" error={sharedErrors.firmware} hint="Settings > System > System Software > Console Information.">
+                <Field label={`${t('Firmware')} *`} error={sharedErrors.firmware} hint={t('Settings > System > System Software > Console Information.')}>
                   <select value={shared.firmware} onChange={(e) => (e.target.value === 'other' ? (setOwnFirmware(true), setS('firmware')('')) : setS('firmware')(e.target.value))}>
-                    <option value="">Choose…</option>
+                    <option value="">{t('Choose…')}</option>
                     {FIRMWARES.map((f) => <option key={f}>{f}</option>)}
-                    <option value="other">Not in the list?</option>
+                    <option value="other">{t('Not in the list?')}</option>
                   </select>
                 </Field>
               )}
-              <Field label="MihawkOS version *" error={sharedErrors.version} hint="On its wallpaper and the WebUI's Help page.">
+              <Field label={`${t('MihawkOS version')} *`} error={sharedErrors.version} hint={t("On its wallpaper and the WebUI's Help page.")}>
                 <select value={shared.version} onChange={(e) => setS('version')(e.target.value)}>
                   {VERSIONS.map((v) => <option key={v}>{v}</option>)}
                 </select>
               </Field>
-              <Field label="Nickname" error={sharedErrors.nickname} hint="Optional, shown with your reports. Not your e-mail.">
+              <Field label={t('Nickname')} error={sharedErrors.nickname} hint={t('Optional, shown with your reports. Not your e-mail.')}>
                 <input value={shared.nickname} onChange={(e) => setS('nickname')(e.target.value)} maxLength={32} autoComplete="nickname" />
               </Field>
             </div>
@@ -364,7 +368,7 @@ export default function ReportPage() {
 
           <div className="titled section-title">
             <Orb night={night} day={gamesDay} dark={gamesNight} />
-            <h2>Your games <span className="count">{rows.length}</span></h2>
+            <h2>{t('Your games')} <span className="count">{rows.length}</span></h2>
           </div>
           <ul className="game-rows">
             {rows.map((row, i) => (
@@ -374,14 +378,14 @@ export default function ReportPage() {
             ))}
           </ul>
           <div className="form-actions glass">
-            <button type="button" className="button" onClick={() => setRows([...rows, emptyRow()])}><Icon name="plus" /> Add another game</button>
+            <button type="button" className="button" onClick={() => setRows([...rows, emptyRow()])}><Icon name="plus" /> {t('Add another game')}</button>
             <button type="submit" className="button primary big" disabled={!POST_URL || status?.kind === 'sending'}>
               <Icon name="send" />
-              {status?.kind === 'sending' ? `Sending ${status.sent + 1} of ${status.total}…` : `Send ${rows.length} ${rows.length === 1 ? 'report' : 'reports'}`}
+              {status?.kind === 'sending' ? t('Sending {0} of {1}…', status.sent + 1, status.total) : t(rows.length === 1 ? 'Send {0} report' : 'Send {0} reports', rows.length)}
             </button>
-            {showErrors && pending > 0 && <span className="error" role="alert">Some fields need a look (in red above).</span>}
+            {showErrors && pending > 0 && <span className="error" role="alert">{t('Some fields need a look (in red above).')}</span>}
           </div>
-          {FORM_URL && <p className="muted fallback">Prefer Google's own page? <a href={FORM_URL} target="_blank" rel="noopener noreferrer">Open the Google Form</a> (one game at a time).</p>}
+          {FORM_URL && <p className="muted fallback">{t("Prefer Google's own page?")} <a href={FORM_URL} target="_blank" rel="noopener noreferrer">{t('Open the Google Form')}</a> {t('(one game at a time)')}</p>}
         </form>
       </main>
       <Footer root="../" />
