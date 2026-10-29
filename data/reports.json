@@ -109,6 +109,10 @@
    "name": "Celeste",
    "header": ""
   },
+  "521890": {
+   "name": "Hello Neighbor",
+   "header": ""
+  },
   "579950": {
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
    "header": ""
@@ -213,6 +217,10 @@
    "name": "The Binding of Isaac: Repentance+",
    "header": ""
   },
+  "3354750": {
+   "name": "skate.",
+   "header": "79c5a87b61a396cc6e6b69e3a083727f175dea83"
+  },
   "3404260": {
    "name": "Dead as Disco",
    "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
@@ -235,6 +243,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "Hello Neighbor",
+   "appid": "521890",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Max, Default Mos",
+   "notes": "If you drag the touchpad while playing the fps caps to 30 until you stop. Weird but perfect otherwise",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "(Re)Skate.",
+   "appid": "3354750",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "Medium = Limit before crash. (Ram intense)",
+   "notes": "Uses its own launcher. Downloaded from own steam account thru depot. plays really good cant handle too much mods and cant switch maps without a gpu crash. Doesnt work on alpha 5. Yet.",
+   "nickname": "Glooty"
+  },
   {
    "date": "2026-10-29",
    "game": "CONTROL Resonant",
