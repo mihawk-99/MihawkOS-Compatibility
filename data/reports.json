@@ -221,6 +221,10 @@
    "name": "Baki Hanma: Blood Arena",
    "header": ""
   },
+  "3669870": {
+   "name": "CONTROL Resonant",
+   "header": "1e0c76e4253d347bb1304c3f213570251d924edf"
+  },
   "3747730": {
    "name": "Legacy of Kain: Defiance Remastered",
    "header": "f0b68c0f6aa4adba527cf5635cf08d58464f9dcc"
@@ -231,6 +235,20 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "CONTROL Resonant",
+   "appid": "3669870",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Game launches. Reaches the main menu. After clicking \"New Game\" it freezes for few seconds that game crashes. The following error pops up \"The game crashed due to running out of GPU memory and will now exit\". After a second the Mihawk app also crashes",
+   "nickname": null
+  },
   {
    "date": "2026-10-29",
    "game": "Blur",
