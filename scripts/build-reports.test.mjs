@@ -92,6 +92,8 @@ test('field cleaners', () => {
   assert.equal(cleanAppId('12345678901'), null);
   assert.equal(cleanFirmware('13.4'), '13.40');
   assert.equal(cleanFirmware('13.400'), null);
+  assert.equal(cleanFirmware('13'), '13.00'); // 13.00 as the sheet's number
+  assert.equal(cleanFirmware('130'), null);
   assert.equal(cleanLauncher(' itch.IO '), 'itch.io');
   assert.equal(cleanLauncher('<b>Steam</b>'), 'Other');
   assert.equal(cleanFps('0'), null);

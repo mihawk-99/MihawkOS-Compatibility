@@ -72,8 +72,9 @@ export function cleanAppId(value) {
 
 // A sheet may store 10.10 as the number 10.1; PS5 firmware always has two digits after the point.
 export function cleanFirmware(value) {
-  const m = /^(\d{1,2})\.(\d{1,2})$/.exec(String(value ?? '').trim());
-  return m ? `${Number(m[1])}.${m[2].padEnd(2, '0')}` : null;
+  // The sheet stores a firmware as a number: 13.40 arrives as 13.4, and 13.00 as 13.
+  const m = /^(\d{1,2})(?:\.(\d{1,2}))?$/.exec(String(value ?? '').trim());
+  return m ? `${Number(m[1])}.${(m[2] ?? '').padEnd(2, '0')}` : null;
 }
 
 export function cleanVersion(value) {
