@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // The report's fields, shared by the page and scripts/build-reports.mjs. The Google Form's options must be spelled
 // exactly as these (docs/FORM.md); a row with another value is dropped when the data is built.
+import versions from '../data/versions.json' with { type: 'json' };
 
 // Best first: the page sorts and picks a game's best rating by this order.
 export const RATINGS = [
@@ -36,8 +37,8 @@ export const COLUMNS = {
 
 export const LIMITS = { game: 100, settings: 300, notes: 1000, nickname: 32 };
 
-// The form's MihawkOS version options, newest first. Add each new release here and in the Google Form.
-export const VERSIONS = ['v4.0.0-alpha-4', 'v3.0.0-alpha-3', 'v2.0.0-alpha-2', 'v1.0.0-alpha-1'];
+// MihawkOS's releases, newest first, as each Publish run reads them from GitHub (scripts/fetch-versions.mjs).
+export const VERSIONS = versions;
 
 // The Google Form's field ids (its pre-fill link, docs/FORM.md). The report page posts each game to the form with these;
 // a question deleted and made again gets a new id, which must be copied here.

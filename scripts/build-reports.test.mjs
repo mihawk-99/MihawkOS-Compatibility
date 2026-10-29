@@ -146,3 +146,12 @@ test('Steam names and hashed header pictures are found once per AppID', async ()
   await findSteam([{ appid: '5' }], odd, async () => ({ header_image: `https://x/apps/6/${hash}/header.jpg` }));
   assert.deepEqual(odd['5'], { name: '', header: '' }); // another AppID's hash is not taken
 });
+
+test('the version list is the releases, newest first, without drafts or odd tags', async () => {
+  const { releaseVersions } = await import('./fetch-versions.mjs');
+  assert.deepEqual(releaseVersions([
+    { tag_name: 'v5.0.1-alpha-5' }, { tag_name: 'v6.0.0-alpha-6', draft: true }, { tag_name: 'v5.0.0-alpha-5' },
+    { tag_name: 'nightly' }, { tag_name: 'v5.0.0-alpha-5' }, {},
+  ]), ['v5.0.1-alpha-5', 'v5.0.0-alpha-5']);
+  assert.deepEqual(releaseVersions({ message: 'rate limited' }), []);
+});

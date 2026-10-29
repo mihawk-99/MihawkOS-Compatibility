@@ -27,7 +27,7 @@ and the script finds the columns by those headers. Case does not matter. The que
 | 1 | `Game` | Short answer | yes | Response validation: Length, Maximum character count, 100 | The game's name, as on its store page. |
 | 2 | `Steam AppID` | Short answer | no | Response validation: Regular expression, Matches, `^\d{1,10}$`; error text: *Only the number, like 620.* | The number in the game's Steam store link: store.steampowered.com/app/**620**/. Leave empty if it is not on Steam. Used for the game's picture; without it, the picture is found by the game's name. |
 | 3 | `Launcher` | Multiple choice | no | `None`, `Steam`, `Epic Games Store`, `GOG Galaxy`, `EA app`, `Ubisoft Connect`, `Battle.net`, `Rockstar Games Launcher`, `itch.io`, `Other` (a plain option: do not turn on Google's own "Other" box, whose free text would be published only as Other anyway) | What you started the game from, if anything. *None*: you started the game's own program. |
-| 4 | `MihawkOS version` | Dropdown | yes | `v4.0.0-alpha-4`, `v3.0.0-alpha-3`, `v2.0.0-alpha-2`, `v1.0.0-alpha-1`, spelled as on the Releases page. Put the newest first, and add each new release at the top. | The version you played on. MihawkOS shows it on its wallpaper and on the WebUI's Help page. |
+| 4 | `MihawkOS version` | Short answer | yes | Response validation: Regular expression, **Matches** `v\d{1,3}\.\d{1,3}\.\d{1,3}(-[a-z]{1,12}([-.]\d{1,3})?)?`, error text `Like v5.0.1-alpha-5, as on MihawkOS's wallpaper.` A text answer, not a dropdown, so a new release needs no change here: Google rejects an answer that is not one of a dropdown's choices, and the report page cannot see that rejection. | The version you played on. MihawkOS shows it on its wallpaper and on the WebUI's Help page. |
 | 5 | `Console` | Multiple choice | yes | `PS5`, `PS5 Slim`, `PS5 Digital Edition`, `PS5 Pro` | Digital Edition: any PS5 without a disc drive. |
 | 6 | `Firmware` | Short answer | yes | Response validation: Regular expression, Matches, `^\d{1,2}\.\d{2}$`; error text: *Like 10.01 or 13.40.* | Settings > System > System Software > Console Information. |
 | 7 | `Rating` | Multiple choice | yes | `Perfect`, `Playable`, `Runs with issues`, `Boots only`, `Broken` | *Perfect*: plays start to end as on a PC, nothing to change. *Playable*: plays to the end, small problems or a setting to change. *Runs with issues*: you can play, but slowdowns, missing sound or video, or crashes get in the way. *Boots only*: reaches its menu or first scene, but you cannot really play. *Broken*: does not start, or stops before you see anything. |
@@ -128,8 +128,9 @@ checks every field the way the form does (`problems()`, tested in `scripts/repor
 - **"Is it the right game?":** an AppID shows its Steam picture, its Steam name (from the list or the lookup's
   `?id=`), and a link to its Steam page. A hand-typed AppID with an empty name takes Steam's name. Without the
   lookup, an AppID the list does not know shows its picture (when it has an unhashed one) and the link only.
-- **When the form changes:** a new MihawkOS release goes into `VERSIONS` in `src/fields.js` as well as the form's
-  dropdown. A question deleted and made again gets a new `entry.` id, to copy into `FORM_ENTRIES`. A new question
+- **Versions:** the page offers MihawkOS's GitHub releases, newest first, which each Publish run writes to
+  `data/versions.json` (`scripts/fetch-versions.mjs`); a new release appears within about 15 minutes.
+- **When the form changes:** a question deleted and made again gets a new `entry.` id, to copy into `FORM_ENTRIES`. A new question
   needs the page, the script and `src/fields.js`.
 - The page's Content-Security-Policy allows `connect-src https://docs.google.com` for the sends and
   `https://script.google.com https://script.googleusercontent.com` for the lookup; the list page allows neither.

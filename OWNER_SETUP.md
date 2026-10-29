@@ -157,8 +157,9 @@ To change the script later, paste the new code, save, then **Deploy > Manage dep
 
 ## When MihawkOS has a new release
 
-Add the version at the top of the form's **MihawkOS version** dropdown, and to `VERSIONS` in `src/fields.js` (the
-report page offers only those). Push the change; the site rebuilds itself. When the homebrew SDK supports a new firmware, add it at the top of
+Nothing to do: each Publish run reads the releases of PS5_MihawkOS on GitHub into `data/versions.json`, and the
+report page offers the new version within about 15 minutes. The form's version question is a text answer that takes
+any version written like `v5.0.1-alpha-5`, so it needs no change either. When the homebrew SDK supports a new firmware, add it at the top of
 `FIRMWARES` in the same file; until then, players choose **Not in the list?** and type it.
 
 ## If something goes wrong

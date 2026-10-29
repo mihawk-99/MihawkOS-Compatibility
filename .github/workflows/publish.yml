@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Every 15 minutes (and on demand or on a push): read the moderated sheet, keep its approved rows, look up the Steam
-# AppID of games reported without one, and commit data/ if it changed. The page is then built and published to GitHub
+# AppID of games reported without one, read MihawkOS's releases for the version list, and commit data/ if it changed. The page is then built and published to GitHub
 # Pages, except on a scheduled run that changed nothing, which ends after the data job (about 10 s).
 #
 # Safety: every action is pinned to a commit; each job has only the permissions it needs; the job that can push runs
@@ -38,6 +38,10 @@ jobs:
           # A secret keeps the link out of the logs; a repository variable works too.
           SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL || vars.SHEET_CSV_URL }}
         run: node scripts/build-reports.mjs
+      - name: Read MihawkOS's releases for the version list
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/fetch-versions.mjs
       - name: Commit the data if it changed
         id: commit
         run: |
@@ -48,7 +52,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/reports.json data/appids.json data/steam.json
+          git add data/reports.json data/appids.json data/steam.json data/versions.json
           git commit -m "Update the reports from the moderated sheet"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
