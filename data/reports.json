@@ -21,6 +21,10 @@
    "name": "Mafia",
    "header": ""
   },
+  "42640": {
+   "name": "Blur",
+   "header": ""
+  },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
    "header": ""
@@ -230,7 +234,7 @@
   {
    "date": "2026-10-29",
    "game": "Blur",
-   "appid": null,
+   "appid": "42640",
    "launcher": "None",
    "version": "v2.0.0-alpha-2",
    "console": "PS5",
