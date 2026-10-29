@@ -229,6 +229,20 @@
  "reports": [
   {
    "date": "2026-10-29",
+   "game": "Blur",
+   "appid": null,
+   "launcher": "None",
+   "version": "v2.0.0-alpha-2",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "Majk"
+  },
+  {
+   "date": "2026-10-29",
    "game": "The Classrooms",
    "appid": "2099110",
    "launcher": "None",
