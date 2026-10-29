@@ -7,6 +7,14 @@
   "name": "Grand Theft Auto IV: The Complete Edition",
   "header": ""
  },
+ "19680": {
+  "name": "Alice: Madness Returns",
+  "header": ""
+ },
+ "22380": {
+  "name": "Fallout: New Vegas",
+  "header": ""
+ },
  "40990": {
   "name": "Mafia",
   "header": ""
@@ -31,6 +39,10 @@
   "name": "Fable - The Lost Chapters",
   "header": ""
  },
+ "204360": {
+  "name": "Castle Crashers®",
+  "header": ""
+ },
  "208650": {
   "name": "Batman™: Arkham Knight",
   "header": ""
@@ -53,6 +65,10 @@
  },
  "243470": {
   "name": "Watch_Dogs™",
+  "header": ""
+ },
+ "244210": {
+  "name": "Assetto Corsa",
   "header": ""
  },
  "265550": {
@@ -126,6 +142,10 @@
  "1262580": {
   "name": "Need for Speed™ Payback",
   "header": ""
+ },
+ "1449850": {
+  "name": "Yu-Gi-Oh! Master Duel",
+  "header": "c3f87e2374fab93f9f05661493bdf4e43ea70776"
  },
  "1663850": {
   "name": "REPLACED",

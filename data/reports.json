@@ -9,6 +9,14 @@
    "name": "Grand Theft Auto IV: The Complete Edition",
    "header": ""
   },
+  "19680": {
+   "name": "Alice: Madness Returns",
+   "header": ""
+  },
+  "22380": {
+   "name": "Fallout: New Vegas",
+   "header": ""
+  },
   "40990": {
    "name": "Mafia",
    "header": ""
@@ -27,6 +35,10 @@
   },
   "204030": {
    "name": "Fable - The Lost Chapters",
+   "header": ""
+  },
+  "204360": {
+   "name": "Castle Crashers®",
    "header": ""
   },
   "208650": {
@@ -51,6 +63,10 @@
   },
   "243470": {
    "name": "Watch_Dogs™",
+   "header": ""
+  },
+  "244210": {
+   "name": "Assetto Corsa",
    "header": ""
   },
   "265550": {
@@ -125,6 +141,10 @@
    "name": "Need for Speed™ Payback",
    "header": ""
   },
+  "1449850": {
+   "name": "Yu-Gi-Oh! Master Duel",
+   "header": "c3f87e2374fab93f9f05661493bdf4e43ea70776"
+  },
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
@@ -195,6 +215,104 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "Yu-Gi-Oh! Master Duel",
+   "appid": "1449850",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Default",
+   "notes": null,
+   "nickname": "Rais"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Castle Crashers®",
+   "appid": "204360",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.42",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Does not start",
+   "nickname": "Kiweed"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Assetto Corsa",
+   "appid": "244210",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "11.40",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "Le jeu fonctionne bien en mode normal, cependant impossible de faire tourner content manager qui nécessite NET framework :(",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Yandere simulator",
+   "appid": "1683460",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": "High",
+   "notes": "Initially it runs perfectly, but it crashes after you try to go to game school, the game simply runs endlessly.",
+   "nickname": "Folkbr"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Need for Speed™ Most Wanted",
+   "appid": "1262560",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.20",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "used the PS5 Controller",
+   "notes": "Everything pretty much worked in top quality in 60fps👍",
+   "nickname": "Raiyan"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Alice in madness",
+   "appid": "19680",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "11.20",
+   "rating": "Broken",
+   "fps": 1,
+   "settings": "Normal",
+   "notes": "The game simply won't start, it shows an invalid handler. It was tested with a game downloaded from the platform. I also tested it unofficially, without relying on Steam, and still encountered errors.",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Fallout: New Vegas",
+   "appid": "22380",
+   "launcher": "GOG Galaxy",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "max in game settings.",
+   "notes": "120fps is playable if you dont mind micro stuttering and lowering the settimgs does not fix it. Exiting game will crash and freeze if you leave Game Mode ON in the main settings before entering MihawkOS so turn it off. Music will not play OUT of your pipboy but Radio Host conversation does.",
+   "nickname": "iO2"
+  },
   {
    "date": "2026-10-28",
    "game": "Euro Truck Simulator 2",
