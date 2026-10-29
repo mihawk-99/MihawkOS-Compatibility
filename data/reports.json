@@ -121,6 +121,10 @@
    "name": "Hollow Knight: Silksong",
    "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
   },
+  "1150690": {
+   "name": "OMORI",
+   "header": ""
+  },
   "1167630": {
    "name": "Teardown",
    "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87"
@@ -152,6 +156,14 @@
   "1683460": {
    "name": "",
    "header": ""
+  },
+  "2099110": {
+   "name": "The Classrooms",
+   "header": "8862668a61deaa273459614ceafe05e4a4e0e059"
+  },
+  "2142790": {
+   "name": "Fields of Mistria",
+   "header": "f65314989c7779a45a674bcc950092eed32c0b0f"
   },
   "2146170": {
    "name": "Baten Kaitos I & II HD Remaster",
@@ -215,6 +227,48 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "The Classrooms",
+   "appid": "2099110",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "12.70",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Elii"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "OMORI",
+   "appid": "1150690",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Default",
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Fields of Mystria",
+   "appid": "2142790",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Digital Edition",
+   "firmware": "12.70",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "Need keyboard to write farm name, other aspects ate perfect",
+   "nickname": "y3lle"
+  },
   {
    "date": "2026-10-29",
    "game": "Yu-Gi-Oh! Master Duel",
