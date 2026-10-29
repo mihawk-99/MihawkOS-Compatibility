@@ -13,6 +13,10 @@
    "name": "Alice: Madness Returns",
    "header": ""
   },
+  "21100": {
+   "name": "F.E.A.R. 3",
+   "header": ""
+  },
   "22380": {
    "name": "Fallout: New Vegas",
    "header": ""
@@ -117,6 +121,10 @@
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
    "header": ""
   },
+  "632360": {
+   "name": "Risk of Rain 2",
+   "header": ""
+  },
   "858710": {
    "name": "Gravity Circuit",
    "header": ""
@@ -151,6 +159,14 @@
   },
   "1262580": {
    "name": "Need for Speed™ Payback",
+   "header": ""
+  },
+  "1326470": {
+   "name": "Sons Of The Forest",
+   "header": ""
+  },
+  "1353230": {
+   "name": "Bomb Rush Cyberfunk",
    "header": ""
   },
   "1449850": {
@@ -243,6 +259,160 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "F.E.A.R. 3",
+   "appid": "21100",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "11.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-29",
+   "game": "JoJos Last Survivor (JJBA BR)",
+   "appid": null,
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "It runs good. But to play online requires radmin vpn. Not sure it works on this",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Dead as Disco",
+   "appid": "3404260",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "Runs with a couple stutters , reshade + mods work. So do custom songs",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Bomb Rush Cyberfunk",
+   "appid": "1353230",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "It works good. Paired with mods more perfect",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Sons Of The Forest",
+   "appid": "1326470",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": 60,
+   "settings": "Lowest + Normal",
+   "notes": "It runs well til you try to load in. I believe its a little too intense for it or requires another type of configurations to get working. It js freezes on load screen",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Risk of Rain 2",
+   "appid": "632360",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "Its 60 will take forever to load as does on pc. Online works too. Sometimes youll get a steamworks error though and it can stutter",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Prism Launcher (Minecraft Java)",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "Too much mods or graphics can crash it. Try limiting what you do much. But its perfect otherwise",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Hello Neighbor Renovated",
+   "appid": null,
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "Only pause works on controller. The games fault. Kbm needs mouse lock to play the game and have a nice experience. Otherwise its fun and still a beta",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Sonic Dream Team",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "Well its a new port by beatz the installer works but the game lags too much besides if stationary. If stationary its full buttery smoove",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Batman™: Arkham Knight",
+   "appid": "208650",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": 60,
+   "settings": "Default",
+   "notes": "Its broken with the bmsdk mod, a crucial mod. Otherwise read the other report and youll see its perfect",
+   "nickname": "Glooty"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Dragon Ball Z Burst Limit Recomp",
+   "appid": null,
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": 60,
+   "settings": "Normal",
+   "notes": "It crashes on splash screen a freeze crash. Maybe a files error but its happened multiple times",
+   "nickname": "Glooty"
+  },
   {
    "date": "2026-10-29",
    "game": "Hello Neighbor",
@@ -798,7 +968,7 @@
    "console": "PS5 Slim",
    "firmware": "13.60",
    "rating": "Perfect",
-   "fps": null,
+   "fps": 60,
    "settings": "Max",
    "notes": "60fps",
    "nickname": null
@@ -898,7 +1068,7 @@
    "rating": "Runs with issues",
    "fps": 20,
    "settings": "Ultra",
-   "notes": "Playbale but very low fps",
+   "notes": "Playable but very low fps",
    "nickname": null
   },
   {
