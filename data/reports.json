@@ -1,6 +1,14 @@
 {
  "examples": false,
  "steam": {
+  "440": {
+   "name": "Team Fortress 2",
+   "header": ""
+  },
+  "550": {
+   "name": "Left 4 Dead 2",
+   "header": ""
+  },
   "620": {
    "name": "Portal 2",
    "header": "faffc0f560786e2f05104a8d2fac837c6969bf13"
@@ -97,6 +105,10 @@
    "name": "Hollow Knight",
    "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
   },
+  "380600": {
+   "name": "Fishing Planet",
+   "header": ""
+  },
   "413150": {
    "name": "Stardew Valley",
    "header": ""
@@ -125,6 +137,10 @@
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
    "header": ""
   },
+  "588650": {
+   "name": "Dead Cells",
+   "header": ""
+  },
   "606150": {
    "name": "Moonlighter",
    "header": "b6b0789b397ed98c8c5871dd2f99945a8fea0332"
@@ -147,6 +163,10 @@
   },
   "858710": {
    "name": "Gravity Circuit",
+   "header": ""
+  },
+  "930210": {
+   "name": "HuniePop 2: Double Date",
    "header": ""
   },
   "952060": {
@@ -197,12 +217,20 @@
    "name": "Yu-Gi-Oh! Master Duel",
    "header": "c3f87e2374fab93f9f05661493bdf4e43ea70776"
   },
+  "1462040": {
+   "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+   "header": "67aebedbdfc261278fc5e3cd45b519212ac0555a"
+  },
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
   },
   "1683460": {
    "name": "",
+   "header": ""
+  },
+  "1790600": {
+   "name": "DRAGON BALL: Sparking! ZERO",
    "header": ""
   },
   "1796470": {
@@ -311,6 +339,132 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-30",
+   "game": "Minecraft java",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "Tried to run it on freesm launcher but lags and eventually crashes",
+   "nickname": "Arshia"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "HuniePop 2",
+   "appid": "930210",
+   "launcher": "None",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Arshia"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Dead cells",
+   "appid": "588650",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Arshia"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "FINAL FANTASY VII REMAKE INTERGRADE",
+   "appid": "1462040",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "6.02",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "60fps",
+   "notes": null,
+   "nickname": "domon07"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Left 4 Dead 2",
+   "appid": "550",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "If you use controller, you have to map the jump button",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Fishing Planet",
+   "appid": "380600",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Pro",
+   "firmware": "13.00",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-10-30",
+   "game": "The Binding of Isaac: Repentance+",
+   "appid": "3353470",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "peitopei"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "DRAGON BALL: Sparking! ZERO",
+   "appid": "1790600",
+   "launcher": "None",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "10.00",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": null,
+   "notes": "crashea siempre, funciona aveces puedes pelear unos minutos, aveces llegas a la pantalla de selecion de modo pero siempre termina crasheando por falta de memoria.\npd : es la version con la ultima update Neo",
+   "nickname": "Gaen"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Team Fortress 2",
+   "appid": "440",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "Peak Valve game. It just works perfectly.",
+   "nickname": "peitopei"
+  },
   {
    "date": "2026-10-29",
    "game": "Phoenix Wright: Ace Attorney Trilogy",

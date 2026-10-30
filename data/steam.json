@@ -1,4 +1,12 @@
 {
+ "440": {
+  "name": "Team Fortress 2",
+  "header": ""
+ },
+ "550": {
+  "name": "Left 4 Dead 2",
+  "header": ""
+ },
  "620": {
   "name": "Portal 2",
   "header": "faffc0f560786e2f05104a8d2fac837c6969bf13"
@@ -99,6 +107,10 @@
   "name": "Hollow Knight",
   "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
  },
+ "380600": {
+  "name": "Fishing Planet",
+  "header": ""
+ },
  "413150": {
   "name": "Stardew Valley",
   "header": ""
@@ -127,6 +139,10 @@
   "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
   "header": ""
  },
+ "588650": {
+  "name": "Dead Cells",
+  "header": ""
+ },
  "606150": {
   "name": "Moonlighter",
   "header": "b6b0789b397ed98c8c5871dd2f99945a8fea0332"
@@ -149,6 +165,10 @@
  },
  "858710": {
   "name": "Gravity Circuit",
+  "header": ""
+ },
+ "930210": {
+  "name": "HuniePop 2: Double Date",
   "header": ""
  },
  "952060": {
@@ -199,12 +219,20 @@
   "name": "Yu-Gi-Oh! Master Duel",
   "header": "c3f87e2374fab93f9f05661493bdf4e43ea70776"
  },
+ "1462040": {
+  "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+  "header": "67aebedbdfc261278fc5e3cd45b519212ac0555a"
+ },
  "1663850": {
   "name": "REPLACED",
   "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
  },
  "1683460": {
   "name": "",
+  "header": ""
+ },
+ "1790600": {
+  "name": "DRAGON BALL: Sparking! ZERO",
   "header": ""
  },
  "1796470": {
