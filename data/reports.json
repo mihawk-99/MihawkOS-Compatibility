@@ -237,6 +237,10 @@
    "name": "Haste",
    "header": ""
   },
+  "1961950": {
+   "name": "CHAOS;HEAD NOAH",
+   "header": ""
+  },
   "2050650": {
    "name": "Resident Evil 4",
    "header": ""
@@ -339,6 +343,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-30",
+   "game": "Watch_Dogs™",
+   "appid": "243470",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 40,
+   "settings": "Ultra",
+   "notes": "Tried it loading time longgg as hell even with an nvme ssd games playable but with hell stutter and hell framerare drop but mods work",
+   "nickname": "Swish"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "CHAOS;HEAD NOAH",
+   "appid": "1961950",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "Boots and works as expected with no crashes",
+   "nickname": "Cifesk"
+  },
   {
    "date": "2026-10-30",
    "game": "Minecraft java",
