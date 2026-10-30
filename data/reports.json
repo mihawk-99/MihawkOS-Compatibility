@@ -45,6 +45,10 @@
    "name": "L.A. Noire",
    "header": ""
   },
+  "199943": {
+   "name": "",
+   "header": ""
+  },
   "203160": {
    "name": "Tomb Raider Game of the Year",
    "header": ""
@@ -179,6 +183,10 @@
   },
   "952060": {
    "name": "Resident Evil 3",
+   "header": ""
+  },
+  "986130": {
+   "name": "Shadows of Doubt",
    "header": ""
   },
   "1030300": {
@@ -363,6 +371,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-30",
+   "game": "Shadows of Doubt",
+   "appid": "986130",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "13.40",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": "60hz, game mode on, dualsense",
+   "notes": "loads to menu, but doesn't load into a new game because of memory issues",
+   "nickname": "fxnn"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Fallout 4: Game of the Year Edition",
+   "appid": "199943",
+   "launcher": "Other",
+   "version": "v5.0.0-alpha-5",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": null,
+   "notes": "I tried version 1.10.163 of the game it runs smooth on medium settings and 50+ mods through Mo2 the only problem that I noticed is that the cursor it's alwasy on screen and moving around it's also overlapping with the ingame cursor",
+   "nickname": null
+  },
   {
    "date": "2026-10-30",
    "game": "Miasmata",
