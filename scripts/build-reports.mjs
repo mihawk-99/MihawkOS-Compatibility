@@ -78,7 +78,8 @@ export function cleanFirmware(value) {
 }
 
 export function cleanVersion(value) {
-  const m = /^v?(\d{1,3}\.\d{1,3}\.\d{1,3}(?:-[a-z]{1,12}(?:[-.]\d{1,3})?)?)$/i.exec(String(value ?? '').trim());
+  // A note in brackets after the version, "v6.0.0-alpha-6 (Not released yet)", is set aside.
+  const m = /^v?(\d{1,3}\.\d{1,3}\.\d{1,3}(?:-[a-z]{1,12}(?:[-.]\d{1,3})?)?)(?:\s*\([^()]{0,60}\))?$/i.exec(String(value ?? '').trim());
   return m ? `v${m[1].toLowerCase()}` : null;
 }
 

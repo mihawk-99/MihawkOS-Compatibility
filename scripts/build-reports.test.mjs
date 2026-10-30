@@ -100,6 +100,8 @@ test('field cleaners', () => {
   assert.equal(cleanFps('29,97'), 30);
   assert.equal(cleanVersion('4.0.0-alpha-4'), 'v4.0.0-alpha-4');
   assert.equal(cleanVersion('latest'), null);
+  assert.equal(cleanVersion('v6.0.0-alpha-6 (Not released yet)'), 'v6.0.0-alpha-6');
+  assert.equal(cleanVersion('v6.0.0-alpha-6 soon'), null);
   assert.equal(cleanDate('2/30/2026 10:00:00'), null);
   assert.equal(cleanDate('2026-10-27T10:00:00Z'), '2026-10-27');
 });
