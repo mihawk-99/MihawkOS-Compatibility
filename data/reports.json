@@ -101,6 +101,10 @@
    "name": "Stardew Valley",
    "header": ""
   },
+  "433340": {
+   "name": "Slime Rancher",
+   "header": ""
+  },
   "490110": {
    "name": "The Precinct",
    "header": ""
@@ -127,6 +131,10 @@
   },
   "632360": {
    "name": "Risk of Rain 2",
+   "header": ""
+  },
+  "787480": {
+   "name": "Phoenix Wright: Ace Attorney Trilogy",
    "header": ""
   },
   "813780": {
@@ -281,6 +289,10 @@
    "name": "Baki Hanma: Blood Arena",
    "header": ""
   },
+  "3601140": {
+   "name": "Sonic Racing: CrossWorlds Demo",
+   "header": "9ef2ad9385e1cd626ff9634a68835e33c7dd4d24"
+  },
   "3669870": {
    "name": "CONTROL Resonant",
    "header": "1e0c76e4253d347bb1304c3f213570251d924edf"
@@ -299,6 +311,62 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "Phoenix Wright: Ace Attorney Trilogy",
+   "appid": "787480",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 30,
+   "settings": "Default settings",
+   "notes": "The game works perfectly",
+   "nickname": "Pako"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Sonic Racing: CrossWorlds Demo",
+   "appid": "3601140",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "It doesn't start",
+   "nickname": "Pako"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Phoenix Wright: Ace Attorney Trilogy",
+   "appid": "787480",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "Default settings",
+   "notes": "Works perfectly",
+   "nickname": "Pako"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Slime Rancher",
+   "appid": "433340",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Ultra high settings, 1080p",
+   "notes": null,
+   "nickname": "Pako"
+  },
   {
    "date": "2026-10-29",
    "game": "Haste",
