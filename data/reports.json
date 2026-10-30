@@ -121,6 +121,10 @@
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
    "header": ""
   },
+  "606150": {
+   "name": "Moonlighter",
+   "header": "b6b0789b397ed98c8c5871dd2f99945a8fea0332"
+  },
   "632360": {
    "name": "Risk of Rain 2",
    "header": ""
@@ -193,6 +197,10 @@
    "name": "",
    "header": ""
   },
+  "1796470": {
+   "name": "Haste",
+   "header": ""
+  },
   "2050650": {
    "name": "Resident Evil 4",
    "header": ""
@@ -261,6 +269,10 @@
    "name": "skate.",
    "header": "79c5a87b61a396cc6e6b69e3a083727f175dea83"
   },
+  "3361510": {
+   "name": "Coal LLC",
+   "header": "464a07362fbcfc902988b469725e65e049d7260d"
+  },
   "3404260": {
    "name": "Dead as Disco",
    "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
@@ -280,9 +292,69 @@
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
    "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
+  },
+  "4197610": {
+   "name": "Librarian: Tidy Up the Arcane Library!",
+   "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
   }
  },
  "reports": [
+  {
+   "date": "2026-10-29",
+   "game": "Haste",
+   "appid": "1796470",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "High settings,60 hz",
+   "notes": null,
+   "nickname": "Pako"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Librarian: Tidy Up the Arcane Library!",
+   "appid": "4197610",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "12.20",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "modp"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Moonlighter",
+   "appid": "606150",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "konbu"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Coal llc",
+   "appid": "3361510",
+   "launcher": null,
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Keyboard and mouse default settings",
+   "notes": "It takes a little while to start up, but other than that it works perfectly.",
+   "nickname": "Pepitozzz"
+  },
   {
    "date": "2026-10-29",
    "game": "Resident Evil 4",

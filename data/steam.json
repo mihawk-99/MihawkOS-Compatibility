@@ -123,6 +123,10 @@
   "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
   "header": ""
  },
+ "606150": {
+  "name": "Moonlighter",
+  "header": "b6b0789b397ed98c8c5871dd2f99945a8fea0332"
+ },
  "632360": {
   "name": "Risk of Rain 2",
   "header": ""
@@ -195,6 +199,10 @@
   "name": "",
   "header": ""
  },
+ "1796470": {
+  "name": "Haste",
+  "header": ""
+ },
  "2050650": {
   "name": "Resident Evil 4",
   "header": ""
@@ -263,6 +271,10 @@
   "name": "skate.",
   "header": "79c5a87b61a396cc6e6b69e3a083727f175dea83"
  },
+ "3361510": {
+  "name": "Coal LLC",
+  "header": "464a07362fbcfc902988b469725e65e049d7260d"
+ },
  "3404260": {
   "name": "Dead as Disco",
   "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
@@ -282,5 +294,9 @@
  "3905010": {
   "name": "ONE PIECE: Grand Gourmet",
   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
+ },
+ "4197610": {
+  "name": "Librarian: Tidy Up the Arcane Library!",
+  "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
  }
 }
