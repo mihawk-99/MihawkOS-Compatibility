@@ -125,6 +125,14 @@
    "name": "Risk of Rain 2",
    "header": ""
   },
+  "813780": {
+   "name": "Age of Empires II: Definitive Edition",
+   "header": ""
+  },
+  "814380": {
+   "name": "Sekiro™: Shadows Die Twice - GOTY Edition",
+   "header": ""
+  },
   "858710": {
    "name": "Gravity Circuit",
    "header": ""
@@ -136,6 +144,10 @@
   "1030300": {
    "name": "Hollow Knight: Silksong",
    "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
+  },
+  "1148130": {
+   "name": "Divinum",
+   "header": "d83df4c3d12fb4874759e3bd5c6db1c5cdb7eaf8"
   },
   "1150690": {
    "name": "OMORI",
@@ -228,6 +240,14 @@
   "3090810": {
    "name": "Truckful",
    "header": "84527335c4107d4ad2e459e97f0af3b0343ffbc2"
+  },
+  "3105440": {
+   "name": "Heroes of Might and Magic: Olden Era",
+   "header": "e2bef853b7cb19e3d5f019022309783609e8454f"
+  },
+  "3156770": {
+   "name": "Witchfire",
+   "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9"
   },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
@@ -443,6 +463,48 @@
   },
   {
    "date": "2026-10-29",
+   "game": "Divinum",
+   "appid": "1148130",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Majk"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Heroes of Might and Magic: Olden Era",
+   "appid": "3105440",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.00",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "controls works only with touchpad",
+   "nickname": "Majk"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Witchfire",
+   "appid": "3156770",
+   "launcher": "None",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "13.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "freezes on compile shaders",
+   "nickname": "Majk"
+  },
+  {
+   "date": "2026-10-29",
    "game": "CONTROL Resonant",
    "appid": "3669870",
    "launcher": "None",
@@ -468,6 +530,20 @@
    "settings": null,
    "notes": null,
    "nickname": "Majk"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Sekiro™: Shadows Die Twice",
+   "appid": "814380",
+   "launcher": null,
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5",
+   "firmware": "11.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Memory is full. Not even getting to the desktop interface.",
+   "nickname": "."
   },
   {
    "date": "2026-10-29",
@@ -510,6 +586,20 @@
    "settings": null,
    "notes": "Need keyboard to write farm name, other aspects ate perfect",
    "nickname": "y3lle"
+  },
+  {
+   "date": "2026-10-29",
+   "game": "Age of Empires II: Definitive Edition",
+   "appid": "813780",
+   "launcher": "Steam",
+   "version": "v4.0.0-alpha-4",
+   "console": "PS5 Pro",
+   "firmware": "13.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Crash at startup. Only Black window",
+   "nickname": null
   },
   {
    "date": "2026-10-29",
