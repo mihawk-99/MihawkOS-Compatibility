@@ -109,6 +109,10 @@
    "name": "Sleeping Dogs: Definitive Edition",
    "header": ""
   },
+  "322330": {
+   "name": "Don't Starve Together",
+   "header": ""
+  },
   "338930": {
    "name": "TRANSFORMERS: Devastation",
    "header": ""
@@ -116,6 +120,10 @@
   "367520": {
    "name": "Hollow Knight",
    "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
+  },
+  "371970": {
+   "name": "Barony",
+   "header": "0f8975e4b2af32eb0d68c309f1eff56d470e73dc"
   },
   "380600": {
    "name": "Fishing Planet",
@@ -249,12 +257,20 @@
    "name": "",
    "header": ""
   },
+  "1782210": {
+   "name": "Crab Game",
+   "header": ""
+  },
   "1790600": {
    "name": "DRAGON BALL: Sparking! ZERO",
    "header": ""
   },
   "1796470": {
    "name": "Haste",
+   "header": ""
+  },
+  "1846170": {
+   "name": "Iron Lung",
    "header": ""
   },
   "1961950": {
@@ -309,6 +325,10 @@
    "name": "Gears of War: E-Day",
    "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
   },
+  "3043580": {
+   "name": "Keeper",
+   "header": "f6ddce24d27462ff55f6343c616d12fe71a996f5"
+  },
   "3061570": {
    "name": "Persona5: The Phantom X",
    "header": "16cdd695861464bd7aa502df7eb35a1e5caad6f8"
@@ -328,6 +348,10 @@
   "3156770": {
    "name": "Witchfire",
    "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9"
+  },
+  "3314790": {
+   "name": "CloverPit",
+   "header": "8ba81356b84aa937573fa29fdd708dbd96b01537"
   },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
@@ -368,9 +392,139 @@
   "4197610": {
    "name": "Librarian: Tidy Up the Arcane Library!",
    "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
+  },
+  "4732690": {
+   "name": "Arknights: Endfield",
+   "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398"
   }
  },
  "reports": [
+  {
+   "date": "2026-10-31",
+   "game": "Don't Starve Together",
+   "appid": "322330",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Don't Starve Together crashes on startup in both x64 and x86 versions. The logs show an assertion failure in \"dxbc-spirv/ sm3_parser.h:293\"\n\n(\"Operand::getSwizzle\"), followed by exit code 3.\n\nSteam works fine, and all required payload checks pass.",
+   "nickname": "Vov4k"
+  },
+  {
+   "date": "2026-10-31",
+   "game": "Arknights: Endfield",
+   "appid": "4732690",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "ACE center unable to load driver.",
+   "nickname": "Alt"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "CloverPit",
+   "appid": "3314790",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "12.70",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "Constant micro-stutters regardless of vsync. Game crashed at a random point during the game on the 66k deadline, no memory card.",
+   "nickname": "Dogel"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Barony",
+   "appid": "371970",
+   "launcher": null,
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Default keyboard and mouse",
+   "notes": "It's working well, I haven't tried the online mode.",
+   "nickname": "Pepitozzz"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Barony",
+   "appid": "371970",
+   "launcher": null,
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Default settings with mouse and keyboard",
+   "notes": "It works great (I haven't tried it online)",
+   "nickname": "Pepitozzz"
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Iron Lung",
+   "appid": "1846170",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "12.70",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "You can progress the story screen by pressing touchpad.",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Resident Evil 4",
+   "appid": "2050650",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "11.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Memory Full on regular PS5 11.60 firmware, Steam run in big picture mode",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Keeper",
+   "appid": "3043580",
+   "launcher": "None",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "12.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Loading shader it crashes with out of video memory trying to allocate rendering resource.",
+   "nickname": null
+  },
+  {
+   "date": "2026-10-30",
+   "game": "Crab Game",
+   "appid": "1782210",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Slim",
+   "firmware": "13.42",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "King mo"
+  },
   {
    "date": "2026-10-30",
    "game": "Shadows of Doubt",

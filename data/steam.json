@@ -111,6 +111,10 @@
   "name": "Sleeping Dogs: Definitive Edition",
   "header": ""
  },
+ "322330": {
+  "name": "Don't Starve Together",
+  "header": ""
+ },
  "338930": {
   "name": "TRANSFORMERS: Devastation",
   "header": ""
@@ -118,6 +122,10 @@
  "367520": {
   "name": "Hollow Knight",
   "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
+ },
+ "371970": {
+  "name": "Barony",
+  "header": "0f8975e4b2af32eb0d68c309f1eff56d470e73dc"
  },
  "380600": {
   "name": "Fishing Planet",
@@ -251,12 +259,20 @@
   "name": "",
   "header": ""
  },
+ "1782210": {
+  "name": "Crab Game",
+  "header": ""
+ },
  "1790600": {
   "name": "DRAGON BALL: Sparking! ZERO",
   "header": ""
  },
  "1796470": {
   "name": "Haste",
+  "header": ""
+ },
+ "1846170": {
+  "name": "Iron Lung",
   "header": ""
  },
  "1961950": {
@@ -311,6 +327,10 @@
   "name": "Gears of War: E-Day",
   "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
  },
+ "3043580": {
+  "name": "Keeper",
+  "header": "f6ddce24d27462ff55f6343c616d12fe71a996f5"
+ },
  "3061570": {
   "name": "Persona5: The Phantom X",
   "header": "16cdd695861464bd7aa502df7eb35a1e5caad6f8"
@@ -330,6 +350,10 @@
  "3156770": {
   "name": "Witchfire",
   "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9"
+ },
+ "3314790": {
+  "name": "CloverPit",
+  "header": "8ba81356b84aa937573fa29fdd708dbd96b01537"
  },
  "3353470": {
   "name": "The Binding of Isaac: Repentance+",
@@ -370,5 +394,9 @@
  "4197610": {
   "name": "Librarian: Tidy Up the Arcane Library!",
   "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
+ },
+ "4732690": {
+  "name": "Arknights: Endfield",
+  "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398"
  }
 }
