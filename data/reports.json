@@ -29,6 +29,10 @@
    "name": "Fallout: New Vegas",
    "header": ""
   },
+  "40970": {
+   "name": "Stronghold Crusader HD (2012)",
+   "header": ""
+  },
   "40990": {
    "name": "Mafia",
    "header": ""
@@ -301,6 +305,10 @@
    "name": "Baten Kaitos I & II HD Remaster",
    "header": ""
   },
+  "2163330": {
+   "name": "Yet Another Zombie Survivors",
+   "header": "d14101ee67beb9c952fd8e38ec015777356430a0"
+  },
   "2420510": {
    "name": "HoloCure - Save the Fans!",
    "header": ""
@@ -403,6 +411,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-10-31",
+   "game": "Stronghold Crusader HD",
+   "appid": "40970",
+   "launcher": "None",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Slim",
+   "firmware": "13.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "It's the gog version",
+   "nickname": "HKDL"
+  },
+  {
+   "date": "2026-10-31",
+   "game": "Yet another zombie survivors",
+   "appid": "2163330",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Vansie"
+  },
   {
    "date": "2026-10-31",
    "game": "Brotato",
