@@ -10,7 +10,9 @@
 // The log prints counts only, never a submission's words, since a public repository's Action logs are public.
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { RATINGS, CONSOLES, LAUNCHERS, COLUMNS, LIMITS } from '../src/fields.js';
+import { RATINGS, CONSOLES, LAUNCHERS, COLUMNS, LIMITS, cleanVersion } from '../src/fields.js';
+
+export { cleanVersion };
 
 const MAX_BYTES = 5 * 1024 * 1024;
 const MAX_ROWS = 20000;
@@ -77,11 +79,6 @@ export function cleanFirmware(value) {
   return m ? `${Number(m[1])}.${(m[2] ?? '').padEnd(2, '0')}` : null;
 }
 
-export function cleanVersion(value) {
-  // A note in brackets after the version, "v6.0.0-alpha-6 (Not released yet)", is set aside.
-  const m = /^v?(\d{1,3}\.\d{1,3}\.\d{1,3}(?:-[a-z]{1,12}(?:[-.]\d{1,3})?)?)(?:\s*\([^()]{0,60}\))?$/i.exec(String(value ?? '').trim());
-  return m ? `v${m[1].toLowerCase()}` : null;
-}
 
 export function cleanLauncher(value) {
   if (!answer(value)) return null;

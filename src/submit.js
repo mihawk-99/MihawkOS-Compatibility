@@ -2,7 +2,7 @@
 // The report page's rules, kept apart from React so scripts/report-form.test.mjs can check them. Each game becomes one
 // Google Form response; the checks match the form's own (docs/FORM.md), because Google gives no answer the page can read
 // when it refuses one.
-import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, LIMITS, FORM_ENTRIES } from './fields.js';
+import { RATINGS, CONSOLES, LAUNCHERS, LIMITS, FORM_ENTRIES, cleanVersion } from './fields.js';
 
 export const SHARED = ['console', 'firmware', 'version', 'nickname'];
 export const PER_GAME = ['game', 'appid', 'launcher', 'rating', 'fps', 'settings', 'notes'];
@@ -20,7 +20,7 @@ export function problems(shared, row) {
   const p = {};
   if (!CONSOLES.includes(shared.console)) p.console = 'Choose your console.';
   if (!/^\d{1,2}\.\d{2}$/.test(String(shared.firmware ?? '').trim())) p.firmware = 'Like 10.01 or 13.40.';
-  if (!VERSIONS.includes(shared.version)) p.version = 'Choose the MihawkOS version.';
+  if (cleanVersion(shared.version) !== shared.version) p.version = 'Choose the MihawkOS version.';
   if (tooLong(shared.nickname, LIMITS.nickname)) p.nickname = `At most ${LIMITS.nickname} characters.`;
   if (!String(row.game ?? '').trim()) p.game = "The game's name.";
   else if (tooLong(row.game.trim(), LIMITS.game)) p.game = `At most ${LIMITS.game} characters.`;
@@ -59,7 +59,7 @@ export function prefill(search) {
     shared: {
       console: pick(get('console', 'model'), CONSOLES),
       firmware: get('firmware', 'fw'),
-      version: pick(get('version'), VERSIONS),
+      version: cleanVersion(get('version')) ?? '',
     },
     row: {
       game: get('game'),

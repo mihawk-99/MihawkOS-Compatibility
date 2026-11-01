@@ -157,8 +157,8 @@ To change the script later, paste the new code, save, then **Deploy > Manage dep
 
 ## When MihawkOS has a new release
 
-Nothing to do: each Publish run reads the releases of PS5_MihawkOS on GitHub into `data/versions.json`, and the
-report page offers the new version within about 15 minutes. The form's version question is a text answer that takes
+Nothing to do: the report page asks GitHub for the releases of PS5_MihawkOS each time it opens, so a new release is
+offered at once; each Publish run also keeps a copy in `data/versions.json`, used when GitHub does not answer. The form's version question is a text answer that takes
 any version written like `v5.0.1-alpha-5`, so it needs no change either. When the homebrew SDK supports a new firmware, add it at the top of
 `FIRMWARES` in the same file; until then, players choose **Not in the list?** and type it.
 

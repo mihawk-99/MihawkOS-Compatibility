@@ -3,7 +3,7 @@
 // own response (src/submit.js), so the sheet, its Approved box and the list's build stay as they are.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import data from '../data/reports.json';
-import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, FIRMWARES } from './fields.js';
+import { RATINGS, CONSOLES, LAUNCHERS, VERSIONS, FIRMWARES, RELEASES_URL, releaseVersions } from './fields.js';
 import { appidFrom, cleanGame, cleanGames, formBody, lookupUrl, prefill, problems, responseUrl } from './submit.js';
 import { Badge, Bar, Footer, FORM_URL, Launcher, steamHeader, useNight } from './shell.jsx';
 import { useT } from './i18n.jsx';
@@ -40,6 +40,21 @@ function loadShared() {
   try { saved = JSON.parse(localStorage.getItem(SAVED) ?? '{}') ?? {}; } catch { /* nothing saved */ }
   const start = { console: '', firmware: '', version: VERSIONS[0], nickname: '', ...saved };
   return Object.fromEntries(Object.entries(start).map(([k, v]) => [k, typeof v === 'string' ? v : '']));
+}
+
+// MihawkOS's versions: the build's list at once, then GitHub's own when it answers, so a release made since the last
+// Publish run is offered too. Without an answer (offline, GitHub's hourly limit) the build's list stays.
+function useVersions() {
+  const [versions, setVersions] = useState(VERSIONS);
+  useEffect(() => {
+    const stop = new AbortController();
+    fetch(RELEASES_URL, { signal: stop.signal, headers: { accept: 'application/vnd.github+json' } })
+      .then((res) => (res.ok ? res.json() : []))
+      .then((list) => { const fresh = releaseVersions(list); if (fresh.length) setVersions([...new Set([...fresh, ...VERSIONS])]); })
+      .catch(() => { /* the build's list stays */ });
+    return () => stop.abort();
+  }, []);
+  return versions;
 }
 
 // The games the list already knows, for the name suggestions and the AppID check.
@@ -253,6 +268,14 @@ export default function ReportPage() {
     for (const [k, v] of Object.entries(start.shared)) if (v) s[k] = v;
     return s;
   });
+  const versions = useVersions();
+  // Until the visitor picks one, the version follows the newest release, which GitHub may name after the build did.
+  const versionPicked = useRef(Boolean(start.shared.version) || (() => {
+    try { return Boolean(JSON.parse(localStorage.getItem(SAVED) ?? '{}')?.version); } catch { return false; }
+  })());
+  useEffect(() => {
+    if (!versionPicked.current) setShared((s) => ({ ...s, version: versions[0] }));
+  }, [versions]);
   // The firmware is a list; "Not in the list?" turns it into a field for a newer one.
   const [ownFirmware, setOwnFirmware] = useState(() => Boolean(shared.firmware) && !FIRMWARES.includes(shared.firmware));
   const [rows, setRows] = useState(() => {
@@ -356,8 +379,8 @@ export default function ReportPage() {
                 </Field>
               )}
               <Field label={`${t('MihawkOS version')} *`} error={sharedErrors.version} hint={t("On its wallpaper and the WebUI's Help page.")}>
-                <select value={shared.version} onChange={(e) => setS('version')(e.target.value)}>
-                  {VERSIONS.map((v) => <option key={v}>{v}</option>)}
+                <select value={shared.version} onChange={(e) => { versionPicked.current = true; setS('version')(e.target.value); }}>
+                  {(versions.includes(shared.version) || !shared.version ? versions : [shared.version, ...versions]).map((v) => <option key={v}>{v}</option>)}
                 </select>
               </Field>
               <Field label={t('Nickname')} error={sharedErrors.nickname} hint={t('Optional, shown with your reports. Not your e-mail.')}>

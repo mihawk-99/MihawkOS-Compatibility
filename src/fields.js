@@ -37,8 +37,26 @@ export const COLUMNS = {
 
 export const LIMITS = { game: 100, settings: 300, notes: 1000, nickname: 32 };
 
-// MihawkOS's releases, newest first, as each Publish run reads them from GitHub (scripts/fetch-versions.mjs).
+// MihawkOS's releases, newest first, as the last Publish run read them from GitHub (scripts/fetch-versions.mjs); the
+// report page asks GitHub again when it opens (RELEASES_URL), so a new release is offered at once.
 export const VERSIONS = versions;
+export const RELEASES_URL = 'https://api.github.com/repos/mihawk-99/PS5_MihawkOS/releases?per_page=100';
+
+export function cleanVersion(value) {
+  // A note in brackets after the version, "v6.0.0-alpha-6 (Not released yet)", is set aside.
+  const m = /^v?(\d{1,3}\.\d{1,3}\.\d{1,3}(?:-[a-z]{1,12}(?:[-.]\d{1,3})?)?)(?:\s*\([^()]{0,60}\))?$/i.exec(String(value ?? '').trim());
+  return m ? `v${m[1].toLowerCase()}` : null;
+}
+
+// GitHub lists releases newest first; drafts and tags not shaped like v1.2.3-alpha-4 are left out.
+export function releaseVersions(releases) {
+  const out = [];
+  for (const r of Array.isArray(releases) ? releases : []) {
+    const v = !r?.draft && cleanVersion(r?.tag_name);
+    if (v && !out.includes(v)) out.push(v);
+  }
+  return out;
+}
 
 // The Google Form's field ids (its pre-fill link, docs/FORM.md). The report page posts each game to the form with these;
 // a question deleted and made again gets a new id, which must be copied here.

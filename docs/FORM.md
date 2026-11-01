@@ -128,8 +128,9 @@ checks every field the way the form does (`problems()`, tested in `scripts/repor
 - **"Is it the right game?":** an AppID shows its Steam picture, its Steam name (from the list or the lookup's
   `?id=`), and a link to its Steam page. A hand-typed AppID with an empty name takes Steam's name. Without the
   lookup, an AppID the list does not know shows its picture (when it has an unhashed one) and the link only.
-- **Versions:** the page offers MihawkOS's GitHub releases, newest first, which each Publish run writes to
-  `data/versions.json` (`scripts/fetch-versions.mjs`); a new release appears within about 15 minutes.
+- **Versions:** the page offers MihawkOS's GitHub releases, newest first: it asks GitHub when it opens
+  (`api.github.com`, in its Content-Security-Policy), and falls back to `data/versions.json`, which each Publish run
+  writes (`scripts/fetch-versions.mjs`). Any version written like `v7.0.0-alpha-7` is accepted.
 - **When the form changes:** a question deleted and made again gets a new `entry.` id, to copy into `FORM_ENTRIES`. A new question
   needs the page, the script and `src/fields.js`.
 - The page's Content-Security-Policy allows `connect-src https://docs.google.com` for the sends and

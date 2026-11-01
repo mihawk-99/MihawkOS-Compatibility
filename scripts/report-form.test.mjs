@@ -19,6 +19,7 @@ test('a complete row passes; each missing or wrong field is named', () => {
   assert.deepEqual(problems(shared, { ...row, appid: '', launcher: '', fps: '' }), {}); // optional fields may stay empty
   assert.ok(problems(shared, { ...row, notes: 'x'.repeat(1001) }).notes);
   assert.ok(problems({ ...shared, nickname: 'n'.repeat(33) }, row).nickname);
+  assert.deepEqual(problems({ ...shared, version: 'v7.0.0-alpha-7' }, row), {}); // a release newer than the build's list
 });
 
 test("the body is the form's own answer: field ids, trimmed values, nothing empty", () => {
