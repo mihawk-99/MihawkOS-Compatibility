@@ -147,6 +147,10 @@
   "name": "TRANSFORMERS: Devastation",
   "header": ""
  },
+ "361420": {
+  "name": "ASTRONEER",
+  "header": "1c44099d86c824a6fd1098a4215097878d68664e"
+ },
  "367520": {
   "name": "Hollow Knight",
   "header": "3c3489495136b26b34f8a9543c7f5645b99d388c"
@@ -331,6 +335,10 @@
   "name": "Haste",
   "header": ""
  },
+ "1809540": {
+  "name": "Nine Sols",
+  "header": ""
+ },
  "1846170": {
   "name": "Iron Lung",
   "header": ""
@@ -478,6 +486,10 @@
  "3905010": {
   "name": "ONE PIECE: Grand Gourmet",
   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
+ },
+ "3949040": {
+  "name": "RV There Yet?",
+  "header": "cae24b4ed7f4531be51f0d63f785b7d253f92dc3"
  },
  "4195110": {
   "name": "Ultrapool",
