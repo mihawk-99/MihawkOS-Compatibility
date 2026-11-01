@@ -27,6 +27,10 @@
   "name": "Fallout: New Vegas",
   "header": ""
  },
+ "38410": {
+  "name": "Fallout 2: A Post Nuclear Role Playing Game",
+  "header": ""
+ },
  "40970": {
   "name": "Stronghold Crusader HD (2012)",
   "header": ""
@@ -155,6 +159,10 @@
   "name": "Fishing Planet",
   "header": ""
  },
+ "383150": {
+  "name": "Dead Island Definitive Edition",
+  "header": ""
+ },
  "413150": {
   "name": "Stardew Valley",
   "header": ""
@@ -225,6 +233,10 @@
  },
  "930210": {
   "name": "HuniePop 2: Double Date",
+  "header": ""
+ },
+ "934700": {
+  "name": "Dead Island 2",
   "header": ""
  },
  "952060": {
@@ -302,6 +314,10 @@
  "1683460": {
   "name": "",
   "header": ""
+ },
+ "1721470": {
+  "name": "Poppy Playtime",
+  "header": "00ca34a0c863a8d86c6582904249216d6aa263bd"
  },
  "1782210": {
   "name": "Crab Game",
@@ -411,6 +427,10 @@
   "name": "Witchfire",
   "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9"
  },
+ "3241660": {
+  "name": "R.E.P.O.",
+  "header": ""
+ },
  "3314790": {
   "name": "CloverPit",
   "header": "8ba81356b84aa937573fa29fdd708dbd96b01537"
@@ -459,6 +479,10 @@
   "name": "ONE PIECE: Grand Gourmet",
   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
  },
+ "4195110": {
+  "name": "Ultrapool",
+  "header": "01a02c21a927ac9dc71353e18cb784b1ea5c53a7"
+ },
  "4197610": {
   "name": "Librarian: Tidy Up the Arcane Library!",
   "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
@@ -470,5 +494,9 @@
  "4739660": {
   "name": "Drag'n Wash",
   "header": "e837f81aebb36b458512fa562a322c218dde1f7c"
+ },
+ "5335510": {
+  "name": "Moon Sweepers",
+  "header": "41e1e802dfc069cc245b91043e451a2f9ffa80e3"
  }
 }

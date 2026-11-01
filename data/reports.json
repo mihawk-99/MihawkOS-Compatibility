@@ -29,6 +29,10 @@
    "name": "Fallout: New Vegas",
    "header": ""
   },
+  "38410": {
+   "name": "Fallout 2: A Post Nuclear Role Playing Game",
+   "header": ""
+  },
   "40970": {
    "name": "Stronghold Crusader HD (2012)",
    "header": ""
@@ -153,6 +157,10 @@
    "name": "Fishing Planet",
    "header": ""
   },
+  "383150": {
+   "name": "Dead Island Definitive Edition",
+   "header": ""
+  },
   "413150": {
    "name": "Stardew Valley",
    "header": ""
@@ -223,6 +231,10 @@
   },
   "930210": {
    "name": "HuniePop 2: Double Date",
+   "header": ""
+  },
+  "934700": {
+   "name": "Dead Island 2",
    "header": ""
   },
   "952060": {
@@ -300,6 +312,10 @@
   "1683460": {
    "name": "",
    "header": ""
+  },
+  "1721470": {
+   "name": "Poppy Playtime",
+   "header": "00ca34a0c863a8d86c6582904249216d6aa263bd"
   },
   "1782210": {
    "name": "Crab Game",
@@ -409,6 +425,10 @@
    "name": "Witchfire",
    "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9"
   },
+  "3241660": {
+   "name": "R.E.P.O.",
+   "header": ""
+  },
   "3314790": {
    "name": "CloverPit",
    "header": "8ba81356b84aa937573fa29fdd708dbd96b01537"
@@ -457,6 +477,10 @@
    "name": "ONE PIECE: Grand Gourmet",
    "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
   },
+  "4195110": {
+   "name": "Ultrapool",
+   "header": "01a02c21a927ac9dc71353e18cb784b1ea5c53a7"
+  },
   "4197610": {
    "name": "Librarian: Tidy Up the Arcane Library!",
    "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda"
@@ -468,9 +492,111 @@
   "4739660": {
    "name": "Drag'n Wash",
    "header": "e837f81aebb36b458512fa562a322c218dde1f7c"
+  },
+  "5335510": {
+   "name": "Moon Sweepers",
+   "header": "41e1e802dfc069cc245b91043e451a2f9ffa80e3"
   }
  },
  "reports": [
+  {
+   "date": "2026-11-01",
+   "game": "Moon Sweepers",
+   "appid": "5335510",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Black Screen",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Fallout 2: A Post Nuclear Role Playing Game",
+   "appid": "38410",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Launcher, config and hi res patcher opens but game does not launch with neither fallout2.exe file",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Ultrapool",
+   "appid": "4195110",
+   "launcher": null,
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Default keyboard and mouse",
+   "notes": "It works perfectly.",
+   "nickname": "Pepitozzz"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "R.E.P.O.",
+   "appid": "3241660",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Shows title cards and then sits on a black screen",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Poppy Playtime",
+   "appid": "1721470",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "I didn’t change no settings",
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Dead Island 2",
+   "appid": "934700",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "default everything",
+   "notes": "Shockingly runs better than the ps4/ps5 versions with the benefits of uncapped frames and PC visual settings",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Dead Island Definitive Edition",
+   "appid": "383150",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "max settings",
+   "notes": "Ran flawless, did not try controller I will update when I do",
+   "nickname": "Juantezuma2.1"
+  },
   {
    "date": "2026-11-01",
    "game": "Drag'n Wash",
