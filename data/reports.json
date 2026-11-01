@@ -105,6 +105,10 @@
    "name": "Tom Clancy’s Splinter Cell Blacklist",
    "header": ""
   },
+  "237630": {
+   "name": "DuckTales: Remastered",
+   "header": ""
+  },
   "243470": {
    "name": "Watch_Dogs™",
    "header": ""
@@ -460,9 +464,41 @@
   "4732690": {
    "name": "Arknights: Endfield",
    "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398"
+  },
+  "4739660": {
+   "name": "Drag'n Wash",
+   "header": "e837f81aebb36b458512fa562a322c218dde1f7c"
   }
  },
  "reports": [
+  {
+   "date": "2026-11-01",
+   "game": "Drag'n Wash",
+   "appid": "4739660",
+   "launcher": null,
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "13.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "luckily it doesn't start",
+   "nickname": "fxnn"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "DuckTales: Remastered",
+   "appid": "237630",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": null,
+   "notes": "alpha - 7 i find steam downlod 80mb /s even i have faster internet",
+   "nickname": "arabicmaple"
+  },
   {
    "date": "2026-11-01",
    "game": "The Witcher 3: Wild Hunt — Remastered",

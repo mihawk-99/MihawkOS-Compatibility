@@ -107,6 +107,10 @@
   "name": "Tom Clancy’s Splinter Cell Blacklist",
   "header": ""
  },
+ "237630": {
+  "name": "DuckTales: Remastered",
+  "header": ""
+ },
  "243470": {
   "name": "Watch_Dogs™",
   "header": ""
@@ -462,5 +466,9 @@
  "4732690": {
   "name": "Arknights: Endfield",
   "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398"
+ },
+ "4739660": {
+  "name": "Drag'n Wash",
+  "header": "e837f81aebb36b458512fa562a322c218dde1f7c"
  }
 }
