@@ -63,12 +63,20 @@
   "name": "Fable - The Lost Chapters",
   "header": ""
  },
+ "204100": {
+  "name": "Max Payne 3",
+  "header": ""
+ },
  "204360": {
   "name": "Castle Crashers®",
   "header": ""
  },
  "208650": {
   "name": "Batman™: Arkham Knight",
+  "header": ""
+ },
+ "219990": {
+  "name": "Grim Dawn",
   "header": ""
  },
  "220240": {
@@ -93,6 +101,10 @@
  },
  "235460": {
   "name": "METAL GEAR RISING: REVENGEANCE",
+  "header": ""
+ },
+ "235600": {
+  "name": "Tom Clancy’s Splinter Cell Blacklist",
   "header": ""
  },
  "243470": {
@@ -173,6 +185,14 @@
  },
  "632360": {
   "name": "Risk of Rain 2",
+  "header": ""
+ },
+ "694280": {
+  "name": "Zombie Army 4: Dead War",
+  "header": ""
+ },
+ "774801": {
+  "name": "Crab Champions",
   "header": ""
  },
  "787480": {
@@ -259,6 +279,14 @@
   "name": "REPLACED",
   "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
  },
+ "1671340": {
+  "name": "Fears to Fathom - Home Alone",
+  "header": ""
+ },
+ "1681430": {
+  "name": "RoboCop: Rogue City",
+  "header": ""
+ },
  "1683460": {
   "name": "",
   "header": ""
@@ -327,6 +355,10 @@
   "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
   "header": ""
  },
+ "2642680": {
+  "name": "Half Sword Tech Demo",
+  "header": "3af0df9baa6a6388a7c54d66aa07d24ef28ac3ad"
+ },
  "2833580": {
   "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
   "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
@@ -383,8 +415,16 @@
   "name": "Dead as Disco",
   "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277"
  },
+ "3405340": {
+  "name": "Megabonk",
+  "header": "d06cb39a82a703e42541085fc61b42d80904b3f8"
+ },
  "3469230": {
   "name": "Baki Hanma: Blood Arena",
+  "header": ""
+ },
+ "3527760": {
+  "name": "RoboCop: Rogue City - Unfinished Business",
   "header": ""
  },
  "3601140": {
