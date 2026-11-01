@@ -121,6 +121,10 @@
    "name": "Brawlhalla",
    "header": "f6dd1b0a6a2b6e161604b36788276b18d36909cf"
   },
+  "292030": {
+   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "header": ""
+  },
   "307690": {
    "name": "Sleeping Dogs: Definitive Edition",
    "header": ""
@@ -147,6 +151,10 @@
   },
   "413150": {
    "name": "Stardew Valley",
+   "header": ""
+  },
+  "429050": {
+   "name": "Feed and Grow: Fish",
    "header": ""
   },
   "433340": {
@@ -353,6 +361,10 @@
    "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
    "header": ""
   },
+  "2586440": {
+   "name": "House 2",
+   "header": "ff701c2fda8cf6706f0ea9c15f1e0e4fb691619c"
+  },
   "2642680": {
    "name": "Half Sword Tech Demo",
    "header": "3af0df9baa6a6388a7c54d66aa07d24ef28ac3ad"
@@ -451,6 +463,48 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-01",
+   "game": "The Witcher 3: Wild Hunt — Remastered",
+   "appid": "292030",
+   "launcher": "GOG Galaxy",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "10.01",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Mihawk"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Feed and Grow: Fiah",
+   "appid": "429050",
+   "launcher": "Steam",
+   "version": "v5.0.1-alpha-5",
+   "console": "PS5",
+   "firmware": "13.40",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "all on standard settings. fullscreen and steam input must be enabled and mouse is on the screen ANNOYINGG",
+   "nickname": "fxnn"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "House 2",
+   "appid": "2586440",
+   "launcher": "Steam",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5",
+   "firmware": "13.40",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "all on standard settings, controller has wrong inputs without xinput emulation / same on pc with dualsense",
+   "nickname": "fxnn"
+  },
   {
    "date": "2026-11-01",
    "game": "Megabonk",
