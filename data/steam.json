@@ -343,6 +343,10 @@
   "name": "Iron Lung",
   "header": ""
  },
+ "1907440": {
+  "name": "Super Lone Survivor",
+  "header": "64fe4bf56e8361347e0f9185b27671280a119f1c"
+ },
  "1942280": {
   "name": "Brotato",
   "header": "f98281910016f8924be37cce3d4b119f5223a358"
@@ -375,6 +379,14 @@
   "name": "Yet Another Zombie Survivors",
   "header": "d14101ee67beb9c952fd8e38ec015777356430a0"
  },
+ "2278520": {
+  "name": "Enshrouded Dedicated Server",
+  "header": "b87ab9f709ce9f6cf553a0e62dc1f4831cfd96cb"
+ },
+ "2416450": {
+  "name": "MOUSE: P.I. For Hire",
+  "header": "298ff2fc3f6a700d022b8d3ec58047f2b426be03"
+ },
  "2420510": {
   "name": "HoloCure - Save the Fans!",
   "header": ""
@@ -389,6 +401,10 @@
  },
  "2521380": {
   "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
+  "header": ""
+ },
+ "2552430": {
+  "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
   "header": ""
  },
  "2586440": {

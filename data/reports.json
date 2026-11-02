@@ -341,6 +341,10 @@
    "name": "Iron Lung",
    "header": ""
   },
+  "1907440": {
+   "name": "Super Lone Survivor",
+   "header": "64fe4bf56e8361347e0f9185b27671280a119f1c"
+  },
   "1942280": {
    "name": "Brotato",
    "header": "f98281910016f8924be37cce3d4b119f5223a358"
@@ -373,6 +377,14 @@
    "name": "Yet Another Zombie Survivors",
    "header": "d14101ee67beb9c952fd8e38ec015777356430a0"
   },
+  "2278520": {
+   "name": "Enshrouded Dedicated Server",
+   "header": "b87ab9f709ce9f6cf553a0e62dc1f4831cfd96cb"
+  },
+  "2416450": {
+   "name": "MOUSE: P.I. For Hire",
+   "header": "298ff2fc3f6a700d022b8d3ec58047f2b426be03"
+  },
   "2420510": {
    "name": "HoloCure - Save the Fans!",
    "header": ""
@@ -387,6 +399,10 @@
   },
   "2521380": {
    "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
+   "header": ""
+  },
+  "2552430": {
+   "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
    "header": ""
   },
   "2586440": {
@@ -511,6 +527,76 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-01",
+   "game": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
+   "appid": "2552430",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "Had to skip a black cutscene and had a couple stutters that seemed to go away when out of the tutorial.",
+   "nickname": "Vansie"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Super Lone Survivor",
+   "appid": "1907440",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "Underrated gem, mouse and kb worked, ran smooth as butter.. again no controller working for me yet",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "MOUSE: P.I. For Hire",
+   "appid": "2416450",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "steam input on and off",
+   "notes": "Works great with mouse and kb working on issues detecting controller. Might not be a game specific issue",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Enshrouded Dedicated Server",
+   "appid": "2278520",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "10.20",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-01",
+   "game": "Max Payne 3",
+   "appid": "204100",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "11.60",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": "DX9 1080P Very High settings",
+   "notes": "Games runs well with DX9 since it takes up less memory\n\nIf you switch it to DX11 you'll get random shutdowns I'm guessing it's memory issues\n\nOther than that it runs ok",
+   "nickname": "Baki7882"
+  },
   {
    "date": "2026-11-01",
    "game": "RV There Yet?",
