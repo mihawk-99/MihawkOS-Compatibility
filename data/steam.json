@@ -1,4 +1,12 @@
 {
+ "70": {
+  "name": "Half-Life",
+  "header": ""
+ },
+ "220": {
+  "name": "Half-Life 2",
+  "header": ""
+ },
  "440": {
   "name": "Team Fortress 2",
   "header": ""
@@ -10,6 +18,18 @@
  "620": {
   "name": "Portal 2",
   "header": "faffc0f560786e2f05104a8d2fac837c6969bf13"
+ },
+ "6020": {
+  "name": "STAR WARS™ Jedi Knight - Jedi Academy™",
+  "header": ""
+ },
+ "6030": {
+  "name": "STAR WARS™ Jedi Knight II - Jedi Outcast™",
+  "header": ""
+ },
+ "6910": {
+  "name": "Deus Ex: Game of the Year Edition",
+  "header": "a59f78bdeac034d05cd6aec0d0e68b188d242990"
  },
  "12210": {
   "name": "Grand Theft Auto IV: The Complete Edition",
@@ -95,6 +115,10 @@
   "name": "Miasmata",
   "header": ""
  },
+ "223710": {
+  "name": "Cry of Fear",
+  "header": ""
+ },
  "227300": {
   "name": "Euro Truck Simulator 2",
   "header": ""
@@ -167,6 +191,10 @@
   "name": "Dead Island Definitive Edition",
   "header": ""
  },
+ "391540": {
+  "name": "Undertale",
+  "header": ""
+ },
  "413150": {
   "name": "Stardew Valley",
   "header": ""
@@ -195,6 +223,10 @@
   "name": "Hello Neighbor",
   "header": ""
  },
+ "527430": {
+  "name": "Warhammer 40,000: Inquisitor - Martyr",
+  "header": ""
+ },
  "579950": {
   "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
   "header": ""
@@ -209,6 +241,10 @@
  },
  "632360": {
   "name": "Risk of Rain 2",
+  "header": ""
+ },
+ "648590": {
+  "name": "",
   "header": ""
  },
  "694280": {
@@ -251,6 +287,10 @@
   "name": "Shadows of Doubt",
   "header": ""
  },
+ "1002300": {
+  "name": "Fear & Hunger",
+  "header": ""
+ },
  "1030300": {
   "name": "Hollow Knight: Silksong",
   "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
@@ -273,6 +313,10 @@
  },
  "1229490": {
   "name": "ULTRAKILL",
+  "header": ""
+ },
+ "1260520": {
+  "name": "Patrick's Parabox",
   "header": ""
  },
  "1262560": {
@@ -306,6 +350,10 @@
  "1663850": {
   "name": "REPLACED",
   "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4"
+ },
+ "1671210": {
+  "name": "DELTARUNE",
+  "header": "7ccda5b1631d2e60cc756a3271e845dbb9168821"
  },
  "1671340": {
   "name": "Fears to Fathom - Home Alone",
