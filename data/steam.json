@@ -195,6 +195,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "209000": {
+  "name": "Batman™: Arkham Origins",
+  "header": "",
+  "reviews": 46072,
+  "ram": 4,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "219990": {
   "name": "Grim Dawn",
   "header": "",
@@ -387,6 +395,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "387290": {
+  "name": "Ori and the Blind Forest: Definitive Edition",
+  "header": "",
+  "reviews": 63580,
+  "ram": 4,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "391220": {
   "name": "Rise of the Tomb Raider™",
   "header": "",
@@ -571,6 +587,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "907650": {
+  "name": "Stronghold: Warlords",
+  "header": "",
+  "reviews": 4480,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "930210": {
   "name": "HuniePop 2: Double Date",
   "header": "",
@@ -639,6 +663,14 @@
   "name": "Teardown",
   "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87",
   "reviews": 128449,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
+ "1222670": {
+  "name": "The Sims™ 4",
+  "header": "",
+  "reviews": 83381,
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
@@ -857,6 +889,14 @@
   "reviews": 22286,
   "ram": 10,
   "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
+ "2140020": {
+  "name": "Stronghold: Definitive Edition",
+  "header": "",
+  "reviews": 9864,
+  "ram": 6,
+  "ramMinimum": true,
   "checked": "2026-11-02"
  },
  "2142790": {

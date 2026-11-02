@@ -193,6 +193,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "209000": {
+   "name": "Batman™: Arkham Origins",
+   "header": "",
+   "reviews": 46072,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "219990": {
    "name": "Grim Dawn",
    "header": "",
@@ -385,6 +393,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "387290": {
+   "name": "Ori and the Blind Forest: Definitive Edition",
+   "header": "",
+   "reviews": 63580,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "391220": {
    "name": "Rise of the Tomb Raider™",
    "header": "",
@@ -569,6 +585,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "907650": {
+   "name": "Stronghold: Warlords",
+   "header": "",
+   "reviews": 4480,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "930210": {
    "name": "HuniePop 2: Double Date",
    "header": "",
@@ -637,6 +661,14 @@
    "name": "Teardown",
    "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87",
    "reviews": 128449,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "1222670": {
+   "name": "The Sims™ 4",
+   "header": "",
+   "reviews": 83381,
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
@@ -855,6 +887,14 @@
    "reviews": 22286,
    "ram": 10,
    "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "2140020": {
+   "name": "Stronghold: Definitive Edition",
+   "header": "",
+   "reviews": 9864,
+   "ram": 6,
+   "ramMinimum": true,
    "checked": "2026-11-02"
   },
   "2142790": {
@@ -1187,6 +1227,118 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Sekiro™: Shadows Die Twice - GOTY Edition",
+   "appid": "814380",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "High",
+   "notes": "Run at a smooth 60fps but with dips",
+   "nickname": "Swish"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Need for Speed™ Heat",
+   "appid": "1222680",
+   "launcher": null,
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 40,
+   "settings": "Ultra",
+   "notes": "Running good with 40 plus fps big step forward",
+   "nickname": "Swish"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Ori and the Blind Forest: Definitive Edition",
+   "appid": "387290",
+   "launcher": "None",
+   "version": "v6.0.0-alpha-6",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "GOG version\nThe only drawback is that the 'Ori MAP' button is the 'Share' button on the DualSense; I’ve never managed to get it to work.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "The Sims™ 4",
+   "appid": "1222670",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "error \"cannot find an application for this type of file\"",
+   "nickname": "KageRin__"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Stronghold: Warlords",
+   "appid": "907650",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "5-10 fps",
+   "nickname": "parsec"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Stronghold: Definitive Edition",
+   "appid": "2140020",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "high",
+   "notes": null,
+   "nickname": "parsec"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Batman™: Arkham Origins",
+   "appid": "209000",
+   "launcher": "GOG Galaxy",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "high",
+   "notes": null,
+   "nickname": "parsec"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Guitar Hero World Tour : Definitive Edition",
+   "appid": null,
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "Everything works controller is delayed",
+   "nickname": "KageRin__"
+  },
   {
    "date": "2026-11-02",
    "game": "Resident Evil 4 (2005)",
