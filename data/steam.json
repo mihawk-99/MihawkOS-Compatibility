@@ -131,12 +131,28 @@
   "name": "",
   "header": ""
  },
+ "45760": {
+  "name": "Ultra Street Fighter® IV",
+  "header": "",
+  "reviews": 11184,
+  "ram": 2,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "72850": {
   "name": "The Elder Scrolls V: Skyrim",
   "header": "",
   "reviews": 180954,
   "ram": 4,
   "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
+ "108600": {
+  "name": "Project Zomboid",
+  "header": "",
+  "reviews": 372503,
+  "ram": 8,
+  "ramMinimum": true,
   "checked": "2026-11-02"
  },
  "110800": {

@@ -129,12 +129,28 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "45760": {
+   "name": "Ultra Street Fighter® IV",
+   "header": "",
+   "reviews": 11184,
+   "ram": 2,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
    "header": "",
    "reviews": 180954,
    "ram": 4,
    "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "108600": {
+   "name": "Project Zomboid",
+   "header": "",
+   "reviews": 372503,
+   "ram": 8,
+   "ramMinimum": true,
    "checked": "2026-11-02"
   },
   "110800": {
@@ -1275,6 +1291,48 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Ultra Street Fighter® IV",
+   "appid": "45760",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "you need a keyboard to play in full-screen mode",
+   "nickname": "DarckSD"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Nine Sols",
+   "appid": "1809540",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "You need to change the controller settings to xbox then it works just perfect",
+   "nickname": "kona"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Project Zomboid",
+   "appid": "108600",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "10.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
   {
    "date": "2026-11-02",
    "game": "FAITH: The Unholy Trinity",
