@@ -18,8 +18,8 @@ const initialOf = (name) => {
   return c && /[A-Z]/.test(c) ? c : '#';
 };
 const LETTERS = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-const VIEW = 'list-view'; // 'list' or 'gallery', remembered on this device
-const savedView = () => { try { return localStorage.getItem(VIEW) === 'gallery' ? 'gallery' : 'list'; } catch { return 'list'; } };
+const VIEW = 'list-view'; // 'gallery' (the default) or 'list', remembered on this device
+const savedView = () => { try { return localStorage.getItem(VIEW) === 'list' ? 'list' : 'gallery'; } catch { return 'gallery'; } };
 const day = (date, lang) => new Date(`${date}T00:00:00Z`).toLocaleDateString(lang, { timeZone: 'UTC', dateStyle: 'medium' });
 
 // shortcut: a report without an AppID is grouped by its name alone, so it does not join the same game's AppID rows;
@@ -40,11 +40,18 @@ function groupGames(reports) {
   });
 }
 
+// Steam's numbers for a game (scripts/build-reports.mjs): its review count and the memory its requirements ask for.
+const steamOf = (game) => (game.appid && data.steam?.[game.appid]) || {};
+// Larger first; a game Steam gives no number for goes last.
+const byNumber = (pick) => (a, b) => (pick(b) ?? -1) - (pick(a) ?? -1);
+
 const SORTS = {
   latest: { label: 'Latest report', compare: (a, b) => ORDER.get(a.latest) - ORDER.get(b.latest) },
   best: { label: 'Best rating', compare: (a, b) => RANK[a.best.rating] - RANK[b.best.rating] },
   name: { label: 'Name', compare: (a, b) => a.name.localeCompare(b.name) },
   count: { label: 'Most reports', compare: (a, b) => b.reports.length - a.reports.length },
+  popular: { label: 'Most popular', compare: byNumber((g) => steamOf(g).reviews) },
+  demanding: { label: 'Most demanding', compare: (a, b) => byNumber((g) => steamOf(g).ram)(a, b) || byNumber((g) => steamOf(g).reviews)(a, b) },
 };
 
 function Cover({ game }) {
@@ -75,7 +82,21 @@ function Report({ r }) {
   );
 }
 
-function Game({ game }) {
+// Under the name, the number the list is sorted by, so the order explains itself.
+function SortDetail({ game, sort }) {
+  const { t, lang } = useT();
+  const s = steamOf(game);
+  if (sort === 'popular' && s.reviews != null) {
+    return <p className="sort-detail">{t('{0} Steam reviews', new Intl.NumberFormat(lang, { notation: 'compact' }).format(s.reviews))}</p>;
+  }
+  if (sort === 'demanding' && s.ram != null) {
+    const gb = new Intl.NumberFormat(lang).format(s.ram);
+    return <p className="sort-detail">{s.ramMinimum ? t('{0} GB RAM minimum', gb) : t('{0} GB RAM recommended', gb)}</p>;
+  }
+  return null;
+}
+
+function Game({ game, sort }) {
   const { t, lang } = useT();
   const [open, setOpen] = useState(false);
   const id = `reports-${game.key.replace(/[^\w-]/g, '_')}`;
@@ -86,6 +107,7 @@ function Game({ game }) {
       <div className="art"><Cover game={game} /></div>
       <div className="game-body">
         <h3 className="name">{game.name}</h3>
+        <SortDetail game={game} sort={sort} />
         <dl className="verdicts">
           <div><dt>{t('Best')}</dt><dd><Badge rating={game.best.rating} /></dd></div>
           <div><dt>{t('Latest')}</dt><dd><Badge rating={game.latest.rating} /> <span className="muted">{game.latest.console}, {game.latest.version}, {day(game.latest.date, lang)}</span></dd></div>
@@ -208,7 +230,7 @@ export default function App() {
             {filtered && <button type="button" className="link" onClick={clear}>{t('Clear filters')}</button>}
           </p>
           {games.length ? (
-            <ul className={`games${view === 'gallery' ? ' gallery' : ''}`}>{games.map((g) => <Game key={g.key} game={g} />)}</ul>
+            <ul className={`games${view === 'gallery' ? ' gallery' : ''}`}>{games.map((g) => <Game key={g.key} game={g} sort={sort} />)}</ul>
           ) : (
             <div className="glass card empty">
               <h3>{reports.length ? t('No game matches') : t('No reports yet')}</h3>

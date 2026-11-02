@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildReports, findAppIds, findSteam, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
+import { buildReports, findAppIds, findSteam, memoryGb, gameKey, parseCsv, cleanText, cleanLauncher, cleanAppId, cleanFirmware, cleanFps, cleanVersion, cleanDate } from './build-reports.mjs';
 
 const fixture = (name) => readFileSync(new URL(`fixtures/${name}`, import.meta.url), 'utf8');
 const HEADER = 'Timestamp,Game,Steam AppID,Launcher,MihawkOS version,Console,Firmware,Rating,FPS,Settings,Notes,Nickname,Approved';
@@ -138,17 +138,23 @@ test('Steam names and hashed header pictures are found once per AppID', async ()
   };
   const cache = { 1030300: { name: 'Hollow Knight: Silksong', header: '7983574d464e6559ac7e24275727f73a8bcca1f3' }, 77: { name: 'Gone', header: '' } };
   const reports = [{ appid: '2499860' }, { appid: '2499860' }, { appid: '620' }, { appid: '1030300' }, { appid: '9' }, { appid: null }];
-  const steam = await findSteam(reports, cache, details);
-  assert.deepEqual(asked, ['2499860', '620', '9']); // each once, never a cached one
+  cache[1030300].checked = '2026-10-30';
+  const steam = await findSteam(reports, cache, details, '2026-11-02');
+  assert.deepEqual(asked, ['2499860', '620', '9']); // each once; a known one checked this week is not asked
+  const plain = { reviews: null, ram: null, ramMinimum: false, checked: '2026-11-02' };
   assert.deepEqual(steam, {
-    2499860: { name: 'DRAGON QUEST VII Reimagined', header: hash }, // the name is cleaned like a report's text
-    620: { name: 'Portal 2', header: '' },
-    1030300: { name: 'Hollow Knight: Silksong', header: '7983574d464e6559ac7e24275727f73a8bcca1f3' },
+    2499860: { name: 'DRAGON QUEST VII Reimagined', header: hash, ...plain }, // the name is cleaned like a report's text
+    620: { name: 'Portal 2', header: '', ...plain },
+    1030300: { name: 'Hollow Knight: Silksong', header: '7983574d464e6559ac7e24275727f73a8bcca1f3', checked: '2026-10-30' },
   }); // only AppIDs of published reports
+  await findSteam([{ appid: '1030300' }], cache, async () => ({ name: 'Hollow Knight: Silksong', recommendations: { total: 150000 },
+    pc_requirements: { minimum: '<strong>Memory:</strong> 4 GB RAM<br>', recommended: '<strong>Memory:</strong> 8 GB RAM<br>' } }), '2026-11-06');
+  assert.deepEqual([cache[1030300].reviews, cache[1030300].ram, cache[1030300].checked], [150000, 8, '2026-11-06']); // asked again after a week
+  assert.equal(cache[1030300].header, '7983574d464e6559ac7e24275727f73a8bcca1f3'); // an answer without a hash keeps the known one
   assert.ok(!('9' in cache)); // Steam not answering is asked again next run
   const odd = {};
   await findSteam([{ appid: '5' }], odd, async () => ({ header_image: `https://x/apps/6/${hash}/header.jpg` }));
-  assert.deepEqual(odd['5'], { name: '', header: '' }); // another AppID's hash is not taken
+  assert.equal(odd['5'].header, ''); // another AppID's hash is not taken
 });
 
 test('the version list is the releases, newest first, without drafts or odd tags', async () => {
@@ -158,4 +164,12 @@ test('the version list is the releases, newest first, without drafts or odd tags
     { tag_name: 'nightly' }, { tag_name: 'v5.0.0-alpha-5' }, {},
   ]), ['v5.0.1-alpha-5', 'v5.0.0-alpha-5']);
   assert.deepEqual(releaseVersions({ message: 'rate limited' }), []);
+});
+
+test('the memory a game asks for: recommended first, else the minimum, in GB', () => {
+  assert.deepEqual(memoryGb({ minimum: 'Memory: 8 GB RAM', recommended: '<li><strong>Memory:</strong> 16 GB RAM</li>' }), { ram: 16, ramMinimum: false });
+  assert.deepEqual(memoryGb({ minimum: '<strong>Memory:</strong> 2 GB RAM' }), { ram: 2, ramMinimum: true });
+  assert.deepEqual(memoryGb({ recommended: 'Memory: 512 MB RAM' }), { ram: 0.5, ramMinimum: false });
+  assert.deepEqual(memoryGb([]), { ram: null, ramMinimum: false }); // Steam sends [] when a game lists none
+  assert.deepEqual(memoryGb({ recommended: 'Memory: 9999 GB' }), { ram: null, ramMinimum: false });
 });

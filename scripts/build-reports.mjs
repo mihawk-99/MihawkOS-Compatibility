@@ -182,18 +182,41 @@ async function steamSearch(term) {
   return Array.isArray(body?.items) ? body.items : [];
 }
 
-// For each AppID, Steam's appdetails gives the game's name (the report page's "is it the right game?") and its header
-// picture. Newer games keep that picture under a content hash (.../apps/<id>/<hash>/header.jpg) and answer 404 at the
-// plain .../apps/<id>/header.jpg. Both are kept per AppID in data/steam.json ({ name, header }, header "" when the plain
-// path is the picture), so each AppID is asked once.
-export async function findSteam(reports, cache, details) {
-  const ids = [...new Set(reports.map((r) => r.appid).filter((id) => id && !(id in cache)))];
+// For each AppID, Steam's appdetails gives the game's name (the report page's "is it the right game?"), its header
+// picture, its review count (the list's "Most popular") and the memory its PC requirements ask for ("Most demanding").
+// Newer games keep the picture under a content hash (.../apps/<id>/<hash>/header.jpg) and answer 404 at the plain
+// .../apps/<id>/header.jpg. All of it is kept per AppID in data/steam.json ({ name, header, reviews, ram, ramMinimum,
+// checked }, header "" when the plain path is the picture): a new AppID is asked at once, a known one again after
+// REFRESH_DAYS, oldest first, at most MAX_LOOKUPS per run between them.
+const REFRESH_DAYS = 7;
+
+// "Memory: 16 GB RAM" in the recommended requirements, else in the minimum ones (then marked as a minimum).
+export function memoryGb(requirements) {
+  for (const part of ['recommended', 'minimum']) {
+    const text = String(requirements?.[part] ?? '').replace(/<[^>]*>/g, ' ');
+    const m = /Memory:\s*(\d{1,4}(?:\.\d)?)\s*(GB|MB)/i.exec(text);
+    const gb = m && (m[2].toUpperCase() === 'MB' ? +m[1] / 1024 : +m[1]);
+    if (gb > 0 && gb <= 256) return { ram: Math.round(gb * 10) / 10, ramMinimum: part === 'minimum' };
+  }
+  return { ram: null, ramMinimum: false };
+}
+
+export async function findSteam(reports, cache, details, today = new Date().toISOString().slice(0, 10)) {
+  const stale = (id) => !(id in cache) || !cache[id].checked
+    || Date.parse(today) - Date.parse(cache[id].checked) >= REFRESH_DAYS * 864e5;
+  const ids = [...new Set(reports.map((r) => r.appid).filter((id) => id && stale(id)))]
+    .sort((a, b) => String(cache[a]?.checked ?? '').localeCompare(String(cache[b]?.checked ?? ''))); // never asked first
   for (const id of ids.slice(0, MAX_LOOKUPS)) {
     const info = await details(id).catch(() => null);
-    if (info === null) continue; // not answered: asked again on the next run
+    if (info === null) continue; // not answered: asked again on the next run, the old entry kept
+    const reviews = Number(info.recommendations?.total);
+    const old = cache[id] ?? {}; // a refresh never blanks what an earlier answer gave (Steam sometimes leaves a field out)
     cache[id] = {
-      name: cleanText(info.name, LIMITS.game),
-      header: new RegExp(`/apps/${id}/([0-9a-f]{40})/header\\.jpg`).exec(String(info.header_image ?? ''))?.[1] ?? '',
+      name: cleanText(info.name, LIMITS.game) || old.name || '',
+      header: new RegExp(`/apps/${id}/([0-9a-f]{40})/header\\.jpg`).exec(String(info.header_image ?? ''))?.[1] ?? old.header ?? '',
+      reviews: Number.isInteger(reviews) && reviews >= 0 ? reviews : null,
+      ...memoryGb(info.pc_requirements),
+      checked: today,
     };
   }
   return Object.fromEntries(Object.entries(cache).filter(([id]) => reports.some((r) => r.appid === id)));
@@ -201,7 +224,7 @@ export async function findSteam(reports, cache, details) {
 
 async function steamDetails(id) {
   const url = new URL('https://store.steampowered.com/api/appdetails');
-  url.search = new URLSearchParams({ appids: id, filters: 'basic' });
+  url.search = new URLSearchParams({ appids: id, filters: 'basic,recommendations' });
   const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return (await res.json())?.[id]?.data ?? {};

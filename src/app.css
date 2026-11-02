@@ -186,6 +186,7 @@ input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); o
 .game .letter { font-size: 42px; font-weight: 600; color: #fff; text-shadow: 0 2px 6px rgba(0, 0, 0, .3); }
 .game-body { padding: 12px 18px 14px; min-width: 0; }
 .name { overflow-wrap: anywhere; }
+.sort-detail { margin: 2px 0 0; font-size: 13px; font-weight: 600; color: var(--muted); }
 .verdicts { margin: 6px 0 10px; display: grid; gap: 6px; }
 .verdicts div { display: flex; gap: 10px; align-items: baseline; }
 .verdicts dt { width: 56px; flex: none; font-size: 13px; color: var(--muted); font-weight: 600; }
