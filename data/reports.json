@@ -201,6 +201,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "219150": {
+   "name": "Hotline Miami",
+   "header": "",
+   "reviews": 110932,
+   "ram": 1,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "219990": {
    "name": "Grim Dawn",
    "header": "",
@@ -353,6 +361,14 @@
    "ramMinimum": true,
    "checked": "2026-11-02"
   },
+  "339230": {
+   "name": "ZOMBI",
+   "header": "",
+   "reviews": 3000,
+   "ram": 6,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "361420": {
    "name": "ASTRONEER",
    "header": "1c44099d86c824a6fd1098a4215097878d68664e",
@@ -373,6 +389,14 @@
    "name": "Barony",
    "header": "0f8975e4b2af32eb0d68c309f1eff56d470e73dc",
    "reviews": 12987,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "374320": {
+   "name": "DARK SOULS™ III",
+   "header": "",
+   "reviews": 280026,
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
@@ -585,6 +609,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "881100": {
+   "name": "Noita",
+   "header": "",
+   "reviews": 81915,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "907650": {
    "name": "Stronghold: Warlords",
    "header": "",
@@ -661,6 +693,14 @@
    "name": "Teardown",
    "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87",
    "reviews": 128449,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "1179080": {
+   "name": "FAITH: The Unholy Trinity",
+   "header": "b5d0111d78b7c3b304387de2c55dabff139c667f",
+   "reviews": 8250,
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
@@ -1201,6 +1241,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "4471060": {
+   "name": "Colleccct",
+   "header": "bd059c8b969972e366c6237182f07a6469b52454",
+   "reviews": null,
+   "ram": 8,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
+  },
   "4732690": {
    "name": "Arknights: Endfield",
    "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398",
@@ -1227,6 +1275,90 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "FAITH: The Unholy Trinity",
+   "appid": "1179080",
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "messi"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "ZOMBI",
+   "appid": "339230",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "requires Uplay services",
+   "nickname": "DarckSD"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "DARK SOULS™ III",
+   "appid": "374320",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "El juego funciona pecfecto en el menu y creador de personajes, pero al pasar al gameplay lentamente los fps van disminuyendo",
+   "nickname": "Cuervo"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Hotline Miami",
+   "appid": "219150",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Vansie"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Noita",
+   "appid": "881100",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Vansie"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Colleccct",
+   "appid": "4471060",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Vansie"
+  },
   {
    "date": "2026-11-02",
    "game": "Sekiro™: Shadows Die Twice - GOTY Edition",
