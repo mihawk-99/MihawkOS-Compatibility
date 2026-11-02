@@ -58,8 +58,8 @@ function Cover({ game }) {
   const [failed, setFailed] = useState(false);
   if (game.appid && /^\d+$/.test(game.appid) && !failed) {
     return (
-      <img src={steamHeader(game.appid, data.steam)} alt=""
-        loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
+      <img src={steamHeader(game.appid, data.steam)} alt="" width="460" height="215"
+        loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
     );
   }
   return <span className="letter" aria-hidden="true">{initialOf(game.name)}</span>;

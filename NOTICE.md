@@ -17,19 +17,24 @@ like the same product as MihawkOS's WebUI.
 | `src/assets/divider-day.svg`, `src/assets/divider-night.svg` | `docs/media/readme/divider-{day,night}.svg` | LGPL-2.1-or-later (SPDX line kept) | Unchanged. |
 | `src/i18n.jsx` (languages, picker), `src/app.css` (picker styles) | `webui/i18n.js`, `webui/app.js` and `webui/app.css`: the WebUI's ten languages, the stored choice (`mihawk-language`) and its flag picker | GPL-3.0-or-later | Rewritten as a React provider and component; same languages, order, flags and storage key. The translations in `src/i18n-text.js` are this site's own words, written here. |
 | `src/assets/music/{bubble-garden,glass-meadow,sky-lounge}.{webm,m4a}` | `ps5/assets/music/*.ogg`: the launcher's music, Bubble Garden, Glass Meadow and Sky Lounge, original pieces made only by `tools/make-mihawk-music.py`, with no recording, sample or third-party note as input | LGPL-2.1-or-later | Re-encoded for the web with FFmpeg 9.0.2, tags dropped: Opus 80 kb/s in WebM (`-c:a libopus -b:a 80k -vbr constrained`) and AAC 112 kb/s in MP4 for browsers without Opus. From the Vorbis files whose SHA-256 are `9c903bc3…002f`, `025d4439…08ab` and `bb19fde7…e7d2e3`. |
+| `public/favicon.svg`, `public/favicon-32.png`, `public/apple-touch-icon.png` | the same `ps5/tools/icon0.svg` | GPL-3.0-or-later | `favicon.svg` is a copy under a new name, so browsers holding the old favicon fetch it again; the PNGs (32 and 180 px, for browsers without SVG icons and phone home screens) are rendered from it with rsvg-convert. |
 | `public/mark.svg` | `ps5/tools/icon0.svg` of the public PS5_MihawkOS at `f81a028`: MihawkOS's title icon since Alpha 7, a Frutiger Aero user tile, original artwork drawn for that project | GPL-3.0-or-later (SPDX line kept) | Unchanged; the header's icon and the favicon. |
 | `public/licenses/LGPL-2.1.txt` | `themes/windows11/COPYING.LIB` | the licence text | Unchanged. |
 
 ## Inter
 
-`src/assets/fonts/Inter-Regular.ttf` and `Inter-SemiBold.ttf` are **Inter** by The Inter Project Authors
-([rsms/inter](https://github.com/rsms/inter)), the face MihawkOS's launcher and WebUI use. They are copied unchanged
-from the MihawkOS v4.0.0-alpha-4 title (`assets/hui/fonts/`):
+`src/assets/fonts/Inter-Regular.woff2` and `Inter-SemiBold.woff2` are **Inter** by The Inter Project Authors
+([rsms/inter](https://github.com/rsms/inter)), the face MihawkOS's launcher and WebUI use, from the TTF files of the
+MihawkOS v4.0.0-alpha-4 title (`assets/hui/fonts/`; SHA-256 `40d692fc…7c0ebe0c82` Regular, `78a843fa…bafcde3` SemiBold).
+Modified here: subset with fontTools 4.67 `pyftsubset` to Latin, Latin Extended, Vietnamese, Cyrillic and the
+punctuation, letterlike symbols and arrows the pages use, keeping the kern, liga, calt, ccmp, locl, mark, mkmk and tnum
+features, and saved as WOFF2 (411 and 420 KB TTF to 66 and 68 KB). The OFL allows this; the licence declares no Reserved
+Font Name, so the family keeps its name.
 
 | File | SHA-256 |
 | --- | --- |
-| `Inter-Regular.ttf` | `40d692fce188e4471e2b3cba937be967878f631ad3ebbbdcd587687c7ebe0c82` |
-| `Inter-SemiBold.ttf` | `78a843fade9d4612a5567302fb595b56976eb5fcebf4fea5a5912d638bafcde3` |
+| `Inter-Regular.woff2` | `8a225222a05b205a8e1bfd0896c6a0c276e13b7b7895dbe299692db58118e40c` |
+| `Inter-SemiBold.woff2` | `2bcf24ebf4df56da35d20f8e88480af83c230c5a63df5ac0b4599c2f3765be62` |
 
 SIL Open Font License 1.1: [`public/licenses/OFL-1.1-Inter.txt`](public/licenses/OFL-1.1-Inter.txt), the copy shipped
 with that title. The licence is published with the site.

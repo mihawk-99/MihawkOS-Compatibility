@@ -1,8 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// The pages' words in MihawkOS's WebUI languages, keyed by the English (src/i18n-text.js), as the WebUI does: t('Games'),
+// The pages' words in MihawkOS's WebUI languages, keyed by the English (src/i18n/<tag>.js), as the WebUI does: t('Games'),
 // t('{0} games', 6). The choice is remembered on the device (the WebUI's own key); a first visit follows the browser.
+// A page loads only its visitor's language, before it first draws (loadLanguage in main.jsx and report.jsx).
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import TEXT from './i18n-text.js';
+
+const FILES = import.meta.glob('./i18n/*.js');
+const TEXT = {}; // tag -> words, filled as languages load
 
 export const LANGUAGES = [
   { tag: 'en-US', name: 'English (US)', flag: 'us' },
@@ -28,24 +31,31 @@ export function pickLanguage(stored, browser) {
   return 'en-US';
 }
 
+export async function loadLanguage(tag) {
+  const file = FILES[`./i18n/${tag}.js`];
+  if (file && !TEXT[tag]) TEXT[tag] = (await file().catch(() => ({ default: {} }))).default;
+}
+
+export function storedLanguage() {
+  let stored = '';
+  try { stored = localStorage.getItem(STORED) ?? ''; } catch { /* storage blocked */ }
+  return pickLanguage(stored, navigator.languages);
+}
+
 export const translate = (lang) => (text, ...values) =>
   String(TEXT[lang]?.[text] ?? text).replace(/\{(\d)\}/g, (_, i) => values[i]);
 
 const Language = createContext({ lang: 'en-US', t: translate('en-US'), setLang: () => {} });
 
 export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(() => {
-    let stored = '';
-    try { stored = localStorage.getItem(STORED) ?? ''; } catch { /* storage blocked */ }
-    return pickLanguage(stored, navigator.languages);
-  });
+  const [lang, setLangState] = useState(storedLanguage);
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   const value = useMemo(() => ({
     lang,
     t: translate(lang),
     setLang: (tag) => {
       try { localStorage.setItem(STORED, tag); } catch { /* this visit only */ }
-      setLangState(tag);
+      loadLanguage(tag).then(() => setLangState(tag));
     },
   }), [lang]);
   return <Language.Provider value={value}>{children}</Language.Provider>;
