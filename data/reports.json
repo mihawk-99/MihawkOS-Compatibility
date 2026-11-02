@@ -97,6 +97,14 @@
    "ramMinimum": true,
    "checked": "2026-11-02"
   },
+  "35700": {
+   "name": "Trine Enchanted Edition",
+   "header": "",
+   "reviews": 12868,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
+  },
   "38410": {
    "name": "Fallout 2: A Post Nuclear Role Playing Game",
    "header": "",
@@ -529,11 +537,27 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "577940": {
+   "name": "Killer Instinct",
+   "header": "",
+   "reviews": 4275,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "579950": {
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
    "header": "",
    "reviews": 1550,
    "ram": 3,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
+  },
+  "586140": {
+   "name": "BlazBlue Centralfiction",
+   "header": "",
+   "reviews": 9597,
+   "ram": 4,
    "ramMinimum": true,
    "checked": "2026-11-02"
   },
@@ -857,6 +881,22 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "1761390": {
+   "name": "Hatsune Miku: Project DIVA Mega Mix+",
+   "header": "",
+   "reviews": 19766,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "1778820": {
+   "name": "TEKKEN 8",
+   "header": "c7b0b80639fc8c7d386922f414f293ca849e8e81",
+   "reviews": 48101,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "1782210": {
    "name": "Crab Game",
    "header": "",
@@ -1001,6 +1041,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "2475490": {
+   "name": "Mouthwashing",
+   "header": "",
+   "reviews": 34903,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "2492670": {
    "name": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
    "header": "458033bb7aad4e6b8a61af0f7798d23db2683864",
@@ -1127,6 +1175,14 @@
    "reviews": 17529,
    "ram": 16,
    "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "3224770": {
+   "name": "Umamusume: Pretty Derby",
+   "header": "d7ddfe8985d7be8db7a0195d5c482c4438ed929d",
+   "reviews": null,
+   "ram": 8,
+   "ramMinimum": true,
    "checked": "2026-11-02"
   },
   "3241660": {
@@ -1291,6 +1347,132 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Mouthwashing",
+   "appid": "2475490",
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "messi"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Sleeping Dogs: Definitive Edition",
+   "appid": "307690",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": 60,
+   "settings": "Extreme",
+   "notes": "Crashs periodically at the first fight you encounter with Johnny.",
+   "nickname": "Shag04"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "RV There Yet?",
+   "appid": "3949040",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": "Default",
+   "notes": "Ask to install windows visual then hangs on a black screen and freezes.",
+   "nickname": "Shag04"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Umamusume: Pretty Derby",
+   "appid": "3224770",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Game goes to black screen doesn’t load.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "BlazBlue Centralfiction",
+   "appid": "586140",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "BTHEGEEK"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Hatsune Miku: Project DIVA Mega Mix+",
+   "appid": "1761390",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Crashed saying couldn't find executable, after validating files",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Killer Instict",
+   "appid": "577940",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "Downloaded through Playden, works flawlessly.",
+   "nickname": "Mahcneto"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "TEKKEN 8",
+   "appid": "1778820",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.20",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": "60hz",
+   "notes": "Reaches to the \"press the start screen\" where you see Bob, after pressing. The game is trying to load/check online stuff. Then the game stops running. Unable to bypass. Forcing to close mihawkOS. Im not sure if i can still include this issue but i'll write in here anyways, it's about the steam's save cloud. It still does not sync for me or any games i've tried like Fatal Fury: City of the Wolves.",
+   "nickname": "Tonkotsu1"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Trine Enchanted Edition",
+   "appid": "35700",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "It starts, but Steam Big Picture restarts while the game's audio plays in the background.",
+   "nickname": "DarckSD"
+  },
   {
    "date": "2026-11-02",
    "game": "Ultra Street Fighter® IV",

@@ -95,6 +95,14 @@
   "ramMinimum": true,
   "checked": "2026-11-02"
  },
+ "35700": {
+  "name": "Trine Enchanted Edition",
+  "header": "",
+  "reviews": 12868,
+  "ram": 1,
+  "ramMinimum": true,
+  "checked": "2026-11-02"
+ },
  "38410": {
   "name": "Fallout 2: A Post Nuclear Role Playing Game",
   "header": "",
@@ -531,11 +539,27 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "577940": {
+  "name": "Killer Instinct",
+  "header": "",
+  "reviews": 4275,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "579950": {
   "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
   "header": "",
   "reviews": 1550,
   "ram": 3,
+  "ramMinimum": true,
+  "checked": "2026-11-02"
+ },
+ "586140": {
+  "name": "BlazBlue Centralfiction",
+  "header": "",
+  "reviews": 9597,
+  "ram": 4,
   "ramMinimum": true,
   "checked": "2026-11-02"
  },
@@ -859,6 +883,22 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "1761390": {
+  "name": "Hatsune Miku: Project DIVA Mega Mix+",
+  "header": "",
+  "reviews": 19766,
+  "ram": 4,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
+ "1778820": {
+  "name": "TEKKEN 8",
+  "header": "c7b0b80639fc8c7d386922f414f293ca849e8e81",
+  "reviews": 48101,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "1782210": {
   "name": "Crab Game",
   "header": "",
@@ -1003,6 +1043,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "2475490": {
+  "name": "Mouthwashing",
+  "header": "",
+  "reviews": 34903,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
  "2492670": {
   "name": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
   "header": "458033bb7aad4e6b8a61af0f7798d23db2683864",
@@ -1129,6 +1177,14 @@
   "reviews": 17529,
   "ram": 16,
   "ramMinimum": false,
+  "checked": "2026-11-02"
+ },
+ "3224770": {
+  "name": "Umamusume: Pretty Derby",
+  "header": "d7ddfe8985d7be8db7a0195d5c482c4438ed929d",
+  "reviews": null,
+  "ram": 8,
+  "ramMinimum": true,
   "checked": "2026-11-02"
  },
  "3241660": {
