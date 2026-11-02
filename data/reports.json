@@ -67,7 +67,11 @@
   },
   "12210": {
    "name": "Grand Theft Auto IV: The Complete Edition",
-   "header": ""
+   "header": "",
+   "reviews": 184080,
+   "ram": 1.5,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
   },
   "19680": {
    "name": "Alice: Madness Returns",
@@ -111,7 +115,11 @@
   },
   "40990": {
    "name": "Mafia",
-   "header": ""
+   "header": "",
+   "reviews": 8939,
+   "ram": 2,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
   },
   "42640": {
    "name": "Blur",
@@ -123,7 +131,11 @@
   },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
-   "header": ""
+   "header": "",
+   "reviews": 180954,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "110800": {
    "name": "L.A. Noire",
@@ -143,7 +155,11 @@
   },
   "203160": {
    "name": "Tomb Raider Game of the Year",
-   "header": ""
+   "header": "",
+   "reviews": 174886,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "204030": {
    "name": "Fable - The Lost Chapters",
@@ -187,7 +203,11 @@
   },
   "220240": {
    "name": "Far Cry 3",
-   "header": "3848aafeb6e5cff40cbf6210c34413f3034150da"
+   "header": "3848aafeb6e5cff40cbf6210c34413f3034150da",
+   "reviews": 124543,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "223470": {
    "name": "POSTAL 2",
@@ -295,7 +315,11 @@
   },
   "307690": {
    "name": "Sleeping Dogs: Definitive Edition",
-   "header": ""
+   "header": "",
+   "reviews": 71356,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "322330": {
    "name": "Don't Starve Together",
@@ -353,6 +377,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "391220": {
+   "name": "Rise of the Tomb Raider™",
+   "header": "",
+   "reviews": 128652,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "391540": {
    "name": "Undertale",
    "header": "",
@@ -363,7 +395,11 @@
   },
   "413150": {
    "name": "Stardew Valley",
-   "header": ""
+   "header": "",
+   "reviews": 903081,
+   "ram": 2,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
   },
   "429050": {
    "name": "Feed and Grow: Fish",
@@ -399,7 +435,11 @@
   },
   "504230": {
    "name": "Celeste",
-   "header": ""
+   "header": "",
+   "reviews": 134124,
+   "ram": 2,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
   },
   "521890": {
    "name": "Hello Neighbor",
@@ -413,6 +453,14 @@
    "name": "Warhammer 40,000: Inquisitor - Martyr",
    "header": "",
    "reviews": 19603,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
+  "530620": {
+   "name": "Resident Evil 7 Teaser: Beginning Hour",
+   "header": "",
+   "reviews": 553,
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
@@ -465,6 +513,14 @@
    "ramMinimum": true,
    "checked": "2026-11-02"
   },
+  "750920": {
+   "name": "Shadow of the Tomb Raider: Definitive Edition",
+   "header": "",
+   "reviews": 73387,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "774801": {
    "name": "Crab Champions",
    "header": "",
@@ -499,7 +555,11 @@
   },
   "858710": {
    "name": "Gravity Circuit",
-   "header": ""
+   "header": "",
+   "reviews": 3063,
+   "ram": 2,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "930210": {
    "name": "HuniePop 2: Double Date",
@@ -519,7 +579,11 @@
   },
   "952060": {
    "name": "Resident Evil 3",
-   "header": ""
+   "header": "",
+   "reviews": 92006,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "986130": {
    "name": "Shadows of Doubt",
@@ -539,7 +603,11 @@
   },
   "1030300": {
    "name": "Hollow Knight: Silksong",
-   "header": "7983574d464e6559ac7e24275727f73a8bcca1f3"
+   "header": "7983574d464e6559ac7e24275727f73a8bcca1f3",
+   "reviews": 390995,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "1148130": {
    "name": "Divinum",
@@ -559,15 +627,27 @@
   },
   "1167630": {
    "name": "Teardown",
-   "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87"
+   "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87",
+   "reviews": 128449,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "1222680": {
    "name": "Need for Speed™ Heat",
-   "header": ""
+   "header": "",
+   "reviews": 130308,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "1229490": {
    "name": "ULTRAKILL",
-   "header": ""
+   "header": "",
+   "reviews": 217364,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "1260520": {
    "name": "Patrick's Parabox",
@@ -779,7 +859,11 @@
   },
   "2146170": {
    "name": "Baten Kaitos I & II HD Remaster",
-   "header": ""
+   "header": "",
+   "reviews": 260,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "2163330": {
    "name": "Yet Another Zombie Survivors",
@@ -821,9 +905,21 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "2499520": {
+   "name": "Be My Horde",
+   "header": "e2008120da5389894a03662ebe17cfbedccb5b2e",
+   "reviews": 2068,
+   "ram": 4,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
+  },
   "2499860": {
    "name": "DRAGON QUEST VII Reimagined",
-   "header": "ea0c655407c078a8994b7e91256c79d90169133a"
+   "header": "ea0c655407c078a8994b7e91256c79d90169133a",
+   "reviews": 2223,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "2521380": {
    "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
@@ -859,7 +955,11 @@
   },
   "2833580": {
    "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
-   "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5"
+   "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5",
+   "reviews": 843,
+   "ram": 8,
+   "ramMinimum": true,
+   "checked": "2026-11-02"
   },
   "2950790": {
    "name": "IRON NEST: Heavy Turret Simulator",
@@ -871,7 +971,11 @@
   },
   "3010850": {
    "name": "Gears of War: E-Day",
-   "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2"
+   "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2",
+   "reviews": 10927,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "3043580": {
    "name": "Keeper",
@@ -891,7 +995,11 @@
   },
   "3081840": {
    "name": "Chrono Gear: Warden of Time",
-   "header": "b98eec081f9c4a6c1a8c89ea677a806204230711"
+   "header": "b98eec081f9c4a6c1a8c89ea677a806204230711",
+   "reviews": 956,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "3090810": {
    "name": "Truckful",
@@ -1015,7 +1123,11 @@
   },
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
-   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067"
+   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067",
+   "reviews": 589,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
   },
   "3949040": {
    "name": "RV There Yet?",
@@ -1067,6 +1179,62 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Resident Evil 7 Teaser: Beginning Hour",
+   "appid": "530620",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "12.70",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Max",
+   "notes": null,
+   "nickname": "Dr+"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Rise of the Tomb Raider™",
+   "appid": "391220",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "DarckSD"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Shadow of the Tomb Raider: Definitive Edition",
+   "appid": "750920",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "DarckSD"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Be My Horde",
+   "appid": "2499520",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "Vansie"
+  },
   {
    "date": "2026-11-02",
    "game": "Cry of Fear",
