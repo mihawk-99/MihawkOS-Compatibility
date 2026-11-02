@@ -12,6 +12,14 @@ import bannerNight from './assets/banner-night.svg';
 const RANK = Object.fromEntries(RATINGS.map((r, i) => [r.name, i]));
 const ORDER = new Map(data.reports.map((r, i) => [r, i])); // 0 = the newest report
 const byVersion = (a, b) => b.localeCompare(a, 'en', { numeric: true });
+// A name's first letter for the A-Z buttons: "(Re)Skate." files under R; a digit or a non-Latin name under #.
+const initialOf = (name) => {
+  const c = name.normalize('NFKD').match(/[A-Za-z0-9]/)?.[0]?.toUpperCase();
+  return c && /[A-Z]/.test(c) ? c : '#';
+};
+const LETTERS = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const VIEW = 'list-view'; // 'list' or 'gallery', remembered on this device
+const savedView = () => { try { return localStorage.getItem(VIEW) === 'gallery' ? 'gallery' : 'list'; } catch { return 'list'; } };
 const day = (date, lang) => new Date(`${date}T00:00:00Z`).toLocaleDateString(lang, { timeZone: 'UTC', dateStyle: 'medium' });
 
 // shortcut: a report without an AppID is grouped by its name alone, so it does not join the same game's AppID rows;
@@ -47,7 +55,7 @@ function Cover({ game }) {
         loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} />
     );
   }
-  return <span className="letter" aria-hidden="true">{[...game.name][0]?.toUpperCase()}</span>;
+  return <span className="letter" aria-hidden="true">{initialOf(game.name)}</span>;
 }
 
 function Report({ r }) {
@@ -74,7 +82,7 @@ function Game({ game }) {
   const count = game.reports.length;
   const launchers = [...new Set(game.reports.map((r) => r.launcher).filter(Boolean))];
   return (
-    <li className="game glass">
+    <li className={`game glass${open ? ' open' : ''}`}>
       <div className="art"><Cover game={game} /></div>
       <div className="game-body">
         <h3 className="name">{game.name}</h3>
@@ -113,6 +121,9 @@ export default function App() {
   const [firmware, setFirmware] = useState('');
   const [version, setVersion] = useState('');
   const [sort, setSort] = useState('latest');
+  const [letter, setLetter] = useState('');
+  const [view, setViewState] = useState(savedView);
+  const setView = (v) => { setViewState(v); try { localStorage.setItem(VIEW, v); } catch { /* this visit only */ } };
   const [night, changeTheme] = useNight();
 
   const firmwares = useMemo(() => [...new Set(reports.map((r) => r.firmware))].sort(byVersion), [reports]);
@@ -120,14 +131,17 @@ export default function App() {
   const allGames = useMemo(() => groupGames(reports), [reports]);
 
   // Filters pick reports first, so a game's best and latest rating are those of the reports that match.
-  const games = useMemo(() => {
+  const matching = useMemo(() => {
     const q = query.trim().toLowerCase();
     const picked = reports.filter((r) => (!q || r.game.toLowerCase().includes(q)) && (!rating || r.rating === rating)
       && (!model || r.console === model) && (!firmware || r.firmware === firmware) && (!version || r.version === version));
     return groupGames(picked).sort((a, b) => SORTS[sort].compare(a, b) || a.name.localeCompare(b.name));
   }, [reports, query, rating, model, firmware, version, sort]);
-  const filtered = query || rating || model || firmware || version;
-  const clear = () => { setQuery(''); setRating(''); setModel(''); setFirmware(''); setVersion(''); };
+  // The letter applies last, so its buttons show which letters the other filters leave.
+  const present = useMemo(() => new Set(matching.map((g) => initialOf(g.name))), [matching]);
+  const games = letter ? matching.filter((g) => initialOf(g.name) === letter) : matching;
+  const filtered = query || rating || model || firmware || version || letter;
+  const clear = () => { setQuery(''); setRating(''); setModel(''); setFirmware(''); setVersion(''); setLetter(''); };
 
   return (
     <>
@@ -172,12 +186,29 @@ export default function App() {
             <Select label="MihawkOS" value={version} onChange={setVersion} options={versions} all={t('Any version')} />
             <Select label={t('Sort by')} value={sort} onChange={setSort} options={Object.entries(SORTS).map(([k, s]) => [k, t(s.label)])} />
           </form>
+          <div className="list-tools">
+            <div className="letters" role="group" aria-label={t('First letter')}>
+              <button type="button" aria-pressed={!letter} onClick={() => setLetter('')}>{t('All')}</button>
+              {LETTERS.map((l) => (
+                <button key={l} type="button" aria-pressed={letter === l} disabled={!present.has(l) && letter !== l}
+                  onClick={() => setLetter(letter === l ? '' : l)}>{l}</button>
+              ))}
+            </div>
+            <div className="view-switch" role="group" aria-label={t('View')}>
+              <button type="button" aria-pressed={view === 'list'} onClick={() => setView('list')}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h3M10 6h10M4 12h3M10 12h10M4 18h3M10 18h10" /></svg>{t('List')}
+              </button>
+              <button type="button" aria-pressed={view === 'gallery'} onClick={() => setView('gallery')}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" /></svg>{t('Gallery')}
+              </button>
+            </div>
+          </div>
           <p className="result-line" aria-live="polite">
             {filtered ? t('{0} matching', games.length) : t(games.length === 1 ? '{0} game' : '{0} games', games.length)}
             {filtered && <button type="button" className="link" onClick={clear}>{t('Clear filters')}</button>}
           </p>
           {games.length ? (
-            <ul className="games">{games.map((g) => <Game key={g.key} game={g} />)}</ul>
+            <ul className={`games${view === 'gallery' ? ' gallery' : ''}`}>{games.map((g) => <Game key={g.key} game={g} />)}</ul>
           ) : (
             <div className="glass card empty">
               <h3>{reports.length ? t('No game matches') : t('No reports yet')}</h3>

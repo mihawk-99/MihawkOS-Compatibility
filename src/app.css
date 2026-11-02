@@ -149,6 +149,32 @@ select option { color: #1b2430; background: #fff; }
 input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
 .result-line { margin: 12px 4px; font-weight: 600; }
 
+/* Under the filters: A-Z buttons (a letter no game starts with is dimmed) and the List / Gallery switch */
+.list-tools { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap; margin-top: 12px; }
+.letters { display: flex; flex-wrap: wrap; gap: 4px; }
+.letters button, .view-switch button { font: 600 13px Inter, system-ui, sans-serif; color: var(--ink); cursor: pointer;
+  border: 1px solid var(--line); background: var(--soft); border-radius: 999px; }
+.letters button { min-width: 30px; height: 30px; padding: 0 8px; }
+.letters button:hover:not(:disabled), .view-switch button:hover { background: rgba(47, 140, 240, .16); }
+.letters button[aria-pressed="true"], .view-switch button[aria-pressed="true"] { color: #fff; border-color: rgba(30, 110, 200, .6);
+  background: linear-gradient(180deg, #5fb4ff, #1f74d1); box-shadow: 0 0 10px rgba(74, 163, 255, .45); }
+.letters button:disabled { opacity: .35; cursor: default; }
+.letters button:focus-visible, .view-switch button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.view-switch { display: inline-flex; gap: 4px; flex: none; }
+.view-switch button { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; }
+.view-switch svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Gallery: a grid of covers; a card whose reports are open takes the whole row, laid out as in the list */
+.games.gallery { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.gallery .game { grid-template-columns: minmax(0, 1fr); align-content: start; }
+.gallery .game .art { margin: 12px 12px 0; }
+.gallery .game .game-body { padding: 10px 14px 14px; }
+.gallery .game .name { font-size: 16px; margin: 0; }
+.gallery .verdicts .muted { display: none; }
+.gallery .game.open { grid-column: 1 / -1; grid-template-columns: 230px minmax(0, 1fr); }
+.gallery .game.open .art { margin: 12px 0 12px 12px; }
+.gallery .game.open .verdicts .muted { display: inline; }
+
 /* One row per game: its picture, its best and latest rating, its reports under it */
 .games, .reports, .ratings { list-style: none; padding: 0; margin: 0; }
 .games { display: grid; gap: 14px; }
@@ -367,6 +393,15 @@ nav a .icon { margin-right: 4px; }
   .game .letter { font-size: 26px; }
   .game-body { padding: 10px 12px 12px; }
   .verdicts dt { width: 50px; }
+  .letters button { min-width: 28px; height: 28px; padding: 0 6px; }
+  .games.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .gallery .game { grid-template-columns: minmax(0, 1fr); }
+  .gallery .game .art { margin: 8px 8px 0; }
+  .gallery .game .game-body { padding: 8px 10px 10px; }
+  .gallery .game .name { font-size: 14px; }
+  .gallery .verdicts dt { width: auto; }
+  .gallery .game:not(.open) .verdicts div { flex-wrap: wrap; gap: 2px 8px; }
+  .gallery .game.open { grid-template-columns: 112px minmax(0, 1fr); }
   .report-head time { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
