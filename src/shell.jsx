@@ -67,7 +67,7 @@ export function Footer({ root }) {
       <p>{t('MihawkOS is a passion project, not a piracy project. Use only games you own.')} <a href="https://github.com/mihawk-99/PS5_MihawkOS">{t('MihawkOS on GitHub')}</a></p>
       <p>{t("No trackers, no analytics, no cookies. Game pictures come from Steam's public image server.")}</p>
       <p>{SOURCE_URL && <><a href={SOURCE_URL}>{t('Source')}</a> (GPL-3.0-or-later) · </>}
-        <a href={`${root}licenses/LGPL-2.1.txt`}>{t('Art and mark')}: LGPL-2.1-or-later</a> · <a href={`${root}licenses/OFL-1.1-Inter.txt`}>Inter: OFL-1.1</a> · <a href={`${root}licenses/react-MIT.txt`}>React: MIT</a> · <a href={`${root}licenses/flag-icons-MIT.txt`}>{t('Flags')}: MIT</a></p>
+        <a href={`${root}licenses/LGPL-2.1.txt`}>{t('Artwork')}: LGPL-2.1-or-later</a> · <a href={`${root}licenses/OFL-1.1-Inter.txt`}>Inter: OFL-1.1</a> · <a href={`${root}licenses/react-MIT.txt`}>React: MIT</a> · <a href={`${root}licenses/flag-icons-MIT.txt`}>{t('Flags')}: MIT</a></p>
     </footer>
   );
 }
