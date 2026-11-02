@@ -289,6 +289,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "254700": {
+   "name": "Resident Evil 4 (2005)",
+   "header": "",
+   "reviews": 79518,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-02"
+  },
   "265550": {
    "name": "Dead Rising 3 Apocalypse Edition",
    "header": "",
@@ -1179,6 +1187,20 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Resident Evil 4 (2005)",
+   "appid": "254700",
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.42",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Game mode enabled",
+   "notes": "Resident Evil 4 with the HD Project mod. It works flawlessly. I recommend trying the game on PC first. Once you've confirmed that everything required by the mod is installed and the game runs correctly, try it on your PS5. I didn't have to modify anything on MihawkOS, it worked out of the box",
+   "nickname": "δράκων"
+  },
   {
    "date": "2026-11-02",
    "game": "Resident Evil 7 Teaser: Beginning Hour",
