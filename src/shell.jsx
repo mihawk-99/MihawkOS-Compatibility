@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// What both pages share: the theme (night by default, the visitor's choice remembered), the glass header with the
+// What both pages share: the theme (day by default, the visitor's choice remembered), the glass header with the
 // Day/Night slider, the music button and the language picker, and the footer.
 import { useState } from 'react';
 import { LAUNCHER_ICONS } from './launchers.js';
@@ -8,15 +8,15 @@ import { MusicButton } from './music.jsx';
 import './app.css';
 
 try {
-  if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light';
-} catch { /* storage blocked: keep night */ }
+  if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+} catch { /* storage blocked: keep day */ }
 
 export const FORM_URL = /^https:\/\/docs\.google\.com\/forms\/d\/e\/[\w-]+\/viewform/.test(import.meta.env.VITE_FORM_URL ?? '')
   ? import.meta.env.VITE_FORM_URL : null;
 export const SOURCE_URL = /^https:\/\/github\.com\//.test(import.meta.env.VITE_SOURCE_URL ?? '') ? import.meta.env.VITE_SOURCE_URL : null;
 
 export function useNight() {
-  const [night, setNight] = useState(document.documentElement.dataset.theme !== 'light');
+  const [night, setNight] = useState(document.documentElement.dataset.theme === 'dark');
   const change = (toNight) => {
     document.documentElement.dataset.theme = toNight ? 'dark' : 'light';
     try { localStorage.setItem('theme', toNight ? 'dark' : 'light'); } catch { /* not remembered */ }

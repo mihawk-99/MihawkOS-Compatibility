@@ -33,7 +33,7 @@ every report. You can search by name, filter by rating, console, firmware and Mi
 Pictures are the games' Steam headers, by the report's Steam AppID or else by the game's exact name on Steam. A report
 also shows the launcher the game was started from, with its logo.
 
-It opens at night; the Day/Night slider in the header switches, and your browser remembers the choice on your
+It opens in daylight; the Day/Night slider in the header switches, and your browser remembers the choice on your
 device. Both pages speak the WebUI's ten languages (English, French, Spanish, German, Italian, Russian, Simplified
 Chinese, Japanese, Brazilian Portuguese, Polish): the flag in the header picks one, and a first visit follows the
 browser's language. The note button beside the flag plays MihawkOS's own three Frutiger Aero pieces, Bubble Garden, Glass Meadow and Sky
