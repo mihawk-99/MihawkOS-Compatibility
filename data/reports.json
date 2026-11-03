@@ -225,6 +225,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "213610": {
+   "name": "Sonic Adventure 2",
+   "header": "",
+   "reviews": 23931,
+   "ram": 2,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
   "219150": {
    "name": "Hotline Miami",
    "header": "",
@@ -1355,6 +1363,62 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-02",
+   "game": "Ultra Street Fighter® IV",
+   "appid": "45760",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.20",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "Installed EmberSF4 through MihawkOS desktop. (it's rollback netcode mod, the communites plays it)\nAdded EmberSF4 as non-game in steam. Certain stuff in-game like the framerate would go down on certain scenes like loading a stage or whenever the win pose starts, then it goes back to full speed. Otherwise almost perfect playable with the mod and online works great. Ps5 dualsense works with the EmberSF4 overlay, so plug n play. Just had a crash mid fight, then it returned to \"Steam's setup stopped\"\n\"No sign-in came within 30 minutes, so Steam was closed. Try again whenever you are ready\"",
+   "nickname": "Tonkotsu1"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "TEKKEN 8",
+   "appid": "1778820",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.20",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": "60hz, Game Mode Off.",
+   "notes": "This will be my 2nd report, i tried uninstalling mihawkOS and installed again from prosperostore. Then booted steam from main menu(startup), Then you see Bob again, press a button, game loads and checks online, then when it brings up \"enter your name with keyboard\", game instantly freezes at that part. And still having steam cloud sync not working.",
+   "nickname": "Tonkotsu1"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Sonic Adventure 2",
+   "appid": "213610",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Boots into the initial settings launcher, crashes on pressing play.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Megabonk",
+   "appid": "3405340",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": 1,
+   "settings": null,
+   "notes": "Crashed in main menu",
+   "nickname": "MrMc"
+  },
   {
    "date": "2026-11-02",
    "game": "Silver Pines",
