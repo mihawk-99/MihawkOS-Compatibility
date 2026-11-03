@@ -1453,6 +1453,34 @@
  "reports": [
   {
    "date": "2026-11-03",
+   "game": "Dynasty warriors 3 remastered",
+   "appid": null,
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.40",
+   "rating": "Boots only",
+   "fps": 120,
+   "settings": "120hz",
+   "notes": "Get to the character selection and crashes.",
+   "nickname": "ReeceyN17"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "RV There Yet?",
+   "appid": "3949040",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": "Default",
+   "notes": "Makes it to menu, but crashes once you try to start a game",
+   "nickname": "Shag04"
+  },
+  {
+   "date": "2026-11-03",
    "game": "Castlevania: Belmont's Curse",
    "appid": "4231820",
    "launcher": "Steam",
