@@ -63,6 +63,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "12200": {
+  "name": "Bully: Scholarship Edition",
+  "header": "",
+  "reviews": 38059,
+  "ram": 1,
+  "ramMinimum": true,
+  "checked": "2026-11-03"
+ },
  "12210": {
   "name": "Grand Theft Auto IV: The Complete Edition",
   "header": "",
@@ -70,6 +78,14 @@
   "ram": 1.5,
   "ramMinimum": true,
   "checked": "2026-11-02"
+ },
+ "17470": {
+  "name": "Dead Space (2008)",
+  "header": "",
+  "reviews": 23051,
+  "ram": 1,
+  "ramMinimum": true,
+  "checked": "2026-11-03"
  },
  "19680": {
   "name": "Alice: Madness Returns",
@@ -347,6 +363,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "260730": {
+  "name": "Desperados: Wanted Dead or Alive",
+  "header": "",
+  "reviews": 2132,
+  "ram": 0.5,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
+ },
  "265550": {
   "name": "Dead Rising 3 Apocalypse Edition",
   "header": "",
@@ -410,6 +434,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "362890": {
+  "name": "Black Mesa",
+  "header": "674b9a0e7b31996efd5032dc15e695dbf457d71d",
+  "reviews": 135400,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
  },
  "367520": {
   "name": "Hollow Knight",
@@ -979,6 +1011,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "2057760": {
+  "name": "Esoteric Ebb",
+  "header": "3fc3e737678a0d5db6816609bec2c9c6f2c11a88",
+  "reviews": 9303,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
+ },
  "2099110": {
   "name": "The Classrooms",
   "header": "8862668a61deaa273459614ceafe05e4a4e0e059",
@@ -1130,6 +1170,14 @@
   "ram": 8,
   "ramMinimum": true,
   "checked": "2026-11-02"
+ },
+ "2908480": {
+  "name": "Gladio Mori Demo",
+  "header": "d0f8be769f5efd8c4b8010d36f17e684c18be420",
+  "reviews": null,
+  "ram": null,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
  },
  "2950790": {
   "name": "IRON NEST: Heavy Turret Simulator",
@@ -1299,6 +1347,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "3756010": {
+  "name": "SUPER BOMBERMAN COLLECTION",
+  "header": "cdb5d4d45a27797897f6052d55bc7316ea9a3e4c",
+  "reviews": 316,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
+ },
  "3905010": {
   "name": "ONE PIECE: Grand Gourmet",
   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067",
@@ -1314,6 +1370,22 @@
   "ram": 12,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "3986520": {
+  "name": "007 First Light - Deluxe Edition Upgrade",
+  "header": "2e8cfb52e72dcb618e730260c7b4002e0f66bd95",
+  "reviews": 150,
+  "ram": null,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
+ },
+ "4078430": {
+  "name": "STAR WARS: Galactic Racer™",
+  "header": "97215eb609882139ce6a28419116be23fcf5ac86",
+  "reviews": 7209,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
  },
  "4195110": {
   "name": "Ultrapool",

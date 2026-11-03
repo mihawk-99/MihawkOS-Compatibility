@@ -65,6 +65,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "12200": {
+   "name": "Bully: Scholarship Edition",
+   "header": "",
+   "reviews": 38059,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-03"
+  },
   "12210": {
    "name": "Grand Theft Auto IV: The Complete Edition",
    "header": "",
@@ -72,6 +80,14 @@
    "ram": 1.5,
    "ramMinimum": true,
    "checked": "2026-11-02"
+  },
+  "17470": {
+   "name": "Dead Space (2008)",
+   "header": "",
+   "reviews": 23051,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-03"
   },
   "19680": {
    "name": "Alice: Madness Returns",
@@ -345,6 +361,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "260730": {
+   "name": "Desperados: Wanted Dead or Alive",
+   "header": "",
+   "reviews": 2132,
+   "ram": 0.5,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
   "265550": {
    "name": "Dead Rising 3 Apocalypse Edition",
    "header": "",
@@ -408,6 +432,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "362890": {
+   "name": "Black Mesa",
+   "header": "674b9a0e7b31996efd5032dc15e695dbf457d71d",
+   "reviews": 135400,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
   },
   "367520": {
    "name": "Hollow Knight",
@@ -977,6 +1009,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "2057760": {
+   "name": "Esoteric Ebb",
+   "header": "3fc3e737678a0d5db6816609bec2c9c6f2c11a88",
+   "reviews": 9303,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
   "2099110": {
    "name": "The Classrooms",
    "header": "8862668a61deaa273459614ceafe05e4a4e0e059",
@@ -1128,6 +1168,14 @@
    "ram": 8,
    "ramMinimum": true,
    "checked": "2026-11-02"
+  },
+  "2908480": {
+   "name": "Gladio Mori Demo",
+   "header": "d0f8be769f5efd8c4b8010d36f17e684c18be420",
+   "reviews": null,
+   "ram": null,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
   },
   "2950790": {
    "name": "IRON NEST: Heavy Turret Simulator",
@@ -1297,6 +1345,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "3756010": {
+   "name": "SUPER BOMBERMAN COLLECTION",
+   "header": "cdb5d4d45a27797897f6052d55bc7316ea9a3e4c",
+   "reviews": 316,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
    "header": "0437aa2ef308bd35d40833de72c3dac04a24f067",
@@ -1312,6 +1368,22 @@
    "ram": 12,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "3986520": {
+   "name": "007 First Light - Deluxe Edition Upgrade",
+   "header": "2e8cfb52e72dcb618e730260c7b4002e0f66bd95",
+   "reviews": 150,
+   "ram": null,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
+  "4078430": {
+   "name": "STAR WARS: Galactic Racer™",
+   "header": "97215eb609882139ce6a28419116be23fcf5ac86",
+   "reviews": 7209,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
   },
   "4195110": {
    "name": "Ultrapool",
@@ -1363,6 +1435,216 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-03",
+   "game": "Gladio Mori Demo",
+   "appid": "2908480",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": "Runs perfectly well. Controller is picked up. Online works as well.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-03",
+   "game": "SUPER BOMBERMAN COLLECTION",
+   "appid": "3756010",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "8.40",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "Runs smoothly, no crashes so far.",
+   "nickname": "Tommy_T"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Hatsune Miku: Project DIVA Mega Mix+",
+   "appid": "1761390",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "8.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Doesn't start, crashes steam big picture, but big picture reloads",
+   "nickname": "Tommy_T"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "STAR WARS: Galactic Racer™",
+   "appid": "4078430",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "8.40",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Installs the needed Visual C++, but doesn't launch, completely crashes Mihawk OS",
+   "nickname": "Tommy_T"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Bombergirl",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "8.40",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "120 hz, no game mode,",
+   "notes": "Games need to be transferred to the same location as on PC. Registry keys need to be set like in Linux setups. Only works when started over the Mihawk Desktop. Direct launcher crashes the game\n\nGame.js needs to look like this:\n\n{\n\"arguments\": \"konaste.bomber-girl://login?tk= \",\n\"detail\": \"Launcher manual URL-Token\",\n\"directory\": \"C:\\\\Games\\\\BomberGirl\\\\launcher\\\\modules\",\n\"env\": [\n\"LC_ALL=ja_JP.UTF-8\",\n],\n\"executable\": \"C:\\\\Games\\\\BomberGirl\\\\launcher\\\\modules\\\\launcher.exe\",\n\"name\": \"Bombergirl (Token-Login)\",\n\"prefix\": \"mihawk\"\n}\n\nToken can then be manually edited over the webbrowser while in launcher. Token can be exctracted from inspecting the \"launch game\" button on the website.\n\nGame runs fluently most of the time, loading inbetween menus etc. lags a bit. Online play should work, didn't test yet. Mihawk OS lacks a capability to create a wrapper and to launch the game over the konami website after login. So maybe at some state it's easier to launch.",
+   "nickname": "Tommy_T"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "007 First Light - Deluxe Edition Upgrade",
+   "appid": "3986520",
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "Fays to face"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Dead Space (2008)",
+   "appid": "17470",
+   "launcher": "None",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "High settings",
+   "notes": null,
+   "nickname": "messi"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "007 First Light - Deluxe Edition Upgrade",
+   "appid": "3986520",
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "Fays to face"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Desperados: Wanted Dead or Alive",
+   "appid": "260730",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": "Be4rdy"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "minecraft java",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 120,
+   "settings": null,
+   "notes": "runs a lot better now but still stuters a bit when new chunks are being renders and it crashed once after like an hour of playing",
+   "nickname": "Arshia"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Esoteric Ebb",
+   "appid": "2057760",
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "12.00",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": "messi"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Left 4 Dead 2",
+   "appid": "550",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "12.20",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "Default MihawkOS Mouse Controls (Remap disables chosen buttons in game)",
+   "notes": "Test 1 - Game experienced a few hangs, nothing major. Although controller input was a little funky. Another report stated that they had to remap the jump button, in my case jump was already mapped but fire/shove was not. Likely due to changing triggers for mouse left/right click for desktop/big picture.\n\nTest 2 - Game loaded significantly faster, with less hanging. Shader pre-cache maybe? Fixed the fiire/shove issue, definitely caused by remapped mouse controls in MihawkOS settings. Althought now it won't pause. Either way, 100% playable",
+   "nickname": "ConnorOnly"
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Black Mesa",
+   "appid": "362890",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "9.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Starts after a long time but the menu doesn't render only plays the background video",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Bully: Scholarship Edition",
+   "appid": "12200",
+   "launcher": "Steam",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "9.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "Since it's and old game it requires a lot of patches and then it doesn't work for me with a controller, starting it takes a looong time",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-02",
+   "game": "Gears of War: E-Day",
+   "appid": "3010850",
+   "launcher": null,
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Open, but close with errors in compilation shaders in start screen",
+   "nickname": null
+  },
   {
    "date": "2026-11-02",
    "game": "Ultra Street Fighter® IV",
