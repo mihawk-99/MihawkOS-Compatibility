@@ -113,6 +113,14 @@
    "ramMinimum": true,
    "checked": "2026-11-02"
   },
+  "33320": {
+   "name": "Prince of Persia: The Forgotten Sands™",
+   "header": "",
+   "reviews": 2963,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-03"
+  },
   "35700": {
    "name": "Trine Enchanted Edition",
    "header": "",
@@ -1435,6 +1443,20 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-03",
+   "game": "Prince of Persia: The Forgotten Sands™",
+   "appid": "33320",
+   "launcher": "Ubisoft Connect",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "max",
+   "notes": null,
+   "nickname": "parsec"
+  },
   {
    "date": "2026-11-03",
    "game": "Gladio Mori Demo",
