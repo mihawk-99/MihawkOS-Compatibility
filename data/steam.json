@@ -1411,6 +1411,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "4231820": {
+  "name": "Castlevania: Belmont's Curse",
+  "header": "6b65aec2c398006aea8b76e1463cc34d0e4ba68b",
+  "reviews": 8503,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-03"
+ },
  "4471060": {
   "name": "Colleccct",
   "header": "bd059c8b969972e366c6237182f07a6469b52454",

@@ -1409,6 +1409,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "4231820": {
+   "name": "Castlevania: Belmont's Curse",
+   "header": "6b65aec2c398006aea8b76e1463cc34d0e4ba68b",
+   "reviews": 8503,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-03"
+  },
   "4471060": {
    "name": "Colleccct",
    "header": "bd059c8b969972e366c6237182f07a6469b52454",
@@ -1443,6 +1451,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-03",
+   "game": "Castlevania: Belmont's Curse",
+   "appid": "4231820",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "11.40",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": null,
+   "notes": null,
+   "nickname": "MisterJohnson87"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Alice: Madness Returns",
+   "appid": "19680",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "All settings on high except motion blur and physx on low",
+   "notes": "Works very well with MadnessPatch (wemino on github)\nStable 60fps on the first 20mins on the game so far\nThe biggest issue remaining : CRAZY long load times that makes no sense.",
+   "nickname": "Exphen"
+  },
   {
    "date": "2026-11-03",
    "game": "Prince of Persia: The Forgotten Sands™",
