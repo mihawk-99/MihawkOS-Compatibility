@@ -203,6 +203,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "202970": {
+  "name": "Call of Duty®: Black Ops II",
+  "header": "",
+  "reviews": 23381,
+  "ram": 2,
+  "ramMinimum": true,
+  "checked": "2026-11-04"
+ },
  "203160": {
   "name": "Tomb Raider Game of the Year",
   "header": "",
@@ -515,6 +523,22 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "409710": {
+  "name": "BioShock™ Remastered",
+  "header": "",
+  "reviews": 52952,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-04"
+ },
+ "409720": {
+  "name": "BioShock™ 2 Remastered",
+  "header": "",
+  "reviews": 24571,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-04"
+ },
  "413150": {
   "name": "Stardew Valley",
   "header": "",
@@ -586,6 +610,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "570940": {
+  "name": "DARK SOULS™: REMASTERED",
+  "header": "",
+  "reviews": 102367,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-04"
  },
  "577940": {
   "name": "Killer Instinct",
@@ -922,6 +954,14 @@
   "ram": null,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "1693980": {
+  "name": "Dead Space",
+  "header": "",
+  "reviews": 64338,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-04"
  },
  "1721470": {
   "name": "Poppy Playtime",

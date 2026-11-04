@@ -201,6 +201,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "202970": {
+   "name": "Call of Duty®: Black Ops II",
+   "header": "",
+   "reviews": 23381,
+   "ram": 2,
+   "ramMinimum": true,
+   "checked": "2026-11-04"
+  },
   "203160": {
    "name": "Tomb Raider Game of the Year",
    "header": "",
@@ -513,6 +521,22 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "409710": {
+   "name": "BioShock™ Remastered",
+   "header": "",
+   "reviews": 52952,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
+  },
+  "409720": {
+   "name": "BioShock™ 2 Remastered",
+   "header": "",
+   "reviews": 24571,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
+  },
   "413150": {
    "name": "Stardew Valley",
    "header": "",
@@ -584,6 +608,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "570940": {
+   "name": "DARK SOULS™: REMASTERED",
+   "header": "",
+   "reviews": 102367,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
   },
   "577940": {
    "name": "Killer Instinct",
@@ -920,6 +952,14 @@
    "ram": null,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "1693980": {
+   "name": "Dead Space",
+   "header": "",
+   "reviews": 64338,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
   },
   "1721470": {
    "name": "Poppy Playtime",
@@ -1451,6 +1491,160 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-03",
+   "game": "Dead Space",
+   "appid": "1693980",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Will not launch on bpm or through home page. Denuvo? Dxd12? Find out next alpha",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "DARK SOULS™ III",
+   "appid": "374320",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "ultra (max) settings",
+   "notes": "Aside from the slightest controller input lag it runs amazing!",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "BioShock™ Remastered",
+   "appid": "409710",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "1920x1080 widescreen, 16x anisotropic filter, 110 fov",
+   "notes": "running beautifully! A little slow to load but once the early stutters go away no hiccups... That might be me using max settings not the game itself",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "BioShock™ 2 Remastered",
+   "appid": "409720",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": null,
+   "notes": "Same as BioShock 1 remastered, occasional stutter but works amazing",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Fallout 2: A Post Nuclear Role Playing Game",
+   "appid": "38410",
+   "launcher": "None",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "Launcher and highres_config launch fine but not fallout 2.exe itself",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Call of Duty®: Black Ops II",
+   "appid": "202970",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "9.00",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "1920x1080p in game settings",
+   "notes": "The game runs smooth and even connects to online servers, was able to play a game of origins in a 4 player lobby no problem. Slight input delay but manageable",
+   "nickname": "Juantezuma2.1"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "UltraStar Deluxe",
+   "appid": null,
+   "launcher": "None",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "Games works but can't play because no microphones detected. Audio management is needed for the app to be fully functional.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Gears of War: E-Day",
+   "appid": "3010850",
+   "launcher": null,
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Problem with compilation cache. Error page",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-03",
+   "game": "DARK SOULS™: REMASTERED",
+   "appid": "570940",
+   "launcher": "None",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "set controller to xbox",
+   "notes": "use on screen keyboard for character name",
+   "nickname": "kona"
+  },
+  {
+   "date": "2026-11-03",
+   "game": "ONE PIECE: Grand Gourmet",
+   "appid": "3905010",
+   "launcher": null,
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-03",
+   "game": "Baten Kaitos I & II HD Remaster",
+   "appid": "2146170",
+   "launcher": null,
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
   {
    "date": "2026-11-03",
    "game": "Dynasty warriors 3 remastered",
