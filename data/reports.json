@@ -369,6 +369,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "251570": {
+   "name": "7 Days to Die",
+   "header": "",
+   "reviews": 280868,
+   "ram": 12,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
+  },
   "254700": {
    "name": "Resident Evil 4 (2005)",
    "header": "",
@@ -913,6 +921,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "1478500": {
+   "name": "Big Walk",
+   "header": "62eeee1507dbac905e128a62f2ce690550238db0",
+   "reviews": 40730,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
+  },
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4",
@@ -1361,6 +1377,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "3527290": {
+   "name": "PEAK",
+   "header": "31bac6b2eccf09b368f5e95ce510bae2baf3cfcd",
+   "reviews": 311770,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-04"
+  },
   "3527760": {
    "name": "RoboCop: Rogue City - Unfinished Business",
    "header": "",
@@ -1491,6 +1515,62 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-04",
+   "game": "Big Walk",
+   "appid": "1478500",
+   "launcher": null,
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "On default settings stable 60. With vsync off above 120",
+   "notes": "Gameplay smooth performs best on DX12 on slim 13.60 Gamepad support Buildin recommended. Community ones bit problematic.",
+   "nickname": "Doom"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "PEAK",
+   "appid": "3527290",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Default settings",
+   "notes": "With Vsync off above 120+ works smoothly no lags. (13.60 slim best performance on DX11)",
+   "nickname": "Doom"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "PEAK",
+   "appid": "3527290",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "With Vsync off 140+",
+   "notes": "Everything works smoothly (Recommend trying all DX11 DX12 and Vulkán) mine best on DX11",
+   "nickname": "Doom"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "7 Days to Die",
+   "appid": "251570",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5 Digital Edition",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Medium settings",
+   "notes": "Once you start the game you need to minimise steam for it to display properly, controller works perfect.",
+   "nickname": "ApolloHB"
+  },
   {
    "date": "2026-11-03",
    "game": "Dead Space",
