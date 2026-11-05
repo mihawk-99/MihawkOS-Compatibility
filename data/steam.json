@@ -427,6 +427,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "311340": {
+  "name": "METAL GEAR SOLID V: GROUND ZEROES",
+  "header": "",
+  "reviews": 13651,
+  "ram": 4,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
+ },
  "322330": {
   "name": "Don't Starve Together",
   "header": "",
@@ -602,6 +610,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "526870": {
+  "name": "Satisfactory",
+  "header": "",
+  "reviews": 237205,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
  },
  "527430": {
   "name": "Warhammer 40,000: Inquisitor - Martyr",
@@ -802,6 +818,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "1118520": {
+  "name": "Paralives",
+  "header": "277ab7a2ad1bbce0f4837bb37a3c86d109bd5258",
+  "reviews": 20795,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
  },
  "1148130": {
   "name": "Divinum",
@@ -1050,6 +1074,14 @@
   "ram": 4,
   "ramMinimum": true,
   "checked": "2026-11-02"
+ },
+ "1941540": {
+  "name": "Mafia: The Old Country",
+  "header": "d06980bb8f41737ca68da8eed40079347db09c84",
+  "reviews": 21396,
+  "ram": 32,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
  },
  "1942280": {
   "name": "Brotato",
@@ -1306,6 +1338,14 @@
   "ram": 16,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "3164500": {
+  "name": "Schedule I",
+  "header": "",
+  "reviews": 294027,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
  },
  "3224770": {
   "name": "Umamusume: Pretty Derby",

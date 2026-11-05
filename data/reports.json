@@ -425,6 +425,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "311340": {
+   "name": "METAL GEAR SOLID V: GROUND ZEROES",
+   "header": "",
+   "reviews": 13651,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
+  },
   "322330": {
    "name": "Don't Starve Together",
    "header": "",
@@ -600,6 +608,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "526870": {
+   "name": "Satisfactory",
+   "header": "",
+   "reviews": 237205,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
   },
   "527430": {
    "name": "Warhammer 40,000: Inquisitor - Martyr",
@@ -800,6 +816,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "1118520": {
+   "name": "Paralives",
+   "header": "277ab7a2ad1bbce0f4837bb37a3c86d109bd5258",
+   "reviews": 20795,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
   },
   "1148130": {
    "name": "Divinum",
@@ -1048,6 +1072,14 @@
    "ram": 4,
    "ramMinimum": true,
    "checked": "2026-11-02"
+  },
+  "1941540": {
+   "name": "Mafia: The Old Country",
+   "header": "d06980bb8f41737ca68da8eed40079347db09c84",
+   "reviews": 21396,
+   "ram": 32,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
   },
   "1942280": {
    "name": "Brotato",
@@ -1305,6 +1337,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "3164500": {
+   "name": "Schedule I",
+   "header": "",
+   "reviews": 294027,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
+  },
   "3224770": {
    "name": "Umamusume: Pretty Derby",
    "header": "d7ddfe8985d7be8db7a0195d5c482c4438ed929d",
@@ -1515,6 +1555,160 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-04",
+   "game": "PEAK",
+   "appid": "3527290",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "Ainda tenho que fazer o teste para ver se consigo jogar online",
+   "nickname": "FleurC"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "The Binding of Isaac: Repentance+",
+   "appid": "3353470",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "Usando controle, sem modificações",
+   "notes": null,
+   "nickname": "FleurC"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Touhou 7: Youyoumu - Perfect Cherry Blossom",
+   "appid": null,
+   "launcher": "None",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Froze at first screen",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Batman™: Arkham Origins",
+   "appid": "209000",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5 Digital Edition",
+   "firmware": "8.00",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "Textures don't load properly.",
+   "nickname": "Amir"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Bully",
+   "appid": null,
+   "launcher": "Other",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Pro",
+   "firmware": "11.60",
+   "rating": "Runs with issues",
+   "fps": 30,
+   "settings": null,
+   "notes": "sound issues and can't playable at all",
+   "nickname": "rashed"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Satisfactory",
+   "appid": "526870",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "11.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "On boot gets \"ran out of page tables\" error",
+   "nickname": "Ducks_On_Quack"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Mafia: The Old Country",
+   "appid": "1941540",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": null,
+   "settings": null,
+   "notes": "The app crashes to PS5 home screen",
+   "nickname": "Fozza"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Paralives",
+   "appid": "1118520",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.42",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": "game mode, dualsense, 120 hz off, game on medium settings",
+   "notes": "The menu open, when click to play MihawkOS report that is low on memory, the game load the character creation screen but after a few seconds it freezes and then crash. The game still a pre release, so it may be a bad optimized use of memory from the game side, idk.",
+   "nickname": "Mulittles"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "METAL GEAR SOLID V: GROUND ZEROES",
+   "appid": "311340",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Ultra",
+   "notes": null,
+   "nickname": "Fozza"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Schedule I",
+   "appid": "3164500",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "11.60",
+   "rating": "Perfect",
+   "fps": 45,
+   "settings": null,
+   "notes": null,
+   "nickname": "Ducks_On_Quack"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Project Zomboid",
+   "appid": "108600",
+   "launcher": "Steam",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Broken",
+   "fps": 1,
+   "settings": "Tried with Game mode on and off, and messed with other settings as well, didn’t seem to change much.",
+   "notes": "Game does not start at all, after pressing play steam closes and nothing else occurs. Ive tried the alternate launch options as well, which sadly don’t work either. The game fails to launch in both the windows emulator and big game mode. Using the alternative launch that steam gives us for this game opens the command shell, and displays the error “OpenJDK 64-Bit Server VM warning: Attempting to get process group affinity failed: Call not implemented”. That’s pretty much all I’ve got, thank you!",
+   "nickname": "Anthony"
+  },
   {
    "date": "2026-11-04",
    "game": "Big Walk",
