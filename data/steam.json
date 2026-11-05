@@ -691,6 +691,22 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "632470": {
+  "name": "Disco Elysium - The Final Cut",
+  "header": "816ea59d6d8ac525f79a07c3a7afa94eddb3437c",
+  "reviews": 119285,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
+ },
+ "633360": {
+  "name": "Remothered: Tormented Fathers",
+  "header": "",
+  "reviews": 1789,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-05"
+ },
  "648590": {
   "name": "",
   "header": "",
@@ -1042,6 +1058,14 @@
   "ram": 16,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "1790930": {
+  "name": "Crisol: Theater of Idols",
+  "header": "5799bc1838d75053880ab421cb5cbc3f54a7f667",
+  "reviews": 4315,
+  "ram": 16,
+  "ramMinimum": true,
+  "checked": "2026-11-05"
  },
  "1796470": {
   "name": "Haste",

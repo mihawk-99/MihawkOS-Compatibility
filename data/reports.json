@@ -689,6 +689,22 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "632470": {
+   "name": "Disco Elysium - The Final Cut",
+   "header": "816ea59d6d8ac525f79a07c3a7afa94eddb3437c",
+   "reviews": 119285,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
+  },
+  "633360": {
+   "name": "Remothered: Tormented Fathers",
+   "header": "",
+   "reviews": 1789,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-05"
+  },
   "648590": {
    "name": "",
    "header": "",
@@ -1040,6 +1056,14 @@
    "ram": 16,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "1790930": {
+   "name": "Crisol: Theater of Idols",
+   "header": "5799bc1838d75053880ab421cb5cbc3f54a7f667",
+   "reviews": 4315,
+   "ram": 16,
+   "ramMinimum": true,
+   "checked": "2026-11-05"
   },
   "1796470": {
    "name": "Haste",
@@ -1555,6 +1579,62 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-05",
+   "game": "Crisol: Theater of Idols",
+   "appid": "1790930",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Only boots than crashes to the home screen after second logo\nAlso audio crackling issues",
+   "nickname": "Fozza"
+  },
+  {
+   "date": "2026-11-05",
+   "game": "Remothered Tormented Fathers",
+   "appid": "633360",
+   "launcher": "GOG Galaxy",
+   "version": "v7.1.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "11.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "Xbox360",
+   "notes": null,
+   "nickname": "Tinkodes"
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Asphalt 9",
+   "appid": null,
+   "launcher": "None",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.00",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "default",
+   "notes": "it worked well. had to set up the controller once and it worked perfectly after that",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-04",
+   "game": "Disco Elysium - The Final Cut",
+   "appid": "632470",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Runs with issues",
+   "fps": null,
+   "settings": null,
+   "notes": "It runs with issues with the controller, not really able to scroll down for an example when someone is talking",
+   "nickname": "FleurC"
+  },
   {
    "date": "2026-11-04",
    "game": "PEAK",
