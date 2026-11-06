@@ -683,6 +683,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "612880": {
+  "name": "Wolfenstein II: The New Colossus",
+  "header": "",
+  "reviews": 35682,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-06"
+ },
  "632360": {
   "name": "Risk of Rain 2",
   "header": "",
@@ -826,6 +834,14 @@
   "ram": 2,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "1015500": {
+  "name": "WWE 2K20",
+  "header": "",
+  "reviews": 3873,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-06"
  },
  "1030300": {
   "name": "Hollow Knight: Silksong",
@@ -971,6 +987,14 @@
   "ramMinimum": false,
   "checked": "2026-11-04"
  },
+ "1491410": {
+  "name": "Eternal Strands",
+  "header": "",
+  "reviews": 1698,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-06"
+ },
  "1663850": {
   "name": "REPLACED",
   "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4",
@@ -1074,6 +1098,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "1799840": {
+  "name": "Queen's Domain",
+  "header": "1a209734951f53b019ec9fa03f835def14f2a968",
+  "reviews": 3092,
+  "ram": 6,
+  "ramMinimum": false,
+  "checked": "2026-11-06"
  },
  "1809540": {
   "name": "Nine Sols",

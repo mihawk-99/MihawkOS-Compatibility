@@ -681,6 +681,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "612880": {
+   "name": "Wolfenstein II: The New Colossus",
+   "header": "",
+   "reviews": 35682,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-06"
+  },
   "632360": {
    "name": "Risk of Rain 2",
    "header": "",
@@ -824,6 +832,14 @@
    "ram": 2,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "1015500": {
+   "name": "WWE 2K20",
+   "header": "",
+   "reviews": 3873,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-06"
   },
   "1030300": {
    "name": "Hollow Knight: Silksong",
@@ -969,6 +985,14 @@
    "ramMinimum": false,
    "checked": "2026-11-04"
   },
+  "1491410": {
+   "name": "Eternal Strands",
+   "header": "",
+   "reviews": 1698,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-06"
+  },
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4",
@@ -1072,6 +1096,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "1799840": {
+   "name": "Queen's Domain",
+   "header": "1a209734951f53b019ec9fa03f835def14f2a968",
+   "reviews": 3092,
+   "ram": 6,
+   "ramMinimum": false,
+   "checked": "2026-11-06"
   },
   "1809540": {
    "name": "Nine Sols",
@@ -1579,6 +1611,76 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-06",
+   "game": "WWE 2K20",
+   "appid": "1015500",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-06",
+   "game": "Queen's Domain",
+   "appid": "1799840",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "11.40",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-06",
+   "game": "Wolfenstein II: The New Colossus",
+   "appid": "612880",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-06",
+   "game": "L.A. Noire",
+   "appid": "110800",
+   "launcher": "None",
+   "version": "v8.0.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 60,
+   "settings": "max",
+   "notes": "unpack winlator ver.",
+   "nickname": "parsec"
+  },
+  {
+   "date": "2026-11-05",
+   "game": "Eternal Strands",
+   "appid": "1491410",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "10.20",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Reach start menu then crash",
+   "nickname": null
+  },
   {
    "date": "2026-11-05",
    "game": "Crisol: Theater of Idols",
