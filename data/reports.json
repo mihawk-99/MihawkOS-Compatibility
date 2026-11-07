@@ -721,6 +721,14 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "674940": {
+   "name": "Stick Fight: The Game",
+   "header": "",
+   "reviews": 100050,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-07"
+  },
   "694280": {
    "name": "Zombie Army 4: Dead War",
    "header": "",
@@ -768,6 +776,14 @@
    "ram": 8,
    "ramMinimum": false,
    "checked": "2026-11-02"
+  },
+  "847370": {
+   "name": "Sunset Overdrive",
+   "header": "",
+   "reviews": 12167,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-07"
   },
   "858710": {
    "name": "Gravity Circuit",
@@ -1611,6 +1627,34 @@
   }
  },
  "reports": [
+  {
+   "date": "2026-11-07",
+   "game": "Sunset Overdrive",
+   "appid": "847370",
+   "launcher": null,
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5 Pro",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": 120,
+   "settings": "Start through a launcher : On, Mouse.",
+   "notes": "Initially shows System requirment not met. Press enter (kayboar) or Start through launcher to close the popup. After that the game runs flawlessly.",
+   "nickname": null
+  },
+  {
+   "date": "2026-11-07",
+   "game": "Stick Fight: The Game",
+   "appid": "674940",
+   "launcher": "Steam",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "1080p max. Unlimited fps.",
+   "notes": "Perfect.\nMatchmaking works great, on screen keyboard could be better.",
+   "nickname": "lilkidsuave"
+  },
   {
    "date": "2026-11-06",
    "game": "WWE 2K20",

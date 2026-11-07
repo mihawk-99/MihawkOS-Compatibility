@@ -723,6 +723,14 @@
   "ramMinimum": false,
   "checked": "2026-11-02"
  },
+ "674940": {
+  "name": "Stick Fight: The Game",
+  "header": "",
+  "reviews": 100050,
+  "ram": 1,
+  "ramMinimum": true,
+  "checked": "2026-11-07"
+ },
  "694280": {
   "name": "Zombie Army 4: Dead War",
   "header": "",
@@ -770,6 +778,14 @@
   "ram": 8,
   "ramMinimum": false,
   "checked": "2026-11-02"
+ },
+ "847370": {
+  "name": "Sunset Overdrive",
+  "header": "",
+  "reviews": 12167,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-07"
  },
  "858710": {
   "name": "Gravity Circuit",
