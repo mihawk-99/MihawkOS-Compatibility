@@ -52,10 +52,10 @@
   "6030": {
    "name": "STAR WARS™ Jedi Knight II - Jedi Outcast™",
    "header": "",
-   "reviews": 4063,
+   "reviews": 4065,
    "ram": 0.1,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "6910": {
    "name": "Deus Ex: Game of the Year Edition",
@@ -140,10 +140,10 @@
   "40970": {
    "name": "Stronghold Crusader HD (2012)",
    "header": "",
-   "reviews": 17648,
+   "reviews": 17650,
    "ram": 0.5,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "40990": {
    "name": "Mafia",
@@ -199,7 +199,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "202970": {
    "name": "Call of Duty®: Black Ops II",
@@ -228,18 +228,18 @@
   "204100": {
    "name": "Max Payne 3",
    "header": "",
-   "reviews": 55756,
+   "reviews": 55829,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "204360": {
    "name": "Castle Crashers®",
    "header": "",
-   "reviews": 110258,
+   "reviews": 110322,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "208650": {
    "name": "Batman™: Arkham Knight",
@@ -276,10 +276,10 @@
   "219990": {
    "name": "Grim Dawn",
    "header": "",
-   "reviews": 93693,
+   "reviews": 93741,
    "ram": 6,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "220240": {
    "name": "Far Cry 3",
@@ -340,18 +340,18 @@
   "235600": {
    "name": "Tom Clancy’s Splinter Cell Blacklist",
    "header": "",
-   "reviews": 19462,
+   "reviews": 19476,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "237630": {
    "name": "DuckTales: Remastered",
    "header": "",
-   "reviews": 6647,
+   "reviews": 6655,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "243470": {
    "name": "Watch_Dogs™",
@@ -411,11 +411,11 @@
   },
   "292030": {
    "name": "The Witcher 3: Wild Hunt — Remastered",
-   "header": "",
-   "reviews": 851771,
+   "header": "4b5b1ba5061b8a992cc69ac58b4245434edb4296",
+   "reviews": 852557,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "307690": {
    "name": "Sleeping Dogs: Definitive Edition",
@@ -436,10 +436,10 @@
   "322330": {
    "name": "Don't Starve Together",
    "header": "",
-   "reviews": 378246,
+   "reviews": 378601,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "338930": {
    "name": "TRANSFORMERS: Devastation",
@@ -457,13 +457,21 @@
    "ramMinimum": false,
    "checked": "2026-11-09"
   },
+  "357190": {
+   "name": "ULTIMATE MARVEL VS. CAPCOM 3",
+   "header": "",
+   "reviews": 6619,
+   "ram": 4,
+   "ramMinimum": false,
+   "checked": "2026-11-09"
+  },
   "361420": {
    "name": "ASTRONEER",
    "header": "1c44099d86c824a6fd1098a4215097878d68664e",
-   "reviews": 119308,
+   "reviews": 119337,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "362890": {
    "name": "Black Mesa",
@@ -484,10 +492,10 @@
   "371970": {
    "name": "Barony",
    "header": "0f8975e4b2af32eb0d68c309f1eff56d470e73dc",
-   "reviews": 12987,
+   "reviews": 13020,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "374320": {
    "name": "DARK SOULS™ III",
@@ -508,10 +516,10 @@
   "383150": {
    "name": "Dead Island Definitive Edition",
    "header": "",
-   "reviews": 24247,
+   "reviews": 24281,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "387290": {
    "name": "Ori and the Blind Forest: Definitive Edition",
@@ -564,10 +572,10 @@
   "429050": {
    "name": "Feed and Grow: Fish",
    "header": "",
-   "reviews": 20955,
+   "reviews": 20983,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "433340": {
    "name": "Slime Rancher",
@@ -732,10 +740,10 @@
   "694280": {
    "name": "Zombie Army 4: Dead War",
    "header": "",
-   "reviews": 10256,
+   "reviews": 10282,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "750920": {
    "name": "Shadow of the Tomb Raider: Definitive Edition",
@@ -748,10 +756,10 @@
   "774801": {
    "name": "Crab Champions",
    "header": "",
-   "reviews": 26801,
+   "reviews": 26876,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "787480": {
    "name": "Phoenix Wright: Ace Attorney Trilogy",
@@ -820,10 +828,10 @@
   "934700": {
    "name": "Dead Island 2",
    "header": "",
-   "reviews": 24035,
+   "reviews": 24172,
    "ram": 10,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "952060": {
    "name": "Resident Evil 3",
@@ -836,18 +844,18 @@
   "986130": {
    "name": "Shadows of Doubt",
    "header": "",
-   "reviews": 14761,
+   "reviews": 14767,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1002300": {
    "name": "Fear & Hunger",
    "header": "",
-   "reviews": 21205,
+   "reviews": 21254,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1015500": {
    "name": "WWE 2K20",
@@ -953,13 +961,21 @@
    "ramMinimum": false,
    "checked": "2026-11-02"
   },
+  "1275890": {
+   "name": "Baldi's Basics Plus",
+   "header": "",
+   "reviews": 11158,
+   "ram": 4,
+   "ramMinimum": true,
+   "checked": "2026-11-09"
+  },
   "1326470": {
    "name": "Sons Of The Forest",
    "header": "",
-   "reviews": 288583,
+   "reviews": 289427,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1353230": {
    "name": "Bomb Rush Cyberfunk",
@@ -968,6 +984,14 @@
    "ram": 4,
    "ramMinimum": true,
    "checked": "2026-11-02"
+  },
+  "1422450": {
+   "name": "Deadlock",
+   "header": "aa249c5e8cc8f90941bd1dbdc311773cd1afe065",
+   "reviews": null,
+   "ram": null,
+   "ramMinimum": false,
+   "checked": "2026-11-09"
   },
   "1449850": {
    "name": "Yu-Gi-Oh! Master Duel",
@@ -1031,15 +1055,15 @@
    "reviews": null,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1681430": {
    "name": "RoboCop: Rogue City",
    "header": "",
-   "reviews": 28885,
+   "reviews": 28992,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1683460": {
    "name": "",
@@ -1060,10 +1084,10 @@
   "1721470": {
    "name": "Poppy Playtime",
    "header": "00ca34a0c863a8d86c6582904249216d6aa263bd",
-   "reviews": 38516,
+   "reviews": 38535,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1761390": {
    "name": "Hatsune Miku: Project DIVA Mega Mix+",
@@ -1087,7 +1111,7 @@
    "reviews": null,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1790600": {
    "name": "DRAGON BALL: Sparking! ZERO",
@@ -1132,10 +1156,18 @@
   "1846170": {
    "name": "Iron Lung",
    "header": "",
-   "reviews": 10287,
+   "reviews": 10304,
    "ram": 0,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
+  },
+  "1879330": {
+   "name": "WARRIORS OROCHI 3 Ultimate Definitive Edition",
+   "header": "",
+   "reviews": 2159,
+   "ram": 8,
+   "ramMinimum": false,
+   "checked": "2026-11-09"
   },
   "1907440": {
    "name": "Super Lone Survivor",
@@ -1143,7 +1175,7 @@
    "reviews": null,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1941540": {
    "name": "Mafia: The Old Country",
@@ -1156,10 +1188,10 @@
   "1942280": {
    "name": "Brotato",
    "header": "f98281910016f8924be37cce3d4b119f5223a358",
-   "reviews": 112653,
+   "reviews": 113415,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "1961950": {
    "name": "CHAOS;HEAD NOAH",
@@ -1172,10 +1204,10 @@
   "2050650": {
    "name": "Resident Evil 4",
    "header": "",
-   "reviews": 193833,
+   "reviews": 194813,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2057760": {
    "name": "Esoteric Ebb",
@@ -1228,10 +1260,10 @@
   "2163330": {
    "name": "Yet Another Zombie Survivors",
    "header": "d14101ee67beb9c952fd8e38ec015777356430a0",
-   "reviews": 14731,
+   "reviews": 14772,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2278520": {
    "name": "Enshrouded Dedicated Server",
@@ -1239,7 +1271,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2333000": {
    "name": "Silver Pines",
@@ -1249,13 +1281,29 @@
    "ramMinimum": false,
    "checked": "2026-11-09"
   },
+  "2370000": {
+   "name": "Lumines Arise",
+   "header": "b3416ea55318a28142922206c47eff907b457e59",
+   "reviews": 866,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-09"
+  },
+  "2406770": {
+   "name": "Bodycam",
+   "header": "",
+   "reviews": 68452,
+   "ram": 16,
+   "ramMinimum": false,
+   "checked": "2026-11-09"
+  },
   "2416450": {
    "name": "MOUSE: P.I. For Hire",
    "header": "298ff2fc3f6a700d022b8d3ec58047f2b426be03",
-   "reviews": 15105,
+   "reviews": 15144,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2420510": {
    "name": "HoloCure - Save the Fans!",
@@ -1308,18 +1356,18 @@
   "2552430": {
    "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
    "header": "",
-   "reviews": 11297,
+   "reviews": 11339,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2586440": {
    "name": "House 2",
    "header": "ff701c2fda8cf6706f0ea9c15f1e0e4fb691619c",
-   "reviews": 227,
+   "reviews": 233,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2642680": {
    "name": "Half Sword Tech Demo",
@@ -1327,7 +1375,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "2833580": {
    "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
@@ -1364,10 +1412,10 @@
   "3043580": {
    "name": "Keeper",
    "header": "f6ddce24d27462ff55f6343c616d12fe71a996f5",
-   "reviews": 1075,
+   "reviews": 1088,
    "ram": 32,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "3061570": {
    "name": "Persona5: The Phantom X",
@@ -1428,18 +1476,18 @@
   "3241660": {
    "name": "R.E.P.O.",
    "header": "",
-   "reviews": 348161,
+   "reviews": 349919,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "3314790": {
    "name": "CloverPit",
    "header": "8ba81356b84aa937573fa29fdd708dbd96b01537",
-   "reviews": 25299,
+   "reviews": 25379,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "3353470": {
    "name": "The Binding of Isaac: Repentance+",
@@ -1500,10 +1548,10 @@
   "3527760": {
    "name": "RoboCop: Rogue City - Unfinished Business",
    "header": "",
-   "reviews": 4115,
+   "reviews": 4132,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "3601140": {
    "name": "Sonic Racing: CrossWorlds Demo",
@@ -1536,6 +1584,14 @@
    "ram": 16,
    "ramMinimum": false,
    "checked": "2026-11-03"
+  },
+  "3760370": {
+   "name": "Kick",
+   "header": "d5e0d563d85638e59c3f1c58b135782a1b43be20",
+   "reviews": null,
+   "ram": 8,
+   "ramMinimum": true,
+   "checked": "2026-11-09"
   },
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
@@ -1572,10 +1628,10 @@
   "4195110": {
    "name": "Ultrapool",
    "header": "01a02c21a927ac9dc71353e18cb784b1ea5c53a7",
-   "reviews": 346,
+   "reviews": 350,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "4197610": {
    "name": "Librarian: Tidy Up the Arcane Library!",
@@ -1601,32 +1657,180 @@
    "ramMinimum": true,
    "checked": "2026-11-09"
   },
+  "4568830": {
+   "name": "ASTRAL COURT DX",
+   "header": "5c40e80592b3777b66782ee4b737fb609eae0f70",
+   "reviews": null,
+   "ram": 1,
+   "ramMinimum": true,
+   "checked": "2026-11-09"
+  },
   "4732690": {
    "name": "Arknights: Endfield",
    "header": "a84104b5ffa357982d188cab0be5d6cfde8a6398",
    "reviews": null,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "4739660": {
    "name": "Drag'n Wash",
    "header": "e837f81aebb36b458512fa562a322c218dde1f7c",
-   "reviews": 4033,
+   "reviews": 4097,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   },
   "5335510": {
    "name": "Moon Sweepers",
    "header": "41e1e802dfc069cc245b91043e451a2f9ffa80e3",
-   "reviews": 4774,
+   "reviews": 7362,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-02"
+   "checked": "2026-11-09"
   }
  },
  "reports": [
+  {
+   "date": "2026-11-08",
+   "game": "ASTRAL COURT DX",
+   "appid": "4568830",
+   "launcher": "Steam",
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5",
+   "firmware": "7.61",
+   "rating": "Playable",
+   "fps": 60,
+   "settings": "Control input set to dualsense",
+   "notes": "Was able to beat the main campaign with only one crash happening but overall is was perfect.",
+   "nickname": "Squidy"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "Baldi's Basics Plus",
+   "appid": "1275890",
+   "launcher": null,
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5",
+   "firmware": "7.61",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": "Control input set to Dualsense",
+   "notes": "The game works at its standard framerate. No issues visible.",
+   "nickname": "Squidy"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "Deadlock",
+   "appid": "1422450",
+   "launcher": null,
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5",
+   "firmware": "7.61",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "The game boots into medium graphics, controller does not work (however I think that is an issue with deadlock), and crashes shortly after saying\n\"Debug:MihawkOS: The PS5 ran out of page tables (its records of each program's memory). though its memory was not full: the game was ended.\"",
+   "nickname": "Squidy"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "Bodycam",
+   "appid": "2406770",
+   "launcher": "Steam",
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5",
+   "firmware": "7.61",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Was able to boot into the loading screen but it crashes when attempting to boot into lobby.",
+   "nickname": "Squidy"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "Lumines Arise",
+   "appid": "2370000",
+   "launcher": "None",
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Playable",
+   "fps": null,
+   "settings": null,
+   "notes": "Worked good. Only played it for 15 minutes so didn't want to give it a perfect rating yet.",
+   "nickname": "Fat_Kid"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "Kick",
+   "appid": "3760370",
+   "launcher": "None",
+   "version": "v8.2.0-alpha-8",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": null,
+   "settings": null,
+   "notes": "Boots to menu then crashes. Hope someone can figure it out in the future.",
+   "nickname": "Fat_Kid"
+  },
+  {
+   "date": "2026-11-08",
+   "game": "FAITH: The Unholy Trinity",
+   "appid": "1179080",
+   "launcher": "Steam",
+   "version": "v7.0.0-alpha-7",
+   "console": "PS5 Slim",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": null,
+   "nickname": null
+  },
+  {
+   "date": "2026-11-08",
+   "game": "WARRIORS OROCHI 3 Ultimate Definitive Edition",
+   "appid": "1879330",
+   "launcher": "None",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Perfect",
+   "fps": null,
+   "settings": null,
+   "notes": "run fine with fps between 59/60",
+   "nickname": "Seabook00"
+  },
+  {
+   "date": "2026-11-07",
+   "game": "Ultimate Marvel vs. Capcom 3",
+   "appid": "357190",
+   "launcher": "None",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": 55,
+   "settings": "DEFAULT",
+   "notes": "The game barely gets to the Capcom splash screen, and then it crashes and doesn't progress from there.",
+   "nickname": "Testy89"
+  },
+  {
+   "date": "2026-11-07",
+   "game": "Sons Of The Forest",
+   "appid": "1326470",
+   "launcher": "None",
+   "version": "v8.1.0-alpha-8",
+   "console": "PS5",
+   "firmware": "13.60",
+   "rating": "Boots only",
+   "fps": 2,
+   "settings": "everything off or lowest possible",
+   "notes": "The game boots but when I try to play it it's using all the ram and I get the ran out of graphics memory notification",
+   "nickname": null
+  },
   {
    "date": "2026-11-07",
    "game": "Sunset Overdrive",
