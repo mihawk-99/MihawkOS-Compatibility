@@ -531,6 +531,14 @@
   "ramMinimum": false,
   "checked": "2026-11-09"
  },
+ "387990": {
+  "name": "Scrap Mechanic",
+  "header": "5c31bde0a901d9459a8d8c556c5a44262b5f57e4",
+  "reviews": 109998,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
+ },
  "391220": {
   "name": "Rise of the Tomb Raider™",
   "header": "",
@@ -586,6 +594,14 @@
   "ram": 4,
   "ramMinimum": true,
   "checked": "2026-11-09"
+ },
+ "489830": {
+  "name": "The Elder Scrolls V: Skyrim Special Edition",
+  "header": "",
+  "reviews": 224199,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
  },
  "490110": {
   "name": "The Precinct",
@@ -811,6 +827,14 @@
   "ramMinimum": false,
   "checked": "2026-11-09"
  },
+ "892970": {
+  "name": "Valheim",
+  "header": "df65cafab20dae97a243c7cc988e8bf959e4b906",
+  "reviews": 477610,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
+ },
  "907650": {
   "name": "Stronghold: Warlords",
   "header": "",
@@ -995,6 +1019,22 @@
   "ramMinimum": false,
   "checked": "2026-11-09"
  },
+ "1440440": {
+  "name": "Sam & Max Save the World",
+  "header": "ab10594227eeccb781407e8112752197f3756455",
+  "reviews": 1765,
+  "ram": 2,
+  "ramMinimum": true,
+  "checked": "2026-11-15"
+ },
+ "1443200": {
+  "name": "Class of '09",
+  "header": "",
+  "reviews": 8662,
+  "ram": 2,
+  "ramMinimum": true,
+  "checked": "2026-11-15"
+ },
  "1449850": {
   "name": "Yu-Gi-Oh! Master Duel",
   "header": "c3f87e2374fab93f9f05661493bdf4e43ea70776",
@@ -1002,6 +1042,14 @@
   "ram": 16,
   "ramMinimum": false,
   "checked": "2026-11-09"
+ },
+ "1451940": {
+  "name": "NEEDY STREAMER OVERLOAD",
+  "header": "",
+  "reviews": 55236,
+  "ram": 0,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
  },
  "1462040": {
   "name": "FINAL FANTASY VII REMAKE INTERGRADE",
@@ -1227,6 +1275,14 @@
   "ramMinimum": false,
   "checked": "2026-11-09"
  },
+ "2111190": {
+  "name": "MULLET MADJACK",
+  "header": "",
+  "reviews": 8397,
+  "ram": 16,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
+ },
  "2138710": {
   "name": "Sifu",
   "header": "",
@@ -1274,6 +1330,14 @@
   "ram": null,
   "ramMinimum": false,
   "checked": "2026-11-09"
+ },
+ "2318310": {
+  "name": "Class of '09: The Re-Up",
+  "header": "",
+  "reviews": 4536,
+  "ram": 2,
+  "ramMinimum": true,
+  "checked": "2026-11-15"
  },
  "2333000": {
   "name": "Silver Pines",
@@ -1378,6 +1442,14 @@
   "ram": null,
   "ramMinimum": false,
   "checked": "2026-11-09"
+ },
+ "2680280": {
+  "name": "PAPERHEAD",
+  "header": "0b30058f0a9d5ad4ed698367b19bad97001faa02",
+  "reviews": 730,
+  "ram": 4,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
  },
  "2833580": {
   "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
@@ -1555,6 +1627,14 @@
   "ramMinimum": false,
   "checked": "2026-11-09"
  },
+ "3564740": {
+  "name": "Where Winds Meet",
+  "header": "",
+  "reviews": null,
+  "ram": 32,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
+ },
  "3601140": {
   "name": "Sonic Racing: CrossWorlds Demo",
   "header": "9ef2ad9385e1cd626ff9634a68835e33c7dd4d24",
@@ -1595,6 +1675,14 @@
   "ramMinimum": true,
   "checked": "2026-11-09"
  },
+ "3892270": {
+  "name": "Gamble With Your Friends",
+  "header": "395e6d7972474333a698b26f8aa5597bf38109a1",
+  "reviews": 22879,
+  "ram": 8,
+  "ramMinimum": false,
+  "checked": "2026-11-15"
+ },
  "3905010": {
   "name": "ONE PIECE: Grand Gourmet",
   "header": "0437aa2ef308bd35d40833de72c3dac04a24f067",
@@ -1626,6 +1714,14 @@
   "ram": 16,
   "ramMinimum": false,
   "checked": "2026-11-10"
+ },
+ "4108000": {
+  "name": "Machine Party",
+  "header": "00ae7d0e0fd0ad72635bddb1dd80ee68cc94eed5",
+  "reviews": 5129,
+  "ram": 8,
+  "ramMinimum": true,
+  "checked": "2026-11-15"
  },
  "4195110": {
   "name": "Ultrapool",
