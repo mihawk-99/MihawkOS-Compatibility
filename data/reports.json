@@ -28,10 +28,10 @@
   "550": {
    "name": "Left 4 Dead 2",
    "header": "",
-   "reviews": 825576,
+   "reviews": 826479,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "620": {
    "name": "Portal 2",
@@ -92,10 +92,10 @@
   "19680": {
    "name": "Alice: Madness Returns",
    "header": "",
-   "reviews": 28326,
+   "reviews": 28390,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "21100": {
    "name": "F.E.A.R. 3",
@@ -124,18 +124,18 @@
   "35700": {
    "name": "Trine Enchanted Edition",
    "header": "",
-   "reviews": 12871,
+   "reviews": 12876,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "38410": {
    "name": "Fallout 2: A Post Nuclear Role Playing Game",
    "header": "",
-   "reviews": 13972,
+   "reviews": 13989,
    "ram": 0,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "40970": {
    "name": "Stronghold Crusader HD (2012)",
@@ -159,15 +159,15 @@
    "reviews": 393,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "45760": {
    "name": "Ultra Street Fighter® IV",
    "header": "",
-   "reviews": 11196,
+   "reviews": 11204,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
@@ -180,18 +180,18 @@
   "108600": {
    "name": "Project Zomboid",
    "header": "",
-   "reviews": 373322,
+   "reviews": 374493,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "110800": {
    "name": "L.A. Noire",
    "header": "",
-   "reviews": 31403,
+   "reviews": 31435,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "199943": {
    "name": "",
@@ -252,10 +252,10 @@
   "209000": {
    "name": "Batman™: Arkham Origins",
    "header": "",
-   "reviews": 46140,
+   "reviews": 46205,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "213610": {
    "name": "Sonic Adventure 2",
@@ -268,10 +268,10 @@
   "219150": {
    "name": "Hotline Miami",
    "header": "",
-   "reviews": 111066,
+   "reviews": 111167,
    "ram": 1,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "219990": {
    "name": "Grim Dawn",
@@ -380,10 +380,10 @@
   "254700": {
    "name": "Resident Evil 4 (2005)",
    "header": "",
-   "reviews": 79681,
+   "reviews": 79790,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "260730": {
    "name": "Desperados: Wanted Dead or Alive",
@@ -420,10 +420,10 @@
   "307690": {
    "name": "Sleeping Dogs: Definitive Edition",
    "header": "",
-   "reviews": 71435,
+   "reviews": 71518,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "311340": {
    "name": "METAL GEAR SOLID V: GROUND ZEROES",
@@ -452,18 +452,18 @@
   "339230": {
    "name": "ZOMBI",
    "header": "",
-   "reviews": 3002,
+   "reviews": 3004,
    "ram": 6,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "357190": {
    "name": "ULTIMATE MARVEL VS. CAPCOM 3",
    "header": "",
-   "reviews": 6619,
+   "reviews": 6622,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "361420": {
    "name": "ASTRONEER",
@@ -500,10 +500,10 @@
   "374320": {
    "name": "DARK SOULS™ III",
    "header": "",
-   "reviews": 280196,
+   "reviews": 280336,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "380600": {
    "name": "Fishing Planet",
@@ -524,10 +524,10 @@
   "387290": {
    "name": "Ori and the Blind Forest: Definitive Edition",
    "header": "",
-   "reviews": 63625,
+   "reviews": 63670,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "387990": {
    "name": "Scrap Mechanic",
@@ -540,10 +540,10 @@
   "391220": {
    "name": "Rise of the Tomb Raider™",
    "header": "",
-   "reviews": 129124,
+   "reviews": 129459,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "391540": {
    "name": "Undertale",
@@ -655,7 +655,7 @@
    "reviews": 553,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "570940": {
    "name": "DARK SOULS™: REMASTERED",
@@ -668,10 +668,10 @@
   "577940": {
    "name": "Killer Instinct",
    "header": "",
-   "reviews": 4277,
+   "reviews": 4279,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "579950": {
    "name": "Marvel's Guardians of the Galaxy: The Telltale Series",
@@ -684,10 +684,10 @@
   "586140": {
    "name": "BlazBlue Centralfiction",
    "header": "",
-   "reviews": 9607,
+   "reviews": 9620,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "588650": {
    "name": "Dead Cells",
@@ -764,10 +764,10 @@
   "750920": {
    "name": "Shadow of the Tomb Raider: Definitive Edition",
    "header": "",
-   "reviews": 73640,
+   "reviews": 73830,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "774801": {
    "name": "Crab Champions",
@@ -796,10 +796,10 @@
   "814380": {
    "name": "Sekiro™: Shadows Die Twice - GOTY Edition",
    "header": "",
-   "reviews": 262085,
+   "reviews": 262335,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "847370": {
    "name": "Sunset Overdrive",
@@ -820,10 +820,10 @@
   "881100": {
    "name": "Noita",
    "header": "",
-   "reviews": 81990,
+   "reviews": 82079,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "892970": {
    "name": "Valheim",
@@ -836,10 +836,10 @@
   "907650": {
    "name": "Stronghold: Warlords",
    "header": "",
-   "reviews": 4483,
+   "reviews": 4485,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "930210": {
    "name": "HuniePop 2: Double Date",
@@ -932,26 +932,26 @@
   "1179080": {
    "name": "FAITH: The Unholy Trinity",
    "header": "b5d0111d78b7c3b304387de2c55dabff139c667f",
-   "reviews": 8278,
+   "reviews": 8302,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1222670": {
    "name": "The Sims™ 4",
    "header": "",
-   "reviews": 83394,
+   "reviews": 83410,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1222680": {
    "name": "Need for Speed™ Heat",
    "header": "",
-   "reviews": 130417,
+   "reviews": 130513,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1229490": {
    "name": "ULTRAKILL",
@@ -980,26 +980,26 @@
   "1262580": {
    "name": "Need for Speed™ Payback",
    "header": "",
-   "reviews": 27708,
+   "reviews": 27739,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1275890": {
    "name": "Baldi's Basics Plus",
    "header": "",
-   "reviews": 11158,
+   "reviews": 11207,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1326470": {
    "name": "Sons Of The Forest",
    "header": "",
-   "reviews": 289427,
+   "reviews": 289902,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1353230": {
    "name": "Bomb Rush Cyberfunk",
@@ -1015,7 +1015,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1440440": {
    "name": "Sam & Max Save the World",
@@ -1140,18 +1140,18 @@
   "1761390": {
    "name": "Hatsune Miku: Project DIVA Mega Mix+",
    "header": "",
-   "reviews": 19790,
+   "reviews": 19804,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1778820": {
    "name": "TEKKEN 8",
-   "header": "c7b0b80639fc8c7d386922f414f293ca849e8e81",
-   "reviews": 48167,
+   "header": "bb40124a525d6146a7c1ee4848bf3a14aa716224",
+   "reviews": 48290,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1782210": {
    "name": "Crab Game",
@@ -1196,10 +1196,10 @@
   "1809540": {
    "name": "Nine Sols",
    "header": "",
-   "reviews": 41276,
+   "reviews": 41392,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1846170": {
    "name": "Iron Lung",
@@ -1212,10 +1212,10 @@
   "1879330": {
    "name": "WARRIORS OROCHI 3 Ultimate Definitive Edition",
    "header": "",
-   "reviews": 2159,
+   "reviews": 2164,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "1907440": {
    "name": "Super Lone Survivor",
@@ -1292,10 +1292,10 @@
   "2140020": {
    "name": "Stronghold: Definitive Edition",
    "header": "",
-   "reviews": 9873,
+   "reviews": 9888,
    "ram": 6,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2142790": {
    "name": "Fields of Mistria",
@@ -1311,7 +1311,7 @@
    "reviews": 261,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2163330": {
    "name": "Yet Another Zombie Survivors",
@@ -1340,10 +1340,10 @@
   "2333000": {
    "name": "Silver Pines",
    "header": "2ce661be5b6e60b8fcc92ecdf3f9dc2dca2a9037",
-   "reviews": 5430,
+   "reviews": 5747,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2370000": {
    "name": "Lumines Arise",
@@ -1351,15 +1351,15 @@
    "reviews": 866,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2406770": {
    "name": "Bodycam",
    "header": "",
-   "reviews": 68452,
+   "reviews": 71507,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2416450": {
    "name": "MOUSE: P.I. For Hire",
@@ -1380,10 +1380,10 @@
   "2475490": {
    "name": "Mouthwashing",
    "header": "",
-   "reviews": 35012,
+   "reviews": 35087,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "2492670": {
    "name": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
@@ -1476,10 +1476,10 @@
   "3010850": {
    "name": "Gears of War: E-Day",
    "header": "1abb0c5ef76c14f463dd6e3964adb64f984237d2",
-   "reviews": 11277,
+   "reviews": 11525,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3043580": {
    "name": "Keeper",
@@ -1543,7 +1543,7 @@
    "reviews": null,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3241660": {
    "name": "R.E.P.O.",
@@ -1567,7 +1567,7 @@
    "reviews": null,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3354750": {
    "name": "skate.",
@@ -1596,10 +1596,10 @@
   "3405340": {
    "name": "Megabonk",
    "header": "d06cb39a82a703e42541085fc61b42d80904b3f8",
-   "reviews": 101625,
+   "reviews": 101756,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3469230": {
    "name": "Baki Hanma: Blood Arena",
@@ -1671,7 +1671,7 @@
    "reviews": null,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3892270": {
    "name": "Gamble With Your Friends",
@@ -1684,18 +1684,18 @@
   "3905010": {
    "name": "ONE PIECE: Grand Gourmet",
    "header": "0437aa2ef308bd35d40833de72c3dac04a24f067",
-   "reviews": 669,
+   "reviews": 702,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3949040": {
    "name": "RV There Yet?",
    "header": "cae24b4ed7f4531be51f0d63f785b7d253f92dc3",
-   "reviews": 77282,
+   "reviews": 77597,
    "ram": 12,
    "ramMinimum": false,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "3986520": {
    "name": "007 First Light - Deluxe Edition Upgrade",
@@ -1751,7 +1751,7 @@
    "reviews": null,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "4568830": {
    "name": "ASTRAL COURT DX",
@@ -1759,7 +1759,7 @@
    "reviews": null,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   "4732690": {
    "name": "Arknights: Endfield",
