@@ -68,26 +68,26 @@
   "12200": {
    "name": "Bully: Scholarship Edition",
    "header": "",
-   "reviews": 38112,
+   "reviews": 38174,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "12210": {
    "name": "Grand Theft Auto IV: The Complete Edition",
    "header": "",
-   "reviews": 184550,
+   "reviews": 185354,
    "ram": 1.5,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "17470": {
    "name": "Dead Space (2008)",
    "header": "",
-   "reviews": 23066,
+   "reviews": 23093,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "19680": {
    "name": "Alice: Madness Returns",
@@ -116,10 +116,10 @@
   "33320": {
    "name": "Prince of Persia: The Forgotten Sands™",
    "header": "",
-   "reviews": 2964,
+   "reviews": 2976,
    "ram": 1,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "35700": {
    "name": "Trine Enchanted Edition",
@@ -148,10 +148,10 @@
   "40990": {
    "name": "Mafia",
    "header": "",
-   "reviews": 8951,
+   "reviews": 8956,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "42640": {
    "name": "Blur",
@@ -172,10 +172,10 @@
   "72850": {
    "name": "The Elder Scrolls V: Skyrim",
    "header": "",
-   "reviews": 180949,
+   "reviews": 180960,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "108600": {
    "name": "Project Zomboid",
@@ -212,10 +212,10 @@
   "203160": {
    "name": "Tomb Raider Game of the Year",
    "header": "",
-   "reviews": 175625,
+   "reviews": 175996,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "204030": {
    "name": "Fable - The Lost Chapters",
@@ -260,10 +260,10 @@
   "213610": {
    "name": "Sonic Adventure 2",
    "header": "",
-   "reviews": 23948,
+   "reviews": 23980,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "219150": {
    "name": "Hotline Miami",
@@ -284,10 +284,10 @@
   "220240": {
    "name": "Far Cry 3",
    "header": "3848aafeb6e5cff40cbf6210c34413f3034150da",
-   "reviews": 124691,
+   "reviews": 124809,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "223470": {
    "name": "POSTAL 2",
@@ -324,10 +324,10 @@
   "234080": {
    "name": "Castlevania: Lords of Shadow – Ultimate Edition",
    "header": "",
-   "reviews": 8099,
+   "reviews": 8111,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "235460": {
    "name": "METAL GEAR RISING: REVENGEANCE",
@@ -388,18 +388,18 @@
   "260730": {
    "name": "Desperados: Wanted Dead or Alive",
    "header": "",
-   "reviews": 2134,
+   "reviews": 2135,
    "ram": 0.5,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "265550": {
    "name": "Dead Rising 3 Apocalypse Edition",
    "header": "",
-   "reviews": 13947,
+   "reviews": 13960,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "291550": {
    "name": "Brawlhalla",
@@ -407,7 +407,7 @@
    "reviews": 2889,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "292030": {
    "name": "The Witcher 3: Wild Hunt — Remastered",
@@ -444,10 +444,10 @@
   "338930": {
    "name": "TRANSFORMERS: Devastation",
    "header": "",
-   "reviews": 1006,
+   "reviews": 1007,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "339230": {
    "name": "ZOMBI",
@@ -476,10 +476,10 @@
   "362890": {
    "name": "Black Mesa",
    "header": "674b9a0e7b31996efd5032dc15e695dbf457d71d",
-   "reviews": 135481,
+   "reviews": 135636,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "367520": {
    "name": "Hollow Knight",
@@ -572,10 +572,10 @@
   "413150": {
    "name": "Stardew Valley",
    "header": "",
-   "reviews": 904335,
+   "reviews": 905396,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "429050": {
    "name": "Feed and Grow: Fish",
@@ -604,26 +604,26 @@
   "490110": {
    "name": "The Precinct",
    "header": "",
-   "reviews": 8057,
+   "reviews": 8082,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "498240": {
    "name": "Batman - The Telltale Series",
    "header": "",
-   "reviews": 15213,
+   "reviews": 15247,
    "ram": 3,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "504230": {
    "name": "Celeste",
    "header": "",
-   "reviews": 134343,
+   "reviews": 134545,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "521890": {
    "name": "Hello Neighbor",
@@ -679,7 +679,7 @@
    "reviews": 1550,
    "ram": 3,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "586140": {
    "name": "BlazBlue Centralfiction",
@@ -812,10 +812,10 @@
   "858710": {
    "name": "Gravity Circuit",
    "header": "",
-   "reviews": 3067,
+   "reviews": 3069,
    "ram": 2,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "881100": {
    "name": "Noita",
@@ -860,10 +860,10 @@
   "952060": {
    "name": "Resident Evil 3",
    "header": "",
-   "reviews": 92276,
+   "reviews": 92467,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "986130": {
    "name": "Shadows of Doubt",
@@ -892,10 +892,10 @@
   "1030300": {
    "name": "Hollow Knight: Silksong",
    "header": "7983574d464e6559ac7e24275727f73a8bcca1f3",
-   "reviews": 391450,
+   "reviews": 391939,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "1118520": {
    "name": "Paralives",
@@ -924,10 +924,10 @@
   "1167630": {
    "name": "Teardown",
    "header": "38bac946654a2cc775607518fb5c8e4e0a0f9a87",
-   "reviews": 128830,
+   "reviews": 129088,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "1179080": {
    "name": "FAITH: The Unholy Trinity",
@@ -956,10 +956,10 @@
   "1229490": {
    "name": "ULTRAKILL",
    "header": "",
-   "reviews": 217799,
+   "reviews": 218304,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "1260520": {
    "name": "Patrick's Parabox",
@@ -1084,10 +1084,10 @@
   "1663850": {
    "name": "REPLACED",
    "header": "9079d7a26c8720ed0616f1bd7f912ccc22a535d4",
-   "reviews": 9947,
+   "reviews": 10044,
    "ram": 16,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "1671210": {
    "name": "DELTARUNE",
@@ -1260,10 +1260,10 @@
   "2057760": {
    "name": "Esoteric Ebb",
    "header": "3fc3e737678a0d5db6816609bec2c9c6f2c11a88",
-   "reviews": 9351,
+   "reviews": 9417,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2099110": {
    "name": "The Classrooms",
@@ -1375,7 +1375,7 @@
    "reviews": null,
    "ram": 0.5,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2475490": {
    "name": "Mouthwashing",
@@ -1404,18 +1404,18 @@
   "2499860": {
    "name": "DRAGON QUEST VII Reimagined",
    "header": "ea0c655407c078a8994b7e91256c79d90169133a",
-   "reviews": 2228,
+   "reviews": 2242,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2521380": {
    "name": "Legacy of Kain™ Soul Reaver 1&2 Remastered",
    "header": "",
-   "reviews": 3081,
+   "reviews": 3083,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2552430": {
    "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
@@ -1452,10 +1452,10 @@
   "2833580": {
    "name": "BRAVELY DEFAULT FLYING FAIRY HD Remaster",
    "header": "560d12106258dde9bc4ac258cbe8e71d540eb8f5",
-   "reviews": 844,
+   "reviews": 846,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2908480": {
    "name": "Gladio Mori Demo",
@@ -1463,15 +1463,15 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "2950790": {
    "name": "IRON NEST: Heavy Turret Simulator",
    "header": "e6c9e990560078611472e5dab98e79a405ed33f4",
-   "reviews": 15119,
+   "reviews": 15303,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "3010850": {
    "name": "Gears of War: E-Day",
@@ -1503,15 +1503,15 @@
    "reviews": 959,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "3090810": {
    "name": "Truckful",
    "header": "84527335c4107d4ad2e459e97f0af3b0343ffbc2",
-   "reviews": 217,
+   "reviews": 228,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "3105440": {
    "name": "Heroes of Might and Magic: Olden Era",
@@ -1660,10 +1660,10 @@
   "3756010": {
    "name": "SUPER BOMBERMAN COLLECTION",
    "header": "cdb5d4d45a27797897f6052d55bc7316ea9a3e4c",
-   "reviews": 318,
+   "reviews": 319,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "3760370": {
    "name": "Kick",
@@ -1700,18 +1700,18 @@
   "3986520": {
    "name": "007 First Light - Deluxe Edition Upgrade",
    "header": "2e8cfb52e72dcb618e730260c7b4002e0f66bd95",
-   "reviews": 150,
+   "reviews": 151,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "4078430": {
    "name": "STAR WARS: Galactic Racer™",
    "header": "97215eb609882139ce6a28419116be23fcf5ac86",
-   "reviews": 7456,
+   "reviews": 7643,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "4108000": {
    "name": "Machine Party",
@@ -1740,10 +1740,10 @@
   "4231820": {
    "name": "Castlevania: Belmont's Curse",
    "header": "6b65aec2c398006aea8b76e1463cc34d0e4ba68b",
-   "reviews": 8957,
+   "reviews": 9317,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-10"
+   "checked": "2026-11-17"
   },
   "4471060": {
    "name": "Colleccct",
