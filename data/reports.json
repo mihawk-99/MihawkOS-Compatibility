@@ -20,10 +20,10 @@
   "440": {
    "name": "Team Fortress 2",
    "header": "",
-   "reviews": 48277,
+   "reviews": 48394,
    "ram": 1,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "550": {
    "name": "Left 4 Dead 2",
@@ -36,10 +36,10 @@
   "620": {
    "name": "Portal 2",
    "header": "faffc0f560786e2f05104a8d2fac837c6969bf13",
-   "reviews": 393149,
+   "reviews": 393390,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "6020": {
    "name": "STAR WARS™ Jedi Knight - Jedi Academy™",
@@ -103,15 +103,15 @@
    "reviews": 7464,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "22380": {
    "name": "Fallout: New Vegas",
    "header": "",
-   "reviews": 213443,
+   "reviews": 213614,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "33320": {
    "name": "Prince of Persia: The Forgotten Sands™",
@@ -199,7 +199,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "202970": {
    "name": "Call of Duty®: Black Ops II",
@@ -220,10 +220,10 @@
   "204030": {
    "name": "Fable - The Lost Chapters",
    "header": "",
-   "reviews": 7507,
+   "reviews": 7510,
    "ram": 0.3,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "204100": {
    "name": "Max Payne 3",
@@ -244,10 +244,10 @@
   "208650": {
    "name": "Batman™: Arkham Knight",
    "header": "",
-   "reviews": 112851,
+   "reviews": 113008,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "209000": {
    "name": "Batman™: Arkham Origins",
@@ -292,18 +292,18 @@
   "223470": {
    "name": "POSTAL 2",
    "header": "",
-   "reviews": 119178,
+   "reviews": 119349,
    "ram": 0.4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "223510": {
    "name": "Miasmata",
    "header": "",
-   "reviews": 1066,
+   "reviews": 1067,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "223710": {
    "name": "Cry of Fear",
@@ -316,10 +316,10 @@
   "227300": {
    "name": "Euro Truck Simulator 2",
    "header": "9a81dc3126c56637297b654f9dcac057cfd79b77",
-   "reviews": 796271,
+   "reviews": 798124,
    "ram": 12,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "234080": {
    "name": "Castlevania: Lords of Shadow – Ultimate Edition",
@@ -332,10 +332,10 @@
   "235460": {
    "name": "METAL GEAR RISING: REVENGEANCE",
    "header": "",
-   "reviews": 69459,
+   "reviews": 69486,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "235600": {
    "name": "Tom Clancy’s Splinter Cell Blacklist",
@@ -356,18 +356,18 @@
   "243470": {
    "name": "Watch_Dogs™",
    "header": "",
-   "reviews": 50936,
+   "reviews": 51069,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "244210": {
    "name": "Assetto Corsa",
    "header": "",
-   "reviews": 137792,
+   "reviews": 138010,
    "ram": 6,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "251570": {
    "name": "7 Days to Die",
@@ -484,10 +484,10 @@
   "367520": {
    "name": "Hollow Knight",
    "header": "3c3489495136b26b34f8a9543c7f5645b99d388c",
-   "reviews": 509456,
+   "reviews": 510176,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "371970": {
    "name": "Barony",
@@ -511,7 +511,7 @@
    "reviews": 557,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "383150": {
    "name": "Dead Island Definitive Edition",
@@ -588,10 +588,10 @@
   "433340": {
    "name": "Slime Rancher",
    "header": "",
-   "reviews": 141008,
+   "reviews": 141102,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "489830": {
    "name": "The Elder Scrolls V: Skyrim Special Edition",
@@ -628,10 +628,10 @@
   "521890": {
    "name": "Hello Neighbor",
    "header": "",
-   "reviews": 27633,
+   "reviews": 27726,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "526870": {
    "name": "Satisfactory",
@@ -692,18 +692,18 @@
   "588650": {
    "name": "Dead Cells",
    "header": "",
-   "reviews": 157679,
+   "reviews": 157784,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "606150": {
    "name": "Moonlighter",
    "header": "b6b0789b397ed98c8c5871dd2f99945a8fea0332",
-   "reviews": 17411,
+   "reviews": 17431,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "612880": {
    "name": "Wolfenstein II: The New Colossus",
@@ -716,10 +716,10 @@
   "632360": {
    "name": "Risk of Rain 2",
    "header": "",
-   "reviews": 242984,
+   "reviews": 243148,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "632470": {
    "name": "Disco Elysium - The Final Cut",
@@ -780,18 +780,18 @@
   "787480": {
    "name": "Phoenix Wright: Ace Attorney Trilogy",
    "header": "",
-   "reviews": 36180,
+   "reviews": 36208,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "813780": {
    "name": "Age of Empires II: Definitive Edition",
    "header": "",
-   "reviews": 160608,
+   "reviews": 160891,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "814380": {
    "name": "Sekiro™: Shadows Die Twice - GOTY Edition",
@@ -844,10 +844,10 @@
   "930210": {
    "name": "HuniePop 2: Double Date",
    "header": "",
-   "reviews": 8153,
+   "reviews": 8157,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "934700": {
    "name": "Dead Island 2",
@@ -868,10 +868,10 @@
   "986130": {
    "name": "Shadows of Doubt",
    "header": "",
-   "reviews": 14783,
+   "reviews": 14790,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1002300": {
    "name": "Fear & Hunger",
@@ -908,18 +908,18 @@
   "1148130": {
    "name": "Divinum",
    "header": "d83df4c3d12fb4874759e3bd5c6db1c5cdb7eaf8",
-   "reviews": 641,
+   "reviews": 651,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1150690": {
    "name": "OMORI",
    "header": "",
-   "reviews": 80571,
+   "reviews": 80648,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1167630": {
    "name": "Teardown",
@@ -972,10 +972,10 @@
   "1262560": {
    "name": "Need for Speed™ Most Wanted",
    "header": "",
-   "reviews": 25672,
+   "reviews": 25748,
    "ram": 4,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1262580": {
    "name": "Need for Speed™ Payback",
@@ -1004,10 +1004,10 @@
   "1353230": {
    "name": "Bomb Rush Cyberfunk",
    "header": "",
-   "reviews": 12734,
+   "reviews": 12741,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1422450": {
    "name": "Deadlock",
@@ -1039,7 +1039,7 @@
    "reviews": null,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1451940": {
    "name": "NEEDY STREAMER OVERLOAD",
@@ -1052,18 +1052,18 @@
   "1462040": {
    "name": "FINAL FANTASY VII REMAKE INTERGRADE",
    "header": "67aebedbdfc261278fc5e3cd45b519212ac0555a",
-   "reviews": 45864,
+   "reviews": 46200,
    "ram": 12,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1465360": {
    "name": "SnowRunner",
    "header": "",
-   "reviews": 47568,
+   "reviews": 47737,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1478500": {
    "name": "Big Walk",
@@ -1119,7 +1119,7 @@
    "reviews": null,
    "ram": null,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1693980": {
    "name": "Dead Space",
@@ -1164,10 +1164,10 @@
   "1790600": {
    "name": "DRAGON BALL: Sparking! ZERO",
    "header": "",
-   "reviews": 50877,
+   "reviews": 50906,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1790930": {
    "name": "Crisol: Theater of Idols",
@@ -1180,10 +1180,10 @@
   "1796470": {
    "name": "Haste",
    "header": "",
-   "reviews": 13005,
+   "reviews": 13051,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "1799840": {
    "name": "Queen's Domain",
@@ -1244,10 +1244,10 @@
   "1961950": {
    "name": "CHAOS;HEAD NOAH",
    "header": "",
-   "reviews": 2112,
+   "reviews": 2116,
    "ram": 4,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "2050650": {
    "name": "Resident Evil 4",
@@ -1268,10 +1268,10 @@
   "2099110": {
    "name": "The Classrooms",
    "header": "8862668a61deaa273459614ceafe05e4a4e0e059",
-   "reviews": 3213,
+   "reviews": 3224,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "2111190": {
    "name": "MULLET MADJACK",
@@ -1284,10 +1284,10 @@
   "2138710": {
    "name": "Sifu",
    "header": "",
-   "reviews": 22432,
+   "reviews": 22596,
    "ram": 10,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "2140020": {
    "name": "Stronghold: Definitive Edition",
@@ -1300,10 +1300,10 @@
   "2142790": {
    "name": "Fields of Mistria",
    "header": "f65314989c7779a45a674bcc950092eed32c0b0f",
-   "reviews": 33839,
+   "reviews": 34514,
    "ram": 8,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "2146170": {
    "name": "Baten Kaitos I & II HD Remaster",
@@ -1388,10 +1388,10 @@
   "2492670": {
    "name": "METAL GEAR SOLID 4: Guns of the Patriots - Master Collection Version",
    "header": "458033bb7aad4e6b8a61af0f7798d23db2683864",
-   "reviews": 2881,
+   "reviews": 2993,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "2499520": {
    "name": "Be My Horde",
@@ -1495,7 +1495,7 @@
    "reviews": null,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3081840": {
    "name": "Chrono Gear: Warden of Time",
@@ -1516,18 +1516,18 @@
   "3105440": {
    "name": "Heroes of Might and Magic: Olden Era",
    "header": "e2bef853b7cb19e3d5f019022309783609e8454f",
-   "reviews": 20420,
+   "reviews": 20747,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3156770": {
    "name": "Witchfire",
    "header": "3e222a764e93b6f5c10d114a8a82d71f221a7cd9",
-   "reviews": 17611,
+   "reviews": 17691,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3164500": {
    "name": "Schedule I",
@@ -1572,26 +1572,26 @@
   "3354750": {
    "name": "skate.",
    "header": "79c5a87b61a396cc6e6b69e3a083727f175dea83",
-   "reviews": 291,
+   "reviews": 292,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3361510": {
    "name": "Coal LLC",
    "header": "464a07362fbcfc902988b469725e65e049d7260d",
-   "reviews": 1398,
+   "reviews": 1406,
    "ram": 2,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3404260": {
    "name": "Dead as Disco",
    "header": "ae0f4b71735adf4f2494ecb7914fcbafee215277",
-   "reviews": 13667,
+   "reviews": 14142,
    "ram": 8,
    "ramMinimum": true,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3405340": {
    "name": "Megabonk",
@@ -1604,10 +1604,10 @@
   "3469230": {
    "name": "Baki Hanma: Blood Arena",
    "header": "",
-   "reviews": 141,
+   "reviews": 142,
    "ram": 3,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3527290": {
    "name": "PEAK",
@@ -1639,23 +1639,23 @@
    "reviews": null,
    "ram": 12,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3669870": {
    "name": "CONTROL Resonant",
    "header": "1e0c76e4253d347bb1304c3f213570251d924edf",
-   "reviews": 15345,
+   "reviews": 16216,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3747730": {
    "name": "Legacy of Kain: Defiance Remastered",
    "header": "f0b68c0f6aa4adba527cf5635cf08d58464f9dcc",
-   "reviews": 696,
+   "reviews": 721,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "3756010": {
    "name": "SUPER BOMBERMAN COLLECTION",
@@ -1732,10 +1732,10 @@
   "4197610": {
    "name": "Librarian: Tidy Up the Arcane Library!",
    "header": "2162be8e12b6bcbf696e508a4b6297c378c33bda",
-   "reviews": 26513,
+   "reviews": 27239,
    "ram": 16,
    "ramMinimum": false,
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   "4231820": {
    "name": "Castlevania: Belmont's Curse",
